@@ -144,7 +144,8 @@ def extract_pdf(path):
 
 def evaluate(row, path):
     """取得済みの原典から、台帳の format・bytes・sha256・pages・text_chars・text_method・check を埋め、テキストを返す。"""
-    data = open(path, "rb").read()
+    with open(path, "rb") as f:
+        data = f.read()
     row["bytes"] = str(len(data))
     row["sha256"] = hashlib.sha256(data).hexdigest()
     ext = os.path.splitext(path)[1].lstrip(".").lower()

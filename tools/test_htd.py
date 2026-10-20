@@ -63,6 +63,11 @@ class Tmp(unittest.TestCase):
         return p
 
 
+def read_text(path):
+    with open(path, encoding="utf-8") as f:
+        return f.read()
+
+
 def req(i, url=None, **kw):
     r = {"id": i, "category": i.split("-")[0], "title": f"見本 {i}", "fiscal_year": "2026", "date": "",
          "page_url": "https://www.town.shiga-hino.lg.jp/0000008534.html",
@@ -121,7 +126,7 @@ class TestFetch(Tmp):
         self.assertEqual((rows["yosan-r8-gaiyou"]["pages"], rows["yosan-r8-gaiyou"]["fetched"]), ("5", "2026-10-21"))
         self.assertTrue(os.path.exists(os.path.join(htd.TEXT_DIR, "yosan-r8-gaiyou.txt")))
         self.assertFalse(os.path.exists(os.path.join(htd.TEXT_DIR, "yosan-r8-hoshin.txt")))   # image はテキストを置かない
-        text = open(os.path.join(htd.TEXT_DIR, "yosan-r8-gaiyou.txt"), encoding="utf-8").read()
+        text = read_text(os.path.join(htd.TEXT_DIR, "yosan-r8-gaiyou.txt"))
         self.assertEqual(text.count("\f"), 5)                                            # 改ページを残す
         # 同じ id をもう一度頼むと止める
         with self.assertRaises(htd.Stop):
@@ -141,9 +146,9 @@ class TestFetch(Tmp):
     def test_extract_again(self):
         p = self.request([req("yosan-r8-gaiyou")])
         htd.fetch(p, opener=lambda url: make_pdf([LINE] * 2))
-        before = open(htd.SOURCES, encoding="utf-8").read()
+        before = read_text(htd.SOURCES)
         htd.extract()
-        self.assertEqual(open(htd.SOURCES, encoding="utf-8").read(), before)
+        self.assertEqual(read_text(htd.SOURCES), before)
         # 原典が差し替わっていたら止める
         with open(os.path.join(htd.RAW_DIR, "yosan-r8-gaiyou.pdf"), "wb") as f:
             f.write(make_pdf([LINE]))
