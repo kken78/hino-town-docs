@@ -107,6 +107,17 @@ class TestRequest(Tmp):
         self.assertIn("台帳にすでにある", str(cm.exception))
 
 
+class TestUnexpected(unittest.TestCase):
+    def test_count(self):
+        self.assertEqual(htd.unexpected("令和3年度 ①㎡※℃ CO₂ ➢ 備︑被害︒"), 0)     # 縦書きの句読点（U+FE11・U+FE12）も使う字
+        self.assertEqual(htd.unexpected("物価⾼騰 ⺠"), 0)                            # 部首の字は数えない
+        self.assertEqual(htd.unexpected("\u0a5e\u202b97\u202c ¾ \x1a\x08"), 6)          # 化けた字・制御文字
+
+    def test_note(self):
+        self.assertEqual(htd.unexpected_note("ふつう\f\u0a5e\u0a5e\fふつう\f\x1a"), "想定外の字のあるページ：2（2字）・4（1字）")
+        self.assertEqual(htd.unexpected_note("ふつう\fふつう"), "")
+
+
 @unittest.skipUnless(HAS_POPPLER, "pdftotext・pdfinfo が無い")
 class TestFetch(Tmp):
     def test_fetch_writes_ledger_and_text(self):
@@ -155,6 +166,19 @@ class TestFetch(Tmp):
         with self.assertRaises(htd.Stop) as cm:
             htd.extract(["yosan-r8-gaiyou"])
         self.assertIn("sha256 が台帳と違う", str(cm.exception))
+
+    def test_extract_keeps_hand_note_first(self):
+        # 手で書いた注記は前に残り、道具の注記は末尾に書き直される（§4）
+        p = self.request([req("kessan-r6-gaiyou")])
+        htd.fetch(p, opener=lambda url: make_pdf([LINE, LINE, "", ""]))
+        rows = htd.read_sources()
+        self.assertEqual(rows[0]["note"], "文字の少ないページ：3・4")
+        rows[0]["note"] = "抜き取り（2026-10-21）：1ページ。欠けと誤りなし。文字の少ないページ：3・4"
+        htd.write_sources(rows)
+        before = read_text(htd.SOURCES)
+        htd.extract()
+        htd.extract()
+        self.assertEqual(read_text(htd.SOURCES), before)
 
     def test_non_pdf(self):
         p = self.request([req("zaisei-r6-zaimu", url="https://www.town.shiga-hino.lg.jp/cmsfiles/a.xlsx")])

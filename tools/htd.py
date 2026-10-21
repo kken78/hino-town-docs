@@ -33,6 +33,17 @@ OK_RATE, IMAGE_RATE = 0.8, 0.2
 SIZE_TOLERANCE = 0.1   # §6：掲載ページの大きさと1割以上違えば note に書く
 WAIT = 1.0             # §6：1秒に1件以内
 USER_AGENT = "hino-town-docs (+https://github.com/kken78/hino-town-docs)"
+# §6：日本語の文書で使う字の範囲。この外の字（部首の字を除く）を「想定外の字」として数える
+ALLOW = [
+    (0x09, 0x0A), (0x0C, 0x0D), (0x20, 0x7E),
+    (0xA7, 0xA7), (0xB0, 0xB1), (0xB4, 0xB4), (0xB6, 0xB6), (0xD7, 0xD7), (0xF7, 0xF7),
+    (0x2010, 0x2027), (0x2030, 0x2030), (0x2032, 0x2033), (0x203B, 0x203B), (0x2070, 0x209F),
+    (0x2100, 0x218F), (0x2190, 0x23FF), (0x2460, 0x27BF),
+    (0x3000, 0x30FF), (0x31F0, 0x31FF), (0x3200, 0x33FF), (0x3400, 0x4DBF), (0x4E00, 0x9FFF),
+    (0xF900, 0xFAFF), (0xFE10, 0xFE19), (0xFE30, 0xFE4F), (0xFF00, 0xFFEF), (0x20000, 0x2FFFF),
+]
+RADICAL = (0x2E80, 0x2FDF)   # §5：部首の字（CJK 部首補助・康熙部首）。想定外の字には数えない
+AUTO_NOTE = re.compile(r"(^|。)(文字の少ないページ|想定外の字のあるページ)：[^。]*")   # 検収のたびに道具が書き直す注記
 
 
 class Stop(Exception):
@@ -122,6 +133,24 @@ def count_chars(text):
     return len(re.sub(r"\s", "", text))
 
 
+def unexpected(text):
+    """§6：想定外の字の数（ALLOW の外の字。部首の字は数えない）。"""
+    n = 0
+    for ch in text:
+        c = ord(ch)
+        if RADICAL[0] <= c <= RADICAL[1] or any(a <= c <= b for a, b in ALLOW):
+            continue
+        n += 1
+    return n
+
+
+def unexpected_note(text):
+    """§6：想定外の字のあるページの注記（無ければ空）。例「想定外の字のあるページ：1（11字）・6（1字）」"""
+    parts = text.split("\f")
+    found = [f"{i + 1}（{n}字）" for i, n in enumerate(unexpected(p) for p in parts) if n]
+    return f"想定外の字のあるページ：{'・'.join(found)}" if found else ""
+
+
 def extract_pdf(path):
     """（テキスト、ページ数、ページごとの文字数）。pdftotext のテキストは改ページ（\\f）で区切られる。"""
     info = subprocess.run(["pdfinfo", path], capture_output=True, text=True)
@@ -162,6 +191,8 @@ def evaluate(row, path):
             row["note"] = join_note(row.get("note"), f"文字の少ないページ：{'・'.join(low)}")
         if row["check"] in ("image", "ng"):
             text = None
+        else:
+            row["note"] = join_note(row.get("note"), unexpected_note(text))
     else:
         row["pages"] = row["text_chars"] = ""
         row["text_method"] = "none"
@@ -239,8 +270,7 @@ def extract(ids=None):
         if len(paths) != 1:
             raise Stop(f"{r['id']}：sources_raw/ に原典が無いか、2つ以上ある")
         old_sha = r["sha256"]
-        note = re.sub(r"(^|。)文字の少ないページ：[0-9・]+", "", r.get("note") or "").strip("。")
-        r["note"] = note
+        r["note"] = AUTO_NOTE.sub("", r.get("note") or "").strip("。")
         text = evaluate(r, paths[0])
         if old_sha and r["sha256"] != old_sha:
             raise Stop(f"{r['id']}：sources_raw/ の原典の sha256 が台帳と違う（差し替えは新しい id で取る。§2）")
