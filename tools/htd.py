@@ -2,17 +2,23 @@
 
   python3 -B tools/htd.py fetch <依頼.tsv>   依頼の資料を町のサイトから取り、文字を取り出して、台帳とテキストを書く
   python3 -B tools/htd.py extract [<id> ...]  取得済みの原典（sources_raw/）から、文字の取り出しと検収をやり直す（ネットワークを使わない）
+  python3 -B tools/htd.py ocr [<id> ...]      原典の全ページを NDLOCR-Lite で読み、OCR の下書き data/ocr/<id>.txt を作る（§10。ネットワークを使わない）
 
 依頼の TSV（UTF-8、タブ区切り、1行目は見出し）の列：id・category・title・fiscal_year・date・page_url・url・size_label
 （size_label は掲載ページに書かれた大きさ。例「1.23MB」。無ければ空）。依頼の id が台帳にすでにあれば、何もせずに止める。
 取得は1秒に1件以内。町のサイトから断られたとき（HTTP のエラー、つながらない）は、そこで止めて報告する。
 止めるまでに取得したものは、台帳とテキストに書く。
 原典は sources_raw/<id>.<拡張子> に置く（リポジトリに入れない）。テキストは data/text/<id>.txt（改ページ \\f を残す）。
+
+ocr は、id を指定しなければ、OCR の下書きがまだ無いか、ocr_method がいまの NDLOCR-Lite の版と違う PDF の資料だけを読む
+（途中で止めても、もう一度動かせば続きから進む。台帳は資料1本ごとに書く）。
+NDLOCR-Lite の場所は環境変数 HTD_NDLOCR（既定 ~/ocr/ndlocr-lite）、その Python は HTD_NDLOCR_PYTHON（既定 ~/ocr/venv-ndlocr/bin/python）。
 """
 import csv
 import hashlib
 import os
 import re
+import shutil
 import subprocess
 import sys
 import time
@@ -22,9 +28,15 @@ from datetime import date
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SOURCES = os.path.join(ROOT, "data", "sources.tsv")
 TEXT_DIR = os.path.join(ROOT, "data", "text")
+OCR_DIR = os.path.join(ROOT, "data", "ocr")
+OCR_RAW_DIR = os.path.join(ROOT, "ocr_raw")
+NDLOCR_DIR = os.path.expanduser(os.environ.get("HTD_NDLOCR", "~/ocr/ndlocr-lite"))
+NDLOCR_PYTHON = os.path.expanduser(os.environ.get("HTD_NDLOCR_PYTHON", "~/ocr/venv-ndlocr/bin/python"))
+OCR_DPI = 300   # §10
 RAW_DIR = os.path.join(ROOT, "sources_raw")
 COLUMNS = ["id", "category", "title", "fiscal_year", "date", "page_url", "url", "format", "bytes", "sha256", "pages",
-           "text_chars", "text_method", "fetched", "check", "note"]
+           "text_chars", "text_method", "ocr_method", "ocr_date", "fetched", "check", "note"]
+COLUMNS_V1 = [c for c in COLUMNS if c not in ("ocr_method", "ocr_date")]   # 0c64af5 より前の台帳。読むときに2列を空で足す
 REQUEST_COLUMNS = ["id", "category", "title", "fiscal_year", "date", "page_url", "url", "size_label"]
 CATEGORIES = ("yosan", "kessan", "zaisei", "kofukin", "kansa", "kyoi", "koho", "jinji", "gyokaku")
 ID_RE = re.compile(r"[a-z0-9]+(-[a-z0-9]+)*")
@@ -65,7 +77,16 @@ def read_tsv(path, columns):
 
 
 def read_sources():
-    return read_tsv(SOURCES, COLUMNS) if os.path.exists(SOURCES) else []
+    if not os.path.exists(SOURCES):
+        return []
+    with open(SOURCES, encoding="utf-8", newline="") as f:
+        head = f.readline().rstrip("\n").split("\t")
+    if head == COLUMNS_V1:
+        rows = read_tsv(SOURCES, COLUMNS_V1)
+        for r in rows:
+            r["ocr_method"] = r["ocr_date"] = ""
+        return rows
+    return read_tsv(SOURCES, COLUMNS)
 
 
 def write_sources(rows):
@@ -284,6 +305,94 @@ def extract(ids=None):
     return targets
 
 
+# ---- OCR の下書き（§10） ----
+
+def run(cmd, **kw):
+    r = subprocess.run(cmd, capture_output=True, text=True, **kw)
+    if r.returncode != 0:
+        tail = (r.stderr or r.stdout).strip().splitlines()[-3:]
+        raise Stop(f"{os.path.basename(cmd[0])} が終了コード {r.returncode}（{' / '.join(tail)}）")
+    return r.stdout
+
+
+def ndlocr_method():
+    """§4：ocr_method の値（ndlocr-lite@<コミットの先頭7桁>）。NDLOCR-Lite の作業ツリーに変更があれば止める。"""
+    if not os.path.isfile(os.path.join(NDLOCR_DIR, "src", "ocr.py")):
+        raise Stop(f"NDLOCR-Lite が無い（{NDLOCR_DIR}/src/ocr.py）。HTD_NDLOCR で場所を指定する")
+    if not os.path.isfile(NDLOCR_PYTHON):
+        raise Stop(f"NDLOCR-Lite の Python が無い（{NDLOCR_PYTHON}）。HTD_NDLOCR_PYTHON で場所を指定する")
+    if run(["git", "-C", NDLOCR_DIR, "status", "--porcelain"]).strip():
+        raise Stop(f"{NDLOCR_DIR} の作業ツリーに変更がある（版が決まらない）")
+    return "ndlocr-lite@" + run(["git", "-C", NDLOCR_DIR, "rev-parse", "--short=7", "HEAD"]).strip()
+
+
+def ocr_one(row, method, today):
+    """1本の PDF の全ページを読み、data/ocr/<id>.txt と台帳の ocr_method・ocr_date を書く。"""
+    i, pages = row["id"], int(row["pages"])
+    pdf = os.path.join(RAW_DIR, f"{i}.pdf")
+    if not os.path.isfile(pdf):
+        raise Stop(f"{i}：sources_raw/ に原典が無い")
+    with open(pdf, "rb") as f:
+        if hashlib.sha256(f.read()).hexdigest() != row["sha256"]:
+            raise Stop(f"{i}：sources_raw/ の原典の sha256 が台帳と違う")
+    base = os.path.join(OCR_RAW_DIR, i)
+    img, out = os.path.join(base, "img"), os.path.join(base, "out")
+    if os.path.isdir(base):
+        shutil.rmtree(base)
+    os.makedirs(img)
+    os.makedirs(out)
+    for n in range(1, pages + 1):   # 画像の名前にページの番号を4桁で入れ、読む順にかかわらず番号で並べる
+        run(["pdftoppm", "-r", str(OCR_DPI), "-gray", "-png", "-singlefile", "-f", str(n), "-l", str(n),
+             pdf, os.path.join(img, f"p{n:04d}")])
+    run([NDLOCR_PYTHON, "ocr.py", "--sourcedir", img, "--output", out], cwd=os.path.join(NDLOCR_DIR, "src"))
+    texts = []
+    for n in range(1, pages + 1):
+        stem = os.path.join(out, f"p{n:04d}")
+        if os.path.isfile(stem + ".txt"):
+            with open(stem + ".txt", encoding="utf-8") as f:
+                t = f.read()
+        elif os.path.isfile(stem + ".json") or os.path.isfile(stem + ".xml"):
+            t = ""   # 字の無いページ（テキストが出ないとき）
+        else:
+            raise Stop(f"{i}：{n}ページの NDLOCR-Lite の出力が無い")
+        if "\f" in t:
+            raise Stop(f"{i}：{n}ページの NDLOCR-Lite の出力に改ページがある")
+        texts.append(t)
+    extra = sorted(set(os.path.splitext(f)[0] for f in os.listdir(out)) - {f"p{n:04d}" for n in range(1, pages + 1)})
+    if extra:
+        raise Stop(f"{i}：ページに当たらない出力がある（{'・'.join(extra[:5])}）")
+    os.makedirs(OCR_DIR, exist_ok=True)
+    with open(os.path.join(OCR_DIR, f"{i}.txt"), "w", encoding="utf-8", newline="") as f:
+        f.write("".join(t + "\f" for t in texts))   # n 番目の改ページの前が n ページ目（§5・§10）
+    shutil.rmtree(img)   # 画像は作り直せるので消す。座標つきの出力（out/）は残す
+    row["ocr_method"], row["ocr_date"] = method, today.isoformat()
+
+
+def ocr(ids=None, today=None, log=print):
+    rows = read_sources()
+    missing = [i for i in (ids or []) if i not in {r["id"] for r in rows}]
+    if missing:
+        raise Stop(f"台帳に無い id：{'・'.join(missing)}")
+    method = ndlocr_method()
+    today = today or date.today()
+    if ids:
+        targets = [r for r in rows if r["id"] in ids]
+        bad = [r["id"] for r in targets if r["format"] != "pdf"]
+        if bad:
+            raise Stop(f"PDF でない資料：{'・'.join(bad)}")
+    else:
+        targets = [r for r in rows if r["format"] == "pdf" and
+                   (r["ocr_method"] != method or not os.path.isfile(os.path.join(OCR_DIR, f"{r['id']}.txt")))]
+    done = []
+    for k, r in enumerate(targets, 1):
+        t0 = time.time()
+        ocr_one(r, method, today)
+        write_sources(rows)   # 1本ごとに書く（途中で止めても続きから進める）
+        done.append(r)
+        log(f"{k}／{len(targets)}	{r['id']}	{r['pages']}ページ	{time.time() - t0:.0f}秒")
+    return done, method
+
+
 def summary(rows):
     from collections import Counter
     c = Counter(r["check"] for r in rows)
@@ -305,6 +414,10 @@ def main(argv=None):
         if args and args[0] == "extract":
             rows = extract(args[1:] or None)
             print(f"やり直し {len(rows)}（{summary(rows)}）")
+            return 0
+        if args and args[0] == "ocr":
+            done, method = ocr(args[1:] or None, log=lambda s: print(s, flush=True))
+            print(f"OCR {len(done)}本・{sum(int(r['pages']) for r in done)}ページ（{method}）")
             return 0
     except Stop as e:
         print(f"停止：{e}", file=sys.stderr)

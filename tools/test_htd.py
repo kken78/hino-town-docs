@@ -5,6 +5,7 @@
 """
 import os
 import shutil
+import subprocess
 import sys
 import tempfile
 import unittest
@@ -15,7 +16,24 @@ sys.path.insert(0, HERE)
 
 import htd  # noqa: E402
 
-HAS_POPPLER = bool(shutil.which("pdftotext") and shutil.which("pdfinfo"))
+HAS_POPPLER = bool(shutil.which("pdftotext") and shutil.which("pdfinfo") and shutil.which("pdftoppm"))
+HAS_GIT = bool(shutil.which("git"))
+
+# NDLOCR-Lite の代わり（ocr.py と同じ引数で動き、画像1枚ごとに <名前>.txt と .json を書く。
+# 環境変数 FAKE_EMPTY の名前は .json だけ（字の無いページ）、FAKE_SKIP の名前は何も書かない）
+FAKE_OCR = """import json, os, sys
+a = sys.argv
+src, out = a[a.index("--sourcedir") + 1], a[a.index("--output") + 1]
+for name in sorted(os.listdir(src), reverse=True):
+    stem = os.path.splitext(name)[0]
+    if stem in os.environ.get("FAKE_SKIP", "").split(","):
+        continue
+    with open(os.path.join(out, stem + ".json"), "w") as f:
+        json.dump({"stem": stem}, f)
+    if stem not in os.environ.get("FAKE_EMPTY", "").split(","):
+        with open(os.path.join(out, stem + ".txt"), "w", encoding="utf-8") as f:
+            f.write("読んだ " + stem)
+"""
 LINE = "The town budget overview for the fiscal year lists the main projects and their costs in detail."
 
 
@@ -44,14 +62,20 @@ def make_pdf(pages):
 class Tmp(unittest.TestCase):
     def setUp(self):
         self.d = tempfile.mkdtemp()
-        self.saved = (htd.SOURCES, htd.TEXT_DIR, htd.RAW_DIR, htd.WAIT)
+        self.saved = (htd.SOURCES, htd.TEXT_DIR, htd.RAW_DIR, htd.WAIT, htd.OCR_DIR, htd.OCR_RAW_DIR,
+                      htd.NDLOCR_DIR, htd.NDLOCR_PYTHON)
         htd.SOURCES = os.path.join(self.d, "data", "sources.tsv")
         htd.TEXT_DIR = os.path.join(self.d, "data", "text")
         htd.RAW_DIR = os.path.join(self.d, "sources_raw")
+        htd.OCR_DIR = os.path.join(self.d, "data", "ocr")
+        htd.OCR_RAW_DIR = os.path.join(self.d, "ocr_raw")
         htd.WAIT = 0
 
     def tearDown(self):
-        htd.SOURCES, htd.TEXT_DIR, htd.RAW_DIR, htd.WAIT = self.saved
+        (htd.SOURCES, htd.TEXT_DIR, htd.RAW_DIR, htd.WAIT, htd.OCR_DIR, htd.OCR_RAW_DIR,
+         htd.NDLOCR_DIR, htd.NDLOCR_PYTHON) = self.saved
+        for k in ("FAKE_EMPTY", "FAKE_SKIP"):
+            os.environ.pop(k, None)
         shutil.rmtree(self.d)
 
     def request(self, rows):
@@ -105,6 +129,21 @@ class TestRequest(Tmp):
         with self.assertRaises(htd.Stop) as cm:
             htd.check_request([req("yosan-r8-gaiyou")], {"yosan-r8-gaiyou"})
         self.assertIn("台帳にすでにある", str(cm.exception))
+
+
+class TestLedgerV1(Tmp):
+    def test_old_header_is_read_and_rewritten(self):
+        # 0c64af5 より前の台帳（ocr_method・ocr_date が無い）は、2列を空で足して読み、書くときは新しい見出しにする
+        os.makedirs(os.path.dirname(htd.SOURCES))
+        row = {c: "" for c in htd.COLUMNS_V1}
+        row.update(id="yosan-r8-gaiyou", category="yosan", format="pdf", pages="1", check="ok")
+        with open(htd.SOURCES, "w", encoding="utf-8", newline="") as f:
+            f.write("\t".join(htd.COLUMNS_V1) + "\n" + "\t".join(row[c] for c in htd.COLUMNS_V1) + "\n")
+        rows = htd.read_sources()
+        self.assertEqual((rows[0]["ocr_method"], rows[0]["ocr_date"]), ("", ""))
+        htd.write_sources(rows)
+        self.assertEqual(read_text(htd.SOURCES).splitlines()[0].split("\t"), htd.COLUMNS)
+        self.assertEqual(len(htd.COLUMNS), 18)
 
 
 class TestUnexpected(unittest.TestCase):
@@ -185,6 +224,53 @@ class TestFetch(Tmp):
         htd.fetch(p, opener=lambda url: b"PK\x03\x04dummy")
         r = htd.read_sources()[0]
         self.assertEqual((r["format"], r["check"], r["text_method"], r["pages"]), ("xlsx", "notext", "none", ""))
+
+
+@unittest.skipUnless(HAS_POPPLER and HAS_GIT, "pdftoppm・git が無い")
+class TestOcr(Tmp):
+    def setUp(self):
+        super().setUp()
+        nd = os.path.join(self.d, "ndlocr")
+        os.makedirs(os.path.join(nd, "src"))
+        with open(os.path.join(nd, "src", "ocr.py"), "w", encoding="utf-8") as f:
+            f.write(FAKE_OCR)
+        g = ["git", "-C", nd, "-c", "user.name=t", "-c", "user.email=t@example.com"]
+        for cmd in (["init", "-q"], ["add", "."], ["commit", "-q", "-m", "fake"]):
+            subprocess.run(g + cmd, check=True, capture_output=True)
+        htd.NDLOCR_DIR, htd.NDLOCR_PYTHON = nd, sys.executable
+        p = self.request([req("yosan-r8-gaiyou"), req("zaisei-r6-zaimu", url="https://www.town.shiga-hino.lg.jp/cmsfiles/a.xlsx")])
+        htd.fetch(p, opener=lambda url: make_pdf([LINE, "", LINE]) if url.endswith(".pdf") else b"PK\x03\x04dummy")
+
+    def test_ocr_writes_pages_in_order(self):
+        os.environ["FAKE_EMPTY"] = "p0002"
+        done, method = htd.ocr(today=date(2026, 10, 22), log=lambda s: None)
+        self.assertEqual([r["id"] for r in done], ["yosan-r8-gaiyou"])            # PDF だけ
+        self.assertRegex(method, r"^ndlocr-lite@[0-9a-f]{7}$")
+        text = read_text(os.path.join(htd.OCR_DIR, "yosan-r8-gaiyou.txt"))
+        self.assertEqual(text, "読んだ p0001\f\f読んだ p0003\f")                  # ページの順。字の無いページは空
+        rows = {r["id"]: r for r in htd.read_sources()}
+        self.assertEqual((rows["yosan-r8-gaiyou"]["ocr_method"], rows["yosan-r8-gaiyou"]["ocr_date"]), (method, "2026-10-22"))
+        self.assertEqual(rows["zaisei-r6-zaimu"]["ocr_method"], "")
+        self.assertFalse(os.path.exists(os.path.join(htd.OCR_RAW_DIR, "yosan-r8-gaiyou", "img")))   # 画像は消す
+        self.assertTrue(os.path.exists(os.path.join(htd.OCR_RAW_DIR, "yosan-r8-gaiyou", "out", "p0001.json")))
+        # もう一度動かすと、済んだものは読まない
+        done, _ = htd.ocr(log=lambda s: None)
+        self.assertEqual(done, [])
+
+    def test_ocr_stops_when_output_missing(self):
+        os.environ["FAKE_SKIP"] = "p0003"
+        with self.assertRaises(htd.Stop) as cm:
+            htd.ocr(log=lambda s: None)
+        self.assertIn("3ページの NDLOCR-Lite の出力が無い", str(cm.exception))
+        self.assertEqual(htd.read_sources()[0]["ocr_method"], "")
+        self.assertFalse(os.path.exists(os.path.join(htd.OCR_DIR, "yosan-r8-gaiyou.txt")))
+
+    def test_ocr_stops_when_ndlocr_changed(self):
+        with open(os.path.join(htd.NDLOCR_DIR, "src", "ocr.py"), "a", encoding="utf-8") as f:
+            f.write("# 書き足し\n")
+        with self.assertRaises(htd.Stop) as cm:
+            htd.ocr(log=lambda s: None)
+        self.assertIn("作業ツリーに変更がある", str(cm.exception))
 
 
 if __name__ == "__main__":

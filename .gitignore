@@ -1,3 +1,4 @@
 sources_raw/
 build/
 __pycache__/
+ocr_raw/
