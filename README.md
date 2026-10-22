@@ -19,7 +19,7 @@
 | `data/inventory/` | 町のサイトで調べた資料の一覧（調べた日ごと。取得する前の一覧） |
 | `data/sources.tsv` | 取得した資料の台帳 |
 | `data/text/` | 原典から取り出した文字（pdftotext） |
-| `data/ocr/` | ページの画像から機械で読んだ文字（OCR の下書き。読み違いを含む。まだ無い） |
+| `data/ocr/` | ページの画像から機械で読んだ文字（OCR の下書き。数字の桁の違いを含む読み違いがあり、数字の出典には使わない） |
 
 文字は、原典の文字・OCR の下書き・確かめた読みの3つの層に分けて置く（[DOCS_SCHEMA.md](DOCS_SCHEMA.md) §9）。OCR の下書きは、国立国会図書館の [NDLOCR-Lite](https://github.com/ndl-lab/ndlocr-lite)（CC BY 4.0。同梱の学習済みモデルは DINOv3 License に従う）で作る。
 

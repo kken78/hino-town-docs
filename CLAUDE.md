@@ -32,4 +32,6 @@
 - 文書（README・CLAUDE.md・DOCS_SCHEMA.md・ライセンス）と、2026-10-21 に町のサイトを調べた一覧（data/inventory/、4,118件）を入れた
 - 取得と検収の道具（tools/htd.py）を入れた
 - 最初の取り込みとして、予算・決算・財政・交付金の56本（755ページ）の台帳とテキストを入れた（2026-10-21 取得。検収は56本とも ok。想定外の字のあるページは7本）
-- 次は、OCR の下書き（DOCS_SCHEMA.md §10。NDLOCR-Lite を /home/kken78/ocr/ に置いて使う）の道具と、56本の全ページの OCR。その次に、確かめた読み（§11）の試し
+- 56本の全ページの OCR の下書き（data/ocr/）を入れた（NDLOCR-Lite d001dad、2026-10-22。/home/kken78/ocr/ に置いて使う）。OCR の抜き取りでは、16ページで数字の読み違いが94か所あった（表の短い数と、罫線を数字と読むものが多い）
+- 全部の OCR は時間がかかる（1ページ約6.5秒）ので、依頼者が端末で `cd /home/kken78/GitHub/hino-town-docs && nohup python3 -B tools/htd.py ocr > /home/kken78/ocr/ocr-run.log 2>&1 &` として動かす。止まってもう一度動かせば続きから進む
+- 次は、確かめた読み（DOCS_SCHEMA.md §11）の試し（抜き取りで問題の出た4ページ）。読むページの選び方は、OCR の数字の読み違いが多いため、OCR にだけ出た数字ではなく、字のかたまりや NDLOCR-Lite が図と見なした領域で考える
