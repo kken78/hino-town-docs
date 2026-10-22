@@ -89,17 +89,34 @@ def read_sources():
     return read_tsv(SOURCES, COLUMNS)
 
 
+def write_atomic(path, write):
+    """path を一度に置き換える。write(f) で同じディレクトリの一時ファイルに書き、書き終えてから os.replace で置き換える
+    （書いている途中で止まっても、前のファイルが残る）。"""
+    os.makedirs(os.path.dirname(path), exist_ok=True)
+    tmp = path + ".tmp"
+    try:
+        with open(tmp, "w", encoding="utf-8", newline="") as f:
+            write(f)
+            f.flush()
+            os.fsync(f.fileno())
+        os.replace(tmp, path)
+    finally:
+        if os.path.exists(tmp):
+            os.remove(tmp)
+
+
 def write_sources(rows):
-    os.makedirs(os.path.dirname(SOURCES), exist_ok=True)
     for r in rows:
         for c in COLUMNS:
             if "\t" in str(r.get(c, "")) or "\n" in str(r.get(c, "")):
                 raise Stop(f"{r['id']} の {c} にタブか改行がある")
-    with open(SOURCES, "w", encoding="utf-8", newline="") as f:
+
+    def write(f):
         w = csv.writer(f, delimiter="\t", lineterminator="\n")
         w.writerow(COLUMNS)
         for r in sorted(rows, key=lambda r: r["id"]):
             w.writerow([r.get(c, "") for c in COLUMNS])
+    write_atomic(SOURCES, write)
 
 
 def check_request(reqs, existing_ids):
@@ -242,9 +259,7 @@ def download(url):
 
 
 def write_text(i, text):
-    os.makedirs(TEXT_DIR, exist_ok=True)
-    with open(os.path.join(TEXT_DIR, f"{i}.txt"), "w", encoding="utf-8", newline="") as f:
-        f.write(text)
+    write_atomic(os.path.join(TEXT_DIR, f"{i}.txt"), lambda f: f.write(text))
 
 
 def fetch(req_path, opener=download, today=None):
@@ -361,9 +376,8 @@ def ocr_one(row, method, today):
     extra = sorted(set(os.path.splitext(f)[0] for f in os.listdir(out)) - {f"p{n:04d}" for n in range(1, pages + 1)})
     if extra:
         raise Stop(f"{i}：ページに当たらない出力がある（{'・'.join(extra[:5])}）")
-    os.makedirs(OCR_DIR, exist_ok=True)
-    with open(os.path.join(OCR_DIR, f"{i}.txt"), "w", encoding="utf-8", newline="") as f:
-        f.write("".join(t + "\f" for t in texts))   # n 番目の改ページの前が n ページ目（§5・§10）
+    joined = "".join(t + "\f" for t in texts)   # n 番目の改ページの前が n ページ目（§5・§10）
+    write_atomic(os.path.join(OCR_DIR, f"{i}.txt"), lambda f: f.write(joined))
     shutil.rmtree(img)   # 画像は作り直せるので消す。座標つきの出力（out/）は残す
     row["ocr_method"], row["ocr_date"] = method, today.isoformat()
 

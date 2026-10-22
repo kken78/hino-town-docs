@@ -146,6 +146,23 @@ class TestLedgerV1(Tmp):
         self.assertEqual(len(htd.COLUMNS), 18)
 
 
+class TestWriteAtomic(Tmp):
+    def test_failure_keeps_old_ledger(self):
+        # 書いている途中で止まっても、前の台帳がそのまま残り、一時ファイルも残らない
+        row = {c: "" for c in htd.COLUMNS}
+        row.update(id="yosan-r8-gaiyou", category="yosan", format="pdf", pages="1", check="ok")
+        htd.write_sources([row])
+        before = read_text(htd.SOURCES)
+
+        def broken(f):
+            f.write("途中まで")
+            raise OSError("書けない（見本）")
+        with self.assertRaises(OSError):
+            htd.write_atomic(htd.SOURCES, broken)
+        self.assertEqual(read_text(htd.SOURCES), before)
+        self.assertEqual(os.listdir(os.path.dirname(htd.SOURCES)), ["sources.tsv"])
+
+
 class TestUnexpected(unittest.TestCase):
     def test_count(self):
         self.assertEqual(htd.unexpected("令和3年度 ①㎡※℃ CO₂ ➢ 備︑被害︒"), 0)     # 縦書きの句読点（U+FE11・U+FE12）も使う字
