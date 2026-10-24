@@ -130,6 +130,9 @@ class TestRequest(Tmp):
             htd.check_request([req("yosan-r8-gaiyou")], {"yosan-r8-gaiyou"})
         self.assertIn("台帳にすでにある", str(cm.exception))
 
+    def test_shingi_is_a_category(self):
+        htd.check_request([req("shingi-youho-teigen"), req("shingi-youho-gijiroku-01", fiscal_year="2022")], set())
+
 
 class TestLedgerV1(Tmp):
     def test_old_header_is_read_and_rewritten(self):

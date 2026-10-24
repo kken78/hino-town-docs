@@ -38,7 +38,7 @@ COLUMNS = ["id", "category", "title", "fiscal_year", "date", "page_url", "url", 
            "text_chars", "text_method", "ocr_method", "ocr_date", "fetched", "check", "note"]
 COLUMNS_V1 = [c for c in COLUMNS if c not in ("ocr_method", "ocr_date")]   # 0c64af5 より前の台帳。読むときに2列を空で足す
 REQUEST_COLUMNS = ["id", "category", "title", "fiscal_year", "date", "page_url", "url", "size_label"]
-CATEGORIES = ("yosan", "kessan", "zaisei", "kofukin", "kansa", "kyoi", "koho", "jinji", "gyokaku")
+CATEGORIES = ("yosan", "kessan", "zaisei", "kofukin", "kansa", "kyoi", "koho", "jinji", "gyokaku", "shingi")
 ID_RE = re.compile(r"[a-z0-9]+(-[a-z0-9]+)*")
 PAGE_MIN = 50          # §6：文字のあるページの下限（空白と改ページを除いた文字数）
 OK_RATE, IMAGE_RATE = 0.8, 0.2
