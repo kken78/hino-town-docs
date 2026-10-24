@@ -137,7 +137,10 @@ def check_request(reqs, existing_ids):
             errs.append(f"{n}行目：id が区分で始まらない（{i}）")
         if r["fiscal_year"] and not re.fullmatch(r"(19|20)[0-9]{2}", r["fiscal_year"]):
             errs.append(f"{n}行目：fiscal_year が西暦の年度でない（{r['fiscal_year']!r}）")
-        if r["date"] and not re.fullmatch(r"[0-9]{4}-[0-9]{2}-[0-9]{2}", r["date"]):
+        if r["category"] == "koho":
+            if r["date"] and not re.fullmatch(r"[0-9]{4}-[0-9]{2}", r["date"]):
+                errs.append(f"{n}行目：広報ひのの date が YYYY-MM でない（{r['date']!r}）")
+        elif r["date"] and not re.fullmatch(r"[0-9]{4}-[0-9]{2}-[0-9]{2}", r["date"]):
             errs.append(f"{n}行目：date が YYYY-MM-DD でない（{r['date']!r}）")
         if not r["url"].startswith("https://www.town.shiga-hino.lg.jp/"):
             errs.append(f"{n}行目：url が町のサイトでない（{r['url']}）")

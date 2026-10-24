@@ -133,6 +133,14 @@ class TestRequest(Tmp):
     def test_shingi_is_a_category(self):
         htd.check_request([req("shingi-youho-teigen"), req("shingi-youho-gijiroku-01", fiscal_year="2022")], set())
 
+    def test_koho_date_is_year_month(self):
+        htd.check_request([req("koho-no792-04", date="2026-07")], set())
+        with self.assertRaises(htd.Stop) as cm:
+            htd.check_request([req("koho-no792-05", date="2026-07-01"), req("yosan-r8-gaiyou", date="2026-03")], set())
+        msg = str(cm.exception)
+        self.assertIn("広報ひのの date が YYYY-MM でない", msg)
+        self.assertIn("date が YYYY-MM-DD でない", msg)
+
 
 class TestLedgerV1(Tmp):
     def test_old_header_is_read_and_rewritten(self):
