@@ -1,10 +1,10 @@
 # hino-town-docs（日野町の公開資料の台帳）
 
-滋賀県日野町のホームページで公開されている資料のうち、計画と議会以外のもの（予算・決算・財政、監査、教育委員会の会議録、広報ひのなど）と、施設や事業ごとの構想・計画のうち shiga-hino-plans で扱わないもの（[DOCS_SCHEMA.md](DOCS_SCHEMA.md) §3 の jigyo）について、原典の所在と中身を確認できる形で記録する（非公式）。
+滋賀県日野町のホームページで公開されている資料のうち、計画と議会以外のもの（予算・決算・財政、監査、教育委員会の会議録、広報ひのなど）と、施設や事業ごとの構想・計画のうち shiga-hino-plans で扱わないもの、shiga-hino-plans が持たない計画の前の版（[DOCS_SCHEMA.md](DOCS_SCHEMA.md) §3 の jigyo）について、原典の所在と中身を確認できる形で記録する（非公式）。
 
 - 原典の PDF などは、このリポジトリに入れない。町のサイトの URL と、取得したときの sha256 を台帳に記録する
 - 原典から機械で取り出した文字（テキスト）を入れる。論点ノート（hino-ronten）などが、版を固定して読むため
-- 計画は shiga-hino-plans、議会（会議録・議会だより）は hino-council-search と council-dashboard で扱う。ここでは扱わない（施設や事業ごとの構想・計画で shiga-hino-plans の計画の一覧に無いものは、jigyo としてここで扱う）
+- 計画は shiga-hino-plans、議会（会議録・議会だより）は hino-council-search と council-dashboard で扱う。ここでは扱わない（施設や事業ごとの構想・計画で shiga-hino-plans の計画の一覧に無いものと、shiga-hino-plans が持たない計画の前の版は、jigyo としてここで扱う）
 
 | 文書 | 内容 |
 | --- | --- |
