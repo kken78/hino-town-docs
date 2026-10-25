@@ -3,6 +3,7 @@
   python3 -B tools/htd.py fetch <依頼.tsv>   依頼の資料を町のサイトから取り、文字を取り出して、台帳とテキストを書く
   python3 -B tools/htd.py extract [<id> ...]  取得済みの原典（sources_raw/）から、文字の取り出しと検収をやり直す（ネットワークを使わない）
   python3 -B tools/htd.py ocr [<id> ...]      原典の全ページを NDLOCR-Lite で読み、OCR の下書き data/ocr/<id>.txt を作る（§10。ネットワークを使わない）
+  python3 -B tools/htd.py raw [<id> ...]      取得済みの原典から、書かれた順の取り出し data/text_raw/<id>.txt を作り直す（§5.1。台帳は変えない。ネットワークを使わない）
 
 依頼の TSV（UTF-8、タブ区切り、1行目は見出し）の列：id・category・title・fiscal_year・date・page_url・url・size_label
 （size_label は掲載ページに書かれた大きさ。例「1.23MB」。無ければ空）。最後に archive_url の列を足してもよい。
@@ -11,6 +12,7 @@ https://web.archive.org/web/<14桁の保存日時>id_/<url> の形）。台帳�
 取得は1秒に1件以内。町のサイトから断られたとき（HTTP のエラー、つながらない）は、そこで止めて報告する。
 止めるまでに取得したものは、台帳とテキストに書く。
 原典は sources_raw/<id>.<拡張子> に置く（リポジトリに入れない）。テキストは data/text/<id>.txt（改ページ \\f を残す）。
+fetch と extract は、テキストを置く資料について、書かれた順の取り出し（pdftotext -raw）も data/text_raw/<id>.txt に置く（§5.1）。
 
 ocr は、id を指定しなければ、OCR の下書きがまだ無いか、ocr_method がいまの NDLOCR-Lite の版と違う PDF の資料だけを読む
 （途中で止めても、もう一度動かせば続きから進む。台帳は資料1本ごとに書く）。
@@ -30,6 +32,7 @@ from datetime import date
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SOURCES = os.path.join(ROOT, "data", "sources.tsv")
 TEXT_DIR = os.path.join(ROOT, "data", "text")
+TEXT_RAW_DIR = os.path.join(ROOT, "data", "text_raw")   # §5.1：pdftotext -raw
 OCR_DIR = os.path.join(ROOT, "data", "ocr")
 OCR_RAW_DIR = os.path.join(ROOT, "ocr_raw")
 NDLOCR_DIR = os.path.expanduser(os.environ.get("HTD_NDLOCR", "~/ocr/ndlocr-lite"))
@@ -221,6 +224,20 @@ def extract_pdf(path):
     return text, pages, chars
 
 
+def extract_raw(path, pages):
+    """pdftotext -raw のテキスト（§5.1）。改ページで区切った数がページ数と合わなければ止める。"""
+    r = subprocess.run(["pdftotext", "-raw", "-enc", "UTF-8", path, "-"], capture_output=True)
+    if r.returncode != 0:
+        raise Stop(f"{os.path.basename(path)}：pdftotext -raw が終了コード {r.returncode}")
+    text = r.stdout.decode("utf-8")
+    parts = text.split("\f")
+    if parts and parts[-1].strip() == "":
+        parts = parts[:-1]
+    if len(parts) != pages:
+        raise Stop(f"{os.path.basename(path)}：ページ数（{pages}）と -raw の改ページで区切った数（{len(parts)}）が合わない")
+    return text
+
+
 def evaluate(row, path):
     """取得済みの原典から、台帳の format・bytes・sha256・pages・text_chars・text_method・check を埋め、テキストを返す。"""
     with open(path, "rb") as f:
@@ -274,6 +291,20 @@ def write_text(i, text):
     write_atomic(os.path.join(TEXT_DIR, f"{i}.txt"), lambda f: f.write(text))
 
 
+def write_texts(row, path, text):
+    """§5 のテキストと §5.1 の -raw のテキストを置く。text が None（image・ng・PDF 以外）なら、どちらも置かない（あれば消す）。"""
+    tp = os.path.join(TEXT_DIR, f"{row['id']}.txt")
+    rp = os.path.join(TEXT_RAW_DIR, f"{row['id']}.txt")
+    if text is None:
+        for q in (tp, rp):
+            if os.path.exists(q):
+                os.remove(q)
+        return
+    raw = extract_raw(path, int(row["pages"]))
+    write_text(row["id"], text)
+    write_atomic(rp, lambda f: f.write(raw))
+
+
 def read_request(path):
     with open(path, encoding="utf-8", newline="") as f:
         head = f.readline().rstrip("\n").split("\t")
@@ -309,8 +340,7 @@ def fetch(req_path, opener=download, today=None):
         if want and abs(len(data) - want) / want >= SIZE_TOLERANCE:
             row["note"] = join_note(row["note"], f"掲載ページの大きさ {q['size_label']}・取得したファイル {len(data):,} バイト")
         text = evaluate(row, path)
-        if text is not None:
-            write_text(q["id"], text)
+        write_texts(row, path, text)
         rows.append(row)
         done.append(row)
     write_sources(rows)
@@ -333,13 +363,28 @@ def extract(ids=None):
         text = evaluate(r, paths[0])
         if old_sha and r["sha256"] != old_sha:
             raise Stop(f"{r['id']}：sources_raw/ の原典の sha256 が台帳と違う（差し替えは新しい id で取る。§2）")
-        tp = os.path.join(TEXT_DIR, f"{r['id']}.txt")
-        if text is None:
-            if os.path.exists(tp):
-                os.remove(tp)
-        else:
-            write_text(r["id"], text)
+        write_texts(r, paths[0], text)
     write_sources(rows)
+    return targets
+
+
+def raw(ids=None):
+    """§5.1：§5 のテキストがある資料について、-raw のテキストを作り直す。原典の sha256 が台帳と違えば止める。台帳は変えない。"""
+    rows = read_sources()
+    missing = [i for i in (ids or []) if i not in {r["id"] for r in rows}]
+    if missing:
+        raise Stop(f"台帳に無い id：{'・'.join(missing)}")
+    targets = [r for r in rows if (not ids or r["id"] in ids) and r["format"] == "pdf" and r["check"] in ("ok", "partial")]
+    for r in targets:
+        path = os.path.join(RAW_DIR, f"{r['id']}.pdf")
+        if not os.path.isfile(path):
+            raise Stop(f"{r['id']}：sources_raw/ に原典が無い")
+        with open(path, "rb") as f:
+            sha = hashlib.sha256(f.read()).hexdigest()
+        if sha != r["sha256"]:
+            raise Stop(f"{r['id']}：sources_raw/ の原典の sha256 が台帳と違う（差し替えは新しい id で取る。§2）")
+        text = extract_raw(path, int(r["pages"]))
+        write_atomic(os.path.join(TEXT_RAW_DIR, f"{r['id']}.txt"), lambda f, t=text: f.write(t))
     return targets
 
 
@@ -451,6 +496,10 @@ def main(argv=None):
         if args and args[0] == "extract":
             rows = extract(args[1:] or None)
             print(f"やり直し {len(rows)}（{summary(rows)}）")
+            return 0
+        if args and args[0] == "raw":
+            rows = raw(args[1:] or None)
+            print(f"-raw のテキスト {len(rows)}本")
             return 0
         if args and args[0] == "ocr":
             done, method = ocr(args[1:] or None, log=lambda s: print(s, flush=True))

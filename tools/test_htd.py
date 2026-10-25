@@ -63,9 +63,10 @@ class Tmp(unittest.TestCase):
     def setUp(self):
         self.d = tempfile.mkdtemp()
         self.saved = (htd.SOURCES, htd.TEXT_DIR, htd.RAW_DIR, htd.WAIT, htd.OCR_DIR, htd.OCR_RAW_DIR,
-                      htd.NDLOCR_DIR, htd.NDLOCR_PYTHON)
+                      htd.NDLOCR_DIR, htd.NDLOCR_PYTHON, htd.TEXT_RAW_DIR)
         htd.SOURCES = os.path.join(self.d, "data", "sources.tsv")
         htd.TEXT_DIR = os.path.join(self.d, "data", "text")
+        htd.TEXT_RAW_DIR = os.path.join(self.d, "data", "text_raw")
         htd.RAW_DIR = os.path.join(self.d, "sources_raw")
         htd.OCR_DIR = os.path.join(self.d, "data", "ocr")
         htd.OCR_RAW_DIR = os.path.join(self.d, "ocr_raw")
@@ -73,7 +74,7 @@ class Tmp(unittest.TestCase):
 
     def tearDown(self):
         (htd.SOURCES, htd.TEXT_DIR, htd.RAW_DIR, htd.WAIT, htd.OCR_DIR, htd.OCR_RAW_DIR,
-         htd.NDLOCR_DIR, htd.NDLOCR_PYTHON) = self.saved
+         htd.NDLOCR_DIR, htd.NDLOCR_PYTHON, htd.TEXT_RAW_DIR) = self.saved
         for k in ("FAKE_EMPTY", "FAKE_SKIP"):
             os.environ.pop(k, None)
         shutil.rmtree(self.d)
@@ -277,6 +278,31 @@ class TestFetch(Tmp):
         htd.extract()
         htd.extract()
         self.assertEqual(read_text(htd.SOURCES), before)
+
+    def test_raw_text(self):
+        # §5.1：テキストを置く資料には -raw のテキストも置き、image には置かない
+        pdfs = {"yosan-r8-gaiyou": make_pdf([LINE] * 3), "yosan-r8-hoshin": make_pdf([LINE] + [""] * 5)}
+        p = self.request([req(i) for i in pdfs])
+        htd.fetch(p, opener=lambda url: pdfs[url.rsplit("/", 1)[1][:-4]])
+        rp = os.path.join(htd.TEXT_RAW_DIR, "yosan-r8-gaiyou.txt")
+        raw = read_text(rp)
+        self.assertEqual(raw.count("\f"), 3)                                             # 改ページを残す
+        self.assertIn("town budget", raw)
+        self.assertFalse(os.path.exists(os.path.join(htd.TEXT_RAW_DIR, "yosan-r8-hoshin.txt")))
+        before = read_text(htd.SOURCES)
+        os.remove(rp)
+        self.assertEqual([r["id"] for r in htd.raw()], ["yosan-r8-gaiyou"])             # raw は作り直すだけ
+        self.assertEqual(read_text(rp), raw)
+        self.assertEqual(read_text(htd.SOURCES), before)                                 # 台帳は変えない
+        htd.extract()
+        self.assertEqual(read_text(rp), raw)
+        with open(os.path.join(htd.RAW_DIR, "yosan-r8-gaiyou.pdf"), "wb") as f:
+            f.write(make_pdf([LINE]))
+        with self.assertRaises(htd.Stop) as cm:
+            htd.raw(["yosan-r8-gaiyou"])
+        self.assertIn("sha256 が台帳と違う", str(cm.exception))
+        with self.assertRaises(htd.Stop):
+            htd.raw(["no-such-id"])
 
     def test_non_pdf(self):
         p = self.request([req("zaisei-r6-zaimu", url="https://www.town.shiga-hino.lg.jp/cmsfiles/a.xlsx")])
