@@ -5,7 +5,9 @@
   python3 -B tools/htd.py ocr [<id> ...]      原典の全ページを NDLOCR-Lite で読み、OCR の下書き data/ocr/<id>.txt を作る（§10。ネットワークを使わない）
 
 依頼の TSV（UTF-8、タブ区切り、1行目は見出し）の列：id・category・title・fiscal_year・date・page_url・url・size_label
-（size_label は掲載ページに書かれた大きさ。例「1.23MB」。無ければ空）。依頼の id が台帳にすでにあれば、何もせずに止める。
+（size_label は掲載ページに書かれた大きさ。例「1.23MB」。無ければ空）。最後に archive_url の列を足してもよい。
+archive_url は、町のサイトから外された資料を Webアーカイブの保存版から取るときだけ書く（§6。
+https://web.archive.org/web/<14桁の保存日時>id_/<url> の形）。台帳の url は町の元の URL のままとし、note に取得元を書く。依頼の id が台帳にすでにあれば、何もせずに止める。
 取得は1秒に1件以内。町のサイトから断られたとき（HTTP のエラー、つながらない）は、そこで止めて報告する。
 止めるまでに取得したものは、台帳とテキストに書く。
 原典は sources_raw/<id>.<拡張子> に置く（リポジトリに入れない）。テキストは data/text/<id>.txt（改ページ \\f を残す）。
@@ -38,7 +40,9 @@ COLUMNS = ["id", "category", "title", "fiscal_year", "date", "page_url", "url", 
            "text_chars", "text_method", "ocr_method", "ocr_date", "fetched", "check", "note"]
 COLUMNS_V1 = [c for c in COLUMNS if c not in ("ocr_method", "ocr_date")]   # 0c64af5 より前の台帳。読むときに2列を空で足す
 REQUEST_COLUMNS = ["id", "category", "title", "fiscal_year", "date", "page_url", "url", "size_label"]
-CATEGORIES = ("yosan", "kessan", "zaisei", "kofukin", "kansa", "kyoi", "koho", "jinji", "gyokaku", "shingi")
+REQUEST_COLUMNS_ARCHIVE = REQUEST_COLUMNS + ["archive_url"]   # §6：Webアーカイブの保存版から取るとき
+ARCHIVE_RE = re.compile(r"https://web\.archive\.org/web/([0-9]{14})id_/(.+)")
+CATEGORIES = ("yosan", "kessan", "zaisei", "kofukin", "kansa", "kyoi", "koho", "jinji", "gyokaku", "shingi", "jigyo")
 ID_RE = re.compile(r"[a-z0-9]+(-[a-z0-9]+)*")
 PAGE_MIN = 50          # §6：文字のあるページの下限（空白と改ページを除いた文字数）
 OK_RATE, IMAGE_RATE = 0.8, 0.2
@@ -144,6 +148,11 @@ def check_request(reqs, existing_ids):
             errs.append(f"{n}行目：date が YYYY-MM-DD でない（{r['date']!r}）")
         if not r["url"].startswith("https://www.town.shiga-hino.lg.jp/"):
             errs.append(f"{n}行目：url が町のサイトでない（{r['url']}）")
+        a = r.get("archive_url") or ""
+        if a:
+            m = ARCHIVE_RE.fullmatch(a)
+            if not m or m.group(2) != r["url"]:
+                errs.append(f"{n}行目：archive_url が url の保存版の形でない（{a}）")
     if errs:
         raise Stop(f"依頼の誤り {len(errs)} 件\n" + "\n".join(f"  {e}" for e in errs))
 
@@ -265,8 +274,19 @@ def write_text(i, text):
     write_atomic(os.path.join(TEXT_DIR, f"{i}.txt"), lambda f: f.write(text))
 
 
+def read_request(path):
+    with open(path, encoding="utf-8", newline="") as f:
+        head = f.readline().rstrip("\n").split("\t")
+    return read_tsv(path, REQUEST_COLUMNS_ARCHIVE if head == REQUEST_COLUMNS_ARCHIVE else REQUEST_COLUMNS)
+
+
+def archive_note(a):
+    t = ARCHIVE_RE.fullmatch(a).group(1)
+    return f"取得元：Webアーカイブの保存版（{t[:4]}-{t[4:6]}-{t[6:8]} {t[8:10]}:{t[10:12]}:{t[12:]} UTC、{a}）"
+
+
 def fetch(req_path, opener=download, today=None):
-    reqs = read_tsv(req_path, REQUEST_COLUMNS)
+    reqs = read_request(req_path)
     rows = read_sources()
     check_request(reqs, {r["id"] for r in rows})
     os.makedirs(RAW_DIR, exist_ok=True)
@@ -275,7 +295,7 @@ def fetch(req_path, opener=download, today=None):
         if n:
             time.sleep(WAIT)
         try:
-            data = opener(q["url"])
+            data = opener(q.get("archive_url") or q["url"])
         except Stop as e:
             stop = str(e)
             break
@@ -284,10 +304,10 @@ def fetch(req_path, opener=download, today=None):
             f.write(data)
         row = {c: q.get(c, "") for c in COLUMNS}
         row["fetched"] = (today or date.today()).isoformat()
-        row["note"] = ""
+        row["note"] = archive_note(q["archive_url"]) if q.get("archive_url") else ""
         want = size_bytes(q.get("size_label"))
         if want and abs(len(data) - want) / want >= SIZE_TOLERANCE:
-            row["note"] = f"掲載ページの大きさ {q['size_label']}・取得したファイル {len(data):,} バイト"
+            row["note"] = join_note(row["note"], f"掲載ページの大きさ {q['size_label']}・取得したファイル {len(data):,} バイト")
         text = evaluate(row, path)
         if text is not None:
             write_text(q["id"], text)

@@ -133,6 +133,9 @@ class TestRequest(Tmp):
     def test_shingi_is_a_category(self):
         htd.check_request([req("shingi-youho-teigen"), req("shingi-youho-gijiroku-01", fiscal_year="2022")], set())
 
+    def test_jigyo_is_a_category(self):
+        htd.check_request([req("jigyo-shinkodomoen-kousou"), req("jigyo-shinkodomoen-pabu")], set())
+
     def test_koho_date_is_year_month(self):
         htd.check_request([req("koho-no792-04", date="2026-07")], set())
         with self.assertRaises(htd.Stop) as cm:
@@ -209,6 +212,34 @@ class TestFetch(Tmp):
         # 同じ id をもう一度頼むと止める
         with self.assertRaises(htd.Stop):
             htd.fetch(p, opener=opener)
+
+    def test_fetch_from_archive(self):
+        url = "https://www.town.shiga-hino.lg.jp/cmsfiles/contents/0000008/8428/kousou.pdf"
+        arc = "https://web.archive.org/web/20250830131330id_/" + url
+        p = os.path.join(self.d, "req.tsv")
+        with open(p, "w", encoding="utf-8", newline="") as f:
+            f.write("\t".join(htd.REQUEST_COLUMNS_ARCHIVE) + "\n")
+            r = req("jigyo-shinkodomoen-kousou", url=url)
+            r["archive_url"] = arc
+            f.write("\t".join(r.get(c, "") for c in htd.REQUEST_COLUMNS_ARCHIVE) + "\n")
+        asked = []
+        htd.fetch(p, opener=lambda u: asked.append(u) or make_pdf([LINE] * 2))
+        self.assertEqual(asked, [arc])                                   # 保存版から取る
+        row = htd.read_sources()[0]
+        self.assertEqual(row["url"], url)                                # 台帳の url は町の元の URL
+        self.assertIn("取得元：Webアーカイブの保存版（2025-08-30 13:13:30 UTC、" + arc + "）", row["note"])
+        htd.extract()                                                    # やり直しても取得元の注記は残る
+        self.assertIn("取得元：Webアーカイブの保存版", htd.read_sources()[0]["note"])
+
+    def test_archive_url_must_match_url(self):
+        url = "https://www.town.shiga-hino.lg.jp/cmsfiles/contents/0000008/8428/kousou.pdf"
+        for bad in ["https://web.archive.org/web/20250830131330id_/https://www.town.shiga-hino.lg.jp/x.pdf",
+                    "https://web.archive.org/web/20250830131330/" + url, "https://example.org/" + url]:
+            r = req("jigyo-shinkodomoen-kousou", url=url)
+            r["archive_url"] = bad
+            with self.assertRaises(htd.Stop) as cm:
+                htd.check_request([r], set())
+            self.assertIn("archive_url", str(cm.exception))
 
     def test_stop_keeps_what_was_fetched(self):
         def opener(url):
