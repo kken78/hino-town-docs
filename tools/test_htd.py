@@ -134,6 +134,9 @@ class TestRequest(Tmp):
     def test_shingi_is_a_category(self):
         htd.check_request([req("shingi-youho-teigen"), req("shingi-youho-gijiroku-01", fiscal_year="2022")], set())
 
+    def test_bosai_is_a_category(self):
+        htd.check_request([req("bosai-h30-hinanjo", fiscal_year="2018")], set())
+
     def test_jigyo_is_a_category(self):
         htd.check_request([req("jigyo-shinkodomoen-kousou"), req("jigyo-shinkodomoen-pabu")], set())
 
