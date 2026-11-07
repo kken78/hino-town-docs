@@ -19,7 +19,7 @@
 | `data/inventory/` | 町のサイトで調べた資料の一覧とページの一覧（調べた日ごと。取得する前の一覧） |
 | `data/watch_ignore.tsv` | 巡回の Issue に出さないものの表（様式・入札・議会など） |
 | `data/sources.tsv` | 取得した資料の台帳 |
-| `data/text/` | 原典から取り出した文字（pdftotext） |
+| `data/text/` | 原典から取り出した文字（PDF は pdftotext。Excel はシートごとの TSV を `data/text/<id>/` に、町のサイトのページは本文の文字） |
 | `data/text_raw/` | 同じ原典から、PDF の中で書かれた順に取り出した文字（pdftotext -raw。表や縦書きの段で文がつながりやすい） |
 | `data/ocr/` | ページの画像から機械で読んだ文字（OCR の下書き。数字の桁の違いを含む読み違いがあり、数字の出典には使わない） |
 
