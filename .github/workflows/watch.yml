@@ -76,6 +76,8 @@ jobs:
                     f"gh run download {rid} -R kken78/hino-town-docs -n watch-{rid} -D /tmp/watch-{rid}",
                     f"cp /tmp/watch-{rid}/town-docs-inventory-{day}.tsv /tmp/watch-{rid}/town-pages-{day}.tsv data/inventory/",
                     "```"]
+          if rep.get("same_day"):
+              commit = [f"同じ日（{day}）の一覧が data/inventory/ にすでにあるので、この巡回の一覧はコミットしない（DOCS_SCHEMA.md §12）。見つけたものを片付けたら、Issue を閉じるだけでよい。"]
           kinds = [
               ("new", "新しい資料とページ", "前の一覧にも台帳にも無い資料とページ（除外の表 data/watch_ignore.tsv に当たるものは除いた）。",
                ["1. 資料ごとに、取り込む・除外の表に足す・今は決めない、のどれかを決める（DOCS_SCHEMA.md §8・§12）",

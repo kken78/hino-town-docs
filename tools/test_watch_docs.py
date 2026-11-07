@@ -168,6 +168,18 @@ class TestIgnoreFile(unittest.TestCase):
         self.assertEqual(code, 0)
         self.assertTrue(os.path.exists(os.path.join(d, "out", "town-docs-inventory-2026-12-01.tsv")))
         self.assertEqual(len(w.read_tsv(os.path.join(d, "out", "town-pages-2026-12-01.tsv"))), 2)
+        self.assertFalse(__import__("json").load(open(os.path.join(d, "r.json"), encoding="utf-8"))["same_day"])
+        # 同じ日の一覧が data/inventory/ にすでにあるとき
+        import shutil
+        shutil.copy(os.path.join(d, "out", "town-pages-2026-12-01.tsv"), inv)
+        w.request = fake_site()
+        try:
+            code = w.main(["--out", os.path.join(d, "out"), "--inventory", inv, "--sources", src, "--ignore", ign,
+                           "--date", "2026-12-01", "--json", os.path.join(d, "r.json")])
+        finally:
+            w.request = orig
+        self.assertEqual(code, 0)
+        self.assertTrue(__import__("json").load(open(os.path.join(d, "r.json"), encoding="utf-8"))["same_day"])
 
 
 if __name__ == "__main__":

@@ -368,6 +368,8 @@ def report(rep):
         L += ["", f"## 取れなかった分類とページ（{len(rep['errors'])}件）"]
         L += [f"- {e['kind']} {e['id']}：HTTP {e['code']} {e.get('reason', '')}".rstrip() for e in rep["errors"]]
     L += ["", f"作った一覧：{rep['out_docs']}・{rep['out_pages']}"]
+    if rep.get("same_day"):
+        L.append("同じ日の一覧が data/inventory/ にすでにあるので、この一覧はコミットしない（DOCS_SCHEMA.md §12）")
     return "\n".join(L)
 
 
@@ -419,7 +421,8 @@ def main(argv=None):
         rep = {"date": datetime.now(JST).strftime("%Y-%m-%d %H:%M JST"), "categories": len(st["cats_done"]),
                "pages": len(pages), "docs": len(docs), "prev_docs": os.path.basename(pd) if pd else "",
                "prev_pages": os.path.basename(pp) if pp else "", "out_docs": out_docs, "out_pages": out_pages,
-               "findings": found, "errors": st["errors"]}
+               "findings": found, "errors": st["errors"],
+               "same_day": any(os.path.exists(os.path.join(a.inventory, os.path.basename(x))) for x in (out_docs, out_pages))}
         if a.json:
             with open(a.json, "w", encoding="utf-8") as f:
                 json.dump(rep, f, ensure_ascii=False, indent=1)
