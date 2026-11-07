@@ -375,13 +375,150 @@ class TestXlsx(Tmp):
         self.assertEqual(rows[5], "合計")                            # 結合したセルは左上だけ
         self.assertEqual(len(rows), 7)                               # 6行と末尾の改行
         idx = read_text(os.path.join(d, "sheets.tsv")).splitlines()
-        self.assertEqual(idx[1], "01\t歳出\tvisible\t6\t5\t1")
-        self.assertEqual(idx[2], "02\tメモ\thidden\t1\t1\t0")
+        self.assertEqual(idx[1], "01\t歳出\tvisible\t6\t5\t1\t0")
+        self.assertEqual(idx[2], "02\tメモ\thidden\t1\t1\t0\t0")
         self.assertFalse(os.path.exists(os.path.join(htd.TEXT_DIR, "zaisei-r6-shiryoshu.txt")))
         self.assertFalse(os.path.exists(os.path.join(htd.TEXT_RAW_DIR, "zaisei-r6-shiryoshu.txt")))
         # extract でやり直しても同じ
         htd.extract(["zaisei-r6-shiryoshu"])
         self.assertEqual(read_text(os.path.join(d, "01.tsv")).split("\n")[1], "議会費 （款）\t1234\t0.125")
+
+
+def make_text_pdf(lines):
+    """1ページに、渡した行（ASCII）を上から順に置いた PDF。"""
+    content = "BT /F1 10 Tf 20 700 Td 12 TL " + " ".join(f"({x}) Tj T*" for x in lines) + " ET"
+    objs = ["<< /Type /Catalog /Pages 2 0 R >>", "<< /Type /Pages /Kids [4 0 R] /Count 1 >>",
+            "<< /Type /Font /Subtype /Type1 /BaseFont /Helvetica >>",
+            "<< /Type /Page /Parent 2 0 R /MediaBox [0 0 595 842] /Resources << /Font << /F1 3 0 R >> >> /Contents 5 0 R >>",
+            f"<< /Length {len(content)} >>\nstream\n{content}\nendstream"]
+    out, offs = b"%PDF-1.4\n", []
+    for n, o in enumerate(objs, 1):
+        offs.append(len(out))
+        out += f"{n} 0 obj\n{o}\nendobj\n".encode("latin-1")
+    x = len(out)
+    out += f"xref\n0 {len(objs) + 1}\n0000000000 65535 f \n".encode() + "".join(f"{o:010d} 00000 n \n" for o in offs).encode()
+    out += f"trailer\n<< /Size {len(objs) + 1} /Root 1 0 R >>\nstartxref\n{x}\n%%EOF\n".encode()
+    return out
+
+
+@unittest.skipUnless(HAS_POPPLER, "pdftotext が無い")
+class TestHyphen(Tmp):
+    def test_restore(self):
+        # 既定の取り出しは「ABCDEF」「5,927,077,723」「17,974,743,700」になる（「-」が消える）
+        lines = ["ABC-", "DEF", "-", "5,927,077,723", "-", "-", "17,974,743,700", "Tel 0748-", "52-6550"]
+        pdf = make_text_pdf(lines)
+        p = self.request([req("zaisei-r6-zaimu")])
+        htd.fetch(p, opener=lambda url: pdf)
+        r = htd.read_sources()[0]
+        t = read_text(os.path.join(htd.TEXT_DIR, "zaisei-r6-zaimu.txt"))
+        self.assertEqual(t.split("\f")[0].strip().split("\n"), lines)
+        self.assertEqual(r["text_method"], "pdftotext+hyphen")
+        self.assertIn("行の終わりの「-」を戻した：5", r["note"])
+        # extract でやり直しても、注記は重ならない
+        htd.extract(["zaisei-r6-zaimu"])
+        self.assertEqual(htd.read_sources()[0]["note"].count("行の終わりの「-」を戻した"), 1)
+
+    def test_no_hyphen_no_note(self):
+        p = self.request([req("yosan-r8-gaiyou")])
+        htd.fetch(p, opener=lambda url: make_pdf([LINE]))
+        r = htd.read_sources()[0]
+        self.assertEqual(r["text_method"], "pdftotext+hyphen")
+        self.assertNotIn("戻した", r["note"])
+
+    def test_restore_page_mismatch(self):
+        self.assertIsNone(htd.restore_page("ABCDEF\n", [("ABC-", True), ("DEX", False)]))
+        self.assertEqual(htd.restore_page("ABC\n", [("ABC", False)]), "ABC\n")
+
+
+DRAWING = """<xdr:wsDr xmlns:xdr="http://schemas.openxmlformats.org/drawingml/2006/spreadsheetDrawing"
+ xmlns:a="http://schemas.openxmlformats.org/drawingml/2006/main"
+ xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006">
+<xdr:twoCellAnchor><xdr:from><xdr:col>3</xdr:col><xdr:colOff>0</xdr:colOff><xdr:row>9</xdr:row><xdr:rowOff>0</xdr:rowOff></xdr:from>
+<xdr:to><xdr:col>5</xdr:col><xdr:colOff>0</xdr:colOff><xdr:row>12</xdr:row><xdr:rowOff>0</xdr:rowOff></xdr:to>
+<xdr:sp><xdr:txBody><a:p><a:r><a:t>人口</a:t></a:r></a:p><a:p><a:r><a:t>22,074</a:t></a:r></a:p></xdr:txBody></xdr:sp>
+<xdr:clientData/></xdr:twoCellAnchor>
+<xdr:twoCellAnchor><xdr:from><xdr:col>0</xdr:col><xdr:colOff>0</xdr:colOff><xdr:row>1</xdr:row><xdr:rowOff>0</xdr:rowOff></xdr:from>
+<xdr:to><xdr:col>2</xdr:col><xdr:colOff>0</xdr:colOff><xdr:row>2</xdr:row><xdr:rowOff>0</xdr:rowOff></xdr:to>
+<xdr:grpSp><xdr:sp><xdr:txBody><a:p><a:r><a:t>題</a:t></a:r></a:p></xdr:txBody></xdr:sp>
+<mc:AlternateContent><mc:Choice Requires="a14"><xdr:sp><xdr:txBody><a:p><a:r><a:t>選ばれる</a:t></a:r></a:p></xdr:txBody></xdr:sp></mc:Choice>
+<mc:Fallback><xdr:sp><xdr:txBody><a:p><a:r><a:t>代わり</a:t></a:r></a:p></xdr:txBody></xdr:sp></mc:Fallback></mc:AlternateContent>
+<xdr:sp><xdr:txBody><a:p/></xdr:txBody></xdr:sp></xdr:grpSp>
+<xdr:clientData/></xdr:twoCellAnchor></xdr:wsDr>"""
+
+
+def add_drawing(path, drawing_xml):
+    """openpyxl で作った xlsx の1つめのシートに、図形の部品を足す（openpyxl は図形を書けないため）。"""
+    import zipfile as zf
+    tmp = path + ".tmp"
+    with zf.ZipFile(path) as zin, zf.ZipFile(tmp, "w") as zout:
+        names = zin.namelist()
+        for n in names:
+            data = zin.read(n)
+            if n == "xl/worksheets/sheet1.xml":
+                data = data.replace(b"</worksheet>", b'<drawing xmlns:r="http://schemas.openxmlformats.org/officeDocument/2006/relationships" r:id="rIdZ1"/></worksheet>')
+            if n == "[Content_Types].xml":
+                data = data.replace(b"</Types>", b'<Override PartName="/xl/drawings/drawing99.xml" ContentType="application/vnd.openxmlformats-officedocument.drawing+xml"/></Types>')
+            zout.writestr(n, data)
+        rels = "xl/worksheets/_rels/sheet1.xml.rels"
+        body = b'<Relationship Id="rIdZ1" Type="http://schemas.openxmlformats.org/officeDocument/2006/relationships/drawing" Target="../drawings/drawing99.xml"/>'
+        assert rels not in names   # この見本では、1つめのシートに関係ファイルは無い
+        zout.writestr(rels, b'<?xml version="1.0"?><Relationships xmlns="http://schemas.openxmlformats.org/package/2006/relationships">' + body + b"</Relationships>")
+        zout.writestr("xl/drawings/drawing99.xml", drawing_xml.encode("utf-8"))
+    os.replace(tmp, path)
+
+
+@unittest.skipUnless(HAS_OPENPYXL, "openpyxl が無い")
+class TestZukei(Tmp):
+    def test_shapes_and_chart(self):
+        import openpyxl
+        from openpyxl.chart import BarChart, Reference
+        src = os.path.join(self.d, "z.xlsx")
+        wb = openpyxl.Workbook()
+        ws = wb.active
+        ws.append(["年度", "金額"])
+        for y, v in (("H26", 100), ("H27", 120)):
+            ws.append([y, v])
+        ch = wb.create_sheet("グラフ")
+        bar = BarChart()
+        bar.title = "歳出の推移"
+        bar.y_axis.title = "千円"
+        bar.add_data(Reference(ws, min_col=2, min_row=1, max_row=3), titles_from_data=True)
+        bar.set_categories(Reference(ws, min_col=1, min_row=2, max_row=3))
+        ch.add_chart(bar, "C5")
+        wb.save(src)
+        add_drawing(src, DRAWING)
+        d = htd.xlsx_drawings(src)
+        self.assertEqual(d[0], [(2, 1, "図形", "", "", "題"), (2, 1, "図形", "", "", "選ばれる"),
+                                (10, 4, "図形", "", "", "人口 22,074")])
+        kinds = [r[2] for r in d[1]]
+        self.assertEqual(kinds[0], "グラフの題")
+        self.assertIn("軸の題", kinds)
+        self.assertEqual(d[1][0][:2], (5, 3))
+        # 値は保存されたときのもの（openpyxl はグラフに値を保存しないので、この見本では値の行は無い）
+        with open(src, "rb") as f:
+            data = f.read()
+        p = self.request([req("zaisei-r6-shiryoshu", url="https://www.town.shiga-hino.lg.jp/cmsfiles/a.xlsx")])
+        htd.fetch(p, opener=lambda url: data)
+        xd = os.path.join(htd.TEXT_DIR, "zaisei-r6-shiryoshu")
+        self.assertEqual(sorted(os.listdir(xd)), ["01-zukei.tsv", "01.tsv", "02-zukei.tsv", "02.tsv", "sheets.tsv"])
+        z = read_text(os.path.join(xd, "01-zukei.tsv")).splitlines()
+        self.assertEqual(z[0], "行\t列\t種類\t系列\t項目\t文字")
+        self.assertEqual(z[3], "10\t4\t図形\t\t\t人口 22,074")
+        idx = read_text(os.path.join(xd, "sheets.tsv")).splitlines()
+        self.assertTrue(idx[0].endswith("\t図形とグラフの字の行の数"))
+        self.assertTrue(idx[1].endswith("\t3"))
+
+    def test_chart_rows(self):
+        xml = """<c:chartSpace xmlns:c="http://schemas.openxmlformats.org/drawingml/2006/chart"
+ xmlns:a="http://schemas.openxmlformats.org/drawingml/2006/main"><c:chart>
+<c:title><c:tx><c:rich><a:p><a:r><a:t>人件費</a:t></a:r></a:p></c:rich></c:tx></c:title>
+<c:plotArea><c:barChart><c:ser><c:tx><c:strRef><c:strCache><c:pt idx="0"><c:v>当該団体(円)</c:v></c:pt></c:strCache></c:strRef></c:tx>
+<c:cat><c:strRef><c:strCache><c:pt idx="0"><c:v> H26</c:v></c:pt><c:pt idx="1"><c:v> H27</c:v></c:pt></c:strCache></c:strRef></c:cat>
+<c:val><c:numRef><c:numCache><c:pt idx="0"><c:v>60780</c:v></c:pt><c:pt idx="1"><c:v>55487</c:v></c:pt></c:numCache></c:numRef></c:val>
+</c:ser></c:barChart><c:valAx><c:title><c:tx><c:rich><a:p><a:r><a:t>（円）</a:t></a:r></a:p></c:rich></c:tx></c:title></c:valAx></c:plotArea></c:chart></c:chartSpace>"""
+        self.assertEqual(htd.chart_rows(xml.encode("utf-8")), [("グラフの題", "", "", "人件費"), ("軸の題", "", "", "（円）"),
+                                               ("グラフの値", "当該団体(円)", " H26", "60780"),
+                                               ("グラフの値", "当該団体(円)", " H27", "55487")])
 
 
 PAGE = """<html><head><title>x</title></head><body><div id="pankuzu"><a href="/">ホーム</a></div>
