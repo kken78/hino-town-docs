@@ -7,6 +7,7 @@ import os
 import shutil
 import subprocess
 import sys
+import datetime as dt
 import tempfile
 import unittest
 from datetime import date
@@ -18,6 +19,11 @@ import htd  # noqa: E402
 
 HAS_POPPLER = bool(shutil.which("pdftotext") and shutil.which("pdfinfo") and shutil.which("pdftoppm"))
 HAS_GIT = bool(shutil.which("git"))
+try:
+    import openpyxl  # noqa: F401
+    HAS_OPENPYXL = True
+except ImportError:
+    HAS_OPENPYXL = False
 
 # NDLOCR-Lite の代わり（ocr.py と同じ引数で動き、画像1枚ごとに <名前>.txt と .json を書く。
 # 環境変数 FAKE_EMPTY の名前は .json だけ（字の無いページ）、FAKE_SKIP の名前は何も書かない）
@@ -308,10 +314,115 @@ class TestFetch(Tmp):
             htd.raw(["no-such-id"])
 
     def test_non_pdf(self):
+        p = self.request([req("zaisei-r6-zaimu", url="https://www.town.shiga-hino.lg.jp/cmsfiles/a.docx")])
+        htd.fetch(p, opener=lambda url: b"PK\x03\x04dummy")
+        r = htd.read_sources()[0]
+        self.assertEqual((r["format"], r["check"], r["text_method"], r["pages"]), ("docx", "notext", "none", ""))
+
+    def test_broken_xlsx_is_ng(self):
         p = self.request([req("zaisei-r6-zaimu", url="https://www.town.shiga-hino.lg.jp/cmsfiles/a.xlsx")])
         htd.fetch(p, opener=lambda url: b"PK\x03\x04dummy")
         r = htd.read_sources()[0]
-        self.assertEqual((r["format"], r["check"], r["text_method"], r["pages"]), ("xlsx", "notext", "none", ""))
+        self.assertEqual((r["format"], r["check"], r["text_method"]), ("xlsx", "ng", "openpyxl"))
+        self.assertFalse(os.path.exists(os.path.join(htd.TEXT_DIR, "zaisei-r6-zaimu")))
+
+    def test_new_categories(self):
+        htd.check_request([req("kaiken-20260225-shiryo-03", date="2026-02-25"), req("hyoka-r6-senryaku-kensho"),
+                           req("chiiki-jichikai-chosa"), req("tokei-r8-jidoseito"),
+                           req("shingi-sogokyoiku-gijiroku-r6-01")], set())
+
+
+def make_xlsx(path):
+    import openpyxl
+    wb = openpyxl.Workbook()
+    ws = wb.active
+    ws.title = "歳出"
+    ws["A1"] = "区分"
+    ws["B1"] = "金額"
+    ws["A2"] = "議会費\n（款）"
+    ws["B2"] = 1234.0
+    ws["C2"] = 0.125
+    ws["B4"] = "=B2*2"           # 計算結果が保存されていない数式
+    ws["D5"] = dt.datetime(2026, 3, 31)
+    ws["E5"] = True
+    ws.merge_cells("A6:B6")
+    ws["A6"] = "合計"
+    h = wb.create_sheet("メモ")
+    h.sheet_state = "hidden"
+    h["A1"] = "隠れたシート"
+    wb.save(path)
+
+
+@unittest.skipUnless(HAS_OPENPYXL, "openpyxl が無い")
+class TestXlsx(Tmp):
+    def test_fetch_xlsx(self):
+        src = os.path.join(self.d, "src.xlsx")
+        make_xlsx(src)
+        with open(src, "rb") as f:
+            data = f.read()
+        p = self.request([req("zaisei-r6-shiryoshu", url="https://www.town.shiga-hino.lg.jp/cmsfiles/a.xlsx")])
+        htd.fetch(p, opener=lambda url: data)
+        r = htd.read_sources()[0]
+        self.assertEqual((r["format"], r["check"], r["text_method"], r["pages"]), ("xlsx", "ok", "openpyxl", "2"))
+        d = os.path.join(htd.TEXT_DIR, "zaisei-r6-shiryoshu")
+        self.assertEqual(sorted(os.listdir(d)), ["01.tsv", "02.tsv", "sheets.tsv"])
+        rows = read_text(os.path.join(d, "01.tsv")).split("\n")
+        self.assertEqual(rows[0], "区分\t金額")
+        self.assertEqual(rows[1], "議会費 （款）\t1234\t0.125")   # 改行は空白1つ。整数は小数点を付けない
+        self.assertEqual(rows[2], "")                                # 値の無い行も残す（行の番号をそろえる）
+        self.assertEqual(rows[3], "")                                # 計算結果の無い数式は空
+        self.assertEqual(rows[4], "\t\t\t2026-03-31\tTRUE")
+        self.assertEqual(rows[5], "合計")                            # 結合したセルは左上だけ
+        self.assertEqual(len(rows), 7)                               # 6行と末尾の改行
+        idx = read_text(os.path.join(d, "sheets.tsv")).splitlines()
+        self.assertEqual(idx[1], "01\t歳出\tvisible\t6\t5\t1")
+        self.assertEqual(idx[2], "02\tメモ\thidden\t1\t1\t0")
+        self.assertFalse(os.path.exists(os.path.join(htd.TEXT_DIR, "zaisei-r6-shiryoshu.txt")))
+        self.assertFalse(os.path.exists(os.path.join(htd.TEXT_RAW_DIR, "zaisei-r6-shiryoshu.txt")))
+        # extract でやり直しても同じ
+        htd.extract(["zaisei-r6-shiryoshu"])
+        self.assertEqual(read_text(os.path.join(d, "01.tsv")).split("\n")[1], "議会費 （款）\t1234\t0.125")
+
+
+PAGE = """<html><head><title>x</title></head><body><div id="pankuzu"><a href="/">ホーム</a></div>
+<time itemprop="datePublished" datetime="2025-09-16">x</time><time itemprop="dateModified" datetime="2025-09-17">x</time>
+<div class="mol_contents"><div class="mol_textblock"><h2>【報告】自治会活動に関する意見交換会</h2>
+<p>人口減少や少子高齢化が進む今、これまでの自治会活動を維持していくのが難しくなってきています。<br>安心して住み続けられる地域をつくるために、意見交換会を開催しました。</p>
+<script>var x = 1;</script><table><tr><th>回</th><th>日</th></tr><tr><td>第1回</td><td>9月6日</td></tr></table>
+<ul><li><a href="/a.pdf">報告資料 (PDF形式、1.2MB)</a></li></ul></div></div>
+<div class="kiji_aside">このページは役に立ちましたか？</div></body></html>"""
+
+
+class TestHtml(Tmp):
+    def test_fetch_page(self):
+        url = "https://www.town.shiga-hino.lg.jp/0000008381.html"
+        p = self.request([req("chiiki-jichikai-page", url=url, page_url=url, fiscal_year="2025")])
+        htd.fetch(p, opener=lambda u: PAGE.encode("utf-8"))
+        r = htd.read_sources()[0]
+        self.assertEqual((r["format"], r["check"], r["text_method"], r["pages"], r["date"]),
+                         ("html", "ok", "html", "", "2025-09-16"))
+        self.assertEqual(r["note"], "ページの更新日 2025-09-17")
+        t = read_text(os.path.join(htd.TEXT_DIR, "chiiki-jichikai-page.txt"))
+        self.assertTrue(t.startswith("【報告】自治会活動に関する意見交換会\n人口減少"))
+        self.assertIn("難しくなってきています。\n安心して", t)       # <br> で改行
+        self.assertIn("回\t日\n第1回\t9月6日", t)                     # 表のセルはタブ
+        self.assertIn("報告資料 (PDF形式、1.2MB)", t)                  # リンクは文字だけ
+        self.assertNotIn("var x", t)
+        self.assertNotIn("ホーム", t)
+        self.assertNotIn("役に立ちましたか", t)
+        self.assertNotIn("\n\n", t)
+        self.assertFalse(os.path.exists(os.path.join(htd.TEXT_RAW_DIR, "chiiki-jichikai-page.txt")))
+        # extract でやり直しても、更新日の注記は重ならない
+        htd.extract(["chiiki-jichikai-page"])
+        self.assertEqual(htd.read_sources()[0]["note"], "ページの更新日 2025-09-17")
+
+    def test_no_body_is_ng(self):
+        url = "https://www.town.shiga-hino.lg.jp/0000000001.html"
+        p = self.request([req("kaiken-20260225-page", url=url, page_url=url)])
+        htd.fetch(p, opener=lambda u: b"<html><body><div id='other'>hello</div></body></html>")
+        r = htd.read_sources()[0]
+        self.assertEqual((r["check"], r["text_method"]), ("ng", "html"))
+        self.assertFalse(os.path.exists(os.path.join(htd.TEXT_DIR, "kaiken-20260225-page.txt")))
 
 
 @unittest.skipUnless(HAS_POPPLER and HAS_GIT, "pdftoppm・git が無い")

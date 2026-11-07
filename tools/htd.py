@@ -14,13 +14,17 @@ https://web.archive.org/web/<14桁の保存日時>id_/<url> の形）。台帳�
 止めるまでに取得したものは、台帳とテキストに書く。
 原典は sources_raw/<id>.<拡張子> に置く（リポジトリに入れない）。テキストは data/text/<id>.txt（改ページ \\f を残す）。
 fetch と extract は、テキストを置く資料について、書かれた順の取り出し（pdftotext -raw）も data/text_raw/<id>.txt に置く（§5.1）。
+xlsx はシートごとの TSV を data/text/<id>/ に（§5.2）、町のサイトのページ（.html）は本文の文字を data/text/<id>.txt に置く（§5.3）。
+xlsx を読むには openpyxl が要る。
 
 ocr は、id を指定しなければ、OCR の下書きがまだ無いか、ocr_method がいまの NDLOCR-Lite の版と違う PDF の資料だけを読む
 （途中で止めても、もう一度動かせば続きから進む。台帳は資料1本ごとに書く）。
 NDLOCR-Lite の場所は環境変数 HTD_NDLOCR（既定 ~/ocr/ndlocr-lite）、その Python は HTD_NDLOCR_PYTHON（既定 ~/ocr/venv-ndlocr/bin/python）。
 """
 import csv
+import datetime as dt
 import hashlib
+import html.parser
 import os
 import re
 import shutil
@@ -46,7 +50,8 @@ COLUMNS_V1 = [c for c in COLUMNS if c not in ("ocr_method", "ocr_date")]   # 0c6
 REQUEST_COLUMNS = ["id", "category", "title", "fiscal_year", "date", "page_url", "url", "size_label"]
 REQUEST_COLUMNS_ARCHIVE = REQUEST_COLUMNS + ["archive_url"]   # §6：Webアーカイブの保存版から取るとき
 ARCHIVE_RE = re.compile(r"https://web\.archive\.org/web/([0-9]{14})id_/(.+)")
-CATEGORIES = ("yosan", "kessan", "zaisei", "kofukin", "kansa", "kyoi", "koho", "jinji", "gyokaku", "shingi", "jigyo", "bosai")
+CATEGORIES = ("yosan", "kessan", "zaisei", "kofukin", "kansa", "kyoi", "koho", "jinji", "gyokaku", "shingi", "jigyo", "bosai",
+              "kaiken", "hyoka", "chiiki", "tokei")
 ID_RE = re.compile(r"[a-z0-9]+(-[a-z0-9]+)*")
 PAGE_MIN = 50          # §6：文字のあるページの下限（空白と改ページを除いた文字数）
 OK_RATE, IMAGE_RATE = 0.8, 0.2
@@ -63,7 +68,11 @@ ALLOW = [
     (0xF900, 0xFAFF), (0xFE10, 0xFE19), (0xFE30, 0xFE4F), (0xFF00, 0xFFEF), (0x20000, 0x2FFFF),
 ]
 RADICAL = (0x2E80, 0x2FDF)   # §5：部首の字（CJK 部首補助・康熙部首）。想定外の字には数えない
-AUTO_NOTE = re.compile(r"(^|。)(文字の少ないページ|想定外の字のあるページ)：[^。]*")   # 検収のたびに道具が書き直す注記
+AUTO_NOTE = re.compile(r"(^|。)((文字の少ないページ|想定外の字のあるページ)：[^。]*|ページの更新日 [0-9-]+)")   # 検収のたびに道具が書き直す注記
+HTML_BODY = ("mol_contents", "main_naka")   # §5.3：本文の枠（id か class）。前のものを先に探す
+HTML_BLOCK = {"p", "div", "li", "ul", "ol", "dl", "dt", "dd", "h1", "h2", "h3", "h4", "h5", "h6", "tr", "table", "section",
+              "article", "blockquote", "pre", "caption", "figcaption"}
+HTML_VOID = {"br", "img", "hr", "meta", "link", "input", "wbr", "col", "area", "base", "source"}
 
 
 class Stop(Exception):
@@ -261,11 +270,161 @@ def evaluate(row, path):
             text = None
         else:
             row["note"] = join_note(row.get("note"), unexpected_note(text))
+    elif ext == "xlsx":
+        sheets = extract_xlsx(path)
+        row["text_method"] = "openpyxl"
+        if sheets is None:
+            row["pages"] = row["text_chars"] = ""
+            row["check"] = "ng"
+        else:
+            row["pages"] = str(len(sheets))
+            row["text_chars"] = str(sum(count_chars(sh["text"]) for sh in sheets))
+            row["check"] = "ok" if any(sh["rows"] for sh in sheets) else "ng"
+            text = sheets if row["check"] == "ok" else None
+    elif ext in ("html", "htm"):
+        body, posted, updated = extract_html(data)
+        row["pages"] = ""
+        row["text_method"] = "html"
+        row["format"] = "html"
+        if body is None or count_chars(body) < PAGE_MIN:
+            row["text_chars"] = str(count_chars(body)) if body else ""
+            row["check"] = "ng"
+        else:
+            row["text_chars"] = str(count_chars(body))
+            row["check"] = "ok"
+            text = body
+            row["note"] = join_note(row.get("note"), unexpected_note(body))
+        if posted and not row.get("date"):
+            row["date"] = posted
+        if updated:
+            row["note"] = join_note(row.get("note"), f"ページの更新日 {updated}")
     else:
         row["pages"] = row["text_chars"] = ""
         row["text_method"] = "none"
         row["check"] = "notext"
     return text
+
+
+# ---- Excel（§5.2） ----
+
+def cell_text(v):
+    """§5.2：セルの値の書き方。"""
+    if v is None:
+        return ""
+    if isinstance(v, bool):
+        return "TRUE" if v else "FALSE"
+    if isinstance(v, float):
+        return str(int(v)) if v.is_integer() and abs(v) < 1e15 else repr(v)
+    if isinstance(v, int):
+        return str(v)
+    if isinstance(v, dt.datetime):
+        return v.strftime("%Y-%m-%d") if (v.hour, v.minute, v.second) == (0, 0, 0) else v.strftime("%Y-%m-%dT%H:%M:%S")
+    if isinstance(v, (dt.date, dt.time)):
+        return v.isoformat()
+    return re.sub(r"[\t\r\n]", " ", str(v))
+
+
+def extract_xlsx(path):
+    """§5.2：シートごとの {name, state, rows（行ごとのセルの文字のリスト）, ncols, missing, text}。開けなければ None。"""
+    try:
+        import openpyxl
+    except ImportError:
+        raise Stop("openpyxl が無い（pip install openpyxl）")
+    try:
+        wb_v = openpyxl.load_workbook(path, data_only=True)
+        wb_f = openpyxl.load_workbook(path, data_only=False)
+    except Exception:
+        return None
+    out = []
+    for ws_v, ws_f in zip(wb_v.worksheets, wb_f.worksheets):
+        rows, ncols, missing = [], 0, 0
+        for r_v, r_f in zip(ws_v.iter_rows(values_only=True), ws_f.iter_rows(values_only=True)):
+            cells = [cell_text(v) for v in r_v]
+            for v, f in zip(r_v, r_f):
+                if v is None and isinstance(f, str) and f.startswith("="):
+                    missing += 1
+            while cells and cells[-1] == "":
+                cells.pop()
+            rows.append(cells)
+            ncols = max(ncols, len(cells))
+        while rows and not rows[-1]:
+            rows.pop()
+        text = "\n".join("\t".join(c) for c in rows) + ("\n" if rows else "")
+        out.append({"name": ws_v.title, "state": ws_v.sheet_state, "rows": rows, "ncols": ncols, "missing": missing,
+                    "text": text})
+    return out
+
+
+# ---- 町のサイトのページ（§5.3） ----
+
+class _Body(html.parser.HTMLParser):
+    """本文の枠（id か class が want の要素）の中の文字を集める。"""
+
+    def __init__(self, want):
+        super().__init__(convert_charrefs=True)
+        self.want, self.depth, self.done, self.skip = want, 0, False, 0
+        self.out, self.cell = [], False
+
+    def handle_starttag(self, tag, attrs):
+        if self.done:
+            return
+        a = dict(attrs)
+        if self.depth == 0:
+            if a.get("id") == self.want or self.want in (a.get("class") or "").split():
+                if tag not in HTML_VOID:
+                    self.depth = 1
+            return
+        if tag not in HTML_VOID:
+            self.depth += 1
+        if tag in ("script", "style"):
+            self.skip += 1
+        elif tag in HTML_BLOCK or tag == "br":
+            self.out.append("\n")
+        elif tag in ("td", "th"):
+            if self.cell:
+                self.out.append("\t")
+            self.cell = True
+        if tag == "tr":
+            self.cell = False
+
+    def handle_endtag(self, tag):
+        if self.done or self.depth == 0 or tag in HTML_VOID:
+            return
+        self.depth -= 1
+        if tag in ("script", "style"):
+            self.skip = max(0, self.skip - 1)
+        elif tag in HTML_BLOCK:
+            self.out.append("\n")
+        if self.depth == 0:
+            self.done = True
+
+    def handle_data(self, d):
+        if self.depth and not self.done and not self.skip:
+            self.out.append(re.sub(r"[ \t\r\n\u3000]+", " ", d) if d.strip() else (" " if d else ""))
+
+    def text(self):
+        lines = []
+        for ln in "".join(self.out).split("\n"):
+            ln = "\t".join(c.strip() for c in ln.split("\t")).strip(" ")
+            if ln.strip("\t "):   # 空の行は置かない
+                lines.append(ln)
+        return "\n".join(lines) + "\n" if lines else ""
+
+
+def extract_html(data):
+    """§5.3：（本文の文字か None、公開日、更新日）。"""
+    s = data.decode("utf-8", errors="replace")
+    posted = re.search(r'itemprop="datePublished"[^>]*datetime="([0-9]{4}-[0-9]{2}-[0-9]{2})', s)
+    updated = re.search(r'itemprop="dateModified"[^>]*datetime="([0-9]{4}-[0-9]{2}-[0-9]{2})', s)
+    body = None
+    for want in HTML_BODY:
+        p = _Body(want)
+        p.feed(s)
+        p.close()
+        if p.depth or p.done:
+            body = p.text()
+            break
+    return body, posted.group(1) if posted else "", updated.group(1) if updated else ""
 
 
 def join_note(a, b):
@@ -293,13 +452,32 @@ def write_text(i, text):
 
 
 def write_texts(row, path, text):
-    """§5 のテキストと §5.1 の -raw のテキストを置く。text が None（image・ng・PDF 以外）なら、どちらも置かない（あれば消す）。"""
+    """§5 のテキストと §5.1 の -raw のテキストを置く。text が None（image・ng・PDF 以外）なら、どちらも置かない（あれば消す）。
+    xlsx は §5.2 のシートごとの TSV、html は §5.3 の本文だけ（-raw は作らない）。"""
     tp = os.path.join(TEXT_DIR, f"{row['id']}.txt")
     rp = os.path.join(TEXT_RAW_DIR, f"{row['id']}.txt")
-    if text is None:
+    xd = os.path.join(TEXT_DIR, row["id"])
+    if os.path.isdir(xd) and (text is None or row["format"] != "xlsx"):
+        shutil.rmtree(xd)
+    if text is None or row["format"] in ("xlsx", "html"):
         for q in (tp, rp):
             if os.path.exists(q):
                 os.remove(q)
+    if text is None:
+        return
+    if row["format"] == "xlsx":
+        if os.path.isdir(xd):
+            shutil.rmtree(xd)
+        os.makedirs(xd)
+        index = ["順\tシートの名前\t状態\t行の数\t列の数\t計算結果の無いセルの数"]
+        for k, sh in enumerate(text, 1):
+            write_atomic(os.path.join(xd, f"{k:02d}.tsv"), lambda f, t=sh["text"]: f.write(t))
+            name = re.sub(r"[\t\r\n]", " ", sh["name"])
+            index.append(f"{k:02d}\t{name}\t{sh['state']}\t{len(sh['rows'])}\t{sh['ncols']}\t{sh['missing']}")
+        write_atomic(os.path.join(xd, "sheets.tsv"), lambda f: f.write("\n".join(index) + "\n"))
+        return
+    if row["format"] == "html":
+        write_text(row["id"], text)
         return
     raw = extract_raw(path, int(row["pages"]))
     write_text(row["id"], text)
