@@ -32,6 +32,8 @@ import subprocess
 import sys
 import time
 import urllib.request
+import xml.etree.ElementTree as ET
+import zipfile
 from datetime import date
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -68,7 +70,7 @@ ALLOW = [
     (0xF900, 0xFAFF), (0xFE10, 0xFE19), (0xFE30, 0xFE4F), (0xFF00, 0xFFEF), (0x20000, 0x2FFFF),
 ]
 RADICAL = (0x2E80, 0x2FDF)   # §5：部首の字（CJK 部首補助・康熙部首）。想定外の字には数えない
-AUTO_NOTE = re.compile(r"(^|。)((文字の少ないページ|想定外の字のあるページ)：[^。]*|ページの更新日 [0-9-]+)")   # 検収のたびに道具が書き直す注記
+AUTO_NOTE = re.compile(r"(^|。)((文字の少ないページ|想定外の字のあるページ|行の終わりの「-」を戻した)：[^。]*|ページの更新日 [0-9-]+)")   # 検収のたびに道具が書き直す注記
 HTML_BODY = ("mol_contents", "main_naka")   # §5.3：本文の枠（id か class）。前のものを先に探す
 HTML_BLOCK = {"p", "div", "li", "ul", "ol", "dl", "dt", "dd", "h1", "h2", "h3", "h4", "h5", "h6", "tr", "table", "section",
               "article", "blockquote", "pre", "caption", "figcaption"}
@@ -228,10 +230,91 @@ def extract_pdf(path):
     parts = text.split("\f")
     if parts and parts[-1].strip() == "":
         parts = parts[:-1]
+    if len(parts) != pages:
+        raise Stop(f"{os.path.basename(path)}：ページ数（{pages}）と改ページで区切った数（{len(parts)}）が合わない")
+    text, back = restore_hyphens(path, text)
+    parts = text.split("\f")[:pages]
     chars = [count_chars(p) for p in parts]
-    if len(chars) != pages:
-        raise Stop(f"{os.path.basename(path)}：ページ数（{pages}）と改ページで区切った数（{len(chars)}）が合わない")
-    return text, pages, chars
+    return text, pages, chars, back
+
+
+# ---- 行の終わりの「-」を戻す（§5.4） ----
+
+NS_X = "{http://www.w3.org/1999/xhtml}"
+BAD_XML = re.compile("[\x00-\x08\x0b\x0c\x0e-\x1f\ufffe\uffff]")
+HYPHEN_IGNORE = re.compile("[\x00-\x08\x0b\x0c\x0e-\x1f\ufffe\uffff\u202a-\u202e\u2066-\u2069"
+                           "\u0590-\u08ff\ufb1d-\ufdff\ufe70-\ufefe]")   # §5.4：突き合わせで数えない字
+WSPACE = re.compile(r"\s")
+
+
+def bbox_lines(path):
+    """§5.4：-bbox-layout のページごとの [(行の文字, 既定の取り出しで「-」が消える行か)]。"""
+    r = subprocess.run(["pdftotext", "-enc", "UTF-8", "-bbox-layout", path, "-"], capture_output=True)
+    if r.returncode != 0:
+        raise Stop(f"{os.path.basename(path)}：pdftotext -bbox-layout が終了コード {r.returncode}")
+    out = BAD_XML.sub("", re.sub(r"<!DOCTYPE[^>]*>", "", r.stdout.decode("utf-8")))
+    try:
+        root = ET.fromstring(out)
+    except ET.ParseError as e:
+        raise Stop(f"{os.path.basename(path)}：-bbox-layout の出力を読めない（{e}）")
+    pages = []
+    for page in root.iter(NS_X + "page"):
+        lines = []
+        for flow in page.findall(NS_X + "flow"):
+            blocks = flow.findall(NS_X + "block")
+            for j, block in enumerate(blocks):
+                ls = block.findall(NS_X + "line")
+                for k, line in enumerate(ls):
+                    t = "".join((w.text or "") for w in line.findall(NS_X + "word"))
+                    lines.append((t, t.endswith("-") and (k + 1 < len(ls) or j + 1 < len(blocks))))
+        pages.append(lines)
+    return pages
+
+
+def restore_page(d, lines):
+    """§5.4：1ページの既定の取り出し d に、消された「-」と改行を戻す。突き合わせが合わなければ None。"""
+    seq, cuts = [], []
+    for t, cut in lines:
+        seq.append(WSPACE.sub("", HYPHEN_IGNORE.sub("", t[:-1] if cut else t)))
+        if cut:
+            cuts.append(sum(len(x) for x in seq))
+    if not cuts:
+        return d
+    if WSPACE.sub("", HYPHEN_IGNORE.sub("", d)) != "".join(seq):
+        return None
+    out, n, ci = [], 0, 0
+    for ch in d:
+        if not (WSPACE.match(ch) or HYPHEN_IGNORE.match(ch)):
+            while ci < len(cuts) and cuts[ci] == n:
+                out.append("-\n")
+                ci += 1
+            n += 1
+        out.append(ch)
+    return "".join(out) if ci == len(cuts) else None
+
+
+def restore_hyphens(path, text):
+    """§5.4：（戻した後のテキスト、戻した「-」の数）。確かめが合わなければ止める。"""
+    name = os.path.basename(path)
+    dp = text.split("\f")
+    bp = bbox_lines(path)
+    if len(dp) - 1 != len(bp):
+        raise Stop(f"{name}：既定の取り出し（{len(dp) - 1}ページ）と -bbox-layout（{len(bp)}ページ）のページの数が違う")
+    res, back = [], 0
+    for k, lines in enumerate(bp):
+        r = restore_page(dp[k], lines)
+        if r is None:
+            raise Stop(f"{name}：{k + 1}ページで、既定の取り出しと -bbox-layout の字の並びが合わない（§5.4）")
+        back += r.count("-") - dp[k].count("-")
+        res.append(r)
+    res.append(dp[-1])
+    out = "\f".join(res)
+    want = sum(t.count("-") for lines in bp for t, _ in lines)
+    if out.count("-") != want:
+        raise Stop(f"{name}：戻した後の「-」（{out.count('-')}）が -bbox-layout の「-」（{want}）と合わない（§5.4）")
+    if re.sub("-\n", "", out) != re.sub("-\n", "", text):
+        raise Stop(f"{name}：戻した「-」と改行を除いても、既定の取り出しに戻らない（§5.4）")
+    return out, back
 
 
 def extract_raw(path, pages):
@@ -258,10 +341,10 @@ def evaluate(row, path):
     row["format"] = ext
     text = None
     if ext == "pdf":
-        text, pages, chars = extract_pdf(path)
+        text, pages, chars, back = extract_pdf(path)
         row["pages"] = str(pages)
         row["text_chars"] = str(sum(chars))
-        row["text_method"] = "pdftotext"
+        row["text_method"] = "pdftotext+hyphen"
         row["check"] = classify(chars)
         if row["check"] == "partial":
             low = [str(i + 1) for i, c in enumerate(chars) if c < PAGE_MIN]
@@ -270,6 +353,8 @@ def evaluate(row, path):
             text = None
         else:
             row["note"] = join_note(row.get("note"), unexpected_note(text))
+            if back:
+                row["note"] = join_note(row["note"], f"行の終わりの「-」を戻した：{back}")
     elif ext == "xlsx":
         sheets = extract_xlsx(path)
         row["text_method"] = "openpyxl"
@@ -278,8 +363,8 @@ def evaluate(row, path):
             row["check"] = "ng"
         else:
             row["pages"] = str(len(sheets))
-            row["text_chars"] = str(sum(count_chars(sh["text"]) for sh in sheets))
-            row["check"] = "ok" if any(sh["rows"] for sh in sheets) else "ng"
+            row["text_chars"] = str(sum(count_chars(sh["text"]) + sum(count_chars(r[5]) for r in sh["zukei"]) for sh in sheets))
+            row["check"] = "ok" if any(sh["rows"] or sh["zukei"] for sh in sheets) else "ng"
             text = sheets if row["check"] == "ok" else None
     elif ext in ("html", "htm"):
         body, posted, updated = extract_html(data)
@@ -352,7 +437,193 @@ def extract_xlsx(path):
         text = "\n".join("\t".join(c) for c in rows) + ("\n" if rows else "")
         out.append({"name": ws_v.title, "state": ws_v.sheet_state, "rows": rows, "ncols": ncols, "missing": missing,
                     "text": text})
+    try:
+        drawings = xlsx_drawings(path)
+    except (zipfile.BadZipFile, KeyError, ET.ParseError, ValueError, AttributeError) as e:
+        raise Stop(f"{os.path.basename(path)}：図形とグラフを読めない（{e}）")
+    if len(drawings) != len(out):
+        raise Stop(f"{os.path.basename(path)}：シートの数（{len(out)}）と、図形を読んだシートの数（{len(drawings)}）が違う")
+    for sh, z in zip(out, drawings):
+        sh["zukei"] = z
+        sh["zukei_text"] = ("\t".join(ZUKEI_COLUMNS) + "\n" +
+                            "".join("\t".join("" if v is None else str(v) for v in r) + "\n" for r in z)) if z else ""
     return out
+
+
+# ---- Excel の図形とグラフの字（§5.2） ----
+
+XNS = {
+    "m": "http://schemas.openxmlformats.org/spreadsheetml/2006/main",
+    "r": "http://schemas.openxmlformats.org/officeDocument/2006/relationships",
+    "pr": "http://schemas.openxmlformats.org/package/2006/relationships",
+    "xdr": "http://schemas.openxmlformats.org/drawingml/2006/spreadsheetDrawing",
+    "a": "http://schemas.openxmlformats.org/drawingml/2006/main",
+    "c": "http://schemas.openxmlformats.org/drawingml/2006/chart",
+    "mc": "http://schemas.openxmlformats.org/markup-compatibility/2006",
+}
+ZUKEI_COLUMNS = ["行", "列", "種類", "系列", "項目", "文字"]
+
+
+def _q(tag):
+    p, t = tag.split(":")
+    return "{" + XNS[p] + "}" + t
+
+
+def _one_line(t):
+    return re.sub(r"[\t\r\n]", " ", t or "")
+
+
+def _rels(z, part):
+    """part（例 xl/worksheets/sheet1.xml）の関係ファイルの {Id: 部品の名前}。"""
+    d, b = os.path.split(part)
+    rp = f"{d}/_rels/{b}.rels"
+    if rp not in z.namelist():
+        return {}
+    out = {}
+    for r in ET.fromstring(z.read(rp)).findall(_q("pr:Relationship")):
+        t = r.get("Target")
+        if r.get("TargetMode") == "External":
+            continue
+        t = t.lstrip("/") if t.startswith("/") else os.path.normpath(os.path.join(d, t)).replace(os.sep, "/")
+        out[r.get("Id")] = t
+    return out
+
+
+def _para_text(el):
+    """txBody などの中の段落を空白1つでつないだ字。"""
+    paras = []
+    for p in el.iter(_q("a:p")):
+        t = "".join((x.text or "") for x in p.iter() if x.tag in (_q("a:t"),))
+        if t.strip():
+            paras.append(t.strip())
+    return _one_line(" ".join(paras)).strip()
+
+
+def _choose(el):
+    """mc:AlternateContent は Choice の中身（無ければ Fallback）だけを見る。"""
+    out = []
+    for ch in el:
+        if ch.tag == _q("mc:AlternateContent"):
+            pick = ch.find(_q("mc:Choice"))
+            if pick is None:
+                pick = ch.find(_q("mc:Fallback"))
+            if pick is not None:
+                out += _choose(pick)
+        else:
+            out.append(ch)
+    return out
+
+
+def _strs(el):
+    """strRef・numRef・strLit などの保存された値の {idx: 字}。"""
+    out = {}
+    if el is None:
+        return out
+    for pt in el.iter(_q("c:pt")):
+        v = pt.find(_q("c:v"))
+        out[int(pt.get("idx", "0"))] = _one_line(v.text if v is not None else "")
+    if not out:
+        v = el.find(_q("c:v"))
+        if v is not None:
+            out[0] = _one_line(v.text)
+    return out
+
+
+def _title(el):
+    if el is None:
+        return ""
+    rich = el.find(".//" + _q("c:rich"))
+    if rich is not None:
+        return _para_text(rich)
+    tx = el.find(_q("c:tx"))
+    return " ".join(_strs(tx).values()).strip() if tx is not None else ""
+
+
+def chart_rows(xml):
+    """グラフの部品から（種類、系列、項目、文字）の並び。"""
+    root = ET.fromstring(xml)
+    rows = []
+    chart = root.find(_q("c:chart"))
+    if chart is None:
+        return rows
+    t = _title(chart.find(_q("c:title")))
+    if t:
+        rows.append(("グラフの題", "", "", t))
+    plot = chart.find(_q("c:plotArea"))
+    if plot is None:
+        return rows
+    for ax in plot:
+        if ax.tag in (_q("c:valAx"), _q("c:catAx"), _q("c:dateAx"), _q("c:serAx")):
+            t = _title(ax.find(_q("c:title")))
+            if t:
+                rows.append(("軸の題", "", "", t))
+    for ser in plot.iter(_q("c:ser")):
+        tx = ser.find(_q("c:tx"))
+        name = " ".join(_strs(tx).values()).strip() if tx is not None else ""
+        cat = _strs(ser.find(_q("c:cat"))) or _strs(ser.find(_q("c:xVal")))
+        val = _strs(ser.find(_q("c:val"))) or _strs(ser.find(_q("c:yVal")))
+        for i in sorted(val):
+            rows.append(("グラフの値", name, cat.get(i, ""), val[i]))
+    return rows
+
+
+def _shapes(el):
+    """図形（sp）の字を、グループ（grpSp）の中まで順に集める。"""
+    out = []
+    for ch in _choose(el):
+        if ch.tag == _q("xdr:sp"):
+            tb = ch.find(_q("xdr:txBody"))
+            t = _para_text(tb) if tb is not None else ""
+            if t:
+                out.append(t)
+        elif ch.tag == _q("xdr:grpSp"):
+            out += _shapes(ch)
+    return out
+
+
+def _charts(el):
+    out = []
+    for ch in _choose(el):
+        if ch.tag == _q("xdr:graphicFrame"):
+            c = ch.find(".//" + _q("c:chart"))
+            if c is not None:
+                out.append(c.get(_q("r:id")))
+        elif ch.tag == _q("xdr:grpSp"):
+            out += _charts(ch)
+    return out
+
+
+def xlsx_drawings(path):
+    """§5.2：ブックの中のシートの順に、図形とグラフの字の行 [(行, 列, 種類, 系列, 項目, 文字)] のリスト。"""
+    with zipfile.ZipFile(path) as z:
+        wb = ET.fromstring(z.read("xl/workbook.xml"))
+        wrels = _rels(z, "xl/workbook.xml")
+        result = []
+        for sh in wb.find(_q("m:sheets")).findall(_q("m:sheet")):
+            part = wrels.get(sh.get(_q("r:id")), "")
+            rows = []
+            for rid, dpart in _rels(z, part).items() if part else []:
+                if "/drawings/" not in dpart or not dpart.endswith(".xml") or dpart not in z.namelist():
+                    continue
+                drels = _rels(z, dpart)
+                dr = ET.fromstring(z.read(dpart))
+                for anchor in _choose(dr):
+                    fr = anchor.find(_q("xdr:from"))
+                    if fr is not None:
+                        r0, c0 = int(fr.find(_q("xdr:row")).text) + 1, int(fr.find(_q("xdr:col")).text) + 1
+                    else:
+                        r0 = c0 = None
+                    for t in _shapes(anchor):
+                        rows.append((r0, c0, "図形", "", "", t))
+                    for cid in _charts(anchor):
+                        cpart = drels.get(cid)
+                        if cpart and cpart in z.namelist():
+                            for kind, ser, item, t in chart_rows(z.read(cpart)):
+                                rows.append((r0, c0, kind, ser, item, t))
+            # 行・列の順（位置の無いものは後ろ）。同じ位置はファイルの中の順（sorted は安定）
+            rows = sorted(rows, key=lambda x: (x[0] is None, x[0] or 0, x[1] or 0))
+            result.append(rows)
+    return result
 
 
 # ---- 町のサイトのページ（§5.3） ----
@@ -469,11 +740,13 @@ def write_texts(row, path, text):
         if os.path.isdir(xd):
             shutil.rmtree(xd)
         os.makedirs(xd)
-        index = ["順\tシートの名前\t状態\t行の数\t列の数\t計算結果の無いセルの数"]
+        index = ["順\tシートの名前\t状態\t行の数\t列の数\t計算結果の無いセルの数\t図形とグラフの字の行の数"]
         for k, sh in enumerate(text, 1):
             write_atomic(os.path.join(xd, f"{k:02d}.tsv"), lambda f, t=sh["text"]: f.write(t))
+            if sh["zukei"]:
+                write_atomic(os.path.join(xd, f"{k:02d}-zukei.tsv"), lambda f, t=sh["zukei_text"]: f.write(t))
             name = re.sub(r"[\t\r\n]", " ", sh["name"])
-            index.append(f"{k:02d}\t{name}\t{sh['state']}\t{len(sh['rows'])}\t{sh['ncols']}\t{sh['missing']}")
+            index.append(f"{k:02d}\t{name}\t{sh['state']}\t{len(sh['rows'])}\t{sh['ncols']}\t{sh['missing']}\t{len(sh['zukei'])}")
         write_atomic(os.path.join(xd, "sheets.tsv"), lambda f: f.write("\n".join(index) + "\n"))
         return
     if row["format"] == "html":
