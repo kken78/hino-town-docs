@@ -15,6 +15,12 @@ import watch_docs as w  # noqa: E402
 S = w.SITE
 
 
+def load_json(path):
+    import json
+    with open(path, encoding="utf-8") as f:
+        return json.load(f)
+
+
 def cat(code):
     return f"{S}category/{code}.html"
 
@@ -168,7 +174,7 @@ class TestIgnoreFile(unittest.TestCase):
         self.assertEqual(code, 0)
         self.assertTrue(os.path.exists(os.path.join(d, "out", "town-docs-inventory-2026-12-01.tsv")))
         self.assertEqual(len(w.read_tsv(os.path.join(d, "out", "town-pages-2026-12-01.tsv"))), 2)
-        self.assertFalse(__import__("json").load(open(os.path.join(d, "r.json"), encoding="utf-8"))["same_day"])
+        self.assertFalse(load_json(os.path.join(d, "r.json"))["same_day"])
         # 同じ日の一覧が data/inventory/ にすでにあるとき
         import shutil
         shutil.copy(os.path.join(d, "out", "town-pages-2026-12-01.tsv"), inv)
@@ -179,7 +185,7 @@ class TestIgnoreFile(unittest.TestCase):
         finally:
             w.request = orig
         self.assertEqual(code, 0)
-        self.assertTrue(__import__("json").load(open(os.path.join(d, "r.json"), encoding="utf-8"))["same_day"])
+        self.assertTrue(load_json(os.path.join(d, "r.json"))["same_day"])
 
 
 if __name__ == "__main__":
