@@ -678,7 +678,7 @@ chiiki の取り組みの略：
 - 赤字の無い年の実質赤字比率などは、原典のセルの字「-」のまま持つ。資金不足比率は10年とも空欄で、空のまま持つ
 - 総括表の歳入総額・歳出総額は普通会計の値で、一般会計の値（13.7）とは違う。name と table で区別し、同じ値として扱わない
 - name：soukatsu は見出しのセルの字のまま（字下げの全角の空白を含む）。kenzenka は「<比率の名前> <基準の見出し>」（例「実質公債費比率 早期健全化基準」）。hikaku は、tokai は指標の名前の図形の字、ほかは「<指標の名前の図形の字> <見出しの図形の字>」（例「財政力指数 類似団体内順位」）。どれもいちばん新しい年度の資料の字
-- unit：総括表の「(千円)」の列の行は `千円`。「(千円･％)」の列の行は、見出しの字に「比率」を含む行は `％`、「指数」を含む行は空（無単位）、ほかは `千円`。kenzenka は `％`。hikaku は、tokai は図形の字から読んだ単位、zenkoku・ken・zenkoku-shi・zenkoku-choson はその指標の tokai と同じ単位、juni は空。普通会計の状況は列で決め、gaku・keijo・ippan・futsuken・choka は `千円`、kosei・keijo_kosei・keijo_hiritsu は `％`
+- unit：総括表の「(千円)」の列の行は `千円`。「(千円･％)」の列の行は、下のキーの表の「指標」の欄の名前に「比率」を含む行は `％`、「指数」を含む行は空（無単位）、ほかは `千円`（keijo-1 は「経常収支比率（…を除いたもの）」なので `％`）。kenzenka は `％`。hikaku は、tokai は図形の字から読んだ単位、zenkoku・ken・zenkoku-shi・zenkoku-choson はその指標の tokai と同じ単位、juni は空。普通会計の状況は列で決め、gaku・keijo・ippan・futsuken・choka は `千円`、kosei・keijo_kosei・keijo_hiritsu は `％`
 
 ### 13.9 起票
 
