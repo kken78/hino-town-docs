@@ -44,6 +44,9 @@
 - `python3 -B tools/kozo.py zaisei-kian`：財政状況資料集10本のセルの値と図形の字から、`zaisei-shihyo.tsv`・`zaisei-futsu.tsv`・`zaisei-ichi.tsv` を起票する。値の位置は見出しの字で決め、当たらないものは空にして note に書く
 - `python3 -B tools/kozo.py zaisei-check`：財政指標の表をセルの値と図形の字で照合・検算し（段1）、検収の台帳 `data/struct/audit/zaisei.tsv` を書く。合わない項目があれば終了コード 1。図形の字で一致しなかった行は段2 に回し、H2・H4 の抜き取りの印も付ける
 - `python3 -B tools/kozo.py zaisei-selftest`：セルの値・前年度の列・図形の字・label_cell に誤りを1つずつ入れ、段1 が見つけることを確かめる
+- `python3 -B tools/kozo.py kessan-kian`：決算審査意見書・決算の概要・財政状況資料集のシート03 から、決算の回・額・一般会計の内訳の3つの表を起票する（tools/kozo_kessan.py）。既存の行の key と、画像で確かめた行の値と note は保つ
+- `python3 -B tools/kozo.py kessan-check`：決算の表を原典の文字で照合し、選ばなかった出典と丸めの範囲で突き合わせ（段1）、検収の台帳 `data/struct/audit/kessan.tsv` を書く。合わない項目があれば終了コード 1。段2 に回す行と H2・H4 の抜き取りの印も付ける
+- `python3 -B tools/kozo.py kessan-selftest`：決算の表を一時の場所に写して誤りを1つずつ入れ、段1 が見つけることを確かめる（表が無ければ検査の見本で確かめる）
 
 検収は shiga-hino-plans の段1〜段4 を写して使う。論点ノート（hino-ronten）は、検収の済んだ行だけを、`hs:`・`hj:`・`hk:`・`hz:` のキーで指す。いまは文書だけを入れてあり、道具と表はこれから作る（令和6年度の補正予算から）。
 

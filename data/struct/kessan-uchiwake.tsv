@@ -1,0 +1,263 @@
+kai	key	group	name	value	unit	ratio	raw	doc	page	note
+h24-ippan	u001	sainyu	町税	322610	万円	37.4	32 億 2,610 万円	kessan-h24-gaiyou	1	
+h24-ippan	u002	sainyu	分担金及び負担金	24762	万円	2.9	2 億 4,762 万円	kessan-h24-gaiyou	1	
+h24-ippan	u003	sainyu	諸収入	11154	万円	1.3	1 億 1,154 万円	kessan-h24-gaiyou	1	
+h24-ippan	u004	sainyu	繰入金	14480	万円	1.7	1 億 4,480 万円	kessan-h24-gaiyou	1	
+h24-ippan	u005	sainyu	町債	101081	万円	11.7	10 億 1,081 万円	kessan-h24-gaiyou	1	
+h24-ippan	u006	sainyu	地方交付税	157057	万円	18.2	15 億 7,057 万円	kessan-h24-gaiyou	1	
+h24-ippan	u007	sainyu	国庫支出金	77403	万円	9.0	7 億 7,403 万円	kessan-h24-gaiyou	1	
+h24-ippan	u008	sainyu	県支出金	51465	万円	6.0	5 億 1,465 万円	kessan-h24-gaiyou	1	
+h24-ippan	u009	sainyu	地方譲与税	8750	万円	1.0	8,750 万円	kessan-h24-gaiyou	1	
+h24-ippan	u010	sainyu	その他	11292	万円	1.3	1 億 1,292 万円	kessan-h24-gaiyou	1	
+h24-ippan	u011	sainyu	県税交付金	31738	万円	3.7	3 億 1,738 万円	kessan-h24-gaiyou	1	
+h24-ippan	u012	sainyu	繰越金	49760	万円	5.8	4 億 9,760 万円	kessan-h24-gaiyou	1	
+h24-ippan	u013	mokuteki	民生費	232151	万円	28.3	23 億 2,151 万円	kessan-h24-gaiyou	2	
+h24-ippan	u014	mokuteki	教育費	159392	万円	19.4	15 億 9,392 万円	kessan-h24-gaiyou	2	
+h24-ippan	u015	mokuteki	総務費	87600	万円	10.7	8 億 7,600 万円	kessan-h24-gaiyou	2	
+h24-ippan	u016	mokuteki	土木費	80393	万円	9.8	8 億 393 万円	kessan-h24-gaiyou	2	
+h24-ippan	u017	mokuteki	農林水産業費	74482	万円	9.1	7 億 4,482 万円	kessan-h24-gaiyou	2	
+h24-ippan	u018	mokuteki	公債費	61977	万円	7.6	6 億 1,977 万円	kessan-h24-gaiyou	2	
+h24-ippan	u019	mokuteki	衛生費	58749	万円	7.2	5 億 8,749 万円	kessan-h24-gaiyou	2	
+h24-ippan	u020	mokuteki	消防費	30853	万円	3.8	3 億 853 万円	kessan-h24-gaiyou	2	
+h24-ippan	u021	mokuteki	商工費	12446	万円	1.5	1 億 2,446 万円	kessan-h24-gaiyou	2	
+h24-ippan	u022	mokuteki	議会費	9063	万円	1.0	9,063 万円	kessan-h24-gaiyou	2	
+h24-ippan	u023	mokuteki	労働費	3078	万円	0.3	3,078 万円	kessan-h24-gaiyou	2	
+h24-ippan	u024	mokuteki	災害復旧費	10686	万円	1.3	1 億 686 万円	kessan-h24-gaiyou	2	
+h25-ippan	u001	sainyu	町税	331398	万円	32.1	33億1,398万円	kessan-h25-gaiyou	1	
+h25-ippan	u002	sainyu	繰越金	40682	万円	3.9	4億682万円	kessan-h25-gaiyou	1	
+h25-ippan	u003	sainyu	分担金及び負担金	27322	万円	2.6	2億7,322万円	kessan-h25-gaiyou	1	
+h25-ippan	u004	sainyu	国庫支出金	141674	万円	13.7	14億1,674万円	kessan-h25-gaiyou	1	
+h25-ippan	u005	sainyu	諸収入	8745	万円	0.8	8,745万円	kessan-h25-gaiyou	1	
+h25-ippan	u006	sainyu	地方譲与税	8316	万円	0.8	8,316万円	kessan-h25-gaiyou	1	
+h25-ippan	u007	sainyu	その他	14529	万円	1.5	1億4,529万円	kessan-h25-gaiyou	1	
+h25-ippan	u008	sainyu	県税交付金	32537	万円	3.2	3億2,537万円	kessan-h25-gaiyou	1	
+h25-ippan	u009	sainyu	財産収入	52428	万円	5.1	5億2,428万円	kessan-h25-gaiyou	1	
+h25-ippan	u010	sainyu	県支出金	69224	万円	6.7	6億9,224万円	kessan-h25-gaiyou	1	
+h25-ippan	u011	sainyu	町債	141081	万円	13.7	14億1,081万円	kessan-h25-gaiyou	1	
+h25-ippan	u012	sainyu	地方交付税	164611	万円	15.9	16億4,611万円	kessan-h25-gaiyou	1	
+h25-ippan	u013	mokuteki	民生費	306784	万円	31.0	30億6,784万円	kessan-h25-gaiyou	2	
+h25-ippan	u014	mokuteki	教育費	201404	万円	20.3	20億1,404万円	kessan-h25-gaiyou	2	
+h25-ippan	u015	mokuteki	土木費	88288	万円	8.9	8億8,288万円	kessan-h25-gaiyou	2	
+h25-ippan	u016	mokuteki	農林水産業費	72149	万円	7.3	7億2,149万円	kessan-h25-gaiyou	2	
+h25-ippan	u017	mokuteki	公債費	60773	万円	6.1	6億773万円	kessan-h25-gaiyou	2	
+h25-ippan	u018	mokuteki	衛生費	54250	万円	5.5	5億4,250万円	kessan-h25-gaiyou	2	
+h25-ippan	u019	mokuteki	消防費	29419	万円	3.0	2億9,419万円	kessan-h25-gaiyou	2	
+h25-ippan	u020	mokuteki	災害復旧費	5099	万円	0.5	5,099万円	kessan-h25-gaiyou	2	
+h25-ippan	u021	mokuteki	商工費	11623	万円	1.2	1億1,623万円	kessan-h25-gaiyou	2	
+h25-ippan	u022	mokuteki	議会費	8360	万円	0.7	8,360万円	kessan-h25-gaiyou	2	
+h25-ippan	u023	mokuteki	総務費	150802	万円	15.2	15億802万円	kessan-h25-gaiyou	2	
+h25-ippan	u024	mokuteki	労働費	3709	万円	0.3	3,709万円	kessan-h25-gaiyou	2	
+h26-ippan	u001	sainyu	町税	347074	万円	38.7	34億7,074万円	kessan-h26-gaiyou	1	
+h26-ippan	u002	sainyu	国庫支出金	87415	万円	9.8	8億7,415万円	kessan-h26-gaiyou	1	
+h26-ippan	u003	sainyu	県支出金	71962	万円	8.0	7億1,962万円	kessan-h26-gaiyou	1	
+h26-ippan	u004	sainyu	町債	64674	万円	7.2	6億4,674万円	kessan-h26-gaiyou	1	
+h26-ippan	u005	sainyu	繰越金	39887	万円	4.5	3億9,887万円	kessan-h26-gaiyou	1	
+h26-ippan	u006	sainyu	繰入金	36881	万円	4.1	3億6,881万円	kessan-h26-gaiyou	1	
+h26-ippan	u007	sainyu	県税交付金	34580	万円	3.9	3億4,580万円	kessan-h26-gaiyou	1	
+h26-ippan	u008	sainyu	分担金及び負担金	26926	万円	3.0	2億6,926万円	kessan-h26-gaiyou	1	
+h26-ippan	u009	sainyu	諸収入	15440	万円	1.7	1億5,440万円	kessan-h26-gaiyou	1	
+h26-ippan	u010	sainyu	地方譲与税	7909	万円	0.9	7,909万円	kessan-h26-gaiyou	1	
+h26-ippan	u011	sainyu	地方交付税	153818	万円	17.2	15億3,818万円	kessan-h26-gaiyou	1	
+h26-ippan	u012	sainyu	その他	9411	万円	1.0	9,411万円	kessan-h26-gaiyou	1	
+h26-ippan	u013	mokuteki	教育費	132711	万円	15.6	13億2,711万円	kessan-h26-gaiyou	2	
+h26-ippan	u014	mokuteki	農林水産業費	60084	万円	7.1	6億0,084万円	kessan-h26-gaiyou	2	
+h26-ippan	u015	mokuteki	衛生費	58266	万円	6.9	5億8,266万円	kessan-h26-gaiyou	2	
+h26-ippan	u016	mokuteki	総務費	100131	万円	11.8	10億0,131万円	kessan-h26-gaiyou	2	
+h26-ippan	u017	mokuteki	民生費	291271	万円	34.3	29億1,271万円	kessan-h26-gaiyou	2	
+h26-ippan	u018	mokuteki	公債費	56410	万円	6.7	5億6,410万円	kessan-h26-gaiyou	2	
+h26-ippan	u019	mokuteki	消防費	32346	万円	3.8	3億2,346万円	kessan-h26-gaiyou	2	
+h26-ippan	u020	mokuteki	商工費	10942	万円	1.3	1億0,942万円	kessan-h26-gaiyou	2	
+h26-ippan	u021	mokuteki	議会費	8592	万円	1.0	8,592万円	kessan-h26-gaiyou	2	
+h26-ippan	u022	mokuteki	災害復旧費	3692	万円	0.4	3,692万円	kessan-h26-gaiyou	2	
+h26-ippan	u023	mokuteki	労働費	2656	万円	0.3	2,656万円	kessan-h26-gaiyou	2	
+h26-ippan	u024	mokuteki	土木費	91856	万円	10.8	9億1,856万円	kessan-h26-gaiyou	2	
+h27-ippan	u001	sainyu	町税	331753	万円	38.4	33億1,753万円	kessan-h27-gaiyou	1	
+h27-ippan	u002	sainyu	地方交付税	162306	万円	18.8	16億2,306万円	kessan-h27-gaiyou	1	
+h27-ippan	u003	sainyu	国庫支出金	93015	万円	10.8	9億3,015万円	kessan-h27-gaiyou	1	
+h27-ippan	u004	sainyu	町債	57210	万円	6.6	5億7,210万円	kessan-h27-gaiyou	1	
+h27-ippan	u005	sainyu	県支出金	65233	万円	7.5	6億5,233万円	kessan-h27-gaiyou	1	
+h27-ippan	u006	sainyu	その他	38317	万円	4.4	3億8,317万円	kessan-h27-gaiyou	1	
+h27-ippan	u007	sainyu	県税交付金	52181	万円	6.0	5億2,181万円	kessan-h27-gaiyou	1	
+h27-ippan	u008	sainyu	繰越金	47020	万円	5.4	4億7,020万円	kessan-h27-gaiyou	1	
+h27-ippan	u009	sainyu	分担金及び負担金	17983	万円	2.1	1億7,983万円	kessan-h27-gaiyou	1	
+h27-ippan	u010	mokuteki	その他	21155	万円	2.6	2億1,155万円	kessan-h27-gaiyou	2	group は原典の画像で決めた
+h27-ippan	u011	seishitsu	その他	11728	万円	1.4	1億1,728万円	kessan-h27-gaiyou	2	group は原典の画像で決めた
+h27-ippan	u012	mokuteki	農林水産業費	55321	万円	6.7	5億5,321万円	kessan-h27-gaiyou	2	
+h27-ippan	u013	seishitsu	維持補修費	5935	万円	0.7	5,935万円	kessan-h27-gaiyou	2	
+h27-ippan	u014	mokuteki	消防費	34260	万円	4.2	3億4,260万円	kessan-h27-gaiyou	2	
+h27-ippan	u015	mokuteki	民生費	288245	万円	35.1	28億8,245万円	kessan-h27-gaiyou	2	
+h27-ippan	u016	seishitsu	人件費	153246	万円	18.6	15億3,246万円	kessan-h27-gaiyou	2	
+h27-ippan	u017	seishitsu	補助費	106968	万円	13.0	10億6,968万円	kessan-h27-gaiyou	2	
+h27-ippan	u018	mokuteki	教育費	134238	万円	16.3	13億4,238万円	kessan-h27-gaiyou	2	
+h27-ippan	u019	seishitsu	扶助費	146196	万円	17.9	14億6,196万円	kessan-h27-gaiyou	2	
+h27-ippan	u020	seishitsu	公債費	59280	万円	7.2	5億9,280万円	kessan-h27-gaiyou	2	group は原典の画像で決めた
+h27-ippan	u021	seishitsu	物件費	129290	万円	15.7	12億9,290万円	kessan-h27-gaiyou	2	
+h27-ippan	u022	mokuteki	総務費	94897	万円	11.5	9億4,897万円	kessan-h27-gaiyou	2	
+h27-ippan	u023	seishitsu	投資的経費	85691	万円	10.4	8億5,691万円	kessan-h27-gaiyou	2	group は原典の画像で決めた
+h27-ippan	u024	mokuteki	土木費	77620	万円	9.4	7億7,620万円	kessan-h27-gaiyou	2	
+h27-ippan	u025	mokuteki	公債費	59280	万円	7.2	5億9,280万円	kessan-h27-gaiyou	2	group は原典の画像で決めた
+h27-ippan	u026	mokuteki	衛生費	57151	万円	7.0	5億7,151万円	kessan-h27-gaiyou	2	
+h27-ippan	u027	seishitsu	繰出金	123833	万円	15.1	12億3,833万円	kessan-h27-gaiyou	2	
+h28-ippan	u001	sainyu	町税	357226	万円	38.9	35億7,226万円	kessan-h28-gaiyou	1	
+h28-ippan	u002	sainyu-naka	自主財源	448356	万円	48.9	44億8,356万円	kessan-h28-gaiyou	1	
+h28-ippan	u003	sainyu-naka	依存財源	469384	万円	51.1	46億9,384万円	kessan-h28-gaiyou	1	
+h28-ippan	u004	sainyu	地方交付税	165859	万円	18.1	16億5,859万円	kessan-h28-gaiyou	1	
+h28-ippan	u005	sainyu	国庫支出金	95852	万円	10.4	9億5,852万円	kessan-h28-gaiyou	1	
+h28-ippan	u006	sainyu	町債	84190	万円	9.2	8億4,190万円	kessan-h28-gaiyou	1	
+h28-ippan	u007	sainyu	県支出金	68625	万円	7.5	6億8,625万円	kessan-h28-gaiyou	1	
+h28-ippan	u008	sainyu	繰越金	42851	万円	4.7	4億2,851万円	kessan-h28-gaiyou	1	
+h28-ippan	u009	sainyu	県税交付金	45863	万円	5.0	4億5,863万円	kessan-h28-gaiyou	1	
+h28-ippan	u010	sainyu	繰入金	4047	万円	0.4	4,047万円	kessan-h28-gaiyou	1	
+h28-ippan	u011	sainyu	その他	14876	万円	1.6	1億4,876万円	kessan-h28-gaiyou	1	
+h28-ippan	u012	sainyu	その他	8995	万円	1.0	8,995万円	kessan-h28-gaiyou	1	
+h28-ippan	u013	sainyu	分担金及び負担金	17006	万円	1.9	1億7,006万円	kessan-h28-gaiyou	1	
+h28-ippan	u014	sainyu	使用料及び手数料	12350	万円	1.3	1億2,350万円	kessan-h28-gaiyou	1	
+h28-ippan	u015	mokuteki	その他	21217	万円	2.5	2億1,217万円	kessan-h28-gaiyou	2	group は原典の画像で決めた
+h28-ippan	u016	seishitsu	その他	6040	万円	0.7	6,040万円	kessan-h28-gaiyou	2	group は原典の画像で決めた
+h28-ippan	u017	mokuteki	農林水産業費	44421	万円	5.2	4億4,421万円	kessan-h28-gaiyou	2	
+h28-ippan	u018	seishitsu	維持補修経費	7501	万円	0.9	7,501万円	kessan-h28-gaiyou	2	
+h28-ippan	u019	mokuteki	消防費	33892	万円	3.9	3億3,892万円	kessan-h28-gaiyou	2	
+h28-ippan	u020	mokuteki	民生費	286601	万円	33.3	28億6,601万円	kessan-h28-gaiyou	2	
+h28-ippan	u021	seishitsu	人件費	153748	万円	17.9	15億3,748万円	kessan-h28-gaiyou	2	
+h28-ippan	u022	seishitsu-naka	義務的経費	369360	万円	42.9	36億9,360万円	kessan-h28-gaiyou	2	
+h28-ippan	u023	seishitsu-naka	その他の経費	123840	万円	14.4	12億3,840万円	kessan-h28-gaiyou	2	
+h28-ippan	u024	seishitsu-naka	一般行政経費	244256	万円	28.4	24億4,256万円	kessan-h28-gaiyou	2	
+h28-ippan	u025	seishitsu	補助費等	106757	万円	12.4	10億6,757万円	kessan-h28-gaiyou	2	
+h28-ippan	u026	mokuteki	総務費	145843	万円	17.0	14億5,843万円	kessan-h28-gaiyou	2	
+h28-ippan	u027	seishitsu	扶助費	156415	万円	18.2	15億6,415万円	kessan-h28-gaiyou	2	
+h28-ippan	u028	mokuteki	衛生費	59498	万円	6.9	5億9,498万円	kessan-h28-gaiyou	2	
+h28-ippan	u029	seishitsu	物件費	129998	万円	15.1	12億9,998万円	kessan-h28-gaiyou	2	
+h28-ippan	u030	seishitsu-naka	投資的経費	122664	万円	14.3	12億2,664万円	kessan-h28-gaiyou	2	group は原典の画像で決めた
+h28-ippan	u031	mokuteki	教育費	130197	万円	15.1	13億197万円	kessan-h28-gaiyou	2	
+h28-ippan	u032	seishitsu	投資的経費	122664	万円	14.3	12億2,664万円	kessan-h28-gaiyou	2	group は原典の画像で決めた
+h28-ippan	u033	mokuteki	土木費	79254	万円	9.2	7億9,254万円	kessan-h28-gaiyou	2	
+h28-ippan	u034	seishitsu	公債費	59197	万円	6.8	5億9,197万円	kessan-h28-gaiyou	2	group は原典の画像で決めた
+h28-ippan	u035	mokuteki	公債費	59197	万円	6.9	5億9,197万円	kessan-h28-gaiyou	2	group は原典の画像で決めた
+h28-ippan	u036	seishitsu	繰出金	117800	万円	13.7	11億7,800万円	kessan-h28-gaiyou	2	
+r2-ippan	u001	sainyu	町税	357282	万円	30.1	35億7,282万円	kessan-r2-gaiyou	1	
+r2-ippan	u002	sainyu-naka	自主財源	457484	万円	38.6	45億7,484万円	kessan-r2-gaiyou	1	
+r2-ippan	u003	sainyu-naka	依存財源	727086	万円	61.4	72億7,086万円	kessan-r2-gaiyou	1	
+r2-ippan	u004	sainyu	繰入金	9421	万円	0.8	9,421万円	kessan-r2-gaiyou	1	
+r2-ippan	u005	sainyu	国庫支出金	357033	万円	30.2	35億7,033万円	kessan-r2-gaiyou	1	
+r2-ippan	u006	sainyu	町債	78328	万円	6.6	7億8,328万円	kessan-r2-gaiyou	1	
+r2-ippan	u007	sainyu	繰越金	49511	万円	4.2	4億9,511万円	kessan-r2-gaiyou	1	
+r2-ippan	u008	sainyu	県支出金	74298	万円	6.3	7億4,298万円	kessan-r2-gaiyou	1	
+r2-ippan	u009	sainyu	地方交付税	144569	万円	12.2	14億4,569万円	kessan-r2-gaiyou	1	
+r2-ippan	u010	sainyu	その他	11210	万円	0.9	1億1,210万円	kessan-r2-gaiyou	1	
+r2-ippan	u011	sainyu	県税交付金	61648	万円	5.2	6億1,648万円	kessan-r2-gaiyou	1	
+r2-ippan	u012	sainyu	分担金および負担金	11793	万円	1.0	1億1,793万円	kessan-r2-gaiyou	1	
+r2-ippan	u013	sainyu	その他	29477	万円	2.5	2億9,477万円	kessan-r2-gaiyou	1	
+r2-ippan	u014	seishitsu-naka	投資的経費	109071	万円	9.7	10億9,071万円	kessan-r2-gaiyou	2	
+r2-ippan	u015	seishitsu	補助費等	354993	万円	31.5	35億4,993万円	kessan-r2-gaiyou	2	
+r2-ippan	u016	seishitsu	扶助費	162760	万円	14.4	16億2,760万円	kessan-r2-gaiyou	2	
+r2-ippan	u017	seishitsu	物件費	125627	万円	11.1	12億5,627万円	kessan-r2-gaiyou	2	
+r2-ippan	u018	seishitsu	繰出金	85961	万円	7.6	8億5,961万円	kessan-r2-gaiyou	2	
+r2-ippan	u019	seishitsu	維持補修費	5705	万円	0.5	5,705万円	kessan-r2-gaiyou	2	
+r2-ippan	u020	seishitsu	人件費	202746	万円	18.0	20億2,746万円	kessan-r2-gaiyou	2	
+r2-ippan	u021	seishitsu-naka	一般行政経費	579324	万円	51.3	57億9,324万円	kessan-r2-gaiyou	2	
+r2-ippan	u022	seishitsu	公債費	75310	万円	6.6	7億5,310万円	kessan-r2-gaiyou	2	
+r2-ippan	u023	seishitsu-naka	義務的経費	440816	万円	39.0	44億816万円	kessan-r2-gaiyou	2	
+r2-ippan	u024	seishitsu	普通建設事業費	109071	万円	9.7	10億9,071万円	kessan-r2-gaiyou	2	
+r2-ippan	u025	seishitsu	その他経費	7038	万円	0.6	7,038万円	kessan-r2-gaiyou	2	
+r3-ippan	u001	sainyu	町税	372204	万円	33.5	37億2,204万円	kessan-r3-gaiyou	1	
+r3-ippan	u002	sainyu	繰入金	3907	万円	0.4	3,907万円	kessan-r3-gaiyou	1	
+r3-ippan	u003	sainyu	繰越金	55360	万円	5.0	5億5,360万円	kessan-r3-gaiyou	1	
+r3-ippan	u004	sainyu	分担金および負担金	12911	万円	1.2	1億2,911万円	kessan-r3-gaiyou	1	
+r3-ippan	u005	sainyu	その他	24675	万円	2.2	2億4,675万円	kessan-r3-gaiyou	1	
+r3-ippan	u006	sainyu	地方交付税	201526	万円	18.2	20億1,526万円	kessan-r3-gaiyou	1	
+r3-ippan	u007	sainyu	国庫支出金	194565	万円	17.5	19億4,565万円	kessan-r3-gaiyou	1	
+r3-ippan	u008	sainyu	県支出金	75062	万円	6.8	7億5,062万円	kessan-r3-gaiyou	1	
+r3-ippan	u009	sainyu	町債	82343	万円	7.4	8億2,343万円	kessan-r3-gaiyou	1	
+r3-ippan	u010	sainyu	県税交付金	71907	万円	6.5	7億1,907万円	kessan-r3-gaiyou	1	
+r3-ippan	u011	sainyu	その他	14656	万円	1.3	1億4,656万円	kessan-r3-gaiyou	1	
+r3-ippan	u012	sainyu-naka	自主財源	469057	万円	42.3	46億9,057万円	kessan-r3-gaiyou	1	
+r3-ippan	u013	sainyu-naka	依存財源	640059	万円	57.7	64億59万円	kessan-r3-gaiyou	1	
+r3-ippan	u014	seishitsu-naka	義務的経費	494875	万円	47.9	49億4,875万円	kessan-r3-gaiyou	2	
+r3-ippan	u015	seishitsu	人件費	207984	万円	20.1	20億7,984万円	kessan-r3-gaiyou	2	
+r3-ippan	u016	seishitsu	扶助費	209533	万円	20.3	20億9.533万円	kessan-r3-gaiyou	2	画像で確かめた：20億9.533万円
+r3-ippan	u017	seishitsu	公債費	77358	万円	7.5	7億7,358万円	kessan-r3-gaiyou	2	
+r3-ippan	u018	seishitsu	普通建設事業費	98628	万円	9.5	9億8,628万円	kessan-r3-gaiyou	2	
+r3-ippan	u019	seishitsu	物件費	136735	万円	13.2	13億6,735万円	kessan-r3-gaiyou	2	
+r3-ippan	u020	seishitsu	維持補修費	6495	万円	0.6	6,495万円	kessan-r3-gaiyou	2	
+r3-ippan	u021	seishitsu	災害復旧費	1777	万円	0.2	1,777万円	kessan-r3-gaiyou	2	
+r3-ippan	u022	seishitsu	補助費等	143256	万円	13.9	14億3,256万円	kessan-r3-gaiyou	2	
+r3-ippan	u023	seishitsu	繰出金	84468	万円	8.2	8億4,468万円	kessan-r3-gaiyou	2	
+r3-ippan	u024	seishitsu	その他経費	67363	万円	6.5	6億7,363万円	kessan-r3-gaiyou	2	
+r3-ippan	u025	seishitsu-naka	投資的経費	100405	万円	9.7	10億405万円	kessan-r3-gaiyou	2	
+r3-ippan	u026	seishitsu-naka	一般行政経費	438317	万円	42.4	43億8,317万円	kessan-r3-gaiyou	2	
+r4-ippan	u001	sainyu	町税	378411	万円	35.3	37億8,411万円	kessan-r4-gaiyou	1	
+r4-ippan	u002	sainyu	繰入金	2323	万円	0.2	2,323万円	kessan-r4-gaiyou	1	
+r4-ippan	u003	sainyu	繰越金	75519	万円	7.0	7億5,519万円	kessan-r4-gaiyou	1	
+r4-ippan	u004	sainyu	分担金および負担金	13160	万円	1.2	1億3,160万円	kessan-r4-gaiyou	1	
+r4-ippan	u005	sainyu	その他	30629	万円	2.9	3億629万円	kessan-r4-gaiyou	1	
+r4-ippan	u006	sainyu	地方交付税	195191	万円	18.2	19億5,191万円	kessan-r4-gaiyou	1	
+r4-ippan	u007	sainyu	国庫支出金	173035	万円	16.1	17億3,035万円	kessan-r4-gaiyou	1	
+r4-ippan	u008	sainyu	県支出金	85428	万円	8.0	8億5,428万円	kessan-r4-gaiyou	1	
+r4-ippan	u009	sainyu	町債	35791	万円	3.3	3億5,791万円	kessan-r4-gaiyou	1	
+r4-ippan	u010	sainyu	県税交付金	71217	万円	6.6	7億1,217万円	kessan-r4-gaiyou	1	
+r4-ippan	u011	sainyu	その他	11264	万円	1.1	1億1,264万円	kessan-r4-gaiyou	1	
+r4-ippan	u012	sainyu-naka	自主財源	500042	万円	46.6	50億42万円	kessan-r4-gaiyou	1	
+r4-ippan	u013	sainyu-naka	依存財源	571926	万円	53.4	57億1,926万円	kessan-r4-gaiyou	1	
+r4-ippan	u014	seishitsu-naka	義務的経費	472585	万円	48.3	47億2,585万円	kessan-r4-gaiyou	2	
+r4-ippan	u015	seishitsu	人件費	212999	万円	21.7	21億2,999万円	kessan-r4-gaiyou	2	
+r4-ippan	u016	seishitsu	扶助費	180973	万円	18.5	18億973万円	kessan-r4-gaiyou	2	
+r4-ippan	u017	seishitsu	公債費	78613	万円	8.0	7億8,613万円	kessan-r4-gaiyou	2	
+r4-ippan	u018	seishitsu	普通建設事業費	93114	万円	9.5	9億3,114万円	kessan-r4-gaiyou	2	
+r4-ippan	u019	seishitsu	物件費	145065	万円	14.8	14億5,065万円	kessan-r4-gaiyou	2	
+r4-ippan	u020	seishitsu	維持補修費	7443	万円	0.8	7,443万円	kessan-r4-gaiyou	2	
+r4-ippan	u021	seishitsu	災害復旧費	482	万円	0.1	482万円	kessan-r4-gaiyou	2	
+r4-ippan	u022	seishitsu	補助費等	154607	万円	15.8	15億4,607万円	kessan-r4-gaiyou	2	
+r4-ippan	u023	seishitsu	繰出金	85882	万円	8.8	8億5,882万円	kessan-r4-gaiyou	2	
+r4-ippan	u024	seishitsu	その他経費	20226	万円	2.1	2億226万円	kessan-r4-gaiyou	2	
+r4-ippan	u025	seishitsu-naka	投資的経費	93596	万円	9.6	9億3,596万円	kessan-r4-gaiyou	2	
+r4-ippan	u026	seishitsu-naka	一般行政経費	413223	万円	42.2	41億3,223万円	kessan-r4-gaiyou	2	
+r5-ippan	u001	sainyu	町税	375295	万円	34.9	37億5,295万円	kessan-r5-gaiyou	1	
+r5-ippan	u002	sainyu	繰入金	6294	万円	0.6	6,294万円	kessan-r5-gaiyou	1	
+r5-ippan	u003	sainyu	繰越金	92564	万円	8.6	9億2,564万円	kessan-r5-gaiyou	1	
+r5-ippan	u004	sainyu	分担金および負担金	18724	万円	1.7	1億8,724万円	kessan-r5-gaiyou	1	
+r5-ippan	u005	sainyu	その他	34016	万円	3.2	3億4,016万円	kessan-r5-gaiyou	1	
+r5-ippan	u006	sainyu	地方交付税	210406	万円	19.6	21億406万円	kessan-r5-gaiyou	1	
+r5-ippan	u007	sainyu	国庫支出金	152058	万円	14.2	15億2,058万円	kessan-r5-gaiyou	1	
+r5-ippan	u008	sainyu	県支出金	79879	万円	7.4	7億9,879万円	kessan-r5-gaiyou	1	
+r5-ippan	u009	sainyu	町債	25119	万円	2.3	2億5,119万円	kessan-r5-gaiyou	1	
+r5-ippan	u010	sainyu	県税交付金	68653	万円	6.4	6億8,653万円	kessan-r5-gaiyou	1	
+r5-ippan	u011	sainyu	その他	11120	万円	1.0	1億1,120万円	kessan-r5-gaiyou	1	
+r5-ippan	u012	sainyu-naka	自主財源	526893	万円	49.1	52億6,893万円	kessan-r5-gaiyou	1	
+r5-ippan	u013	sainyu-naka	依存財源	547235	万円	50.9	54億7,235万円	kessan-r5-gaiyou	1	
+r5-ippan	u014	seishitsu-naka	義務的経費	486304	万円	48.2	48億6,304万円	kessan-r5-gaiyou	2	
+r5-ippan	u015	seishitsu	人件費	221579	万円	22.0	22億1,579万円	kessan-r5-gaiyou	2	
+r5-ippan	u016	seishitsu	扶助費	188873	万円	18.7	18億8,873万円	kessan-r5-gaiyou	2	
+r5-ippan	u017	seishitsu	公債費	75852	万円	7.5	7億5,852万円	kessan-r5-gaiyou	2	
+r5-ippan	u018	seishitsu	普通建設事業費	94257	万円	9.3	9億4,257万円	kessan-r5-gaiyou	2	
+r5-ippan	u019	seishitsu	物件費	135657	万円	13.4	13億5,657万円	kessan-r5-gaiyou	2	
+r5-ippan	u020	seishitsu	維持補修費	8342	万円	0.8	8,342万円	kessan-r5-gaiyou	2	
+r5-ippan	u021	seishitsu	補助費等	173392	万円	17.2	17億3,392万円	kessan-r5-gaiyou	2	
+r5-ippan	u022	seishitsu	繰出金	78684	万円	7.8	7億8,684万円	kessan-r5-gaiyou	2	
+r5-ippan	u023	seishitsu	その他経費	32320	万円	3.2	3億2,320万円	kessan-r5-gaiyou	2	
+r5-ippan	u024	seishitsu-naka	投資的経費	94257	万円	9.3	9億4,257万円	kessan-r5-gaiyou	2	
+r5-ippan	u025	seishitsu-naka	一般行政経費	428395	万円	42.5	42億8,395万円	kessan-r5-gaiyou	2	
+r6-ippan	u001	sainyu	町税	402892	万円	36.6	40億2,892万円	kessan-r6-gaiyou	1	
+r6-ippan	u002	sainyu	繰入金	4832	万円	0.4	4,832万円	kessan-r6-gaiyou	1	
+r6-ippan	u003	sainyu	繰越金	65172	万円	5.9	6億5,172万円	kessan-r6-gaiyou	1	
+r6-ippan	u004	sainyu	その他	30349	万円	2.8	3億349万円	kessan-r6-gaiyou	1	
+r6-ippan	u005	sainyu	分担金および負担金	13335	万円	1.2	1億3,335万円	kessan-r6-gaiyou	1	
+r6-ippan	u006	sainyu	地方交付税	206667	万円	18.8	20億6,667万円	kessan-r6-gaiyou	1	
+r6-ippan	u007	sainyu	国庫支出金	167921	万円	15.3	16億7,921万円	kessan-r6-gaiyou	1	
+r6-ippan	u008	sainyu	県支出金	89009	万円	8.1	8億9,009万円	kessan-r6-gaiyou	1	
+r6-ippan	u009	sainyu	町債	24000	万円	2.2	2億4,000万円	kessan-r6-gaiyou	1	
+r6-ippan	u010	sainyu	県税交付金	75110	万円	6.58	7億5,110万円	kessan-r6-gaiyou	1	
+r6-ippan	u011	sainyu	その他	20778	万円	1.9	2億778万円	kessan-r6-gaiyou	1	
+r6-ippan	u012	sainyu-naka	依存財源	583485	万円	53.0	58億3,485万円	kessan-r6-gaiyou	1	
+r6-ippan	u013	sainyu-naka	自主財源	516580	万円	47.0	51億6,580万円	kessan-r6-gaiyou	1	
+r6-ippan	u014	seishitsu	その他経費	13044	万円	1.3	1億3,044万円	kessan-r6-gaiyou	2	
+r6-ippan	u015	seishitsu	維持補修費	7612	万円	0.7	7,612万円	kessan-r6-gaiyou	2	
+r6-ippan	u016	seishitsu	人件費	248129	万円	24.2	24億8,129万円	kessan-r6-gaiyou	2	
+r6-ippan	u017	seishitsu	扶助費	221093	万円	21.6	22億1,093万円	kessan-r6-gaiyou	2	
+r6-ippan	u018	seishitsu	公債費	74613	万円	7.3	7億4,613万円	kessan-r6-gaiyou	2	
+r6-ippan	u019	seishitsu	普通建設事業費	89213	万円	8.7	8億9,213万円	kessan-r6-gaiyou	2	
+r6-ippan	u020	seishitsu	補助費等	155694	万円	15.2	15億5,694万円	kessan-r6-gaiyou	2	
+r6-ippan	u021	seishitsu	繰出金	79053	万円	7.7	7億9,053万円	kessan-r6-gaiyou	2	
+r6-ippan	u022	seishitsu-naka	義務的経費	543835	万円	53.1	54億3,835万円	kessan-r6-gaiyou	2	
+r6-ippan	u023	seishitsu-naka	投資的経費	89213	万円	8.7	8億9,213万円	kessan-r6-gaiyou	2	
+r6-ippan	u024	seishitsu-naka	一般行政経費	390181	万円	38.1	39億181万円	kessan-r6-gaiyou	2	
+r6-ippan	u025	seishitsu	物件費	134778	万円	13.2	13億4,778万円	kessan-r6-gaiyou	2	

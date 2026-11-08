@@ -1616,7 +1616,8 @@ def audit_rows(t, result, old_ledger, today=TODAY, marks=None):
                 if human:   # 人の印の付いた行は変えない（13.10 の人の列を保つ）
                     for c in ("checked", "reviewer", "date", "note"):
                         new[c] = o[c]
-                elif other_mark:
+                elif other_mark or o["reviewer"] == "auto:ai":
+                    # 段2 の結果（auto:ai）と、段2 の H1 などの要人確認は、段1 を動かし直しても保つ。H2・H4 の印だけ付け直す
                     for c in ("checked", "reviewer", "date"):
                         new[c] = o[c]
                     new["note"] = join_note(marks.get((table, rw), ""), *rest)
@@ -1787,6 +1788,9 @@ def main(argv):
             kian(ROOT, argv[2])
             return 0
         return hosei_check(ROOT, argv[2])[0]
+    if len(argv) == 2 and argv[1] in ("kessan-kian", "kessan-check", "kessan-selftest"):
+        import kozo_kessan
+        return kozo_kessan.main(argv)
     print(__doc__)
     return 2
 
