@@ -409,19 +409,19 @@ hikaku-keijo-ken		r3	zaisei-r3-shiryoshu	04	R55C44	R53C44	zukei
 hikaku-keijo-ken		r4	zaisei-r4-shiryoshu	04	R55C44	R53C44	zukei	
 hikaku-keijo-ken		r5	zaisei-r5-shiryoshu	04	R55C44	R53C44	zukei	
 hikaku-keijo-ken		r6	zaisei-r6-shiryoshu	04	R55C44	R53C44	zukei	
-hikaku-shokuin-tokai		h27	zaisei-h27-shiryoshu	04			zukei	指標の名前の図形「人口1,000人当たり職員数」が 0 個
-hikaku-shokuin-tokai		h28	zaisei-h28-shiryoshu	04			zukei	指標の名前の図形「人口1,000人当たり職員数」が 0 個
-hikaku-shokuin-tokai		h29	zaisei-h29-shiryoshu	04			zukei	指標の名前の図形「人口1,000人当たり職員数」が 0 個
-hikaku-shokuin-tokai		h30	zaisei-h30-shiryoshu	04	R54C76	R54C64	zukei	図形の字「[9.31人]」から「[」「]」「%」を除いた「9.31人」を数に読めない（13.8 に除き方の決まりが無い）
-hikaku-shokuin-tokai		r1	zaisei-r1-shiryoshu	04	R54C76	R54C64	zukei	図形の字「[9.40人]」から「[」「]」「%」を除いた「9.40人」を数に読めない（13.8 に除き方の決まりが無い）
-hikaku-shokuin-tokai		r2	zaisei-r2-shiryoshu	04	R54C76	R54C64	zukei	図形の字「[9.67人]」から「[」「]」「%」を除いた「9.67人」を数に読めない（13.8 に除き方の決まりが無い）
-hikaku-shokuin-tokai		r3	zaisei-r3-shiryoshu	04	R54C76	R54C64	zukei	図形の字「[9.74人]」から「[」「]」「%」を除いた「9.74人」を数に読めない（13.8 に除き方の決まりが無い）
-hikaku-shokuin-tokai		r4	zaisei-r4-shiryoshu	04	R54C76	R54C64	zukei	図形の字「[9.67人]」から「[」「]」「%」を除いた「9.67人」を数に読めない（13.8 に除き方の決まりが無い）
-hikaku-shokuin-tokai		r5	zaisei-r5-shiryoshu	04	R54C76	R54C64	zukei	図形の字「[9.78人]」から「[」「]」「%」を除いた「9.78人」を数に読めない（13.8 に除き方の決まりが無い）
-hikaku-shokuin-tokai		r6	zaisei-r6-shiryoshu	04	R54C76	R54C64	zukei	図形の字「[10.19人]」から「[」「]」「%」を除いた「10.19人」を数に読めない（13.8 に除き方の決まりが無い）
-hikaku-shokuin-juni		h27	zaisei-h27-shiryoshu	04			zukei	指標の名前の図形「人口1,000人当たり職員数」が 0 個
-hikaku-shokuin-juni		h28	zaisei-h28-shiryoshu	04			zukei	指標の名前の図形「人口1,000人当たり職員数」が 0 個
-hikaku-shokuin-juni		h29	zaisei-h29-shiryoshu	04			zukei	指標の名前の図形「人口1,000人当たり職員数」が 0 個
+hikaku-shokuin-tokai		h27	zaisei-h27-shiryoshu	04	R54C23	R54C20	zukei	
+hikaku-shokuin-tokai		h28	zaisei-h28-shiryoshu	04	R54C23	R54C20	zukei	
+hikaku-shokuin-tokai		h29	zaisei-h29-shiryoshu	04	R54C75	R54C65	zukei	
+hikaku-shokuin-tokai		h30	zaisei-h30-shiryoshu	04	R54C76	R54C64	zukei	
+hikaku-shokuin-tokai		r1	zaisei-r1-shiryoshu	04	R54C76	R54C64	zukei	
+hikaku-shokuin-tokai		r2	zaisei-r2-shiryoshu	04	R54C76	R54C64	zukei	
+hikaku-shokuin-tokai		r3	zaisei-r3-shiryoshu	04	R54C76	R54C64	zukei	
+hikaku-shokuin-tokai		r4	zaisei-r4-shiryoshu	04	R54C76	R54C64	zukei	
+hikaku-shokuin-tokai		r5	zaisei-r5-shiryoshu	04	R54C76	R54C64	zukei	
+hikaku-shokuin-tokai		r6	zaisei-r6-shiryoshu	04	R54C76	R54C64	zukei	
+hikaku-shokuin-juni		h27	zaisei-h27-shiryoshu	04	R55C27	R53C27	zukei	
+hikaku-shokuin-juni		h28	zaisei-h28-shiryoshu	04	R55C27	R53C27	zukei	
+hikaku-shokuin-juni		h29	zaisei-h29-shiryoshu	04	R55C86	R53C86	zukei	
 hikaku-shokuin-juni		h30	zaisei-h30-shiryoshu	04	R55C86	R53C86	zukei	
 hikaku-shokuin-juni		r1	zaisei-r1-shiryoshu	04	R55C86	R53C86	zukei	
 hikaku-shokuin-juni		r2	zaisei-r2-shiryoshu	04	R55C86	R53C86	zukei	
@@ -429,9 +429,9 @@ hikaku-shokuin-juni		r3	zaisei-r3-shiryoshu	04	R55C86	R53C86	zukei
 hikaku-shokuin-juni		r4	zaisei-r4-shiryoshu	04	R55C86	R53C86	zukei	
 hikaku-shokuin-juni		r5	zaisei-r5-shiryoshu	04	R55C86	R53C86	zukei	
 hikaku-shokuin-juni		r6	zaisei-r6-shiryoshu	04	R55C86	R53C86	zukei	
-hikaku-shokuin-zenkoku		h27	zaisei-h27-shiryoshu	04			zukei	指標の名前の図形「人口1,000人当たり職員数」が 0 個
-hikaku-shokuin-zenkoku		h28	zaisei-h28-shiryoshu	04			zukei	指標の名前の図形「人口1,000人当たり職員数」が 0 個
-hikaku-shokuin-zenkoku		h29	zaisei-h29-shiryoshu	04			zukei	指標の名前の図形「人口1,000人当たり職員数」が 0 個
+hikaku-shokuin-zenkoku		h27	zaisei-h27-shiryoshu	04	R55C29	R53C29	zukei	
+hikaku-shokuin-zenkoku		h28	zaisei-h28-shiryoshu	04	R55C29	R53C29	zukei	
+hikaku-shokuin-zenkoku		h29	zaisei-h29-shiryoshu	04	R55C94	R53C94	zukei	
 hikaku-shokuin-zenkoku		h30	zaisei-h30-shiryoshu	04	R55C94	R53C94	zukei	
 hikaku-shokuin-zenkoku		r1	zaisei-r1-shiryoshu	04	R55C94	R53C94	zukei	
 hikaku-shokuin-zenkoku		r2	zaisei-r2-shiryoshu	04	R55C94	R53C94	zukei	
@@ -439,9 +439,9 @@ hikaku-shokuin-zenkoku		r3	zaisei-r3-shiryoshu	04	R55C94	R53C94	zukei
 hikaku-shokuin-zenkoku		r4	zaisei-r4-shiryoshu	04	R55C94	R53C94	zukei	
 hikaku-shokuin-zenkoku		r5	zaisei-r5-shiryoshu	04	R55C94	R53C94	zukei	
 hikaku-shokuin-zenkoku		r6	zaisei-r6-shiryoshu	04	R55C94	R53C94	zukei	
-hikaku-shokuin-ken		h27	zaisei-h27-shiryoshu	04			zukei	指標の名前の図形「人口1,000人当たり職員数」が 0 個
-hikaku-shokuin-ken		h28	zaisei-h28-shiryoshu	04			zukei	指標の名前の図形「人口1,000人当たり職員数」が 0 個
-hikaku-shokuin-ken		h29	zaisei-h29-shiryoshu	04			zukei	指標の名前の図形「人口1,000人当たり職員数」が 0 個
+hikaku-shokuin-ken		h27	zaisei-h27-shiryoshu	04	R55C31	R53C31	zukei	
+hikaku-shokuin-ken		h28	zaisei-h28-shiryoshu	04	R55C31	R53C31	zukei	
+hikaku-shokuin-ken		h29	zaisei-h29-shiryoshu	04	R55C101	R53C101	zukei	
 hikaku-shokuin-ken		h30	zaisei-h30-shiryoshu	04	R55C101	R53C101	zukei	
 hikaku-shokuin-ken		r1	zaisei-r1-shiryoshu	04	R55C101	R53C101	zukei	
 hikaku-shokuin-ken		r2	zaisei-r2-shiryoshu	04	R55C101	R53C101	zukei	
@@ -569,16 +569,16 @@ hikaku-rasupairesu-zenkoku-choson		r3	zaisei-r3-shiryoshu	04	R77C101	R76C101	zuk
 hikaku-rasupairesu-zenkoku-choson		r4	zaisei-r4-shiryoshu	04	R77C101	R76C101	zukei	
 hikaku-rasupairesu-zenkoku-choson		r5	zaisei-r5-shiryoshu	04	R77C101	R76C101	zukei	
 hikaku-rasupairesu-zenkoku-choson		r6	zaisei-r6-shiryoshu	04	R77C101	R76C101	zukei	
-hikaku-jinkenhi-tokai		h27	zaisei-h27-shiryoshu	04	R76C7	R76C2	zukei	図形の字「[126,433円]」から「[」「]」「%」を除いた「126,433円」を数に読めない（13.8 に除き方の決まりが無い）
-hikaku-jinkenhi-tokai		h28	zaisei-h28-shiryoshu	04	R76C7	R76C2	zukei	図形の字「[128,690円]」から「[」「]」「%」を除いた「128,690円」を数に読めない（13.8 に除き方の決まりが無い）
-hikaku-jinkenhi-tokai		h29	zaisei-h29-shiryoshu	04	R76C20	R76C4	zukei	図形の字「[129,100円]」から「[」「]」「%」を除いた「129,100円」を数に読めない（13.8 に除き方の決まりが無い）
-hikaku-jinkenhi-tokai		h30	zaisei-h30-shiryoshu	04	R76C20	R76C4	zukei	図形の字「[130,943円]」から「[」「]」「%」を除いた「130,943円」を数に読めない（13.8 に除き方の決まりが無い）
-hikaku-jinkenhi-tokai		r1	zaisei-r1-shiryoshu	04	R76C20	R76C4	zukei	図形の字「[135,433円]」から「[」「]」「%」を除いた「135,433円」を数に読めない（13.8 に除き方の決まりが無い）
-hikaku-jinkenhi-tokai		r2	zaisei-r2-shiryoshu	04	R76C20	R76C4	zukei	図形の字「[152,006円]」から「[」「]」「%」を除いた「152,006円」を数に読めない（13.8 に除き方の決まりが無い）
-hikaku-jinkenhi-tokai		r3	zaisei-r3-shiryoshu	04	R76C20	R76C4	zukei	図形の字「[161,329円]」から「[」「]」「%」を除いた「161,329円」を数に読めない（13.8 に除き方の決まりが無い）
-hikaku-jinkenhi-tokai		r4	zaisei-r4-shiryoshu	04	R76C20	R76C4	zukei	図形の字「[168,611円]」から「[」「]」「%」を除いた「168,611円」を数に読めない（13.8 に除き方の決まりが無い）
-hikaku-jinkenhi-tokai		r5	zaisei-r5-shiryoshu	04	R76C20	R76C4	zukei	図形の字「[169,404円]」から「[」「]」「%」を除いた「169,404円」を数に読めない（13.8 に除き方の決まりが無い）
-hikaku-jinkenhi-tokai		r6	zaisei-r6-shiryoshu	04	R76C20	R76C4	zukei	図形の字「[182,036円]」から「[」「]」「%」を除いた「182,036円」を数に読めない（13.8 に除き方の決まりが無い）
+hikaku-jinkenhi-tokai		h27	zaisei-h27-shiryoshu	04	R76C7	R76C2	zukei	
+hikaku-jinkenhi-tokai		h28	zaisei-h28-shiryoshu	04	R76C7	R76C2	zukei	
+hikaku-jinkenhi-tokai		h29	zaisei-h29-shiryoshu	04	R76C20	R76C4	zukei	
+hikaku-jinkenhi-tokai		h30	zaisei-h30-shiryoshu	04	R76C20	R76C4	zukei	
+hikaku-jinkenhi-tokai		r1	zaisei-r1-shiryoshu	04	R76C20	R76C4	zukei	
+hikaku-jinkenhi-tokai		r2	zaisei-r2-shiryoshu	04	R76C20	R76C4	zukei	
+hikaku-jinkenhi-tokai		r3	zaisei-r3-shiryoshu	04	R76C20	R76C4	zukei	
+hikaku-jinkenhi-tokai		r4	zaisei-r4-shiryoshu	04	R76C20	R76C4	zukei	
+hikaku-jinkenhi-tokai		r5	zaisei-r5-shiryoshu	04	R76C20	R76C4	zukei	
+hikaku-jinkenhi-tokai		r6	zaisei-r6-shiryoshu	04	R76C20	R76C4	zukei	
 hikaku-jinkenhi-juni		h27	zaisei-h27-shiryoshu	04	R77C9	R76C9	zukei	
 hikaku-jinkenhi-juni		h28	zaisei-h28-shiryoshu	04	R77C9	R76C9	zukei	
 hikaku-jinkenhi-juni		h29	zaisei-h29-shiryoshu	04	R77C29	R76C29	zukei	
