@@ -889,7 +889,7 @@ def audit(t, res, old_ledger, today=TODAY):
                 if human:
                     for c in ("checked", "reviewer", "date", "note"):
                         new[c] = o[c]
-                elif other_mark:
+                elif other_mark or o["reviewer"] == "auto:ai":  # 段2 の結果と要人確認は保ち、H2・H4 の印だけ付け直す
                     for c in ("checked", "reviewer", "date"):
                         new[c] = o[c]
                     new["note"] = join_note(marks.get((table, rw), ""), *rest)
