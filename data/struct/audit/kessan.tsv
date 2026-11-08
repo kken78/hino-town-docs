@@ -3,93 +3,93 @@ key	table	row	cols	value	unit	source	checked	reviewer	date	note
 b2eacd6d66eb6815	kessan-gaku	h24-ippan/saishutsu	value	820870	万円	kessan-h24-gaiyou p.1	✓	auto:pdftext	2026-11-08	
 b42e75918dbba897	kessan-gaku	h24-ippan/sashihiki	value	40682	万円	kessan-h24-gaiyou p.1	✓	auto:pdftext	2026-11-08	
 be84b3316fdd4d4d	kessan-gaku	h24-ippan/jisshitsu	value	39166	万円	kessan-h24-gaiyou p.1	✓	auto:pdftext	2026-11-08	要人確認:H4 2点 億・万の字を万円に読んだ
-5a3a9593d0d22fb3	kessan-gaku	h24-jutaku/sainyu	value	261	万円	kessan-h24-gaiyou p.6	✓	auto:pdftext	2026-11-08	要人確認:H4 2点 億・万の字を万円に読んだ
+5a3a9593d0d22fb3	kessan-gaku	h24-jutaku/sainyu	value	261	万円	kessan-h24-gaiyou p.6	✓	auto:pdftext	2026-11-08	
 5c90da58656000db	kessan-gaku	h24-jutaku/saishutsu	value	236	万円	kessan-h24-gaiyou p.6	✓	auto:pdftext	2026-11-08	
-b6e64ebc46f1d5f2	kessan-gaku	h24-kaigo/sainyu	value	159368	万円	kessan-h24-gaiyou p.6	✓	auto:pdftext	2026-11-08	要人確認:H4 2点 億・万の字を万円に読んだ
+b6e64ebc46f1d5f2	kessan-gaku	h24-kaigo/sainyu	value	159368	万円	kessan-h24-gaiyou p.6	✓	auto:pdftext	2026-11-08	
 41e99ab2e9422dc3	kessan-gaku	h24-kaigo/saishutsu	value	156626	万円	kessan-h24-gaiyou p.6	✓	auto:pdftext	2026-11-08	
-265a283cd1088ad0	kessan-gaku	h24-kansui/sainyu	value	1138	万円	kessan-h24-gaiyou p.6	✓	auto:pdftext	2026-11-08	要人確認:H4 2点 億・万の字を万円に読んだ
+265a283cd1088ad0	kessan-gaku	h24-kansui/sainyu	value	1138	万円	kessan-h24-gaiyou p.6	✓	auto:pdftext	2026-11-08	
 845462ae76f8aecc	kessan-gaku	h24-kansui/saishutsu	value	1132	万円	kessan-h24-gaiyou p.6	✓	auto:pdftext	2026-11-08	
-4fdf4d38956893d3	kessan-gaku	h24-koki/sainyu	value	21535	万円	kessan-h24-gaiyou p.6	✓	auto:pdftext	2026-11-08	要人確認:H4 2点 億・万の字を万円に読んだ
+4fdf4d38956893d3	kessan-gaku	h24-koki/sainyu	value	21535	万円	kessan-h24-gaiyou p.6	✓	auto:pdftext	2026-11-08	
 62e63d6d156da8af	kessan-gaku	h24-koki/saishutsu	value	21211	万円	kessan-h24-gaiyou p.6	✓	auto:pdftext	2026-11-08	
-56c96537032accd1	kessan-gaku	h24-kokuho/sainyu	value	223159	万円	kessan-h24-gaiyou p.6	✓	auto:pdftext	2026-11-08	要人確認:H4 2点 億・万の字を万円に読んだ
+56c96537032accd1	kessan-gaku	h24-kokuho/sainyu	value	223159	万円	kessan-h24-gaiyou p.6	✓	auto:pdftext	2026-11-08	
 f5cfe0c399a2c58c	kessan-gaku	h24-kokuho/saishutsu	value	211467	万円	kessan-h24-gaiyou p.6	✓	auto:pdftext	2026-11-08	
-58f96522981a7ebe	kessan-gaku	h24-koshita/sainyu	value	93559	万円	kessan-h24-gaiyou p.6	✓	auto:pdftext	2026-11-08	要人確認:H4 2点 億・万の字を万円に読んだ
+58f96522981a7ebe	kessan-gaku	h24-koshita/sainyu	value	93559	万円	kessan-h24-gaiyou p.6	✓	auto:pdftext	2026-11-08	
 c545e2b62c504c13	kessan-gaku	h24-koshita/saishutsu	value	93536	万円	kessan-h24-gaiyou p.6	✓	auto:pdftext	2026-11-08	
-c2828e84722462e6	kessan-gaku	h24-nishiyama/sainyu	value	269	万円	kessan-h24-gaiyou p.6	✓	auto:pdftext	2026-11-08	要人確認:H4 2点 億・万の字を万円に読んだ
+c2828e84722462e6	kessan-gaku	h24-nishiyama/sainyu	value	269	万円	kessan-h24-gaiyou p.6	✓	auto:pdftext	2026-11-08	
 dd89cd647a68a026	kessan-gaku	h24-nishiyama/saishutsu	value	259	万円	kessan-h24-gaiyou p.6	✓	auto:pdftext	2026-11-08	
-8e71ae170346c268	kessan-gaku	h24-noshu/sainyu	value	23524	万円	kessan-h24-gaiyou p.6	✓	auto:pdftext	2026-11-08	要人確認:H4 2点 億・万の字を万円に読んだ
+8e71ae170346c268	kessan-gaku	h24-noshu/sainyu	value	23524	万円	kessan-h24-gaiyou p.6	✓	auto:pdftext	2026-11-08	
 aa43f3bf2a3e1978	kessan-gaku	h24-noshu/saishutsu	value	23515	万円	kessan-h24-gaiyou p.6	✓	auto:pdftext	2026-11-08	
-c73e9f8b16d32207	kessan-gaku	h24-roken/sainyu	value	7199	万円	kessan-h24-gaiyou p.6	✓	auto:pdftext	2026-11-08	要人確認:H4 2点 億・万の字を万円に読んだ
+c73e9f8b16d32207	kessan-gaku	h24-roken/sainyu	value	7199	万円	kessan-h24-gaiyou p.6	✓	auto:pdftext	2026-11-08	
 8ce84e4ce9333ab0	kessan-gaku	h24-roken/saishutsu	value	7195	万円	kessan-h24-gaiyou p.6	✓	auto:pdftext	2026-11-08	
 6c0b7693aea785f7	kessan-gaku	h24-suido/shueki-shunyu	value	65381	万円	kessan-h24-gaiyou p.6	✓	auto:pdftext	2026-11-08	
 ac9c1763eef8bfc8	kessan-gaku	h24-suido/shueki-shishutsu	value	56310	万円	kessan-h24-gaiyou p.6	✓	auto:pdftext	2026-11-08	
 73f1db8a4ce52c2e	kessan-gaku	h24-suido/shihon-shunyu	value	12984	万円	kessan-h24-gaiyou p.6	✓	auto:pdftext	2026-11-08	
-55e1cf2f4420526d	kessan-gaku	h24-suido/shihon-shishutsu	value	25248	万円	kessan-h24-gaiyou p.6	✓	auto:pdftext	2026-11-08	要人確認:H4 2点 億・万の字を万円に読んだ
+55e1cf2f4420526d	kessan-gaku	h24-suido/shihon-shishutsu	value	25248	万円	kessan-h24-gaiyou p.6	✓	auto:pdftext	2026-11-08	
 bd40f881c874786b	kessan-gaku	h25-ippan/sainyu	value	1032547	万円	kessan-h25-gaiyou p.1	✓	auto:pdftext	2026-11-08	
 5a4004c86b4f5c6e	kessan-gaku	h25-ippan/saishutsu	value	992660	万円	kessan-h25-gaiyou p.1	✓	auto:pdftext	2026-11-08	
 6b6ebe0025f47af5	kessan-gaku	h25-ippan/sashihiki	value	39887	万円	kessan-h25-gaiyou p.1	✓	auto:pdftext	2026-11-08	
 8ffa93b0cb5b7d62	kessan-gaku	h25-ippan/jisshitsu	value	23205	万円	kessan-h25-gaiyou p.1	✓	auto:pdftext	2026-11-08	要人確認:H4 2点 億・万の字を万円に読んだ
-e3c0fbbcfb56a609	kessan-gaku	h25-jutaku/sainyu	value	1272	万円	kessan-h25-gaiyou p.6	✓	auto:pdftext	2026-11-08	要人確認:H4 2点 億・万の字を万円に読んだ
+e3c0fbbcfb56a609	kessan-gaku	h25-jutaku/sainyu	value	1272	万円	kessan-h25-gaiyou p.6	✓	auto:pdftext	2026-11-08	
 404c12172fe4a6b0	kessan-gaku	h25-jutaku/saishutsu	value	1272	万円	kessan-h25-gaiyou p.6	✓	auto:pdftext	2026-11-08	
-7c271ac8fbf2266a	kessan-gaku	h25-kaigo/sainyu	value	172881	万円	kessan-h25-gaiyou p.6	✓	auto:pdftext	2026-11-08	要人確認:H4 2点 億・万の字を万円に読んだ
+7c271ac8fbf2266a	kessan-gaku	h25-kaigo/sainyu	value	172881	万円	kessan-h25-gaiyou p.6	✓	auto:pdftext	2026-11-08	
 3fd212c435e7567f	kessan-gaku	h25-kaigo/saishutsu	value	170195	万円	kessan-h25-gaiyou p.6	✓	auto:pdftext	2026-11-08	
-74767e8319884967	kessan-gaku	h25-kansui/sainyu	value	1178	万円	kessan-h25-gaiyou p.6	✓	auto:pdftext	2026-11-08	要人確認:H4 2点 億・万の字を万円に読んだ
+74767e8319884967	kessan-gaku	h25-kansui/sainyu	value	1178	万円	kessan-h25-gaiyou p.6	✓	auto:pdftext	2026-11-08	
 623dc326d5e03031	kessan-gaku	h25-kansui/saishutsu	value	1170	万円	kessan-h25-gaiyou p.6	✓	auto:pdftext	2026-11-08	
-cc8e0e569f67cedf	kessan-gaku	h25-koki/sainyu	value	21612	万円	kessan-h25-gaiyou p.6	✓	auto:pdftext	2026-11-08	要人確認:H4 2点 億・万の字を万円に読んだ
+cc8e0e569f67cedf	kessan-gaku	h25-koki/sainyu	value	21612	万円	kessan-h25-gaiyou p.6	✓	auto:pdftext	2026-11-08	
 bb3e1a252a8c6ec8	kessan-gaku	h25-koki/saishutsu	value	21355	万円	kessan-h25-gaiyou p.6	✓	auto:pdftext	2026-11-08	
-33bd66058e414ae6	kessan-gaku	h25-kokuho/sainyu	value	209715	万円	kessan-h25-gaiyou p.6	✓	auto:pdftext	2026-11-08	要人確認:H4 2点 億・万の字を万円に読んだ
+33bd66058e414ae6	kessan-gaku	h25-kokuho/sainyu	value	209715	万円	kessan-h25-gaiyou p.6	✓	auto:pdftext	2026-11-08	
 63eb96587de5ea72	kessan-gaku	h25-kokuho/saishutsu	value	205810	万円	kessan-h25-gaiyou p.6	✓	auto:pdftext	2026-11-08	
-bf9cfa49967151d8	kessan-gaku	h25-koshita/sainyu	value	106801	万円	kessan-h25-gaiyou p.6	✓	auto:pdftext	2026-11-08	要人確認:H4 2点 億・万の字を万円に読んだ
+bf9cfa49967151d8	kessan-gaku	h25-koshita/sainyu	value	106801	万円	kessan-h25-gaiyou p.6	✓	auto:pdftext	2026-11-08	
 c17b69c9e1c07286	kessan-gaku	h25-koshita/saishutsu	value	106753	万円	kessan-h25-gaiyou p.6	✓	auto:pdftext	2026-11-08	
-1bf2c568ff4f3a1a	kessan-gaku	h25-nishiyama/sainyu	value	334	万円	kessan-h25-gaiyou p.6	✓	auto:pdftext	2026-11-08	要人確認:H4 2点 億・万の字を万円に読んだ
+1bf2c568ff4f3a1a	kessan-gaku	h25-nishiyama/sainyu	value	334	万円	kessan-h25-gaiyou p.6	✓	auto:pdftext	2026-11-08	
 b67c667af7ed8683	kessan-gaku	h25-nishiyama/saishutsu	value	320	万円	kessan-h25-gaiyou p.6	✓	auto:pdftext	2026-11-08	
-ae45cc7dbf89fd55	kessan-gaku	h25-noshu/sainyu	value	27933	万円	kessan-h25-gaiyou p.6	✓	auto:pdftext	2026-11-08	要人確認:H4 2点 億・万の字を万円に読んだ
+ae45cc7dbf89fd55	kessan-gaku	h25-noshu/sainyu	value	27933	万円	kessan-h25-gaiyou p.6	✓	auto:pdftext	2026-11-08	
 f5a047fa188e6dc9	kessan-gaku	h25-noshu/saishutsu	value	27500	万円	kessan-h25-gaiyou p.6	✓	auto:pdftext	2026-11-08	
-f92628ff47122797	kessan-gaku	h25-roken/sainyu	value	66663	万円	kessan-h25-gaiyou p.6	✓	auto:pdftext	2026-11-08	要人確認:H4 2点 億・万の字を万円に読んだ
+f92628ff47122797	kessan-gaku	h25-roken/sainyu	value	66663	万円	kessan-h25-gaiyou p.6	✓	auto:pdftext	2026-11-08	
 2461be9538e103c7	kessan-gaku	h25-roken/saishutsu	value	66663	万円	kessan-h25-gaiyou p.6	✓	auto:pdftext	2026-11-08	
 94a185de1523b8b5	kessan-gaku	h25-suido/shueki-shunyu	value	58666	万円	kessan-h25-gaiyou p.6	✓	auto:pdftext	2026-11-08	
 44c05e365f0156b6	kessan-gaku	h25-suido/shueki-shishutsu	value	54094	万円	kessan-h25-gaiyou p.6	✓	auto:pdftext	2026-11-08	
 38b53504ac92636f	kessan-gaku	h25-suido/shihon-shunyu	value	18601	万円	kessan-h25-gaiyou p.6	✓	auto:pdftext	2026-11-08	
-596ba52af888708b	kessan-gaku	h25-suido/shihon-shishutsu	value	18701	万円	kessan-h25-gaiyou p.6	✓	auto:pdftext	2026-11-08	要人確認:H4 2点 億・万の字を万円に読んだ
+596ba52af888708b	kessan-gaku	h25-suido/shihon-shishutsu	value	18701	万円	kessan-h25-gaiyou p.6	✓	auto:pdftext	2026-11-08	
 f6a612e30d45ddf3	kessan-gaku	h26-ippan/sainyu	value	895977	万円	kessan-h26-gaiyou p.1	✓	auto:pdftext	2026-11-08	
 6ea42d3544c8286d	kessan-gaku	h26-ippan/saishutsu	value	848957	万円	kessan-h26-gaiyou p.1	✓	auto:pdftext	2026-11-08	
 1410e702186c318d	kessan-gaku	h26-ippan/sashihiki	value	47020	万円	kessan-h26-gaiyou p.1	✓	auto:pdftext	2026-11-08	
 f495b33705001df8	kessan-gaku	h26-ippan/jisshitsu	value	42269	万円	kessan-h26-gaiyou p.1	✓	auto:pdftext	2026-11-08	要人確認:H4 2点 億・万の字を万円に読んだ
-5cd67357a532bb16	kessan-gaku	h26-kaigo/sainyu	value	179516	万円	kessan-h26-gaiyou p.2	✓	auto:pdftext	2026-11-08	要人確認:H4 2点 億・万の字を万円に読んだ
+5cd67357a532bb16	kessan-gaku	h26-kaigo/sainyu	value	179516	万円	kessan-h26-gaiyou p.2	✓	auto:pdftext	2026-11-08	
 4a2b1f3916d5cf79	kessan-gaku	h26-kaigo/saishutsu	value	176696	万円	kessan-h26-gaiyou p.2	✓	auto:pdftext	2026-11-08	
-41597eaf24ae934f	kessan-gaku	h26-kansui/sainyu	value	1278	万円	kessan-h26-gaiyou p.2	✓	auto:pdftext	2026-11-08	要人確認:H4 2点 億・万の字を万円に読んだ
+41597eaf24ae934f	kessan-gaku	h26-kansui/sainyu	value	1278	万円	kessan-h26-gaiyou p.2	✓	auto:pdftext	2026-11-08	
 709e6efced9c33fa	kessan-gaku	h26-kansui/saishutsu	value	1276	万円	kessan-h26-gaiyou p.2	✓	auto:pdftext	2026-11-08	
-7d5a2ed127f88daa	kessan-gaku	h26-koki/sainyu	value	23277	万円	kessan-h26-gaiyou p.2	✓	auto:pdftext	2026-11-08	要人確認:H4 2点 億・万の字を万円に読んだ
+7d5a2ed127f88daa	kessan-gaku	h26-koki/sainyu	value	23277	万円	kessan-h26-gaiyou p.2	✓	auto:pdftext	2026-11-08	
 67ae2ef91da423e9	kessan-gaku	h26-koki/saishutsu	value	22963	万円	kessan-h26-gaiyou p.2	✓	auto:pdftext	2026-11-08	
-0b9d116405ff5ff3	kessan-gaku	h26-kokuho/sainyu	value	221215	万円	kessan-h26-gaiyou p.2	✓	auto:pdftext	2026-11-08	要人確認:H4 2点 億・万の字を万円に読んだ
+0b9d116405ff5ff3	kessan-gaku	h26-kokuho/sainyu	value	221215	万円	kessan-h26-gaiyou p.2	✓	auto:pdftext	2026-11-08	
 e02cce1cea2ee406	kessan-gaku	h26-kokuho/saishutsu	value	215135	万円	kessan-h26-gaiyou p.2	✓	auto:pdftext	2026-11-08	
-382e629046c1d998	kessan-gaku	h26-koshita/sainyu	value	81885	万円	kessan-h26-gaiyou p.2	✓	auto:pdftext	2026-11-08	要人確認:H4 2点 億・万の字を万円に読んだ
+382e629046c1d998	kessan-gaku	h26-koshita/sainyu	value	81885	万円	kessan-h26-gaiyou p.2	✓	auto:pdftext	2026-11-08	
 ac48af85a241c473	kessan-gaku	h26-koshita/saishutsu	value	81856	万円	kessan-h26-gaiyou p.2	✓	auto:pdftext	2026-11-08	
-4099717533c29d66	kessan-gaku	h26-nishiyama/sainyu	value	230	万円	kessan-h26-gaiyou p.2	✓	auto:pdftext	2026-11-08	要人確認:H4 2点 億・万の字を万円に読んだ
+4099717533c29d66	kessan-gaku	h26-nishiyama/sainyu	value	230	万円	kessan-h26-gaiyou p.2	✓	auto:pdftext	2026-11-08	
 2c6fe310208d13a8	kessan-gaku	h26-nishiyama/saishutsu	value	194	万円	kessan-h26-gaiyou p.2	✓	auto:pdftext	2026-11-08	
-74aa517008f1da84	kessan-gaku	h26-noshu/sainyu	value	18940	万円	kessan-h26-gaiyou p.2	✓	auto:pdftext	2026-11-08	要人確認:H4 2点 億・万の字を万円に読んだ
+74aa517008f1da84	kessan-gaku	h26-noshu/sainyu	value	18940	万円	kessan-h26-gaiyou p.2	✓	auto:pdftext	2026-11-08	
 7af6685bcc7c282e	kessan-gaku	h26-noshu/saishutsu	value	18096	万円	kessan-h26-gaiyou p.2	✓	auto:pdftext	2026-11-08	
 12a3f6ea74cce03d	kessan-gaku	h26-suido/shueki-shunyu	value	65743	万円	kessan-h26-gaiyou p.2	✓	auto:pdftext	2026-11-08	
 f67d05a94765d5ec	kessan-gaku	h26-suido/shueki-shishutsu	value	59589	万円	kessan-h26-gaiyou p.2	✓	auto:pdftext	2026-11-08	
 e327d8306fcd8974	kessan-gaku	h26-suido/shihon-shunyu	value	7439	万円	kessan-h26-gaiyou p.2	✓	auto:pdftext	2026-11-08	
-7b84c60e25cac733	kessan-gaku	h26-suido/shihon-shishutsu	value	14473	万円	kessan-h26-gaiyou p.2	✓	auto:pdftext	2026-11-08	要人確認:H4 2点 億・万の字を万円に読んだ
+7b84c60e25cac733	kessan-gaku	h26-suido/shihon-shishutsu	value	14473	万円	kessan-h26-gaiyou p.2	✓	auto:pdftext	2026-11-08	
 ea79f00b06323048	kessan-gaku	h27-ippan/sainyu	value	865018	万円	kessan-h27-gaiyou p.1	✓	auto:pdftext	2026-11-08	
 9984eb53617e4e49	kessan-gaku	h27-ippan/saishutsu	value	822167	万円	kessan-h27-gaiyou p.1	✓	auto:pdftext	2026-11-08	
 6bb6ff0243c41394	kessan-gaku	h27-ippan/sashihiki	value	42851	万円	kessan-h27-gaiyou p.1	✓	auto:pdftext	2026-11-08	
-9b3aa0c61fe0c7fe	kessan-gaku	h27-ippan/jisshitsu	value	38565	万円	kessan-h27-gaiyou p.1	✓	auto:pdftext	2026-11-08	要人確認:H4 2点 億・万の字を万円に読んだ
-7ee14fc8a2788c79	kessan-gaku	h27-kaigo/sainyu	value	191044	万円	kessan-h27-gaiyou p.1	✓	auto:pdftext	2026-11-08	要人確認:H4 3点 億・万の字を万円に読んだ・別の出典と丸めの範囲でしか合わない
+9b3aa0c61fe0c7fe	kessan-gaku	h27-ippan/jisshitsu	value	38565	万円	kessan-h27-gaiyou p.1	✓	auto:pdftext	2026-11-08	
+7ee14fc8a2788c79	kessan-gaku	h27-kaigo/sainyu	value	191044	万円	kessan-h27-gaiyou p.1	✓	auto:pdftext	2026-11-08	
 d4338d84d89b165b	kessan-gaku	h27-kaigo/saishutsu	value	186946	万円	kessan-h27-gaiyou p.1	✓	auto:pdftext	2026-11-08	
 22e8da92cb2597ba	kessan-gaku	h27-kaigo/sashihiki	value	41	百万円	zaisei-h27-shiryoshu 03!R29C27	✓	auto:pdftext	2026-11-08	
 06aedb397278e366	kessan-gaku	h27-kaigo/jisshitsu	value	41	百万円	zaisei-h27-shiryoshu 03!R29C32	✓	auto:pdftext	2026-11-08	
-163f89dfe0604499	kessan-gaku	h27-kansui/sainyu	value	1283	万円	kessan-h27-gaiyou p.2	✓	auto:pdftext	2026-11-08	要人確認:H4 3点 億・万の字を万円に読んだ・別の出典と丸めの範囲でしか合わない
+163f89dfe0604499	kessan-gaku	h27-kansui/sainyu	value	1283	万円	kessan-h27-gaiyou p.2	✓	auto:pdftext	2026-11-08	
 f4145504894b47db	kessan-gaku	h27-kansui/saishutsu	value	1276	万円	kessan-h27-gaiyou p.2	✓	auto:pdftext	2026-11-08	
 2140d20477467173	kessan-gaku	h27-kansui/sashihiki	value	0	百万円	zaisei-h27-shiryoshu 03!R32C27	✓	auto:pdftext	2026-11-08	
 666f7b0a81f9fcf7	kessan-gaku	h27-kansui/jisshitsu	value	0	百万円	zaisei-h27-shiryoshu 03!R32C32	✓	auto:pdftext	2026-11-08	
-702ecbb0b7e57d45	kessan-gaku	h27-koki/sainyu	value	23418	万円	kessan-h27-gaiyou p.2	✓	auto:pdftext	2026-11-08	要人確認:H4 3点 億・万の字を万円に読んだ・別の出典と丸めの範囲でしか合わない
+702ecbb0b7e57d45	kessan-gaku	h27-koki/sainyu	value	23418	万円	kessan-h27-gaiyou p.2	✓	auto:pdftext	2026-11-08	
 caa9a917f2f8a538	kessan-gaku	h27-koki/saishutsu	value	23160	万円	kessan-h27-gaiyou p.2	✓	auto:pdftext	2026-11-08	
 6b2b759997714156	kessan-gaku	h27-koki/sashihiki	value	3	百万円	zaisei-h27-shiryoshu 03!R30C27	✓	auto:pdftext	2026-11-08	
 e115326c8b04abf5	kessan-gaku	h27-koki/jisshitsu	value	3	百万円	zaisei-h27-shiryoshu 03!R30C32	✓	auto:pdftext	2026-11-08	
-351ae914cc47316e	kessan-gaku	h27-kokuho/sainyu	value	250832	万円	kessan-h27-gaiyou p.1	✓	auto:pdftext	2026-11-08	要人確認:H4 3点 億・万の字を万円に読んだ・別の出典と丸めの範囲でしか合わない
+351ae914cc47316e	kessan-gaku	h27-kokuho/sainyu	value	250832	万円	kessan-h27-gaiyou p.1	✓	auto:pdftext	2026-11-08	
 1ae839e3c4b6078b	kessan-gaku	h27-kokuho/saishutsu	value	245199	万円	kessan-h27-gaiyou p.1	✓	auto:pdftext	2026-11-08	
 1f64e40848c4daac	kessan-gaku	h27-kokuho/sashihiki	value	56	百万円	zaisei-h27-shiryoshu 03!R28C27	✓	auto:pdftext	2026-11-08	
 d34bc1ab001c8ba3	kessan-gaku	h27-kokuho/jisshitsu	value	56	百万円	zaisei-h27-shiryoshu 03!R28C32	✓	auto:pdftext	2026-11-08	
@@ -97,24 +97,24 @@ d34bc1ab001c8ba3	kessan-gaku	h27-kokuho/jisshitsu	value	56	百万円	zaisei-h27-
 d046a6fc088995ca	kessan-gaku	h27-koshita/saishutsu	value	79851	万円	kessan-h27-gaiyou p.1	✓	auto:pdftext	2026-11-08	
 5f6dd9a5af2ac598	kessan-gaku	h27-koshita/sashihiki	value	0	百万円	zaisei-h27-shiryoshu 03!R33C27	✓	auto:pdftext	2026-11-08	
 84c2d93aa8ac2baa	kessan-gaku	h27-koshita/jisshitsu	value	111	百万円	zaisei-h27-shiryoshu 03!R33C32	✓	auto:pdftext	2026-11-08	
-99d1da80692d12ec	kessan-gaku	h27-nishiyama/sainyu	value	254	万円	kessan-h27-gaiyou p.2	✓	auto:pdftext	2026-11-08	要人確認:H4 2点 億・万の字を万円に読んだ
+99d1da80692d12ec	kessan-gaku	h27-nishiyama/sainyu	value	254	万円	kessan-h27-gaiyou p.2	✓	auto:pdftext	2026-11-08	
 1c00957e1c3282db	kessan-gaku	h27-nishiyama/saishutsu	value	218	万円	kessan-h27-gaiyou p.2	✓	auto:pdftext	2026-11-08	
-b48b1ab6018f53c1	kessan-gaku	h27-noshu/sainyu	value	19467	万円	kessan-h27-gaiyou p.2	✓	auto:ai	2026-11-08	要人確認:H4 6点 段2 に回った・億・万の字を万円に読んだ・別の出典と丸めの範囲でしか合わない。段2 一致（2人とも高）。シート03 と 8.67 百万円違う
+b48b1ab6018f53c1	kessan-gaku	h27-noshu/sainyu	value	19467	万円	kessan-h27-gaiyou p.2	✓	auto:ai	2026-11-08	段2 一致（2人とも高）。シート03 と 8.67 百万円違う
 98b64181cab0bb71	kessan-gaku	h27-noshu/saishutsu	value	18828	万円	kessan-h27-gaiyou p.2	✓	auto:ai	2026-11-08	段2 一致（2人とも高）。シート03 と 2.28 百万円違う
 6e5bc4345f9af2bc	kessan-gaku	h27-noshu/sashihiki	value	0	百万円	zaisei-h27-shiryoshu 03!R34C27	✓	auto:pdftext	2026-11-08	
 06d82f7426925c04	kessan-gaku	h27-noshu/jisshitsu	value	46	百万円	zaisei-h27-shiryoshu 03!R34C32	✓	auto:pdftext	2026-11-08	
 54f94ff7de7b8116	kessan-gaku	h27-suido/shueki-shunyu	value	64953	万円	kessan-h27-gaiyou p.2	✓	auto:pdftext	2026-11-08	
 3101ab42611b80b3	kessan-gaku	h27-suido/shueki-shishutsu	value	58570	万円	kessan-h27-gaiyou p.2	✓	auto:pdftext	2026-11-08	
 ddd4ae2ec964cf50	kessan-gaku	h27-suido/shihon-shunyu	value	4633	万円	kessan-h27-gaiyou p.2	✓	auto:pdftext	2026-11-08	
-d12b0f82326ccd91	kessan-gaku	h27-suido/shihon-shishutsu	value	10080	万円	kessan-h27-gaiyou p.2	✓	auto:pdftext	2026-11-08	要人確認:H4 2点 億・万の字を万円に読んだ
+d12b0f82326ccd91	kessan-gaku	h27-suido/shihon-shishutsu	value	10080	万円	kessan-h27-gaiyou p.2	✓	auto:pdftext	2026-11-08	
 f3dd9a2a6535daa0	kessan-gaku	h27-suido/soshueki	value	608	百万円	zaisei-h27-shiryoshu 03!R31C17	✓	auto:pdftext	2026-11-08	
 76ca47bece36e932	kessan-gaku	h27-suido/sohiyo	value	545	百万円	zaisei-h27-shiryoshu 03!R31C22	✓	auto:pdftext	2026-11-08	
 d4282f7aaa5ebf82	kessan-gaku	h27-suido/junsoneki	value	63	百万円	zaisei-h27-shiryoshu 03!R31C27	✓	auto:pdftext	2026-11-08	
 b8133248fb5bbd92	kessan-gaku	h28-ippan/sainyu	value	917740	万円	kessan-h28-gaiyou p.1	✓	auto:pdftext	2026-11-08	
 46a6945f022607be	kessan-gaku	h28-ippan/saishutsu	value	860120	万円	kessan-h28-gaiyou p.1	✓	auto:pdftext	2026-11-08	
 bc7ad8b4bf004ff3	kessan-gaku	h28-ippan/sashihiki	value	57620	万円	kessan-h28-gaiyou p.1	✓	auto:pdftext	2026-11-08	
-f063363f7b146e15	kessan-gaku	h28-ippan/jisshitsu	value	24454	万円	kessan-h28-gaiyou p.1	✓	auto:pdftext	2026-11-08	要人確認:H4 2点 億・万の字を万円に読んだ
-b183b5d1d2b1d04b	kessan-gaku	h28-kaigo/sainyu	value	197163	万円	kessan-h28-gaiyou p.2	✓	auto:pdftext	2026-11-08	要人確認:H4 3点 億・万の字を万円に読んだ・別の出典と丸めの範囲でしか合わない
+f063363f7b146e15	kessan-gaku	h28-ippan/jisshitsu	value	24454	万円	kessan-h28-gaiyou p.1	✓	auto:pdftext	2026-11-08	
+b183b5d1d2b1d04b	kessan-gaku	h28-kaigo/sainyu	value	197163	万円	kessan-h28-gaiyou p.2	✓	auto:pdftext	2026-11-08	
 b261de3e12068b22	kessan-gaku	h28-kaigo/saishutsu	value	190346	万円	kessan-h28-gaiyou p.2	✓	auto:pdftext	2026-11-08	
 3273f71da534a9b9	kessan-gaku	h28-kaigo/sashihiki	value	6817	万円	kessan-h28-gaiyou p.2	✓	auto:pdftext	2026-11-08	
 a6663086f8592014	kessan-gaku	h28-kaigo/jisshitsu	value	68	百万円	zaisei-h28-shiryoshu 03!R29C32	✓	auto:pdftext	2026-11-08	
@@ -122,38 +122,38 @@ a6663086f8592014	kessan-gaku	h28-kaigo/jisshitsu	value	68	百万円	zaisei-h28-s
 1d42cf45f0fc6aa9	kessan-gaku	h28-kansui/saishutsu	value	1232	万円	kessan-h28-gaiyou p.2	✓	auto:pdftext	2026-11-08	
 83e32f8064ecc789	kessan-gaku	h28-kansui/sashihiki	value	3	万円	kessan-h28-gaiyou p.2	✓	auto:pdftext	2026-11-08	要人確認:H4 4点 億・万の字を万円に読んだ・別の出典と丸めの範囲でしか合わない・値が0か1桁
 903787caf29f79f2	kessan-gaku	h28-kansui/jisshitsu	value	0	百万円	zaisei-h28-shiryoshu 03!R32C32	✓	auto:pdftext	2026-11-08	
-010a483b128e5183	kessan-gaku	h28-koki/sainyu	value	23963	万円	kessan-h28-gaiyou p.2	✓	auto:pdftext	2026-11-08	要人確認:H4 3点 億・万の字を万円に読んだ・別の出典と丸めの範囲でしか合わない
+010a483b128e5183	kessan-gaku	h28-koki/sainyu	value	23963	万円	kessan-h28-gaiyou p.2	✓	auto:pdftext	2026-11-08	
 e83ea8ccbd6a4bb0	kessan-gaku	h28-koki/saishutsu	value	23657	万円	kessan-h28-gaiyou p.2	✓	auto:pdftext	2026-11-08	
 30d93c93b9d48433	kessan-gaku	h28-koki/sashihiki	value	306	万円	kessan-h28-gaiyou p.2	✓	auto:pdftext	2026-11-08	
 990e988303420390	kessan-gaku	h28-koki/jisshitsu	value	3	百万円	zaisei-h28-shiryoshu 03!R30C32	✓	auto:pdftext	2026-11-08	
-4f80e44a3dc70be0	kessan-gaku	h28-kokuho/sainyu	value	248694	万円	kessan-h28-gaiyou p.2	✓	auto:pdftext	2026-11-08	要人確認:H4 3点 億・万の字を万円に読んだ・別の出典と丸めの範囲でしか合わない
+4f80e44a3dc70be0	kessan-gaku	h28-kokuho/sainyu	value	248694	万円	kessan-h28-gaiyou p.2	✓	auto:pdftext	2026-11-08	
 43ae0dbe81933f50	kessan-gaku	h28-kokuho/saishutsu	value	237239	万円	kessan-h28-gaiyou p.2	✓	auto:pdftext	2026-11-08	
 1611f1fd48ce3b2a	kessan-gaku	h28-kokuho/sashihiki	value	11455	万円	kessan-h28-gaiyou p.2	✓	auto:pdftext	2026-11-08	
 733167f566ae8b63	kessan-gaku	h28-kokuho/jisshitsu	value	115	百万円	zaisei-h28-shiryoshu 03!R28C32	✓	auto:pdftext	2026-11-08	
-0875427b88736dd4	kessan-gaku	h28-koshita/sainyu	value	85671	万円	kessan-h28-gaiyou p.2	✓	auto:pdftext	2026-11-08	要人確認:H4 3点 億・万の字を万円に読んだ・別の出典と丸めの範囲でしか合わない
+0875427b88736dd4	kessan-gaku	h28-koshita/sainyu	value	85671	万円	kessan-h28-gaiyou p.2	✓	auto:pdftext	2026-11-08	
 bd2ba25abac4fc46	kessan-gaku	h28-koshita/saishutsu	value	85602	万円	kessan-h28-gaiyou p.2	✓	auto:pdftext	2026-11-08	
 2b17030e5e92809d	kessan-gaku	h28-koshita/sashihiki	value	69	万円	kessan-h28-gaiyou p.2	✓	auto:pdftext	2026-11-08	
 c008b3c9fa6be5eb	kessan-gaku	h28-koshita/jisshitsu	value	1	百万円	zaisei-h28-shiryoshu 03!R33C32	✓	auto:pdftext	2026-11-08	
-218d24804e95bf8f	kessan-gaku	h28-nishiyama/sainyu	value	241	万円	kessan-h28-gaiyou p.2	✓	auto:pdftext	2026-11-08	要人確認:H4 2点 億・万の字を万円に読んだ
+218d24804e95bf8f	kessan-gaku	h28-nishiyama/sainyu	value	241	万円	kessan-h28-gaiyou p.2	✓	auto:pdftext	2026-11-08	
 ad191d66336fc032	kessan-gaku	h28-nishiyama/saishutsu	value	217	万円	kessan-h28-gaiyou p.2	✓	auto:pdftext	2026-11-08	
 0617f0baf72746cd	kessan-gaku	h28-nishiyama/sashihiki	value	24	万円	kessan-h28-gaiyou p.2	✓	auto:pdftext	2026-11-08	
-635ff804858eb772	kessan-gaku	h28-noshu/sainyu	value	18538	万円	kessan-h28-gaiyou p.2	✓	auto:pdftext	2026-11-08	要人確認:H4 3点 億・万の字を万円に読んだ・別の出典と丸めの範囲でしか合わない
+635ff804858eb772	kessan-gaku	h28-noshu/sainyu	value	18538	万円	kessan-h28-gaiyou p.2	✓	auto:pdftext	2026-11-08	
 ba9dfaa9e3de29cf	kessan-gaku	h28-noshu/saishutsu	value	17686	万円	kessan-h28-gaiyou p.2	✓	auto:pdftext	2026-11-08	
 6357966e580b13f6	kessan-gaku	h28-noshu/sashihiki	value	852	万円	kessan-h28-gaiyou p.2	✓	auto:pdftext	2026-11-08	
 a5fd4143ea20718f	kessan-gaku	h28-noshu/jisshitsu	value	9	百万円	zaisei-h28-shiryoshu 03!R34C32	✓	auto:pdftext	2026-11-08	
 4df9040ef6ee7990	kessan-gaku	h28-suido/shihon-shunyu	value	4963	万円	kessan-h28-gaiyou p.2	✓	auto:pdftext	2026-11-08	
 118f454ecf16002b	kessan-gaku	h28-suido/shihon-shishutsu	value	12207	万円	kessan-h28-gaiyou p.2	✓	auto:pdftext	2026-11-08	
 798c7f0f5f9048a8	kessan-gaku	h28-suido/soshueki	value	61389	万円	kessan-h28-gaiyou p.2	✓	auto:pdftext	2026-11-08	
-99abdf22a30cfd60	kessan-gaku	h28-suido/sohiyo	value	56428	万円	kessan-h28-gaiyou p.2	✓	auto:pdftext	2026-11-08	要人確認:H4 3点 億・万の字を万円に読んだ・別の出典と丸めの範囲でしか合わない
+99abdf22a30cfd60	kessan-gaku	h28-suido/sohiyo	value	56428	万円	kessan-h28-gaiyou p.2	✓	auto:pdftext	2026-11-08	
 a672fde885921ba4	kessan-gaku	h28-suido/junsoneki	value	50	百万円	zaisei-h28-shiryoshu 03!R31C27	✓	auto:pdftext	2026-11-08	
 9a691379e766698f	kessan-gaku	h29-ippan/sainyu	value	9209	百万円	zaisei-h29-shiryoshu 03!R7C17	✓	auto:pdftext	2026-11-08	
 7693010550cc17a2	kessan-gaku	h29-ippan/saishutsu	value	8758	百万円	zaisei-h29-shiryoshu 03!R7C22	✓	auto:pdftext	2026-11-08	
 cc876311e9ad8dfd	kessan-gaku	h29-ippan/sashihiki	value	451	百万円	zaisei-h29-shiryoshu 03!R7C27	✓	auto:pdftext	2026-11-08	
-eefdbc8d21ea2e42	kessan-gaku	h29-ippan/jisshitsu	value	334	百万円	zaisei-h29-shiryoshu 03!R7C32	✓	auto:pdftext	2026-11-08	要人確認:H4 0点
+eefdbc8d21ea2e42	kessan-gaku	h29-ippan/jisshitsu	value	334	百万円	zaisei-h29-shiryoshu 03!R7C32	✓	auto:pdftext	2026-11-08	
 29d8b5f4036236f2	kessan-gaku	h29-kaigo/sainyu	value	2039	百万円	zaisei-h29-shiryoshu 03!R29C17	✓	auto:pdftext	2026-11-08	
 9eca5b7db2ffac96	kessan-gaku	h29-kaigo/saishutsu	value	1984	百万円	zaisei-h29-shiryoshu 03!R29C22	✓	auto:pdftext	2026-11-08	
 812ce2793a1914d9	kessan-gaku	h29-kaigo/sashihiki	value	55	百万円	zaisei-h29-shiryoshu 03!R29C27	✓	auto:pdftext	2026-11-08	
-0968ac377e9dbefb	kessan-gaku	h29-kaigo/jisshitsu	value	55	百万円	zaisei-h29-shiryoshu 03!R29C32	✓	auto:pdftext	2026-11-08	要人確認:H4 0点
+0968ac377e9dbefb	kessan-gaku	h29-kaigo/jisshitsu	value	55	百万円	zaisei-h29-shiryoshu 03!R29C32	✓	auto:pdftext	2026-11-08	
 5cd1651d55432eaa	kessan-gaku	h29-kansui/sainyu	value	12	百万円	zaisei-h29-shiryoshu 03!R32C17	✓	auto:pdftext	2026-11-08	
 33812ad713ee19bf	kessan-gaku	h29-kansui/saishutsu	value	12	百万円	zaisei-h29-shiryoshu 03!R32C22	✓	auto:pdftext	2026-11-08	
 8e1055106f216ad8	kessan-gaku	h29-kansui/sashihiki	value	0	百万円	zaisei-h29-shiryoshu 03!R32C27	✓	auto:pdftext	2026-11-08	
@@ -161,30 +161,30 @@ ffec72fa41a0d25e	kessan-gaku	h29-kansui/jisshitsu	value	0	百万円	zaisei-h29-s
 a45f80fe37340271	kessan-gaku	h29-koki/sainyu	value	253	百万円	zaisei-h29-shiryoshu 03!R30C17	✓	auto:pdftext	2026-11-08	
 838a88940bf01e81	kessan-gaku	h29-koki/saishutsu	value	249	百万円	zaisei-h29-shiryoshu 03!R30C22	✓	auto:pdftext	2026-11-08	
 6059db6c0d12a588	kessan-gaku	h29-koki/sashihiki	value	4	百万円	zaisei-h29-shiryoshu 03!R30C27	✓	auto:pdftext	2026-11-08	
-c4c577ae63a54484	kessan-gaku	h29-koki/jisshitsu	value	4	百万円	zaisei-h29-shiryoshu 03!R30C32	✓	auto:pdftext	2026-11-08	要人確認:H4 1点 値が0か1桁
+c4c577ae63a54484	kessan-gaku	h29-koki/jisshitsu	value	4	百万円	zaisei-h29-shiryoshu 03!R30C32	✓	auto:pdftext	2026-11-08	
 50d554a43ee5a94d	kessan-gaku	h29-kokuho/sainyu	value	2496	百万円	zaisei-h29-shiryoshu 03!R28C17	✓	auto:pdftext	2026-11-08	
 dec9e1a2cf8d6593	kessan-gaku	h29-kokuho/saishutsu	value	2359	百万円	zaisei-h29-shiryoshu 03!R28C22	✓	auto:pdftext	2026-11-08	
 7bd7e83bdb0c3558	kessan-gaku	h29-kokuho/sashihiki	value	137	百万円	zaisei-h29-shiryoshu 03!R28C27	✓	auto:pdftext	2026-11-08	
-a13a0e646b9d5150	kessan-gaku	h29-kokuho/jisshitsu	value	137	百万円	zaisei-h29-shiryoshu 03!R28C32	✓	auto:pdftext	2026-11-08	要人確認:H4 0点
+a13a0e646b9d5150	kessan-gaku	h29-kokuho/jisshitsu	value	137	百万円	zaisei-h29-shiryoshu 03!R28C32	✓	auto:pdftext	2026-11-08	
 18c80b8dd01d870d	kessan-gaku	h29-koshita/sainyu	value	859	百万円	zaisei-h29-shiryoshu 03!R33C17	✓	auto:pdftext	2026-11-08	
 2fccd1aa679d398a	kessan-gaku	h29-koshita/saishutsu	value	859	百万円	zaisei-h29-shiryoshu 03!R33C22	✓	auto:pdftext	2026-11-08	
 b1db45791c183df7	kessan-gaku	h29-koshita/sashihiki	value	0	百万円	zaisei-h29-shiryoshu 03!R33C27	✓	auto:pdftext	2026-11-08	
-35bde01efe5edc9d	kessan-gaku	h29-koshita/jisshitsu	value	0	百万円	zaisei-h29-shiryoshu 03!R33C32	✓	auto:pdftext	2026-11-08	要人確認:H4 1点 値が0か1桁
+35bde01efe5edc9d	kessan-gaku	h29-koshita/jisshitsu	value	0	百万円	zaisei-h29-shiryoshu 03!R33C32	✓	auto:pdftext	2026-11-08	
 a281fed07e5758b6	kessan-gaku	h29-noshu/sainyu	value	193	百万円	zaisei-h29-shiryoshu 03!R34C17	✓	auto:pdftext	2026-11-08	
 f3672b8d73c7db6f	kessan-gaku	h29-noshu/saishutsu	value	186	百万円	zaisei-h29-shiryoshu 03!R34C22	✓	auto:pdftext	2026-11-08	
 87ee2b3c35c858f9	kessan-gaku	h29-noshu/sashihiki	value	7	百万円	zaisei-h29-shiryoshu 03!R34C27	✓	auto:pdftext	2026-11-08	
-e0f349af1d552835	kessan-gaku	h29-noshu/jisshitsu	value	7	百万円	zaisei-h29-shiryoshu 03!R34C32	✓	auto:pdftext	2026-11-08	要人確認:H4 1点 値が0か1桁
+e0f349af1d552835	kessan-gaku	h29-noshu/jisshitsu	value	7	百万円	zaisei-h29-shiryoshu 03!R34C32	✓	auto:pdftext	2026-11-08	
 cbdbdee3d7b7b723	kessan-gaku	h29-suido/soshueki	value	618	百万円	zaisei-h29-shiryoshu 03!R31C17	✓	auto:pdftext	2026-11-08	
 090448fdaf68fe61	kessan-gaku	h29-suido/sohiyo	value	554	百万円	zaisei-h29-shiryoshu 03!R31C22	✓	auto:pdftext	2026-11-08	
-0b9ef12f3d3bf566	kessan-gaku	h29-suido/junsoneki	value	64	百万円	zaisei-h29-shiryoshu 03!R31C27	✓	auto:pdftext	2026-11-08	要人確認:H4 0点
+0b9ef12f3d3bf566	kessan-gaku	h29-suido/junsoneki	value	64	百万円	zaisei-h29-shiryoshu 03!R31C27	✓	auto:pdftext	2026-11-08	
 c50ae045d7642a3e	kessan-gaku	h30-ippan/sainyu	value	9484	百万円	zaisei-h30-shiryoshu 03!R7C17	✓	auto:pdftext	2026-11-08	
 0ce534122ea87f26	kessan-gaku	h30-ippan/saishutsu	value	8967	百万円	zaisei-h30-shiryoshu 03!R7C22	✓	auto:pdftext	2026-11-08	
 a7ea22c49550d3b4	kessan-gaku	h30-ippan/sashihiki	value	517	百万円	zaisei-h30-shiryoshu 03!R7C27	✓	auto:pdftext	2026-11-08	
-4367be4e6a09419a	kessan-gaku	h30-ippan/jisshitsu	value	435	百万円	zaisei-h30-shiryoshu 03!R7C32	✓	auto:pdftext	2026-11-08	要人確認:H4 0点
+4367be4e6a09419a	kessan-gaku	h30-ippan/jisshitsu	value	435	百万円	zaisei-h30-shiryoshu 03!R7C32	✓	auto:pdftext	2026-11-08	
 8fc28abe5b1aaa3b	kessan-gaku	h30-kaigo/sainyu	value	2126	百万円	zaisei-h30-shiryoshu 03!R29C17	✓	auto:pdftext	2026-11-08	
 9391f68f9a4e8dfb	kessan-gaku	h30-kaigo/saishutsu	value	2002	百万円	zaisei-h30-shiryoshu 03!R29C22	✓	auto:pdftext	2026-11-08	
 94d7c735863b5339	kessan-gaku	h30-kaigo/sashihiki	value	125	百万円	zaisei-h30-shiryoshu 03!R29C27	✓	auto:pdftext	2026-11-08	
-a3c77a63a7f126b3	kessan-gaku	h30-kaigo/jisshitsu	value	125	百万円	zaisei-h30-shiryoshu 03!R29C32	✓	auto:pdftext	2026-11-08	要人確認:H4 0点
+a3c77a63a7f126b3	kessan-gaku	h30-kaigo/jisshitsu	value	125	百万円	zaisei-h30-shiryoshu 03!R29C32	✓	auto:pdftext	2026-11-08	
 359608f762920ba3	kessan-gaku	h30-kansui/sainyu	value	31	百万円	zaisei-h30-shiryoshu 03!R32C17	✓	auto:pdftext	2026-11-08	
 03d7f7a1d2c1dee3	kessan-gaku	h30-kansui/saishutsu	value	31	百万円	zaisei-h30-shiryoshu 03!R32C22	✓	auto:pdftext	2026-11-08	
 3f0619b5a926e3eb	kessan-gaku	h30-kansui/sashihiki	value	0	百万円	zaisei-h30-shiryoshu 03!R32C27	✓	auto:pdftext	2026-11-08	
@@ -192,30 +192,30 @@ a3c77a63a7f126b3	kessan-gaku	h30-kaigo/jisshitsu	value	125	百万円	zaisei-h30-
 924e30c106c1e89e	kessan-gaku	h30-koki/sainyu	value	254	百万円	zaisei-h30-shiryoshu 03!R30C17	✓	auto:pdftext	2026-11-08	
 3789cd9e922f2e2d	kessan-gaku	h30-koki/saishutsu	value	250	百万円	zaisei-h30-shiryoshu 03!R30C22	✓	auto:pdftext	2026-11-08	
 2b26a2a90a4be955	kessan-gaku	h30-koki/sashihiki	value	4	百万円	zaisei-h30-shiryoshu 03!R30C27	✓	auto:pdftext	2026-11-08	
-9598c85f6290cfbc	kessan-gaku	h30-koki/jisshitsu	value	4	百万円	zaisei-h30-shiryoshu 03!R30C32	✓	auto:pdftext	2026-11-08	要人確認:H4 1点 値が0か1桁
+9598c85f6290cfbc	kessan-gaku	h30-koki/jisshitsu	value	4	百万円	zaisei-h30-shiryoshu 03!R30C32	✓	auto:pdftext	2026-11-08	
 ac550ba2b14ac04b	kessan-gaku	h30-kokuho/sainyu	value	2163	百万円	zaisei-h30-shiryoshu 03!R28C17	✓	auto:pdftext	2026-11-08	
 08e22db4e1ce38fe	kessan-gaku	h30-kokuho/saishutsu	value	2141	百万円	zaisei-h30-shiryoshu 03!R28C22	✓	auto:pdftext	2026-11-08	
 f4891e0c96e388af	kessan-gaku	h30-kokuho/sashihiki	value	22	百万円	zaisei-h30-shiryoshu 03!R28C27	✓	auto:pdftext	2026-11-08	
-c9e94f7623451e86	kessan-gaku	h30-kokuho/jisshitsu	value	22	百万円	zaisei-h30-shiryoshu 03!R28C32	✓	auto:pdftext	2026-11-08	要人確認:H4 0点
+c9e94f7623451e86	kessan-gaku	h30-kokuho/jisshitsu	value	22	百万円	zaisei-h30-shiryoshu 03!R28C32	✓	auto:pdftext	2026-11-08	
 4eff2d406dcaaf9e	kessan-gaku	h30-koshita/sainyu	value	877	百万円	zaisei-h30-shiryoshu 03!R33C17	✓	auto:pdftext	2026-11-08	
 5aa3e7bbbe87959c	kessan-gaku	h30-koshita/saishutsu	value	866	百万円	zaisei-h30-shiryoshu 03!R33C22	✓	auto:pdftext	2026-11-08	
 5c4ba1cb86b105dc	kessan-gaku	h30-koshita/sashihiki	value	11	百万円	zaisei-h30-shiryoshu 03!R33C27	✓	auto:pdftext	2026-11-08	
-feb346eea569b134	kessan-gaku	h30-koshita/jisshitsu	value	11	百万円	zaisei-h30-shiryoshu 03!R33C32	✓	auto:pdftext	2026-11-08	要人確認:H4 0点
+feb346eea569b134	kessan-gaku	h30-koshita/jisshitsu	value	11	百万円	zaisei-h30-shiryoshu 03!R33C32	✓	auto:pdftext	2026-11-08	
 1a5ac5ac359624d4	kessan-gaku	h30-noshu/sainyu	value	188	百万円	zaisei-h30-shiryoshu 03!R34C17	✓	auto:pdftext	2026-11-08	
 f7134ea561217d62	kessan-gaku	h30-noshu/saishutsu	value	184	百万円	zaisei-h30-shiryoshu 03!R34C22	✓	auto:pdftext	2026-11-08	
 4430600055e1bcf6	kessan-gaku	h30-noshu/sashihiki	value	4	百万円	zaisei-h30-shiryoshu 03!R34C27	✓	auto:pdftext	2026-11-08	
-638cd6aaccd1145f	kessan-gaku	h30-noshu/jisshitsu	value	4	百万円	zaisei-h30-shiryoshu 03!R34C32	✓	auto:pdftext	2026-11-08	要人確認:H4 1点 値が0か1桁
+638cd6aaccd1145f	kessan-gaku	h30-noshu/jisshitsu	value	4	百万円	zaisei-h30-shiryoshu 03!R34C32	✓	auto:pdftext	2026-11-08	
 ed4508084a023bbe	kessan-gaku	h30-suido/soshueki	value	617	百万円	zaisei-h30-shiryoshu 03!R31C17	✓	auto:pdftext	2026-11-08	
 a1387e44f5082c59	kessan-gaku	h30-suido/sohiyo	value	546	百万円	zaisei-h30-shiryoshu 03!R31C22	✓	auto:pdftext	2026-11-08	
-d090e73cd402a1e9	kessan-gaku	h30-suido/junsoneki	value	71	百万円	zaisei-h30-shiryoshu 03!R31C27	✓	auto:pdftext	2026-11-08	要人確認:H4 0点
+d090e73cd402a1e9	kessan-gaku	h30-suido/junsoneki	value	71	百万円	zaisei-h30-shiryoshu 03!R31C27	✓	auto:pdftext	2026-11-08	
 39afd82524360e51	kessan-gaku	r1-ippan/sainyu	value	9639	百万円	zaisei-r1-shiryoshu 03!R7C17	✓	auto:pdftext	2026-11-08	
 0e1d90f35d69e9e5	kessan-gaku	r1-ippan/saishutsu	value	9144	百万円	zaisei-r1-shiryoshu 03!R7C22	✓	auto:pdftext	2026-11-08	
 23bce01b2c5c4e2c	kessan-gaku	r1-ippan/sashihiki	value	495	百万円	zaisei-r1-shiryoshu 03!R7C27	✓	auto:pdftext	2026-11-08	
-694b8f1c9fbe9ff8	kessan-gaku	r1-ippan/jisshitsu	value	484	百万円	zaisei-r1-shiryoshu 03!R7C32	✓	auto:pdftext	2026-11-08	要人確認:H4 0点
+694b8f1c9fbe9ff8	kessan-gaku	r1-ippan/jisshitsu	value	484	百万円	zaisei-r1-shiryoshu 03!R7C32	✓	auto:pdftext	2026-11-08	
 4a9c78653f3372c3	kessan-gaku	r1-kaigo/sainyu	value	2204	百万円	zaisei-r1-shiryoshu 03!R29C17	✓	auto:pdftext	2026-11-08	
 aaa79fdbb11de602	kessan-gaku	r1-kaigo/saishutsu	value	2088	百万円	zaisei-r1-shiryoshu 03!R29C22	✓	auto:pdftext	2026-11-08	
 e51daf583e99a4dc	kessan-gaku	r1-kaigo/sashihiki	value	117	百万円	zaisei-r1-shiryoshu 03!R29C27	✓	auto:pdftext	2026-11-08	
-46c98b7d285b7884	kessan-gaku	r1-kaigo/jisshitsu	value	117	百万円	zaisei-r1-shiryoshu 03!R29C32	✓	auto:pdftext	2026-11-08	要人確認:H4 0点
+46c98b7d285b7884	kessan-gaku	r1-kaigo/jisshitsu	value	117	百万円	zaisei-r1-shiryoshu 03!R29C32	✓	auto:pdftext	2026-11-08	
 b032be1739d55661	kessan-gaku	r1-kansui/sainyu	value	13	百万円	zaisei-r1-shiryoshu 03!R32C17	✓	auto:pdftext	2026-11-08	
 26713b59655c349d	kessan-gaku	r1-kansui/saishutsu	value	13	百万円	zaisei-r1-shiryoshu 03!R32C22	✓	auto:pdftext	2026-11-08	
 033859838fa1a763	kessan-gaku	r1-kansui/sashihiki	value	0	百万円	zaisei-r1-shiryoshu 03!R32C27	✓	auto:pdftext	2026-11-08	
@@ -223,37 +223,37 @@ b032be1739d55661	kessan-gaku	r1-kansui/sainyu	value	13	百万円	zaisei-r1-shiry
 e30eb2e7a3b51f22	kessan-gaku	r1-koki/sainyu	value	258	百万円	zaisei-r1-shiryoshu 03!R30C17	✓	auto:pdftext	2026-11-08	
 2e88fe7448044974	kessan-gaku	r1-koki/saishutsu	value	254	百万円	zaisei-r1-shiryoshu 03!R30C22	✓	auto:pdftext	2026-11-08	
 043cd5e27f2a1352	kessan-gaku	r1-koki/sashihiki	value	4	百万円	zaisei-r1-shiryoshu 03!R30C27	✓	auto:pdftext	2026-11-08	
-643c4498034753b9	kessan-gaku	r1-koki/jisshitsu	value	4	百万円	zaisei-r1-shiryoshu 03!R30C32	✓	auto:pdftext	2026-11-08	要人確認:H4 1点 値が0か1桁
+643c4498034753b9	kessan-gaku	r1-koki/jisshitsu	value	4	百万円	zaisei-r1-shiryoshu 03!R30C32	✓	auto:pdftext	2026-11-08	
 9495f010eb2140a5	kessan-gaku	r1-kokuho/sainyu	value	2213	百万円	zaisei-r1-shiryoshu 03!R28C17	✓	auto:pdftext	2026-11-08	
 99cbb3e59623ba28	kessan-gaku	r1-kokuho/saishutsu	value	2204	百万円	zaisei-r1-shiryoshu 03!R28C22	✓	auto:pdftext	2026-11-08	
 aa2bf4322173f7b7	kessan-gaku	r1-kokuho/sashihiki	value	9	百万円	zaisei-r1-shiryoshu 03!R28C27	✓	auto:pdftext	2026-11-08	
-7ce5be364db71ba2	kessan-gaku	r1-kokuho/jisshitsu	value	9	百万円	zaisei-r1-shiryoshu 03!R28C32	✓	auto:pdftext	2026-11-08	要人確認:H4 1点 値が0か1桁
+7ce5be364db71ba2	kessan-gaku	r1-kokuho/jisshitsu	value	9	百万円	zaisei-r1-shiryoshu 03!R28C32	✓	auto:pdftext	2026-11-08	
 c7aecc7c65bdf1c7	kessan-gaku	r1-koshita/sainyu	value	811	百万円	zaisei-r1-shiryoshu 03!R33C17	✓	auto:pdftext	2026-11-08	
 e13de5b388fb4a43	kessan-gaku	r1-koshita/saishutsu	value	749	百万円	zaisei-r1-shiryoshu 03!R33C22	✓	auto:pdftext	2026-11-08	
 3d0b831f25ee98a5	kessan-gaku	r1-koshita/sashihiki	value	61	百万円	zaisei-r1-shiryoshu 03!R33C27	✓	auto:pdftext	2026-11-08	
-8c4c7750c8366b4c	kessan-gaku	r1-koshita/jisshitsu	value	61	百万円	zaisei-r1-shiryoshu 03!R33C32	✓	auto:pdftext	2026-11-08	要人確認:H4 0点
+8c4c7750c8366b4c	kessan-gaku	r1-koshita/jisshitsu	value	61	百万円	zaisei-r1-shiryoshu 03!R33C32	✓	auto:pdftext	2026-11-08	
 aaac3d8f1784bb2c	kessan-gaku	r1-noshu/sainyu	value	188	百万円	zaisei-r1-shiryoshu 03!R34C17	✓	auto:pdftext	2026-11-08	
 be6662c5144850da	kessan-gaku	r1-noshu/saishutsu	value	184	百万円	zaisei-r1-shiryoshu 03!R34C22	✓	auto:pdftext	2026-11-08	
 73e9014035331664	kessan-gaku	r1-noshu/sashihiki	value	5	百万円	zaisei-r1-shiryoshu 03!R34C27	✓	auto:pdftext	2026-11-08	
-43cb6eae9011c9c9	kessan-gaku	r1-noshu/jisshitsu	value	5	百万円	zaisei-r1-shiryoshu 03!R34C32	✓	auto:pdftext	2026-11-08	要人確認:H4 1点 値が0か1桁
+43cb6eae9011c9c9	kessan-gaku	r1-noshu/jisshitsu	value	5	百万円	zaisei-r1-shiryoshu 03!R34C32	✓	auto:pdftext	2026-11-08	
 6db5db789d9063c9	kessan-gaku	r1-suido/soshueki	value	623	百万円	zaisei-r1-shiryoshu 03!R31C17	✓	auto:pdftext	2026-11-08	
 8b6541cfca9af227	kessan-gaku	r1-suido/sohiyo	value	541	百万円	zaisei-r1-shiryoshu 03!R31C22	✓	auto:pdftext	2026-11-08	
-145ba9e4fcd0e814	kessan-gaku	r1-suido/junsoneki	value	82	百万円	zaisei-r1-shiryoshu 03!R31C27	✓	auto:pdftext	2026-11-08	要人確認:H4 0点
+145ba9e4fcd0e814	kessan-gaku	r1-suido/junsoneki	value	82	百万円	zaisei-r1-shiryoshu 03!R31C27	✓	auto:pdftext	2026-11-08	
 97db1672ca0067ad	kessan-gaku	r2-gesuido/shueki-shunyu	value	711351673	円	kessan-r3-ikensho p.37	✓	auto:pdftext	2026-11-08	
 c1d12c553c35d557	kessan-gaku	r2-gesuido/shueki-shishutsu	value	616416636	円	kessan-r3-ikensho p.38	✓	auto:pdftext	2026-11-08	
 7b82e295ddb459e0	kessan-gaku	r2-gesuido/shihon-shunyu	value	484943540	円	kessan-r3-ikensho p.38	✓	auto:pdftext	2026-11-08	
 bf0c3c979f61e8a1	kessan-gaku	r2-gesuido/shihon-shishutsu	value	761642165	円	kessan-r3-ikensho p.39	✓	auto:pdftext	2026-11-08	
 8a7dc8453e6022d2	kessan-gaku	r2-gesuido/soshueki	value	689	百万円	zaisei-r2-shiryoshu 03!R32C17	✓	auto:pdftext	2026-11-08	
 3e4af347e3c26e40	kessan-gaku	r2-gesuido/sohiyo	value	608	百万円	zaisei-r2-shiryoshu 03!R32C22	✓	auto:pdftext	2026-11-08	
-e75b7afcfa99e80f	kessan-gaku	r2-gesuido/junsoneki	value	81	百万円	zaisei-r2-shiryoshu 03!R32C27	✓	auto:pdftext	2026-11-08	要人確認:H4 0点
-b142b385a2e5a03c	kessan-gaku	r2-ippan/sainyu	value	11845707215	円	kessan-r3-ikensho p.4	✓	auto:pdftext	2026-11-08	要人確認:H4 1点 別の出典と丸めの範囲でしか合わない
+e75b7afcfa99e80f	kessan-gaku	r2-gesuido/junsoneki	value	81	百万円	zaisei-r2-shiryoshu 03!R32C27	✓	auto:pdftext	2026-11-08	
+b142b385a2e5a03c	kessan-gaku	r2-ippan/sainyu	value	11845707215	円	kessan-r3-ikensho p.4	✓	auto:pdftext	2026-11-08	
 c16d78c0ac4f935b	kessan-gaku	r2-ippan/saishutsu	value	11292112299	円	kessan-r3-ikensho p.4	✓	auto:pdftext	2026-11-08	
 3e302232366192b6	kessan-gaku	r2-ippan/sashihiki	value	553594916	円	kessan-r3-ikensho p.4	✓	auto:pdftext	2026-11-08	
 0a6ab6e3f9f4995b	kessan-gaku	r2-ippan/jisshitsu	value	473355916	円	kessan-r3-ikensho p.4	✓	auto:pdftext	2026-11-08	
 a27c442f7b1213b6	kessan-gaku	r2-kaigo/sainyu-hoken	value	2193778151	円	kessan-r3-ikensho p.23	✓	auto:pdftext	2026-11-08	
 6dbfe9477780fa14	kessan-gaku	r2-kaigo/saishutsu-hoken	value	2092651035	円	kessan-r3-ikensho p.23	✓	auto:pdftext	2026-11-08	
 94684f2a05a7d8ce	kessan-gaku	r2-kaigo/sashihiki-hoken	value	101127116	円	kessan-r3-ikensho p.23	✓	auto:pdftext	2026-11-08	
-80a598b1436d5d9e	kessan-gaku	r2-kaigo/jisshitsu-hoken	value	101127116	円	kessan-r3-ikensho p.23	✓	auto:pdftext	2026-11-08	要人確認:H4 1点 別の出典と丸めの範囲でしか合わない
+80a598b1436d5d9e	kessan-gaku	r2-kaigo/jisshitsu-hoken	value	101127116	円	kessan-r3-ikensho p.23	✓	auto:pdftext	2026-11-08	
 4741a5f3c06d97a8	kessan-gaku	r2-kaigo/sainyu-service	value	6226063	円	kessan-r3-ikensho p.25	✓	auto:pdftext	2026-11-08	
 1f00a0c7778edd52	kessan-gaku	r2-kaigo/saishutsu-service	value	5748379	円	kessan-r3-ikensho p.25	✓	auto:pdftext	2026-11-08	
 aa3f85ed563f4c2f	kessan-gaku	r2-kaigo/sashihiki-service	value	477684	円	kessan-r3-ikensho p.25	✓	auto:pdftext	2026-11-08	
@@ -261,19 +261,19 @@ aa3f85ed563f4c2f	kessan-gaku	r2-kaigo/sashihiki-service	value	477684	円	kessan-
 d1c01c5967916617	kessan-gaku	r2-kansui/sainyu	value	11841544	円	kessan-r3-ikensho p.19	✓	auto:pdftext	2026-11-08	
 0fdc9ff00affbb7d	kessan-gaku	r2-kansui/saishutsu	value	11784533	円	kessan-r3-ikensho p.19	✓	auto:pdftext	2026-11-08	
 826b4cc8b8437926	kessan-gaku	r2-kansui/sashihiki	value	57011	円	kessan-r3-ikensho p.19	✓	auto:pdftext	2026-11-08	
-3bd507b5312a2866	kessan-gaku	r2-kansui/jisshitsu	value	57011	円	kessan-r3-ikensho p.19	✓	auto:pdftext	2026-11-08	要人確認:H4 1点 別の出典と丸めの範囲でしか合わない
+3bd507b5312a2866	kessan-gaku	r2-kansui/jisshitsu	value	57011	円	kessan-r3-ikensho p.19	✓	auto:pdftext	2026-11-08	
 88e6f90e4ef78af0	kessan-gaku	r2-koki/sainyu	value	276830996	円	kessan-r3-ikensho p.27	✓	auto:pdftext	2026-11-08	
 332306c19f445056	kessan-gaku	r2-koki/saishutsu	value	273327050	円	kessan-r3-ikensho p.27	✓	auto:pdftext	2026-11-08	
 22f444d54d0b764b	kessan-gaku	r2-koki/sashihiki	value	3503946	円	kessan-r3-ikensho p.27	✓	auto:pdftext	2026-11-08	
-741179f07a5d5dc5	kessan-gaku	r2-koki/jisshitsu	value	3503946	円	kessan-r3-ikensho p.27	✓	auto:pdftext	2026-11-08	要人確認:H4 1点 別の出典と丸めの範囲でしか合わない
+741179f07a5d5dc5	kessan-gaku	r2-koki/jisshitsu	value	3503946	円	kessan-r3-ikensho p.27	✓	auto:pdftext	2026-11-08	
 7a6d59316580f2c0	kessan-gaku	r2-kokuho/sainyu	value	2069125508	円	kessan-r3-ikensho p.15	✓	auto:pdftext	2026-11-08	
 c77562e990cbf45f	kessan-gaku	r2-kokuho/saishutsu	value	2049570880	円	kessan-r3-ikensho p.15	✓	auto:pdftext	2026-11-08	
 64dba8fa3919c667	kessan-gaku	r2-kokuho/sashihiki	value	19554628	円	kessan-r3-ikensho p.15	✓	auto:pdftext	2026-11-08	
-2a52cefafc25174e	kessan-gaku	r2-kokuho/jisshitsu	value	19554628	円	kessan-r3-ikensho p.15	✓	auto:pdftext	2026-11-08	要人確認:H4 1点 別の出典と丸めの範囲でしか合わない
+2a52cefafc25174e	kessan-gaku	r2-kokuho/jisshitsu	value	19554628	円	kessan-r3-ikensho p.15	✓	auto:pdftext	2026-11-08	
 8ee3a14ba9dfff71	kessan-gaku	r2-nishiyama/sainyu	value	2363091	円	kessan-r3-ikensho p.29	✓	auto:pdftext	2026-11-08	
 00eaa2016682494b	kessan-gaku	r2-nishiyama/saishutsu	value	1937329	円	kessan-r3-ikensho p.29	✓	auto:pdftext	2026-11-08	
 877f7b9da12a9cf4	kessan-gaku	r2-nishiyama/sashihiki	value	425762	円	kessan-r3-ikensho p.29	✓	auto:pdftext	2026-11-08	
-3d381046654d5d28	kessan-gaku	r2-nishiyama/jisshitsu	value	425762	円	kessan-r3-ikensho p.29	✓	auto:pdftext	2026-11-08	要人確認:H4 0点
+3d381046654d5d28	kessan-gaku	r2-nishiyama/jisshitsu	value	425762	円	kessan-r3-ikensho p.29	✓	auto:pdftext	2026-11-08	
 138bb38cd24d2387	kessan-gaku	r2-noshu/sainyu	value	185847252	円	kessan-r3-ikensho p.21	✓	auto:ai	2026-11-08	要人確認:H4 4点 段2 に回った・別の出典と丸めの範囲でしか合わない。段2 一致（2人とも高）。シート03 と 5.85 百万円違う
 4557cec5ea91ba49	kessan-gaku	r2-noshu/saishutsu	value	175781722	円	kessan-r3-ikensho p.21	✓	auto:pdftext	2026-11-08	
 3621cd4c7704589f	kessan-gaku	r2-noshu/sashihiki	value	10065530	円	kessan-r3-ikensho p.21	✓	auto:ai	2026-11-08	段2 一致（2人とも高）。シート03 と 5.07 百万円違う
@@ -284,22 +284,22 @@ ac3949fc4fee0805	kessan-gaku	r2-suido/shueki-shishutsu	value	574322371	円	kessa
 5850a5a9a805986c	kessan-gaku	r2-suido/shihon-shishutsu	value	384656924	円	kessan-r3-ikensho p.31	✓	auto:pdftext	2026-11-08	
 c201d2384f0a8a4b	kessan-gaku	r2-suido/soshueki	value	525	百万円	zaisei-r2-shiryoshu 03!R31C17	✓	auto:pdftext	2026-11-08	
 4b044a79df91cad6	kessan-gaku	r2-suido/sohiyo	value	536	百万円	zaisei-r2-shiryoshu 03!R31C22	✓	auto:pdftext	2026-11-08	
-fd7d865645a447b2	kessan-gaku	r2-suido/junsoneki	value	-11	百万円	zaisei-r2-shiryoshu 03!R31C27	✓	auto:pdftext	2026-11-08	要人確認:H4 0点
+fd7d865645a447b2	kessan-gaku	r2-suido/junsoneki	value	-11	百万円	zaisei-r2-shiryoshu 03!R31C27	✓	auto:pdftext	2026-11-08	
 aa530bee9df6931a	kessan-gaku	r3-gesuido/shueki-shunyu	value	713754391	円	kessan-r3-ikensho p.37	✓	auto:pdftext	2026-11-08	
 8320c3401d199e2c	kessan-gaku	r3-gesuido/shueki-shishutsu	value	616079588	円	kessan-r3-ikensho p.38	✓	auto:pdftext	2026-11-08	
 3808d0423a1d42f0	kessan-gaku	r3-gesuido/shihon-shunyu	value	468523146	円	kessan-r3-ikensho p.38	✓	auto:pdftext	2026-11-08	
 74a84e201af2bc10	kessan-gaku	r3-gesuido/shihon-shishutsu	value	748666414	円	kessan-r3-ikensho p.39	✓	auto:pdftext	2026-11-08	
 01b1d0ad23cfd9e4	kessan-gaku	r3-gesuido/soshueki	value	691	百万円	zaisei-r3-shiryoshu 03!R32C17	✓	auto:pdftext	2026-11-08	
 d7c2ca0a4b611fbb	kessan-gaku	r3-gesuido/sohiyo	value	607	百万円	zaisei-r3-shiryoshu 03!R32C22	✓	auto:pdftext	2026-11-08	
-b11a97db016b71a9	kessan-gaku	r3-gesuido/junsoneki	value	84	百万円	zaisei-r3-shiryoshu 03!R32C27	✓	auto:pdftext	2026-11-08	要人確認:H4 0点
-531c8a63c8bee3b6	kessan-gaku	r3-ippan/sainyu	value	11091156343	円	kessan-r3-ikensho p.4	✓	auto:pdftext	2026-11-08	要人確認:H4 1点 別の出典と丸めの範囲でしか合わない
+b11a97db016b71a9	kessan-gaku	r3-gesuido/junsoneki	value	84	百万円	zaisei-r3-shiryoshu 03!R32C27	✓	auto:pdftext	2026-11-08	
+531c8a63c8bee3b6	kessan-gaku	r3-ippan/sainyu	value	11091156343	円	kessan-r3-ikensho p.4	✓	auto:pdftext	2026-11-08	
 d7423b7b705235d3	kessan-gaku	r3-ippan/saishutsu	value	10335965287	円	kessan-r3-ikensho p.4	✓	auto:pdftext	2026-11-08	
 8f999187235a5693	kessan-gaku	r3-ippan/sashihiki	value	755191056	円	kessan-r3-ikensho p.4	✓	auto:pdftext	2026-11-08	
 70e2f63f95e902e5	kessan-gaku	r3-ippan/jisshitsu	value	722495056	円	kessan-r3-ikensho p.4	✓	auto:pdftext	2026-11-08	
 412d9ef177983a15	kessan-gaku	r3-kaigo/sainyu-hoken	value	2259700724	円	kessan-r3-ikensho p.23	✓	auto:pdftext	2026-11-08	
 ee3be9c7b82037e4	kessan-gaku	r3-kaigo/saishutsu-hoken	value	2136238828	円	kessan-r3-ikensho p.23	✓	auto:pdftext	2026-11-08	
 62479274e951a2d7	kessan-gaku	r3-kaigo/sashihiki-hoken	value	123461896	円	kessan-r3-ikensho p.23	✓	auto:pdftext	2026-11-08	
-08a2b04d74ad0ffe	kessan-gaku	r3-kaigo/jisshitsu-hoken	value	123461896	円	kessan-r3-ikensho p.23	✓	auto:pdftext	2026-11-08	要人確認:H4 1点 別の出典と丸めの範囲でしか合わない
+08a2b04d74ad0ffe	kessan-gaku	r3-kaigo/jisshitsu-hoken	value	123461896	円	kessan-r3-ikensho p.23	✓	auto:pdftext	2026-11-08	
 bd54cd3a6f5980c8	kessan-gaku	r3-kaigo/sainyu-service	value	6887969	円	kessan-r3-ikensho p.25	✓	auto:pdftext	2026-11-08	
 d90d5e9630285c80	kessan-gaku	r3-kaigo/saishutsu-service	value	5795204	円	kessan-r3-ikensho p.25	✓	auto:pdftext	2026-11-08	
 2092a09e4b1f07aa	kessan-gaku	r3-kaigo/sashihiki-service	value	1092765	円	kessan-r3-ikensho p.25	✓	auto:pdftext	2026-11-08	
@@ -311,41 +311,41 @@ c877edb5009bd31e	kessan-gaku	r3-kansui/sainyu	value	11098201	円	kessan-r3-ikens
 7c1b12c88bab8b6a	kessan-gaku	r3-koki/sainyu	value	283540537	円	kessan-r3-ikensho p.27	✓	auto:pdftext	2026-11-08	
 31dc1fe82a855a71	kessan-gaku	r3-koki/saishutsu	value	279194722	円	kessan-r3-ikensho p.27	✓	auto:pdftext	2026-11-08	
 943e649677fbae23	kessan-gaku	r3-koki/sashihiki	value	4345815	円	kessan-r3-ikensho p.27	✓	auto:pdftext	2026-11-08	
-1caa45719303579b	kessan-gaku	r3-koki/jisshitsu	value	4345815	円	kessan-r3-ikensho p.27	✓	auto:pdftext	2026-11-08	要人確認:H4 1点 別の出典と丸めの範囲でしか合わない
+1caa45719303579b	kessan-gaku	r3-koki/jisshitsu	value	4345815	円	kessan-r3-ikensho p.27	✓	auto:pdftext	2026-11-08	
 10eb57081d3b4822	kessan-gaku	r3-kokuho/sainyu	value	2131481728	円	kessan-r3-ikensho p.15	✓	auto:pdftext	2026-11-08	
 295d5960fcad8322	kessan-gaku	r3-kokuho/saishutsu	value	2097277129	円	kessan-r3-ikensho p.15	✓	auto:pdftext	2026-11-08	
 544e0d3383b027a4	kessan-gaku	r3-kokuho/sashihiki	value	34204599	円	kessan-r3-ikensho p.15	✓	auto:pdftext	2026-11-08	
-ef5e2648ce46d18a	kessan-gaku	r3-kokuho/jisshitsu	value	34204599	円	kessan-r3-ikensho p.15	✓	auto:pdftext	2026-11-08	要人確認:H4 1点 別の出典と丸めの範囲でしか合わない
+ef5e2648ce46d18a	kessan-gaku	r3-kokuho/jisshitsu	value	34204599	円	kessan-r3-ikensho p.15	✓	auto:pdftext	2026-11-08	
 cd94da92083b5b87	kessan-gaku	r3-nishiyama/sainyu	value	2376206	円	kessan-r3-ikensho p.29	✓	auto:pdftext	2026-11-08	
 cbba7319a8893e8f	kessan-gaku	r3-nishiyama/saishutsu	value	1902971	円	kessan-r3-ikensho p.29	✓	auto:pdftext	2026-11-08	
 4a3734b923aea9cf	kessan-gaku	r3-nishiyama/sashihiki	value	473235	円	kessan-r3-ikensho p.29	✓	auto:pdftext	2026-11-08	
-d248352c6be5a555	kessan-gaku	r3-nishiyama/jisshitsu	value	473235	円	kessan-r3-ikensho p.29	✓	auto:pdftext	2026-11-08	要人確認:H4 0点
+d248352c6be5a555	kessan-gaku	r3-nishiyama/jisshitsu	value	473235	円	kessan-r3-ikensho p.29	✓	auto:pdftext	2026-11-08	
 e0bd114d89b37720	kessan-gaku	r3-noshu/sainyu	value	179592999	円	kessan-r3-ikensho p.21	✓	auto:pdftext	2026-11-08	
 8c095d4ee7ba06c7	kessan-gaku	r3-noshu/saishutsu	value	169077211	円	kessan-r3-ikensho p.21	✓	auto:pdftext	2026-11-08	
 c5473cb331b1866f	kessan-gaku	r3-noshu/sashihiki	value	10515788	円	kessan-r3-ikensho p.21	✓	auto:pdftext	2026-11-08	
-832bd4c925314a0f	kessan-gaku	r3-noshu/jisshitsu	value	9775788	円	kessan-r3-ikensho p.21	✓	auto:ai	2026-11-08	要人確認:H4 4点 段2 に回った・別の出典と丸めの範囲でしか合わない。段2 一致（2人とも高）。シート03 と 1.22 百万円違う
+832bd4c925314a0f	kessan-gaku	r3-noshu/jisshitsu	value	9775788	円	kessan-r3-ikensho p.21	✓	auto:ai	2026-11-08	段2 一致（2人とも高）。シート03 と 1.22 百万円違う
 8a478d9bf0e179a1	kessan-gaku	r3-suido/shueki-shunyu	value	689970919	円	kessan-r3-ikensho p.30	✓	auto:pdftext	2026-11-08	
 ec5ba29146339c11	kessan-gaku	r3-suido/shueki-shishutsu	value	556003951	円	kessan-r3-ikensho p.30	✓	auto:pdftext	2026-11-08	
 3b309000c7f5b20a	kessan-gaku	r3-suido/shihon-shunyu	value	175547430	円	kessan-r3-ikensho p.31	✓	auto:pdftext	2026-11-08	
 d4f9204651a6afc6	kessan-gaku	r3-suido/shihon-shishutsu	value	344438935	円	kessan-r3-ikensho p.31	✓	auto:pdftext	2026-11-08	
 343fa1d7f03cc04e	kessan-gaku	r3-suido/soshueki	value	623	百万円	zaisei-r3-shiryoshu 03!R31C17	✓	auto:pdftext	2026-11-08	
 c2fe6ab82d981822	kessan-gaku	r3-suido/sohiyo	value	526	百万円	zaisei-r3-shiryoshu 03!R31C22	✓	auto:pdftext	2026-11-08	
-c5b57c9346dfa637	kessan-gaku	r3-suido/junsoneki	value	98	百万円	zaisei-r3-shiryoshu 03!R31C27	✓	auto:pdftext	2026-11-08	要人確認:H4 0点
+c5b57c9346dfa637	kessan-gaku	r3-suido/junsoneki	value	98	百万円	zaisei-r3-shiryoshu 03!R31C27	✓	auto:pdftext	2026-11-08	
 6aa1ae4faf6675d7	kessan-gaku	r4-gesuido/shueki-shunyu	value	682965032	円	kessan-r4-ikensho p.37	✓	auto:pdftext	2026-11-08	
 bf2e1a85c6c4a441	kessan-gaku	r4-gesuido/shueki-shishutsu	value	601674088	円	kessan-r4-ikensho p.38	✓	auto:pdftext	2026-11-08	
 392f34e0843ba455	kessan-gaku	r4-gesuido/shihon-shunyu	value	621828965	円	kessan-r4-ikensho p.38	✓	auto:pdftext	2026-11-08	
 ae38b2b37c7d15a1	kessan-gaku	r4-gesuido/shihon-shishutsu	value	965253583	円	kessan-r4-ikensho p.39	✓	auto:pdftext	2026-11-08	
 d3c6c81054a28f2a	kessan-gaku	r4-gesuido/soshueki	value	662	百万円	zaisei-r4-shiryoshu 03!R32C17	✓	auto:pdftext	2026-11-08	
 9661fcb1f2618a5f	kessan-gaku	r4-gesuido/sohiyo	value	614	百万円	zaisei-r4-shiryoshu 03!R32C22	✓	auto:pdftext	2026-11-08	
-8e428ce43db0ac42	kessan-gaku	r4-gesuido/junsoneki	value	48	百万円	zaisei-r4-shiryoshu 03!R32C27	✓	auto:pdftext	2026-11-08	要人確認:H4 0点
-ab9c7f66e51c232c	kessan-gaku	r4-ippan/sainyu	value	10719675151	円	kessan-r4-ikensho p.4	✓	auto:pdftext	2026-11-08	要人確認:H4 1点 別の出典と丸めの範囲でしか合わない
+8e428ce43db0ac42	kessan-gaku	r4-gesuido/junsoneki	value	48	百万円	zaisei-r4-shiryoshu 03!R32C27	✓	auto:pdftext	2026-11-08	
+ab9c7f66e51c232c	kessan-gaku	r4-ippan/sainyu	value	10719675151	円	kessan-r4-ikensho p.4	✓	auto:pdftext	2026-11-08	
 03fc19cb6bffcf78	kessan-gaku	r4-ippan/saishutsu	value	9794035391	円	kessan-r4-ikensho p.4	✓	auto:pdftext	2026-11-08	
 302a202b82fac641	kessan-gaku	r4-ippan/sashihiki	value	925639760	円	kessan-r4-ikensho p.4	✓	auto:pdftext	2026-11-08	
 f136049c93e9e591	kessan-gaku	r4-ippan/jisshitsu	value	823765760	円	kessan-r4-ikensho p.4	✓	auto:pdftext	2026-11-08	
 2a304a4401397b9f	kessan-gaku	r4-kaigo/sainyu-hoken	value	2305581082	円	kessan-r4-ikensho p.23	✓	auto:pdftext	2026-11-08	
 20f0450f304e3d19	kessan-gaku	r4-kaigo/saishutsu-hoken	value	2119212329	円	kessan-r4-ikensho p.23	✓	auto:pdftext	2026-11-08	
 36df85e631e59c0b	kessan-gaku	r4-kaigo/sashihiki-hoken	value	186368753	円	kessan-r4-ikensho p.23	✓	auto:pdftext	2026-11-08	
-99a991a31febc2fa	kessan-gaku	r4-kaigo/jisshitsu-hoken	value	186368753	円	kessan-r4-ikensho p.23	✓	auto:pdftext	2026-11-08	要人確認:H4 1点 別の出典と丸めの範囲でしか合わない
+99a991a31febc2fa	kessan-gaku	r4-kaigo/jisshitsu-hoken	value	186368753	円	kessan-r4-ikensho p.23	✓	auto:pdftext	2026-11-08	
 7f0e620e8f315dad	kessan-gaku	r4-kaigo/sainyu-service	value	7401819	円	kessan-r4-ikensho p.25	✓	auto:pdftext	2026-11-08	
 84ba189279da5a75	kessan-gaku	r4-kaigo/saishutsu-service	value	6557169	円	kessan-r4-ikensho p.25	✓	auto:pdftext	2026-11-08	
 3f6c2690c4ba9eaf	kessan-gaku	r4-kaigo/sashihiki-service	value	844650	円	kessan-r4-ikensho p.25	✓	auto:pdftext	2026-11-08	
@@ -357,33 +357,33 @@ c4e70f2746789495	kessan-gaku	r4-kansui/sainyu	value	29915551	円	kessan-r4-ikens
 03003503c80025a6	kessan-gaku	r4-koki/sainyu	value	293559637	円	kessan-r4-ikensho p.27	✓	auto:pdftext	2026-11-08	
 9756a2251fe83ba7	kessan-gaku	r4-koki/saishutsu	value	289433182	円	kessan-r4-ikensho p.27	✓	auto:pdftext	2026-11-08	
 7d7115a11c7ff331	kessan-gaku	r4-koki/sashihiki	value	4126455	円	kessan-r4-ikensho p.27	✓	auto:pdftext	2026-11-08	
-753b8a6007989c9f	kessan-gaku	r4-koki/jisshitsu	value	4126455	円	kessan-r4-ikensho p.27	✓	auto:pdftext	2026-11-08	要人確認:H4 1点 別の出典と丸めの範囲でしか合わない
+753b8a6007989c9f	kessan-gaku	r4-koki/jisshitsu	value	4126455	円	kessan-r4-ikensho p.27	✓	auto:pdftext	2026-11-08	
 748fb23de200009a	kessan-gaku	r4-kokuho/sainyu	value	2062412322	円	kessan-r4-ikensho p.15	✓	auto:pdftext	2026-11-08	
 c9c45e4c29ec8f98	kessan-gaku	r4-kokuho/saishutsu	value	2052937460	円	kessan-r4-ikensho p.15	✓	auto:pdftext	2026-11-08	
 6d3c6700a178c595	kessan-gaku	r4-kokuho/sashihiki	value	9474862	円	kessan-r4-ikensho p.15	✓	auto:pdftext	2026-11-08	
-f01fd0390333c4d0	kessan-gaku	r4-kokuho/jisshitsu	value	9474862	円	kessan-r4-ikensho p.15	✓	auto:pdftext	2026-11-08	要人確認:H4 1点 別の出典と丸めの範囲でしか合わない
+f01fd0390333c4d0	kessan-gaku	r4-kokuho/jisshitsu	value	9474862	円	kessan-r4-ikensho p.15	✓	auto:pdftext	2026-11-08	
 f8a72906971ce20c	kessan-gaku	r4-nishiyama/sainyu	value	2603780	円	kessan-r4-ikensho p.29	✓	auto:pdftext	2026-11-08	
 1fefa3f7e65e56aa	kessan-gaku	r4-nishiyama/saishutsu	value	1917476	円	kessan-r4-ikensho p.29	✓	auto:pdftext	2026-11-08	
 e53439adfcbebd15	kessan-gaku	r4-nishiyama/sashihiki	value	686304	円	kessan-r4-ikensho p.29	✓	auto:pdftext	2026-11-08	
-acc48bdc2c17fa76	kessan-gaku	r4-nishiyama/jisshitsu	value	686304	円	kessan-r4-ikensho p.29	✓	auto:pdftext	2026-11-08	要人確認:H4 0点
+acc48bdc2c17fa76	kessan-gaku	r4-nishiyama/jisshitsu	value	686304	円	kessan-r4-ikensho p.29	✓	auto:pdftext	2026-11-08	
 7f0af2c182529dff	kessan-gaku	r4-noshu/sainyu	value	154744873	円	kessan-r4-ikensho p.21	✓	auto:pdftext	2026-11-08	
 3d51fc2f00cfb640	kessan-gaku	r4-noshu/saishutsu	value	134425548	円	kessan-r4-ikensho p.21	✓	auto:pdftext	2026-11-08	
 e31235ee225fdfb9	kessan-gaku	r4-noshu/sashihiki	value	20319325	円	kessan-r4-ikensho p.21	✓	auto:pdftext	2026-11-08	
-bca46f992d4c8dcd	kessan-gaku	r4-noshu/jisshitsu	value	14499325	円	kessan-r4-ikensho p.21	✓	auto:ai	2026-11-08	要人確認:H4 4点 段2 に回った・別の出典と丸めの範囲でしか合わない。段2 一致（2人とも高）。シート03 と 5.5 百万円違う
+bca46f992d4c8dcd	kessan-gaku	r4-noshu/jisshitsu	value	14499325	円	kessan-r4-ikensho p.21	✓	auto:ai	2026-11-08	段2 一致（2人とも高）。シート03 と 5.5 百万円違う
 3508171dd290e582	kessan-gaku	r4-suido/shueki-shunyu	value	659406580	円	kessan-r4-ikensho p.30	✓	auto:pdftext	2026-11-08	
 1f323b3971f8ee94	kessan-gaku	r4-suido/shueki-shishutsu	value	554287995	円	kessan-r4-ikensho p.30	✓	auto:pdftext	2026-11-08	
 889cc786c594a4cd	kessan-gaku	r4-suido/shihon-shunyu	value	96278200	円	kessan-r4-ikensho p.31	✓	auto:pdftext	2026-11-08	
 3195f41614b113b1	kessan-gaku	r4-suido/shihon-shishutsu	value	285576074	円	kessan-r4-ikensho p.31	✓	auto:pdftext	2026-11-08	
 e913fc8829bc103f	kessan-gaku	r4-suido/soshueki	value	606	百万円	zaisei-r4-shiryoshu 03!R31C17	✓	auto:pdftext	2026-11-08	
 fdb3e0452d2502c0	kessan-gaku	r4-suido/sohiyo	value	517	百万円	zaisei-r4-shiryoshu 03!R31C22	✓	auto:pdftext	2026-11-08	
-c8246a0fde1ca2eb	kessan-gaku	r4-suido/junsoneki	value	89	百万円	zaisei-r4-shiryoshu 03!R31C27	✓	auto:pdftext	2026-11-08	要人確認:H4 0点
+c8246a0fde1ca2eb	kessan-gaku	r4-suido/junsoneki	value	89	百万円	zaisei-r4-shiryoshu 03!R31C27	✓	auto:pdftext	2026-11-08	
 0cd4ecdcedc6ace1	kessan-gaku	r5-gesuido/shueki-shunyu	value	829988211	円	kessan-r5-ikensho p.32	✓	auto:pdftext	2026-11-08	
 2d9ac200574ea907	kessan-gaku	r5-gesuido/shueki-shishutsu	value	765319932	円	kessan-r5-ikensho p.33	✓	auto:pdftext	2026-11-08	
 8adc8f593948a863	kessan-gaku	r5-gesuido/shihon-shunyu	value	478664825	円	kessan-r5-ikensho p.33	✓	auto:pdftext	2026-11-08	
 b6c8f66d9362fbd4	kessan-gaku	r5-gesuido/shihon-shishutsu	value	785473703	円	kessan-r5-ikensho p.34	✓	auto:pdftext	2026-11-08	
 c251054fdf1e24b4	kessan-gaku	r5-gesuido/soshueki	value	802	百万円	zaisei-r5-shiryoshu 03!R32C17	✓	auto:pdftext	2026-11-08	
 acf81ca78d56f2e3	kessan-gaku	r5-gesuido/sohiyo	value	743	百万円	zaisei-r5-shiryoshu 03!R32C22	✓	auto:pdftext	2026-11-08	
-1c4d0a5e8f2baf6e	kessan-gaku	r5-gesuido/junsoneki	value	59	百万円	zaisei-r5-shiryoshu 03!R32C27	✓	auto:pdftext	2026-11-08	要人確認:H4 0点
+1c4d0a5e8f2baf6e	kessan-gaku	r5-gesuido/junsoneki	value	59	百万円	zaisei-r5-shiryoshu 03!R32C27	✓	auto:pdftext	2026-11-08	
 bf18e43f18d93964	kessan-gaku	r5-ippan/sainyu	value	10741276823	円	kessan-r5-ikensho p.4	✓	auto:pdftext	2026-11-08	要人確認:H4 1点 別の出典と丸めの範囲でしか合わない
 85ac1f3c9687d23c	kessan-gaku	r5-ippan/saishutsu	value	10089555733	円	kessan-r5-ikensho p.4	✓	auto:pdftext	2026-11-08	
 a049669e348a959d	kessan-gaku	r5-ippan/sashihiki	value	651721090	円	kessan-r5-ikensho p.4	✓	auto:pdftext	2026-11-08	
@@ -391,7 +391,7 @@ a049669e348a959d	kessan-gaku	r5-ippan/sashihiki	value	651721090	円	kessan-r5-ik
 84f25faf7682eb83	kessan-gaku	r5-kaigo/sainyu-hoken	value	2317212752	円	kessan-r5-ikensho p.18	✓	auto:pdftext	2026-11-08	
 93ac1af727ebe501	kessan-gaku	r5-kaigo/saishutsu-hoken	value	2167833520	円	kessan-r5-ikensho p.18	✓	auto:pdftext	2026-11-08	
 3f19046c234a0523	kessan-gaku	r5-kaigo/sashihiki-hoken	value	149379232	円	kessan-r5-ikensho p.18	✓	auto:pdftext	2026-11-08	
-51a7df5b2bb270a0	kessan-gaku	r5-kaigo/jisshitsu-hoken	value	149379232	円	kessan-r5-ikensho p.18	✓	auto:pdftext	2026-11-08	要人確認:H4 1点 別の出典と丸めの範囲でしか合わない
+51a7df5b2bb270a0	kessan-gaku	r5-kaigo/jisshitsu-hoken	value	149379232	円	kessan-r5-ikensho p.18	✓	auto:pdftext	2026-11-08	
 65d0c58e0d9dc00a	kessan-gaku	r5-kaigo/sainyu-service	value	7137489	円	kessan-r5-ikensho p.20	✓	auto:pdftext	2026-11-08	
 c5e58e49b274ec39	kessan-gaku	r5-kaigo/saishutsu-service	value	6483021	円	kessan-r5-ikensho p.20	✓	auto:pdftext	2026-11-08	
 6d2feef20c338eb2	kessan-gaku	r5-kaigo/sashihiki-service	value	654468	円	kessan-r5-ikensho p.20	✓	auto:pdftext	2026-11-08	
@@ -399,22 +399,22 @@ c5e58e49b274ec39	kessan-gaku	r5-kaigo/saishutsu-service	value	6483021	円	kessan
 6f4887780dd322a3	kessan-gaku	r5-koki/sainyu	value	302971478	円	kessan-r5-ikensho p.22	✓	auto:pdftext	2026-11-08	
 49165b3cd209c86c	kessan-gaku	r5-koki/saishutsu	value	298060960	円	kessan-r5-ikensho p.22	✓	auto:pdftext	2026-11-08	
 9d24ff6b4355a2e4	kessan-gaku	r5-koki/sashihiki	value	4910518	円	kessan-r5-ikensho p.22	✓	auto:pdftext	2026-11-08	
-9678fb2a19ea447c	kessan-gaku	r5-koki/jisshitsu	value	4910518	円	kessan-r5-ikensho p.22	✓	auto:pdftext	2026-11-08	要人確認:H4 1点 別の出典と丸めの範囲でしか合わない
+9678fb2a19ea447c	kessan-gaku	r5-koki/jisshitsu	value	4910518	円	kessan-r5-ikensho p.22	✓	auto:pdftext	2026-11-08	
 673b1d671f3ba67d	kessan-gaku	r5-kokuho/sainyu	value	2069179995	円	kessan-r5-ikensho p.14	✓	auto:pdftext	2026-11-08	
 fb27c1746adb7099	kessan-gaku	r5-kokuho/saishutsu	value	2058123103	円	kessan-r5-ikensho p.14	✓	auto:pdftext	2026-11-08	
 240329749fd52bee	kessan-gaku	r5-kokuho/sashihiki	value	11056892	円	kessan-r5-ikensho p.14	✓	auto:pdftext	2026-11-08	
-7927e612c8331132	kessan-gaku	r5-kokuho/jisshitsu	value	11056892	円	kessan-r5-ikensho p.14	✓	auto:pdftext	2026-11-08	要人確認:H4 1点 別の出典と丸めの範囲でしか合わない
+7927e612c8331132	kessan-gaku	r5-kokuho/jisshitsu	value	11056892	円	kessan-r5-ikensho p.14	✓	auto:pdftext	2026-11-08	
 9ac7ebf73695a76a	kessan-gaku	r5-nishiyama/sainyu	value	2557150	円	kessan-r5-ikensho p.24	✓	auto:pdftext	2026-11-08	
 4b041c13a87c32a2	kessan-gaku	r5-nishiyama/saishutsu	value	1924987	円	kessan-r5-ikensho p.24	✓	auto:pdftext	2026-11-08	
 39e3a2d7ab6c7ddc	kessan-gaku	r5-nishiyama/sashihiki	value	632163	円	kessan-r5-ikensho p.24	✓	auto:pdftext	2026-11-08	
-70c8235dfd46cb82	kessan-gaku	r5-nishiyama/jisshitsu	value	632163	円	kessan-r5-ikensho p.24	✓	auto:pdftext	2026-11-08	要人確認:H4 0点
+70c8235dfd46cb82	kessan-gaku	r5-nishiyama/jisshitsu	value	632163	円	kessan-r5-ikensho p.24	✓	auto:pdftext	2026-11-08	
 4b24490554c1b071	kessan-gaku	r5-suido/shueki-shunyu	value	666414278	円	kessan-r5-ikensho p.25	✓	auto:pdftext	2026-11-08	
 4af5401accfef3e9	kessan-gaku	r5-suido/shueki-shishutsu	value	548641430	円	kessan-r5-ikensho p.25	✓	auto:pdftext	2026-11-08	
 5e7b6f1ec755d95e	kessan-gaku	r5-suido/shihon-shunyu	value	146964600	円	kessan-r5-ikensho p.26	✓	auto:pdftext	2026-11-08	
 df25663a9deef5c3	kessan-gaku	r5-suido/shihon-shishutsu	value	236846571	円	kessan-r5-ikensho p.26	✓	auto:pdftext	2026-11-08	
 d083c2ccd84a02b1	kessan-gaku	r5-suido/soshueki	value	611	百万円	zaisei-r5-shiryoshu 03!R31C17	✓	auto:pdftext	2026-11-08	
 ccda29614929369e	kessan-gaku	r5-suido/sohiyo	value	506	百万円	zaisei-r5-shiryoshu 03!R31C22	✓	auto:pdftext	2026-11-08	
-0a3232cad1ee1da6	kessan-gaku	r5-suido/junsoneki	value	105	百万円	zaisei-r5-shiryoshu 03!R31C27	✓	auto:pdftext	2026-11-08	要人確認:H4 0点
+0a3232cad1ee1da6	kessan-gaku	r5-suido/junsoneki	value	105	百万円	zaisei-r5-shiryoshu 03!R31C27	✓	auto:pdftext	2026-11-08	
 e3361685bf2c91bb	kessan-gaku	r6-gesuido/shueki-shunyu	value	798908936	円	kessan-r6-ikensho p.32	✓	auto:pdftext	2026-11-08	
 6a4eb6e18d694846	kessan-gaku	r6-gesuido/shueki-shishutsu	value	779460536	円	kessan-r6-ikensho p.33	✓	auto:pdftext	2026-11-08	
 376f9aeccc68b60d	kessan-gaku	r6-gesuido/shihon-shunyu	value	480502690	円	kessan-r6-ikensho p.33	✓	auto:pdftext	2026-11-08	
@@ -422,14 +422,14 @@ e3361685bf2c91bb	kessan-gaku	r6-gesuido/shueki-shunyu	value	798908936	円	kessan
 b8a42ff1ae42472d	kessan-gaku	r6-gesuido/soshueki	value	768	百万円	zaisei-r6-shiryoshu 03!R32C17	✓	auto:pdftext	2026-11-08	
 3644fb3813c4f0f3	kessan-gaku	r6-gesuido/sohiyo	value	763	百万円	zaisei-r6-shiryoshu 03!R32C22	✓	auto:pdftext	2026-11-08	
 5501008ab928740b	kessan-gaku	r6-gesuido/junsoneki	value	5	百万円	zaisei-r6-shiryoshu 03!R32C27	✓	auto:pdftext	2026-11-08	要人確認:H4 1点 値が0か1桁
-3362a4ad93f3644f	kessan-gaku	r6-ippan/sainyu	value	11000645903	円	kessan-r6-ikensho p.4	✓	auto:pdftext	2026-11-08	要人確認:H4 1点 別の出典と丸めの範囲でしか合わない
+3362a4ad93f3644f	kessan-gaku	r6-ippan/sainyu	value	11000645903	円	kessan-r6-ikensho p.4	✓	auto:pdftext	2026-11-08	
 54aa46ebda68c0aa	kessan-gaku	r6-ippan/saishutsu	value	10232293135	円	kessan-r6-ikensho p.4	✓	auto:pdftext	2026-11-08	
 2c4e077372e12201	kessan-gaku	r6-ippan/sashihiki	value	768352768	円	kessan-r6-ikensho p.4	✓	auto:pdftext	2026-11-08	
 fca784299ac67c3a	kessan-gaku	r6-ippan/jisshitsu	value	714447768	円	kessan-r6-ikensho p.4	✓	auto:pdftext	2026-11-08	
 2c5206941f768d1e	kessan-gaku	r6-kaigo/sainyu-hoken	value	2249522066	円	kessan-r6-ikensho p.18	✓	auto:pdftext	2026-11-08	
 91e43206c732dada	kessan-gaku	r6-kaigo/saishutsu-hoken	value	2116219481	円	kessan-r6-ikensho p.18	✓	auto:pdftext	2026-11-08	
 0a7eefb4aaff8ac1	kessan-gaku	r6-kaigo/sashihiki-hoken	value	133302585	円	kessan-r6-ikensho p.18	✓	auto:pdftext	2026-11-08	
-dec21cc4838246e7	kessan-gaku	r6-kaigo/jisshitsu-hoken	value	133302585	円	kessan-r6-ikensho p.18	✓	auto:pdftext	2026-11-08	要人確認:H4 1点 別の出典と丸めの範囲でしか合わない
+dec21cc4838246e7	kessan-gaku	r6-kaigo/jisshitsu-hoken	value	133302585	円	kessan-r6-ikensho p.18	✓	auto:pdftext	2026-11-08	
 ff060a2fa4f6f596	kessan-gaku	r6-kaigo/sainyu-service	value	7795014	円	kessan-r6-ikensho p.20	✓	auto:pdftext	2026-11-08	
 f73db2a3291ba8a9	kessan-gaku	r6-kaigo/saishutsu-service	value	7081580	円	kessan-r6-ikensho p.20	✓	auto:pdftext	2026-11-08	
 f105c1bb294861ab	kessan-gaku	r6-kaigo/sashihiki-service	value	713434	円	kessan-r6-ikensho p.20	✓	auto:pdftext	2026-11-08	
@@ -437,22 +437,22 @@ f105c1bb294861ab	kessan-gaku	r6-kaigo/sashihiki-service	value	713434	円	kessan-
 a5970bc3165e172c	kessan-gaku	r6-koki/sainyu	value	341215736	円	kessan-r6-ikensho p.22	✓	auto:pdftext	2026-11-08	
 ca2d6aa5cabf4cb2	kessan-gaku	r6-koki/saishutsu	value	334955612	円	kessan-r6-ikensho p.22	✓	auto:pdftext	2026-11-08	
 584d0244013ead8b	kessan-gaku	r6-koki/sashihiki	value	6260124	円	kessan-r6-ikensho p.22	✓	auto:pdftext	2026-11-08	
-27aab18d9b2f11bd	kessan-gaku	r6-koki/jisshitsu	value	6260124	円	kessan-r6-ikensho p.22	✓	auto:pdftext	2026-11-08	要人確認:H4 1点 別の出典と丸めの範囲でしか合わない
+27aab18d9b2f11bd	kessan-gaku	r6-koki/jisshitsu	value	6260124	円	kessan-r6-ikensho p.22	✓	auto:pdftext	2026-11-08	
 831ebbfbe29e1e5d	kessan-gaku	r6-kokuho/sainyu	value	2038705877	円	kessan-r6-ikensho p.14	✓	auto:pdftext	2026-11-08	
 295e0bedaba1a99b	kessan-gaku	r6-kokuho/saishutsu	value	2026385526	円	kessan-r6-ikensho p.14	✓	auto:pdftext	2026-11-08	
 c0ee22d7766dee55	kessan-gaku	r6-kokuho/sashihiki	value	12320351	円	kessan-r6-ikensho p.14	✓	auto:pdftext	2026-11-08	
-cc03b4409b51fe29	kessan-gaku	r6-kokuho/jisshitsu	value	12320351	円	kessan-r6-ikensho p.14	✓	auto:pdftext	2026-11-08	要人確認:H4 1点 別の出典と丸めの範囲でしか合わない
+cc03b4409b51fe29	kessan-gaku	r6-kokuho/jisshitsu	value	12320351	円	kessan-r6-ikensho p.14	✓	auto:pdftext	2026-11-08	
 ba262c4499006610	kessan-gaku	r6-nishiyama/sainyu	value	2587489	円	kessan-r6-ikensho p.24	✓	auto:pdftext	2026-11-08	
 4c1d26226975d71d	kessan-gaku	r6-nishiyama/saishutsu	value	1906869	円	kessan-r6-ikensho p.24	✓	auto:pdftext	2026-11-08	
 56bea97ff2b4c671	kessan-gaku	r6-nishiyama/sashihiki	value	680620	円	kessan-r6-ikensho p.24	✓	auto:pdftext	2026-11-08	
-ac4201b45f97ac23	kessan-gaku	r6-nishiyama/jisshitsu	value	680620	円	kessan-r6-ikensho p.24	✓	auto:pdftext	2026-11-08	要人確認:H4 0点
+ac4201b45f97ac23	kessan-gaku	r6-nishiyama/jisshitsu	value	680620	円	kessan-r6-ikensho p.24	✓	auto:pdftext	2026-11-08	
 3f31d7eb13b2cdd2	kessan-gaku	r6-suido/shueki-shunyu	value	630782136	円	kessan-r6-ikensho p.25	✓	auto:pdftext	2026-11-08	
 e51b8130343b8494	kessan-gaku	r6-suido/shueki-shishutsu	value	546251425	円	kessan-r6-ikensho p.25	✓	auto:pdftext	2026-11-08	
 b141c2cc6ad70c9d	kessan-gaku	r6-suido/shihon-shunyu	value	148591800	円	kessan-r6-ikensho p.26	✓	auto:pdftext	2026-11-08	
 012b793818476be0	kessan-gaku	r6-suido/shihon-shishutsu	value	254852209	円	kessan-r6-ikensho p.26	✓	auto:pdftext	2026-11-08	
 9536c1d86876c78f	kessan-gaku	r6-suido/soshueki	value	576	百万円	zaisei-r6-shiryoshu 03!R31C17	✓	auto:pdftext	2026-11-08	
 aa858f1e484f5a5c	kessan-gaku	r6-suido/sohiyo	value	505	百万円	zaisei-r6-shiryoshu 03!R31C22	✓	auto:pdftext	2026-11-08	
-376257de4e171c47	kessan-gaku	r6-suido/junsoneki	value	71	百万円	zaisei-r6-shiryoshu 03!R31C27	✓	auto:pdftext	2026-11-08	要人確認:H4 0点
+376257de4e171c47	kessan-gaku	r6-suido/junsoneki	value	71	百万円	zaisei-r6-shiryoshu 03!R31C27	✓	auto:pdftext	2026-11-08	
 9d51077ad99c0260	kessan-gaku	r7-gesuido/shueki-shunyu	value	744404116	円	kessan-r7-ikensho p.31	✓	auto:pdftext	2026-11-08	
 98ce3f8faa076fb3	kessan-gaku	r7-gesuido/shueki-shishutsu	value	778610710	円	kessan-r7-ikensho p.32	✓	auto:pdftext	2026-11-08	
 6f1c86d43a720f4b	kessan-gaku	r7-gesuido/shihon-shunyu	value	447776760	円	kessan-r7-ikensho p.32	✓	auto:pdftext	2026-11-08	
@@ -460,11 +460,11 @@ b340fd0842d871fe	kessan-gaku	r7-gesuido/shihon-shishutsu	value	705755070	円	kes
 3471a771e3a559eb	kessan-gaku	r7-ippan/sainyu	value	12078567240	円	kessan-r7-ikensho p.4	✓	auto:pdftext	2026-11-08	
 e494fa847d73143d	kessan-gaku	r7-ippan/saishutsu	value	11334406401	円	kessan-r7-ikensho p.4	✓	auto:pdftext	2026-11-08	
 cf543791b37bf08a	kessan-gaku	r7-ippan/sashihiki	value	744160839	円	kessan-r7-ikensho p.4	✓	auto:pdftext	2026-11-08	
-640bfbd15ab43ecc	kessan-gaku	r7-ippan/jisshitsu	value	632947839	円	kessan-r7-ikensho p.4	✓	auto:pdftext	2026-11-08	要人確認:H4 0点
+640bfbd15ab43ecc	kessan-gaku	r7-ippan/jisshitsu	value	632947839	円	kessan-r7-ikensho p.4	✓	auto:pdftext	2026-11-08	
 339d671add8149c3	kessan-gaku	r7-kaigo/sainyu-hoken	value	2243462996	円	kessan-r7-ikensho p.17	✓	auto:pdftext	2026-11-08	
 4007ccd7555e726d	kessan-gaku	r7-kaigo/saishutsu-hoken	value	2174219854	円	kessan-r7-ikensho p.17	✓	auto:pdftext	2026-11-08	
 bc2bd371f5f96cdc	kessan-gaku	r7-kaigo/sashihiki-hoken	value	69243142	円	kessan-r7-ikensho p.17	✓	auto:pdftext	2026-11-08	
-dd30aab2b7160540	kessan-gaku	r7-kaigo/jisshitsu-hoken	value	69243142	円	kessan-r7-ikensho p.17	✓	auto:pdftext	2026-11-08	要人確認:H4 0点
+dd30aab2b7160540	kessan-gaku	r7-kaigo/jisshitsu-hoken	value	69243142	円	kessan-r7-ikensho p.17	✓	auto:pdftext	2026-11-08	
 a4c72507905e7afe	kessan-gaku	r7-kaigo/sainyu-service	value	8965021	円	kessan-r7-ikensho p.19	✓	auto:pdftext	2026-11-08	
 fa7b4d8ef306ea0f	kessan-gaku	r7-kaigo/saishutsu-service	value	8964812	円	kessan-r7-ikensho p.19	✓	auto:pdftext	2026-11-08	
 81eb1f2e865239c2	kessan-gaku	r7-kaigo/sashihiki-service	value	209	円	kessan-r7-ikensho p.19	✓	auto:pdftext	2026-11-08	
@@ -472,19 +472,19 @@ fa7b4d8ef306ea0f	kessan-gaku	r7-kaigo/saishutsu-service	value	8964812	円	kessan
 711a07aa841377bc	kessan-gaku	r7-koki/sainyu	value	370994298	円	kessan-r7-ikensho p.21	✓	auto:pdftext	2026-11-08	
 f73a975e375e2414	kessan-gaku	r7-koki/saishutsu	value	363422252	円	kessan-r7-ikensho p.21	✓	auto:pdftext	2026-11-08	
 5d81b1c832c68944	kessan-gaku	r7-koki/sashihiki	value	7572046	円	kessan-r7-ikensho p.21	✓	auto:pdftext	2026-11-08	
-3731a5dd51c726cb	kessan-gaku	r7-koki/jisshitsu	value	7572046	円	kessan-r7-ikensho p.21	✓	auto:pdftext	2026-11-08	要人確認:H4 0点
+3731a5dd51c726cb	kessan-gaku	r7-koki/jisshitsu	value	7572046	円	kessan-r7-ikensho p.21	✓	auto:pdftext	2026-11-08	
 e7bf168a7b593c03	kessan-gaku	r7-kokuho/sainyu	value	2019116247	円	kessan-r7-ikensho p.13	✓	auto:pdftext	2026-11-08	
 9ee3ab94e7ce1042	kessan-gaku	r7-kokuho/saishutsu	value	1989238476	円	kessan-r7-ikensho p.13	✓	auto:pdftext	2026-11-08	
 f26bc3dcc3faa6e9	kessan-gaku	r7-kokuho/sashihiki	value	29877771	円	kessan-r7-ikensho p.13	✓	auto:pdftext	2026-11-08	
-224d8c9440330377	kessan-gaku	r7-kokuho/jisshitsu	value	29877771	円	kessan-r7-ikensho p.13	✓	auto:pdftext	2026-11-08	要人確認:H4 0点
+224d8c9440330377	kessan-gaku	r7-kokuho/jisshitsu	value	29877771	円	kessan-r7-ikensho p.13	✓	auto:pdftext	2026-11-08	
 b1330edcde13bb03	kessan-gaku	r7-nishiyama/sainyu	value	2726123	円	kessan-r7-ikensho p.23	✓	auto:pdftext	2026-11-08	
 3a7091d6fae4a0bf	kessan-gaku	r7-nishiyama/saishutsu	value	2046877	円	kessan-r7-ikensho p.23	✓	auto:pdftext	2026-11-08	
 7c8bac0f818e5f3d	kessan-gaku	r7-nishiyama/sashihiki	value	679246	円	kessan-r7-ikensho p.23	✓	auto:pdftext	2026-11-08	
-54cb7240dd538749	kessan-gaku	r7-nishiyama/jisshitsu	value	679246	円	kessan-r7-ikensho p.23	✓	auto:pdftext	2026-11-08	要人確認:H4 0点
+54cb7240dd538749	kessan-gaku	r7-nishiyama/jisshitsu	value	679246	円	kessan-r7-ikensho p.23	✓	auto:pdftext	2026-11-08	
 5e3a5e6141e6cf88	kessan-gaku	r7-suido/shueki-shunyu	value	615622394	円	kessan-r7-ikensho p.24	✓	auto:pdftext	2026-11-08	
 3d19d7180cca1d98	kessan-gaku	r7-suido/shueki-shishutsu	value	529235179	円	kessan-r7-ikensho p.24	✓	auto:pdftext	2026-11-08	
 f3e6d6a8c13f534b	kessan-gaku	r7-suido/shihon-shunyu	value	52261826	円	kessan-r7-ikensho p.25	✓	auto:pdftext	2026-11-08	
-afa56fc1481ff3a8	kessan-gaku	r7-suido/shihon-shishutsu	value	251792227	円	kessan-r7-ikensho p.25	✓	auto:pdftext	2026-11-08	要人確認:H4 0点
+afa56fc1481ff3a8	kessan-gaku	r7-suido/shihon-shishutsu	value	251792227	円	kessan-r7-ikensho p.25	✓	auto:pdftext	2026-11-08	
 7332ce64dab22435	kessan-uchiwake	h24-ippan/u001	name,value	町税|322610	万円	kessan-h24-gaiyou p.1	✓	auto:pdftext	2026-11-08	要人確認:H4 3点 億・万の字を万円に読んだ・円グラフの値が文字に2回出る
 f3ad79b887cd4cd6	kessan-uchiwake	h24-ippan/u002	name,value	分担金及び負担金|24762	万円	kessan-h24-gaiyou p.1	✓	auto:pdftext	2026-11-08	
 0b799be09510490f	kessan-uchiwake	h24-ippan/u003	name,value	諸収入|11154	万円	kessan-h24-gaiyou p.1	✓	auto:pdftext	2026-11-08	
