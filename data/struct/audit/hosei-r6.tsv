@@ -659,20 +659,20 @@ b548db2215490e55	hosei-kan	r6-ippan-10/sei-3-2	tosho,tosho_ippan,mae,mae_ippan,h
 55672592d3afba5f	hosei-kan	r6-ippan-10/sei-3-7	tosho,tosho_ippan,mae,mae_ippan,hosei,hosei_ippan,hoseigo,hoseigo_ippan,taitosho	590755|454725|593531|457501|-28755|-19354|564776|438147|-4.4	千円	yosan-r6-hosei-03 p.7	✓	auto:pdftext	2026-11-08	
 11428a35ea08b33e	hosei-kan	r6-ippan-10/sei-3-8	tosho,tosho_ippan,mae,mae_ippan,hosei,hosei_ippan,hoseigo,hoseigo_ippan,taitosho	5000|5000|5000|5000|0|0|5000|5000|0.0	千円	yosan-r6-hosei-03 p.7	✓	auto:pdftext	2026-11-08	
 1f97e310a52e4ce2	hosei-kan	r6-ippan-10/sei-total	tosho,tosho_ippan,mae,mae_ippan,hosei,hosei_ippan,hoseigo,hoseigo_ippan,taitosho	9935000|7044242|10844658|7377263|354683|-149564|11199341|7227699|12.7	千円	yosan-r6-hosei-03 p.7	✓	auto:pdftext	2026-11-08	
-864ac335dccd5ee5	hosei-maru	r6-gesuido-01/t001	name,amount	下水道事業会計補正予算（第 1 号）|8584	千円	yosan-r6-hosei-12-tsuika p.2	✓	auto:pdftext	2026-11-08	
-f6380ea99a60c9d3	hosei-maru	r6-gesuido-02/t001	name,amount	下水道事業会計補正予算（第２号）|-40390	千円	yosan-r6-hosei-03 p.3	✓	auto:pdftext	2026-11-08	
-dbe1dcaeb8df77e8	hosei-maru	r6-ippan-01/m001	name,amount	都市計画総務事務事業|9500	千円	yosan-r6-tosho-hosei-tsuika p.1	✓	auto:pdftext	2026-11-08	
-79da61ecba22c649	hosei-maru	r6-ippan-02/m001	name,amount	会計年度任用職員人件費（社会福祉総務費）|371	千円	yosan-r6-hosei-05 p.1	✓	auto:pdftext	2026-11-08	
+864ac335dccd5ee5	hosei-maru	r6-gesuido-01/t001	name,amount	下水道事業会計補正予算（第 1 号）|8584	千円	yosan-r6-hosei-12-tsuika p.2	✓	auto:pdftext	2026-11-08	要人確認:H4 0点
+f6380ea99a60c9d3	hosei-maru	r6-gesuido-02/t001	name,amount	下水道事業会計補正予算（第２号）|-40390	千円	yosan-r6-hosei-03 p.3	✓	auto:pdftext	2026-11-08	要人確認:H4 0点
+dbe1dcaeb8df77e8	hosei-maru	r6-ippan-01/m001	name,amount	都市計画総務事務事業|9500	千円	yosan-r6-tosho-hosei-tsuika p.1	✓	auto:pdftext	2026-11-08	要人確認:H4 2点 同じ金額の字がページに3回以上
+79da61ecba22c649	hosei-maru	r6-ippan-02/m001	name,amount	会計年度任用職員人件費（社会福祉総務費）|371	千円	yosan-r6-hosei-05 p.1	✓	auto:pdftext	2026-11-08	要人確認:H4 2点 説明の文を共有
 1e2ee9be9fffaf3b	hosei-maru	r6-ippan-02/m002	name,amount	物価高騰対応重点支援事業（一体支援）|65202	千円	yosan-r6-hosei-05 p.2	✓	auto:pdftext	2026-11-08	
 9fba688e31243df2	hosei-maru	r6-ippan-02/m003	name,amount	物価高騰対応重点支援事業（調整給付）|117067	千円	yosan-r6-hosei-05 p.2	✓	auto:pdftext	2026-11-08	
 c2a9f71f452f3d3e	hosei-maru	r6-ippan-02/m004	name,amount	国民健康保険特別会計繰出金|809	千円	yosan-r6-hosei-05 p.2	✓	auto:pdftext	2026-11-08	
-67e206e2444ccb01	hosei-maru	r6-ippan-03/m001	name,amount	人事管理事業|3704	千円	yosan-r6-hosei-06 p.2	✓	auto:pdftext	2026-11-08	
+67e206e2444ccb01	hosei-maru	r6-ippan-03/m001	name,amount	人事管理事業|3704	千円	yosan-r6-hosei-06 p.2	✓	auto:pdftext	2026-11-08	要人確認:H4 0点
 54ab2394a123314e	hosei-maru	r6-ippan-03/m002	name,amount	児童手当支給事業|8685	千円	yosan-r6-hosei-06 p.2	✓	auto:pdftext	2026-11-08	
 8a8279c5ff3180ae	hosei-maru	r6-ippan-03/m003	name,amount	予防接種事業|53300	千円	yosan-r6-hosei-06 p.2	✓	auto:pdftext	2026-11-08	
 f77caaf49f076f87	hosei-maru	r6-ippan-03/m004	name,amount	勤労福祉会館管理運営事業|861	千円	yosan-r6-hosei-06 p.2	✓	auto:pdftext	2026-11-08	
 7c6ab370add3c6e4	hosei-maru	r6-ippan-03/m005	name,amount	図書館管理事業|31339	千円	yosan-r6-hosei-06 p.2	✓	auto:pdftext	2026-11-08	
-604ab549d1972447	hosei-maru	r6-ippan-04/m001	name,amount	物価高騰対応重点支援事業（調整給付）|65000	千円	yosan-r6-hosei-07 p.1	✓	auto:pdftext	2026-11-08	
-fd352f02b1c07536	hosei-maru	r6-ippan-05/m001	name,amount	議会運営事業|1817	千円	yosan-r6-hosei-09 p.2	✓	auto:pdftext	2026-11-08	
+604ab549d1972447	hosei-maru	r6-ippan-04/m001	name,amount	物価高騰対応重点支援事業（調整給付）|65000	千円	yosan-r6-hosei-07 p.1	✓	auto:pdftext	2026-11-08	要人確認:H4 2点 同じ金額の字がページに3回以上
+fd352f02b1c07536	hosei-maru	r6-ippan-05/m001	name,amount	議会運営事業|1817	千円	yosan-r6-hosei-09 p.2	✓	auto:pdftext	2026-11-08	要人確認:H4 0点
 4296028e21334e44	hosei-maru	r6-ippan-05/m002	name,amount	交通安全施設対策事業|9600	千円	yosan-r6-hosei-09 p.2	✓	auto:pdftext	2026-11-08	
 158e05c43bb45846	hosei-maru	r6-ippan-05/m003	name,amount	鉄道対策事業|12400	千円	yosan-r6-hosei-09 p.2	✓	auto:pdftext	2026-11-08	
 6ba81a6a15d785ff	hosei-maru	r6-ippan-05/m004	name,amount	障害者総合支援事業|2596	千円	yosan-r6-hosei-09 p.2	✓	auto:pdftext	2026-11-08	
@@ -686,32 +686,32 @@ dcf75f93d5eb5c2a	hosei-maru	r6-ippan-05/m011	name,amount	消防団運営事業|3
 fff6bbab82f3fd6e	hosei-maru	r6-ippan-05/m012	name,amount	幼稚園管理運営事業|4214	千円	yosan-r6-hosei-09 p.3	✓	auto:pdftext	2026-11-08	
 4aff2de0c767e45a	hosei-maru	r6-ippan-05/m013	name,amount	小学校管理運営事業|-3402	千円	yosan-r6-hosei-09 p.3	✓	auto:pdftext	2026-11-08	
 7398b2f59cbea76c	hosei-maru	r6-ippan-05/m014	name,amount	国民スポーツ大会運営事業|4850	千円	yosan-r6-hosei-09 p.3	✓	auto:pdftext	2026-11-08	
-a173e271076956c8	hosei-maru	r6-ippan-06/m001	name,amount	衆議院議員選挙費|15898	千円	yosan-r6-hosei-10-senketsu p.1	✓	auto:pdftext	2026-11-08	
+a173e271076956c8	hosei-maru	r6-ippan-06/m001	name,amount	衆議院議員選挙費|15898	千円	yosan-r6-hosei-10-senketsu p.1	✓	auto:pdftext	2026-11-08	要人確認:H4 2点 説明の文を共有
 940d9743dc8dd852	hosei-maru	r6-ippan-06/m002	name,amount	会計年度任用職員人件費（衆議院議員選挙費）|332	千円	yosan-r6-hosei-10-senketsu p.1	✓	auto:pdftext	2026-11-08	
 d31fccc9d46a47f3	hosei-maru	r6-ippan-07/m001	name,amount	戸籍住民基本台帳事務事業|2566	千円	yosan-r6-hosei-12 p.2	✓	auto:pdftext	2026-11-08	
 cda5617d5714f21f	hosei-maru	r6-ippan-07/m002	name,amount	障害者福祉事務事業|10740	千円	yosan-r6-hosei-12 p.2	✓	auto:pdftext	2026-11-08	
 be2dcc610e76c0f9	hosei-maru	r6-ippan-07/m003	name,amount	障害者総合支援事業|53500	千円	yosan-r6-hosei-12 p.2	✓	auto:pdftext	2026-11-08	
 e24247f45a0c5252	hosei-maru	r6-ippan-07/m004	name,amount	児童福祉事務事業|3430	千円	yosan-r6-hosei-12 p.2	✓	auto:pdftext	2026-11-08	
 deb290c1e124ed3f	hosei-maru	r6-ippan-07/m005	name,amount	児童健全育成事業|21899	千円	yosan-r6-hosei-12 p.2	✓	auto:pdftext	2026-11-08	
-0e0d52a953038c74	hosei-maru	r6-ippan-07/m006	name,amount	公立保育所運営事業|2000	千円	yosan-r6-hosei-12 p.2	✓	auto:pdftext	2026-11-08	
+0e0d52a953038c74	hosei-maru	r6-ippan-07/m006	name,amount	公立保育所運営事業|2000	千円	yosan-r6-hosei-12 p.2	✓	auto:pdftext	2026-11-08	要人確認:H4 2点 説明の文を共有
 2cbb1e6682dc76ad	hosei-maru	r6-ippan-07/m007	name,amount	認定こども園運営事業|280	千円	yosan-r6-hosei-12 p.2	✓	auto:pdftext	2026-11-08	
 87424eb19f274522	hosei-maru	r6-ippan-07/m008	name,amount	保健衛生事務事業（保健）|30629	千円	yosan-r6-hosei-12 p.2	✓	auto:pdftext	2026-11-08	
 1e224bc28f012693	hosei-maru	r6-ippan-07/m009	name,amount	水田農業推進対策事業|2363	千円	yosan-r6-hosei-12 p.2	✓	auto:pdftext	2026-11-08	
 6a0b358fe2ffcca6	hosei-maru	r6-ippan-07/m010	name,amount	日野川基幹水利施設管理事業|12765	千円	yosan-r6-hosei-12 p.2	✓	auto:pdftext	2026-11-08	
 f532389f91904af5	hosei-maru	r6-ippan-07/m011	name,amount	学校給食事業|8000	千円	yosan-r6-hosei-12 p.2	✓	auto:pdftext	2026-11-08	
-4655f41495c2fce3	hosei-maru	r6-ippan-08/m001	name,amount	職員人件費（議会費） ほか|58583	千円	yosan-r6-hosei-12-tsuika p.2	✓	auto:pdftext	2026-11-08	
+4655f41495c2fce3	hosei-maru	r6-ippan-08/m001	name,amount	職員人件費（議会費） ほか|58583	千円	yosan-r6-hosei-12-tsuika p.2	✓	auto:pdftext	2026-11-08	要人確認:H4 2点 説明の文を共有
 709ac4303fde2ca2	hosei-maru	r6-ippan-08/m002	name,amount	会計年度任用職員人件費（議会費） ほか|70848	千円	yosan-r6-hosei-12-tsuika p.2	✓	auto:pdftext	2026-11-08	
 dd9715cfe6207e65	hosei-maru	r6-ippan-08/m003	name,amount	国民健康保険特別会計繰出金|1078	千円	yosan-r6-hosei-12-tsuika p.2	✓	auto:pdftext	2026-11-08	
 1a77ef89b4395c0f	hosei-maru	r6-ippan-08/m004	name,amount	介護保険特別会計繰出金（保険事業勘定）|436	千円	yosan-r6-hosei-12-tsuika p.2	✓	auto:pdftext	2026-11-08	
 dc62305e2e5d0fa8	hosei-maru	r6-ippan-08/m005	name,amount	下水道事業会計繰出金（農集）|245	千円	yosan-r6-hosei-12-tsuika p.2	✓	auto:pdftext	2026-11-08	
 ecbee179a28c4442	hosei-maru	r6-ippan-08/m006	name,amount	下水道事業会計繰出金（公共）|8339	千円	yosan-r6-hosei-12-tsuika p.2	✓	auto:pdftext	2026-11-08	
 638405660685db6a	hosei-maru	r6-ippan-08/m007	name,amount	児童手当支給事業|17700	千円	yosan-r6-hosei-12-tsuika p.2	✓	auto:pdftext	2026-11-08	
-37077cfd4072d915	hosei-maru	r6-ippan-09/m001	name,amount	会計年度任用職員人件費（社会福祉総務費）|741	千円	yosan-r6-hosei-02 p.1	✓	auto:pdftext	2026-11-08	
+37077cfd4072d915	hosei-maru	r6-ippan-09/m001	name,amount	会計年度任用職員人件費（社会福祉総務費）|741	千円	yosan-r6-hosei-02 p.1	✓	auto:pdftext	2026-11-08	要人確認:H4 2点 説明の文を共有
 627d7de65c3efe72	hosei-maru	r6-ippan-09/m002	name,amount	物価高支援給付金事業（令和６年度非課税世帯）|70932	千円	yosan-r6-hosei-02 p.1	✓	auto:pdftext	2026-11-08	
 cce6b99631544324	hosei-maru	r6-ippan-09/m003	name,amount	医療・介護・保育施設等物価高騰対策支援事業|20000	千円	yosan-r6-hosei-02 p.2	✓	auto:pdftext	2026-11-08	
 9438d581324003de	hosei-maru	r6-ippan-09/m004	name,amount	地域経済緊急支援事業|30000	千円	yosan-r6-hosei-02 p.2	✓	auto:pdftext	2026-11-08	
 e2c15989671dc667	hosei-maru	r6-ippan-09/m005	name,amount	学校給食事業|7500	千円	yosan-r6-hosei-02 p.2	✓	auto:pdftext	2026-11-08	
-a7dd3bdcdbd0ea16	hosei-maru	r6-ippan-10/m001	name,amount	鉄道対策事業|31314	千円	yosan-r6-hosei-03 p.2	✓	auto:pdftext	2026-11-08	
+a7dd3bdcdbd0ea16	hosei-maru	r6-ippan-10/m001	name,amount	鉄道対策事業|31314	千円	yosan-r6-hosei-03 p.2	✓	auto:pdftext	2026-11-08	要人確認:H4 0点
 df134b1ac147bcb4	hosei-maru	r6-ippan-10/m002	name,amount	私立保育園運営事業|20798	千円	yosan-r6-hosei-03 p.2	✓	auto:pdftext	2026-11-08	
 fc42ef0b0ade63eb	hosei-maru	r6-ippan-10/m003	name,amount	畜産・酪農収益力強化整備等特別対策事業|530950	千円	yosan-r6-hosei-03 p.2	✓	auto:pdftext	2026-11-08	
 8419dc2749bfdaa6	hosei-maru	r6-ippan-10/m004	name,amount	土地改良事務事業|42942	千円	yosan-r6-hosei-03 p.2	✓	auto:pdftext	2026-11-08	
@@ -719,23 +719,23 @@ fc42ef0b0ade63eb	hosei-maru	r6-ippan-10/m003	name,amount	畜産・酪農収益�
 c4127513f35604b5	hosei-maru	r6-ippan-10/m006	name,amount	社会資本整備総合交付金事業（防災・安全）|133007	千円	yosan-r6-hosei-03 p.2	✓	auto:pdftext	2026-11-08	
 d529573310ae034e	hosei-maru	r6-ippan-10/m007	name,amount	交通安全対策事業（通学路緊急対策）|40400	千円	yosan-r6-hosei-03 p.2	✓	auto:pdftext	2026-11-08	
 5738df0677031bc9	hosei-maru	r6-ippan-10/m008	name,amount	小学校管理運営事業|67080	千円	yosan-r6-hosei-03 p.2	✓	auto:pdftext	2026-11-08	
-a299f02b45301e5b	hosei-maru	r6-kaigo-01/t001	name,amount	介護保険特別会計補正予算（第１号）|84422	千円	yosan-r6-hosei-09 p.3	✓	auto:pdftext	2026-11-08	
-65346ec50514efe1	hosei-maru	r6-kaigo-02/t001	name,amount	介護保険特別会計補正予算（第２号）|3775	千円	yosan-r6-hosei-12 p.3	✓	auto:pdftext	2026-11-08	
-1ff1b93ca07ba794	hosei-maru	r6-kaigo-03/t001	name,amount	介護保険特別会計補正予算（第３号）|2428	千円	yosan-r6-hosei-12-tsuika p.2	✓	auto:pdftext	2026-11-08	
-eb030e650a07b2f4	hosei-maru	r6-kaigo-04/t001	name,amount	介護保険特別会計補正予算（第４号）|-2115	千円	yosan-r6-hosei-03 p.3	✓	auto:pdftext	2026-11-08	
-013ebce889d1f7eb	hosei-maru	r6-koki-01/t001	name,amount	後期高齢者医療特別会計補正予算（第１号）|100	千円	yosan-r6-hosei-12 p.3	✓	auto:pdftext	2026-11-08	
-cd1310269c04e141	hosei-maru	r6-koki-02/t001	name,amount	後期高齢者医療特別会計補正予算（第２号）|9311	千円	yosan-r6-hosei-03 p.3	✓	auto:pdftext	2026-11-08	
-1dc7a9f59662f597	hosei-maru	r6-kokuho-01/t001	name,amount	国民健康保険特別会計補正予算（第 1 号）|809	千円	yosan-r6-hosei-05 p.2	✓	auto:pdftext	2026-11-08	
-13d467c45653720a	hosei-maru	r6-kokuho-02/t001	name,amount	国民健康保険特別会計補正予算（第２号）|13197	千円	yosan-r6-hosei-09 p.3	✓	auto:pdftext	2026-11-08	
-99bea6b1c6c36b24	hosei-maru	r6-kokuho-03/t001	name,amount	国民健康保険特別会計補正予算（第３号）|4875	千円	yosan-r6-hosei-12 p.3	✓	auto:pdftext	2026-11-08	
-6900007a60532c37	hosei-maru	r6-kokuho-04/t001	name,amount	国民健康保険特別会計補正予算（第４号）|3416	千円	yosan-r6-hosei-12-tsuika p.2	✓	auto:pdftext	2026-11-08	
-4cc51c2b89b90c43	hosei-maru	r6-kokuho-05/t001	name,amount	国民健康保険特別会計補正予算（第５号）|-84012	千円	yosan-r6-hosei-03 p.3	✓	auto:pdftext	2026-11-08	
-292a1b91bc1bdb42	hosei-maru	r6-suido-01/t001	name,amount	水道事業会計補正予算（第 1 号）|91000	千円	yosan-r6-hosei-03 p.3	✓	auto:pdftext	2026-11-08	
-2b55d3ba557f53d2	hosei-jiko	r6-ippan-05/z001	kind,kubun,kaikei,name,amount	chihosai|henko||緊急自然災害防止対策事業債|18000	千円	yosan-r6-hosei-09 p.4	✓	auto:pdftext	2026-11-08	
+a299f02b45301e5b	hosei-maru	r6-kaigo-01/t001	name,amount	介護保険特別会計補正予算（第１号）|84422	千円	yosan-r6-hosei-09 p.3	✓	auto:pdftext	2026-11-08	要人確認:H4 0点
+65346ec50514efe1	hosei-maru	r6-kaigo-02/t001	name,amount	介護保険特別会計補正予算（第２号）|3775	千円	yosan-r6-hosei-12 p.3	✓	auto:pdftext	2026-11-08	要人確認:H4 0点
+1ff1b93ca07ba794	hosei-maru	r6-kaigo-03/t001	name,amount	介護保険特別会計補正予算（第３号）|2428	千円	yosan-r6-hosei-12-tsuika p.2	✓	auto:pdftext	2026-11-08	要人確認:H4 0点
+eb030e650a07b2f4	hosei-maru	r6-kaigo-04/t001	name,amount	介護保険特別会計補正予算（第４号）|-2115	千円	yosan-r6-hosei-03 p.3	✓	auto:pdftext	2026-11-08	要人確認:H4 0点
+013ebce889d1f7eb	hosei-maru	r6-koki-01/t001	name,amount	後期高齢者医療特別会計補正予算（第１号）|100	千円	yosan-r6-hosei-12 p.3	✓	auto:pdftext	2026-11-08	要人確認:H4 0点
+cd1310269c04e141	hosei-maru	r6-koki-02/t001	name,amount	後期高齢者医療特別会計補正予算（第２号）|9311	千円	yosan-r6-hosei-03 p.3	✓	auto:pdftext	2026-11-08	要人確認:H4 0点
+1dc7a9f59662f597	hosei-maru	r6-kokuho-01/t001	name,amount	国民健康保険特別会計補正予算（第 1 号）|809	千円	yosan-r6-hosei-05 p.2	✓	auto:pdftext	2026-11-08	要人確認:H4 0点
+13d467c45653720a	hosei-maru	r6-kokuho-02/t001	name,amount	国民健康保険特別会計補正予算（第２号）|13197	千円	yosan-r6-hosei-09 p.3	✓	auto:pdftext	2026-11-08	要人確認:H4 0点
+99bea6b1c6c36b24	hosei-maru	r6-kokuho-03/t001	name,amount	国民健康保険特別会計補正予算（第３号）|4875	千円	yosan-r6-hosei-12 p.3	✓	auto:pdftext	2026-11-08	要人確認:H4 0点
+6900007a60532c37	hosei-maru	r6-kokuho-04/t001	name,amount	国民健康保険特別会計補正予算（第４号）|3416	千円	yosan-r6-hosei-12-tsuika p.2	✓	auto:pdftext	2026-11-08	要人確認:H4 0点
+4cc51c2b89b90c43	hosei-maru	r6-kokuho-05/t001	name,amount	国民健康保険特別会計補正予算（第５号）|-84012	千円	yosan-r6-hosei-03 p.3	✓	auto:pdftext	2026-11-08	要人確認:H4 0点
+292a1b91bc1bdb42	hosei-maru	r6-suido-01/t001	name,amount	水道事業会計補正予算（第 1 号）|91000	千円	yosan-r6-hosei-03 p.3	✓	auto:pdftext	2026-11-08	要人確認:H4 0点
+2b55d3ba557f53d2	hosei-jiko	r6-ippan-05/z001	kind,kubun,kaikei,name,amount	chihosai|henko||緊急自然災害防止対策事業債|18000	千円	yosan-r6-hosei-09 p.4	✓	auto:pdftext	2026-11-08	要人確認:H4 0点
 b05155f2be743e87	hosei-jiko	r6-ippan-05/z002	kind,kubun,kaikei,name,amount	chihosai|henko||臨時財政対策債|1553	千円	yosan-r6-hosei-09 p.4	✓	auto:pdftext	2026-11-08	
-bd0c8321f844fc0f	hosei-jiko	r6-ippan-07/z001	kind,kubun,kaikei,name,amount	saimu|tsuika||日野町議会広報印刷業務|1733	千円	yosan-r6-hosei-12 p.3	✓	auto:pdftext	2026-11-08	
+bd0c8321f844fc0f	hosei-jiko	r6-ippan-07/z001	kind,kubun,kaikei,name,amount	saimu|tsuika||日野町議会広報印刷業務|1733	千円	yosan-r6-hosei-12 p.3	✓	auto:pdftext	2026-11-08	要人確認:H4 0点
 06dbcae9679c77f9	hosei-jiko	r6-ippan-07/z002	kind,kubun,kaikei,name,amount	saimu|henko||日野町都市公園等維持管理業務|13403	千円	yosan-r6-hosei-12 p.3	✓	auto:pdftext	2026-11-08	
-8150687e6d77e096	hosei-jiko	r6-ippan-09/z001	kind,kubun,kaikei,name,amount	kurikoshi|||会計年度任用職員人件費（社会福祉総務費）|741	千円	yosan-r6-hosei-02 p.2	✓	auto:pdftext	2026-11-08	
+8150687e6d77e096	hosei-jiko	r6-ippan-09/z001	kind,kubun,kaikei,name,amount	kurikoshi|||会計年度任用職員人件費（社会福祉総務費）|741	千円	yosan-r6-hosei-02 p.2	✓	auto:pdftext	2026-11-08	要人確認:H4 0点
 2cd3912b61093910	hosei-jiko	r6-ippan-09/z002	kind,kubun,kaikei,name,amount	kurikoshi|||物価高支援給付金事業（令和６年度非課税世帯）|70829	千円	yosan-r6-hosei-02 p.2	✓	auto:pdftext	2026-11-08	
 05b9383a3d9af46e	hosei-jiko	r6-ippan-09/z003	kind,kubun,kaikei,name,amount	kurikoshi|||地域経済緊急支援事業|30000	千円	yosan-r6-hosei-02 p.2	✓	auto:pdftext	2026-11-08	
 ca6a375f177a0d4c	hosei-jiko	r6-ippan-09/z004	kind,kubun,kaikei,name,amount	kurikoshi|||学校給食事業|7500	千円	yosan-r6-hosei-02 p.2	✓	auto:pdftext	2026-11-08	
@@ -757,7 +757,7 @@ c182387c1905c4a1	hosei-jiko	r6-ippan-10/z015	kind,kubun,kaikei,name,amount	kurik
 105834a838891106	hosei-jiko	r6-ippan-10/z016	kind,kubun,kaikei,name,amount	chihosai|tsuika|ippan|一般補助施設整備等事業債（地域公共交通再構築事業）|36900	千円	yosan-r6-hosei-03 p.4	✓	auto:pdftext	2026-11-08	
 21b68b63887e6f88	hosei-jiko	r6-ippan-10/z017	kind,kubun,kaikei,name,amount	chihosai|tsuika|ippan|一般事業債（地域鉄道対策事業）|200	千円	yosan-r6-hosei-03 p.4	✓	auto:pdftext	2026-11-08	
 005dfe8a700ef884	hosei-jiko	r6-ippan-10/z018	kind,kubun,kaikei,name,amount	chihosai|tsuika|ippan|防災・減災・国土強靭化緊急対策事業債（道路メンテナンス補助事業）|9200	千円	yosan-r6-hosei-03 p.4	✓	auto:pdftext	2026-11-08	
-1b1ce84aa059d082	hosei-jiko	r6-ippan-10/z019	kind,kubun,kaikei,name,amount	chihosai|tsuika|ippan|防災・減災・国土強靭化緊急対策事業債（社会資本整備総合交付金事業（防災・安全））|15000	千円	yosan-r6-hosei-03 p.4	✓	auto:pdftext	2026-11-08	
+1b1ce84aa059d082	hosei-jiko	r6-ippan-10/z019	kind,kubun,kaikei,name,amount	chihosai|tsuika|ippan|防災・減災・国土強靭化緊急対策事業債（社会資本整備総合交付金事業（防災・安全））|15000	千円	yosan-r6-hosei-03 p.4	✓	auto:pdftext	2026-11-08	要人確認:H4 2点 line が2行をつないだもの
 6ec61cdada78e74f	hosei-jiko	r6-ippan-10/z020	kind,kubun,kaikei,name,amount	chihosai|tsuika|ippan|学校教育施設等整備事業債（小学校施設設備改修事業）|46700	千円	yosan-r6-hosei-03 p.4	✓	auto:pdftext	2026-11-08	
 d158aa39752fb92d	hosei-jiko	r6-ippan-10/z021	kind,kubun,kaikei,name,amount	chihosai|henko|ippan|公共事業等債（道路メンテナンス補助事業）|-8300	千円	yosan-r6-hosei-03 p.4	✓	auto:pdftext	2026-11-08	
 4e49e1aa67c7fe13	hosei-jiko	r6-ippan-10/z022	kind,kubun,kaikei,name,amount	chihosai|henko|ippan|公共事業等債（社会資本整備総合交付金事業（防災・安全））|41100	千円	yosan-r6-hosei-03 p.4	✓	auto:pdftext	2026-11-08	
