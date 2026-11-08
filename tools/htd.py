@@ -247,8 +247,11 @@ HYPHEN_IGNORE = re.compile("[\x00-\x08\x0b\x0c\x0e-\x1f\ufffe\uffff\u202a-\u202e
 WSPACE = re.compile(r"\s")
 
 
+HYPHEN_KINDS = "-\u2010\u2011\u2012\u2013\u2014\u2212\uff0d"   # §5.4：「-」の類（既定の取り出しが行の終わりで消すことのある字。版によって違う）
+
+
 def bbox_lines(path):
-    """§5.4：-bbox-layout のページごとの [(行の文字, 既定の取り出しで「-」が消える行か)]。"""
+    """§5.4：-bbox-layout のページごとの [(行の文字, 行の終わりが「-」の類で、次の行か次の段がある行か)]。"""
     r = subprocess.run(["pdftotext", "-enc", "UTF-8", "-bbox-layout", path, "-"], capture_output=True)
     if r.returncode != 0:
         raise Stop(f"{os.path.basename(path)}：pdftotext -bbox-layout が終了コード {r.returncode}")
@@ -266,35 +269,61 @@ def bbox_lines(path):
                 ls = block.findall(NS_X + "line")
                 for k, line in enumerate(ls):
                     t = "".join((w.text or "") for w in line.findall(NS_X + "word"))
-                    lines.append((t, t.endswith("-") and (k + 1 < len(ls) or j + 1 < len(blocks))))
+                    lines.append((t, bool(t) and t[-1] in HYPHEN_KINDS and (k + 1 < len(ls) or j + 1 < len(blocks))))
         pages.append(lines)
     return pages
 
 
 def restore_page(d, lines):
-    """§5.4：1ページの既定の取り出し d に、消された「-」と改行を戻す。突き合わせが合わなければ None。"""
-    seq, cuts = [], []
-    for t, cut in lines:
-        seq.append(WSPACE.sub("", HYPHEN_IGNORE.sub("", t[:-1] if cut else t)))
-        if cut:
-            cuts.append(sum(len(x) for x in seq))
+    """§5.4：1ページの既定の取り出し d に、消された「-」の類と改行を戻す。
+    候補の行（終わりが「-」の類）ごとに、その字が既定の取り出しに残っている（keep）か消された（cut）かを、
+    空白を除いた字の並びが行の順に既定の取り出しと一致するように決める（両方あり得るときは残っているほうを取る）。
+    （戻した後の文字、戻した字の数）。どう決めても一致しなければ None。"""
+    a = WSPACE.sub("", HYPHEN_IGNORE.sub("", d))
+    bodies = [(WSPACE.sub("", HYPHEN_IGNORE.sub("", t)), cand) for t, cand in lines]
+    failed = set()                       # 戻ってやり直した (行, 位置)
+    stack = [(0, 0, [])]                 # (次の行, 既定の取り出しの位置, cuts)
+    cuts = None
+    while stack:
+        i, pos, cs = stack.pop()
+        if (i, pos) in failed:
+            continue
+        if i == len(bodies):
+            if pos == len(a):
+                cuts = cs
+                break
+            failed.add((i, pos))
+            continue
+        body, cand = bodies[i]
+        nxt = []
+        if cand and body and a.startswith(body[:-1], pos):      # 消された（あとで試す）
+            nxt.append((i + 1, pos + len(body) - 1, cs + [(pos + len(body) - 1, body[-1])]))
+        if a.startswith(body, pos):                              # 残っている（先に試す）
+            nxt.append((i + 1, pos + len(body), cs))
+        if not nxt:
+            failed.add((i, pos))
+        stack.extend(nxt)                                        # 後ろに積んだものから試す
+    if cuts is None:
+        # 行の順で一致しなくても、字の数が同じなら消された字は無い（並びの違いは §5.4 の対象外）
+        return (d, 0) if len(a) == sum(len(b) for b, _ in bodies) else None
     if not cuts:
-        return d
-    if WSPACE.sub("", HYPHEN_IGNORE.sub("", d)) != "".join(seq):
-        return None
+        return d, 0
     out, n, ci = [], 0, 0
     for ch in d:
         if not (WSPACE.match(ch) or HYPHEN_IGNORE.match(ch)):
-            while ci < len(cuts) and cuts[ci] == n:
-                out.append("-\n")
+            while ci < len(cuts) and cuts[ci][0] == n:
+                out.append(cuts[ci][1] + "\n")
                 ci += 1
             n += 1
         out.append(ch)
-    return "".join(out) if ci == len(cuts) else None
+    while ci < len(cuts) and cuts[ci][0] == n:   # ページの終わり
+        out.append(cuts[ci][1] + "\n")
+        ci += 1
+    return ("".join(out), len(cuts)) if ci == len(cuts) else None
 
 
 def restore_hyphens(path, text):
-    """§5.4：（戻した後のテキスト、戻した「-」の数）。確かめが合わなければ止める。"""
+    """§5.4：（戻した後のテキスト、戻した「-」の類の数）。確かめが合わなければ止める。"""
     name = os.path.basename(path)
     dp = text.split("\f")
     bp = bbox_lines(path)
@@ -305,15 +334,16 @@ def restore_hyphens(path, text):
         r = restore_page(dp[k], lines)
         if r is None:
             raise Stop(f"{name}：{k + 1}ページで、既定の取り出しと -bbox-layout の字の並びが合わない（§5.4）")
-        back += r.count("-") - dp[k].count("-")
-        res.append(r)
+        res.append(r[0])
+        back += r[1]
     res.append(dp[-1])
     out = "\f".join(res)
-    want = sum(t.count("-") for lines in bp for t, _ in lines)
-    if out.count("-") != want:
-        raise Stop(f"{name}：戻した後の「-」（{out.count('-')}）が -bbox-layout の「-」（{want}）と合わない（§5.4）")
-    if re.sub("-\n", "", out) != re.sub("-\n", "", text):
-        raise Stop(f"{name}：戻した「-」と改行を除いても、既定の取り出しに戻らない（§5.4）")
+    for h in HYPHEN_KINDS:
+        want = sum(t.count(h) for lines in bp for t, _ in lines)
+        if out.count(h) != want:
+            raise Stop(f"{name}：戻した後の「{h}」（{out.count(h)}）が -bbox-layout の「{h}」（{want}）と合わない（§5.4）")
+    if re.sub(f"[{re.escape(HYPHEN_KINDS)}]\n", "", out) != re.sub(f"[{re.escape(HYPHEN_KINDS)}]\n", "", text):
+        raise Stop(f"{name}：戻した「-」の類と改行を除いても、既定の取り出しに戻らない（§5.4）")
     return out, back
 
 
