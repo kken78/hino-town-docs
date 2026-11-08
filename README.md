@@ -39,7 +39,7 @@
 | `audit/`・`issues/` | 検収の台帳と、原典の誤りの記録 |
 
 - `python3 -B tools/kozo.py hosei-kian r6`：令和6年度の補正予算の概要の原典の文字（`data/text_raw/`）から、補正予算の6つの表を起票する。既存の行の key は保つ
-- `python3 -B tools/kozo.py hosei-check r6`：表を原典の文字で照合・検算し（段1）、検収の台帳 `data/struct/audit/hosei-r6.tsv` を書く。合わない項目があれば終了コード 1
+- `python3 -B tools/kozo.py hosei-check r6`：表を原典の文字で照合・検算し（段1）、検収の台帳 `data/struct/audit/hosei-r6.tsv` を書く。合わない項目があれば終了コード 1。H2・H4 の抜き取りの印も付ける
 - `python3 -B tools/kozo.py selftest`：表を一時の場所に写して誤りを1つずつ入れ、段1 が見つけることを確かめる（表が無ければ検査の見本で確かめる）
 
 検収は shiga-hino-plans の段1〜段4 を写して使う。論点ノート（hino-ronten）は、検収の済んだ行だけを、`hs:`・`hj:`・`hk:`・`hz:` のキーで指す。いまは文書だけを入れてあり、道具と表はこれから作る（令和6年度の補正予算から）。
