@@ -61,6 +61,6 @@
 
 - プログラム（tools/）：GNU Affero General Public License v3.0 以降（AGPL-3.0-or-later、[LICENSE](LICENSE)）
 - 台帳と一覧の構造（列の作り方、id、検収の記録）：CC BY 4.0
-- 原典の資料名・本文から写したもの（一覧と台帳の資料名、`data/text/`・`data/text_raw/`・`data/ocr/` の文字）：このリポジトリのライセンスの対象外（著作権は日野町など各発行者にある）
+- 原典の資料名・本文から写したもの（一覧と台帳の資料名、`data/text/`・`data/text_raw/`・`data/ocr/` の文字、`data/struct/` の表のうち原典から写した数と名前）：このリポジトリのライセンスの対象外（著作権は日野町など各発行者にある）。`data/struct/` のキーと列の作り方は、台帳の構造と同じく CC BY 4.0
 
 Copyright (C) 2026 Kenjiro HIGASHI
