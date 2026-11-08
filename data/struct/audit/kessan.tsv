@@ -2,7 +2,7 @@ key	table	row	cols	value	unit	source	checked	reviewer	date	note
 2f597cd84a98b66a	kessan-gaku	h24-ippan/sainyu	value	861552	万円	kessan-h24-gaiyou p.1	✓	auto:pdftext	2026-11-08	
 b2eacd6d66eb6815	kessan-gaku	h24-ippan/saishutsu	value	820870	万円	kessan-h24-gaiyou p.1	✓	auto:pdftext	2026-11-08	
 b42e75918dbba897	kessan-gaku	h24-ippan/sashihiki	value	40682	万円	kessan-h24-gaiyou p.1	✓	auto:pdftext	2026-11-08	
-be84b3316fdd4d4d	kessan-gaku	h24-ippan/jisshitsu	value	39166	万円	kessan-h24-gaiyou p.1	✓	auto:pdftext	2026-11-08	要人確認:H4 2点 億・万の字を万円に読んだ
+be84b3316fdd4d4d	kessan-gaku	h24-ippan/jisshitsu	value	39166	万円	kessan-h24-gaiyou p.1	✓	kken78	2026-11-08	H4 2点 億・万の字を万円に読んだ。人が確認：一致（2026-11-08）
 5a3a9593d0d22fb3	kessan-gaku	h24-jutaku/sainyu	value	261	万円	kessan-h24-gaiyou p.6	✓	auto:pdftext	2026-11-08	
 5c90da58656000db	kessan-gaku	h24-jutaku/saishutsu	value	236	万円	kessan-h24-gaiyou p.6	✓	auto:pdftext	2026-11-08	
 b6e64ebc46f1d5f2	kessan-gaku	h24-kaigo/sainyu	value	159368	万円	kessan-h24-gaiyou p.6	✓	auto:pdftext	2026-11-08	
@@ -28,7 +28,7 @@ ac9c1763eef8bfc8	kessan-gaku	h24-suido/shueki-shishutsu	value	56310	万円	kessa
 bd40f881c874786b	kessan-gaku	h25-ippan/sainyu	value	1032547	万円	kessan-h25-gaiyou p.1	✓	auto:pdftext	2026-11-08	
 5a4004c86b4f5c6e	kessan-gaku	h25-ippan/saishutsu	value	992660	万円	kessan-h25-gaiyou p.1	✓	auto:pdftext	2026-11-08	
 6b6ebe0025f47af5	kessan-gaku	h25-ippan/sashihiki	value	39887	万円	kessan-h25-gaiyou p.1	✓	auto:pdftext	2026-11-08	
-8ffa93b0cb5b7d62	kessan-gaku	h25-ippan/jisshitsu	value	23205	万円	kessan-h25-gaiyou p.1	✓	auto:pdftext	2026-11-08	要人確認:H4 2点 億・万の字を万円に読んだ
+8ffa93b0cb5b7d62	kessan-gaku	h25-ippan/jisshitsu	value	23205	万円	kessan-h25-gaiyou p.1	✓	kken78	2026-11-08	H4 2点 億・万の字を万円に読んだ。人が確認：一致（2026-11-08）
 e3c0fbbcfb56a609	kessan-gaku	h25-jutaku/sainyu	value	1272	万円	kessan-h25-gaiyou p.6	✓	auto:pdftext	2026-11-08	
 404c12172fe4a6b0	kessan-gaku	h25-jutaku/saishutsu	value	1272	万円	kessan-h25-gaiyou p.6	✓	auto:pdftext	2026-11-08	
 7c271ac8fbf2266a	kessan-gaku	h25-kaigo/sainyu	value	172881	万円	kessan-h25-gaiyou p.6	✓	auto:pdftext	2026-11-08	
@@ -54,7 +54,7 @@ f92628ff47122797	kessan-gaku	h25-roken/sainyu	value	66663	万円	kessan-h25-gaiy
 f6a612e30d45ddf3	kessan-gaku	h26-ippan/sainyu	value	895977	万円	kessan-h26-gaiyou p.1	✓	auto:pdftext	2026-11-08	
 6ea42d3544c8286d	kessan-gaku	h26-ippan/saishutsu	value	848957	万円	kessan-h26-gaiyou p.1	✓	auto:pdftext	2026-11-08	
 1410e702186c318d	kessan-gaku	h26-ippan/sashihiki	value	47020	万円	kessan-h26-gaiyou p.1	✓	auto:pdftext	2026-11-08	
-f495b33705001df8	kessan-gaku	h26-ippan/jisshitsu	value	42269	万円	kessan-h26-gaiyou p.1	✓	auto:pdftext	2026-11-08	要人確認:H4 2点 億・万の字を万円に読んだ
+f495b33705001df8	kessan-gaku	h26-ippan/jisshitsu	value	42269	万円	kessan-h26-gaiyou p.1	✓	kken78	2026-11-08	H4 2点 億・万の字を万円に読んだ。人が確認：一致（2026-11-08）
 5cd67357a532bb16	kessan-gaku	h26-kaigo/sainyu	value	179516	万円	kessan-h26-gaiyou p.2	✓	auto:pdftext	2026-11-08	
 4a2b1f3916d5cf79	kessan-gaku	h26-kaigo/saishutsu	value	176696	万円	kessan-h26-gaiyou p.2	✓	auto:pdftext	2026-11-08	
 41597eaf24ae934f	kessan-gaku	h26-kansui/sainyu	value	1278	万円	kessan-h26-gaiyou p.2	✓	auto:pdftext	2026-11-08	
@@ -93,7 +93,7 @@ e115326c8b04abf5	kessan-gaku	h27-koki/jisshitsu	value	3	百万円	zaisei-h27-shi
 1ae839e3c4b6078b	kessan-gaku	h27-kokuho/saishutsu	value	245199	万円	kessan-h27-gaiyou p.1	✓	auto:pdftext	2026-11-08	
 1f64e40848c4daac	kessan-gaku	h27-kokuho/sashihiki	value	56	百万円	zaisei-h27-shiryoshu 03!R28C27	✓	auto:pdftext	2026-11-08	
 d34bc1ab001c8ba3	kessan-gaku	h27-kokuho/jisshitsu	value	56	百万円	zaisei-h27-shiryoshu 03!R28C32	✓	auto:pdftext	2026-11-08	
-31c845c998d1d0ad	kessan-gaku	h27-koshita/sainyu	value	81041	万円	kessan-h27-gaiyou p.1	✓	auto:ai	2026-11-08	要人確認:H4 6点 段2 に回った・億・万の字を万円に読んだ・別の出典と丸めの範囲でしか合わない。段2 一致（2人とも高）。シート03 と 12.41 百万円違う
+31c845c998d1d0ad	kessan-gaku	h27-koshita/sainyu	value	81041	万円	kessan-h27-gaiyou p.1	✓	kken78	2026-11-08	H4 6点 段2 に回った・億・万の字を万円に読んだ・別の出典と丸めの範囲でしか合わない。人が確認：一致（2026-11-08）。段2 一致（2人とも高）。シート03 と 12.41 百万円違う
 d046a6fc088995ca	kessan-gaku	h27-koshita/saishutsu	value	79851	万円	kessan-h27-gaiyou p.1	✓	auto:pdftext	2026-11-08	
 5f6dd9a5af2ac598	kessan-gaku	h27-koshita/sashihiki	value	0	百万円	zaisei-h27-shiryoshu 03!R33C27	✓	auto:pdftext	2026-11-08	
 84c2d93aa8ac2baa	kessan-gaku	h27-koshita/jisshitsu	value	111	百万円	zaisei-h27-shiryoshu 03!R33C32	✓	auto:pdftext	2026-11-08	
@@ -120,7 +120,7 @@ b261de3e12068b22	kessan-gaku	h28-kaigo/saishutsu	value	190346	万円	kessan-h28-
 a6663086f8592014	kessan-gaku	h28-kaigo/jisshitsu	value	68	百万円	zaisei-h28-shiryoshu 03!R29C32	✓	auto:pdftext	2026-11-08	
 00d9fa2ba681a34d	kessan-gaku	h28-kansui/sainyu	value	1235	万円	kessan-h28-gaiyou p.2	✓	auto:pdftext	2026-11-08	
 1d42cf45f0fc6aa9	kessan-gaku	h28-kansui/saishutsu	value	1232	万円	kessan-h28-gaiyou p.2	✓	auto:pdftext	2026-11-08	
-83e32f8064ecc789	kessan-gaku	h28-kansui/sashihiki	value	3	万円	kessan-h28-gaiyou p.2	✓	auto:pdftext	2026-11-08	要人確認:H4 4点 億・万の字を万円に読んだ・別の出典と丸めの範囲でしか合わない・値が0か1桁
+83e32f8064ecc789	kessan-gaku	h28-kansui/sashihiki	value	3	万円	kessan-h28-gaiyou p.2	✓	kken78	2026-11-08	H4 4点 億・万の字を万円に読んだ・別の出典と丸めの範囲でしか合わない・値が0か1桁。人が確認：一致（2026-11-08）
 903787caf29f79f2	kessan-gaku	h28-kansui/jisshitsu	value	0	百万円	zaisei-h28-shiryoshu 03!R32C32	✓	auto:pdftext	2026-11-08	
 010a483b128e5183	kessan-gaku	h28-koki/sainyu	value	23963	万円	kessan-h28-gaiyou p.2	✓	auto:pdftext	2026-11-08	
 e83ea8ccbd6a4bb0	kessan-gaku	h28-koki/saishutsu	value	23657	万円	kessan-h28-gaiyou p.2	✓	auto:pdftext	2026-11-08	
@@ -157,7 +157,7 @@ eefdbc8d21ea2e42	kessan-gaku	h29-ippan/jisshitsu	value	334	百万円	zaisei-h29-
 5cd1651d55432eaa	kessan-gaku	h29-kansui/sainyu	value	12	百万円	zaisei-h29-shiryoshu 03!R32C17	✓	auto:pdftext	2026-11-08	
 33812ad713ee19bf	kessan-gaku	h29-kansui/saishutsu	value	12	百万円	zaisei-h29-shiryoshu 03!R32C22	✓	auto:pdftext	2026-11-08	
 8e1055106f216ad8	kessan-gaku	h29-kansui/sashihiki	value	0	百万円	zaisei-h29-shiryoshu 03!R32C27	✓	auto:pdftext	2026-11-08	
-ffec72fa41a0d25e	kessan-gaku	h29-kansui/jisshitsu	value	0	百万円	zaisei-h29-shiryoshu 03!R32C32	✓	auto:pdftext	2026-11-08	要人確認:H4 1点 値が0か1桁
+ffec72fa41a0d25e	kessan-gaku	h29-kansui/jisshitsu	value	0	百万円	zaisei-h29-shiryoshu 03!R32C32	✓	kken78	2026-11-08	H4 1点 値が0か1桁。人が確認：一致（2026-11-08）
 a45f80fe37340271	kessan-gaku	h29-koki/sainyu	value	253	百万円	zaisei-h29-shiryoshu 03!R30C17	✓	auto:pdftext	2026-11-08	
 838a88940bf01e81	kessan-gaku	h29-koki/saishutsu	value	249	百万円	zaisei-h29-shiryoshu 03!R30C22	✓	auto:pdftext	2026-11-08	
 6059db6c0d12a588	kessan-gaku	h29-koki/sashihiki	value	4	百万円	zaisei-h29-shiryoshu 03!R30C27	✓	auto:pdftext	2026-11-08	
@@ -188,7 +188,7 @@ a3c77a63a7f126b3	kessan-gaku	h30-kaigo/jisshitsu	value	125	百万円	zaisei-h30-
 359608f762920ba3	kessan-gaku	h30-kansui/sainyu	value	31	百万円	zaisei-h30-shiryoshu 03!R32C17	✓	auto:pdftext	2026-11-08	
 03d7f7a1d2c1dee3	kessan-gaku	h30-kansui/saishutsu	value	31	百万円	zaisei-h30-shiryoshu 03!R32C22	✓	auto:pdftext	2026-11-08	
 3f0619b5a926e3eb	kessan-gaku	h30-kansui/sashihiki	value	0	百万円	zaisei-h30-shiryoshu 03!R32C27	✓	auto:pdftext	2026-11-08	
-135cdb383d82c21d	kessan-gaku	h30-kansui/jisshitsu	value	0	百万円	zaisei-h30-shiryoshu 03!R32C32	✓	auto:pdftext	2026-11-08	要人確認:H4 1点 値が0か1桁
+135cdb383d82c21d	kessan-gaku	h30-kansui/jisshitsu	value	0	百万円	zaisei-h30-shiryoshu 03!R32C32	✓	kken78	2026-11-08	H4 1点 値が0か1桁。人が確認：一致（2026-11-08）
 924e30c106c1e89e	kessan-gaku	h30-koki/sainyu	value	254	百万円	zaisei-h30-shiryoshu 03!R30C17	✓	auto:pdftext	2026-11-08	
 3789cd9e922f2e2d	kessan-gaku	h30-koki/saishutsu	value	250	百万円	zaisei-h30-shiryoshu 03!R30C22	✓	auto:pdftext	2026-11-08	
 2b26a2a90a4be955	kessan-gaku	h30-koki/sashihiki	value	4	百万円	zaisei-h30-shiryoshu 03!R30C27	✓	auto:pdftext	2026-11-08	
@@ -219,7 +219,7 @@ e51daf583e99a4dc	kessan-gaku	r1-kaigo/sashihiki	value	117	百万円	zaisei-r1-sh
 b032be1739d55661	kessan-gaku	r1-kansui/sainyu	value	13	百万円	zaisei-r1-shiryoshu 03!R32C17	✓	auto:pdftext	2026-11-08	
 26713b59655c349d	kessan-gaku	r1-kansui/saishutsu	value	13	百万円	zaisei-r1-shiryoshu 03!R32C22	✓	auto:pdftext	2026-11-08	
 033859838fa1a763	kessan-gaku	r1-kansui/sashihiki	value	0	百万円	zaisei-r1-shiryoshu 03!R32C27	✓	auto:pdftext	2026-11-08	
-1a96f0d3b3c367bb	kessan-gaku	r1-kansui/jisshitsu	value	0	百万円	zaisei-r1-shiryoshu 03!R32C32	✓	auto:pdftext	2026-11-08	要人確認:H4 1点 値が0か1桁
+1a96f0d3b3c367bb	kessan-gaku	r1-kansui/jisshitsu	value	0	百万円	zaisei-r1-shiryoshu 03!R32C32	✓	kken78	2026-11-08	H4 1点 値が0か1桁。人が確認：一致（2026-11-08）
 e30eb2e7a3b51f22	kessan-gaku	r1-koki/sainyu	value	258	百万円	zaisei-r1-shiryoshu 03!R30C17	✓	auto:pdftext	2026-11-08	
 2e88fe7448044974	kessan-gaku	r1-koki/saishutsu	value	254	百万円	zaisei-r1-shiryoshu 03!R30C22	✓	auto:pdftext	2026-11-08	
 043cd5e27f2a1352	kessan-gaku	r1-koki/sashihiki	value	4	百万円	zaisei-r1-shiryoshu 03!R30C27	✓	auto:pdftext	2026-11-08	
@@ -274,7 +274,7 @@ c77562e990cbf45f	kessan-gaku	r2-kokuho/saishutsu	value	2049570880	円	kessan-r3-
 00eaa2016682494b	kessan-gaku	r2-nishiyama/saishutsu	value	1937329	円	kessan-r3-ikensho p.29	✓	auto:pdftext	2026-11-08	
 877f7b9da12a9cf4	kessan-gaku	r2-nishiyama/sashihiki	value	425762	円	kessan-r3-ikensho p.29	✓	auto:pdftext	2026-11-08	
 3d381046654d5d28	kessan-gaku	r2-nishiyama/jisshitsu	value	425762	円	kessan-r3-ikensho p.29	✓	auto:pdftext	2026-11-08	
-138bb38cd24d2387	kessan-gaku	r2-noshu/sainyu	value	185847252	円	kessan-r3-ikensho p.21	✓	auto:ai	2026-11-08	要人確認:H4 4点 段2 に回った・別の出典と丸めの範囲でしか合わない。段2 一致（2人とも高）。シート03 と 5.85 百万円違う
+138bb38cd24d2387	kessan-gaku	r2-noshu/sainyu	value	185847252	円	kessan-r3-ikensho p.21	✓	kken78	2026-11-08	H4 4点 段2 に回った・別の出典と丸めの範囲でしか合わない。人が確認：一致（2026-11-08）。段2 一致（2人とも高）。シート03 と 5.85 百万円違う
 4557cec5ea91ba49	kessan-gaku	r2-noshu/saishutsu	value	175781722	円	kessan-r3-ikensho p.21	✓	auto:pdftext	2026-11-08	
 3621cd4c7704589f	kessan-gaku	r2-noshu/sashihiki	value	10065530	円	kessan-r3-ikensho p.21	✓	auto:ai	2026-11-08	段2 一致（2人とも高）。シート03 と 5.07 百万円違う
 0a0a4a5cd47270c6	kessan-gaku	r2-noshu/jisshitsu	value	4694530	円	kessan-r3-ikensho p.21	✓	auto:pdftext	2026-11-08	
@@ -305,7 +305,7 @@ d90d5e9630285c80	kessan-gaku	r3-kaigo/saishutsu-service	value	5795204	円	kessan
 2092a09e4b1f07aa	kessan-gaku	r3-kaigo/sashihiki-service	value	1092765	円	kessan-r3-ikensho p.25	✓	auto:pdftext	2026-11-08	
 88b38eba26ce4f88	kessan-gaku	r3-kaigo/jisshitsu-service	value	1092765	円	kessan-r3-ikensho p.25	✓	auto:pdftext	2026-11-08	
 c877edb5009bd31e	kessan-gaku	r3-kansui/sainyu	value	11098201	円	kessan-r3-ikensho p.19	✓	auto:pdftext	2026-11-08	
-246947e6ce6a5b5b	kessan-gaku	r3-kansui/saishutsu	value	11015954	円	kessan-r3-ikensho p.19	✓	auto:ai	2026-11-08	要人確認:H4 4点 段2 に回った・別の出典と丸めの範囲でしか合わない。段2 一致（2人とも高）。シート03 と 1.02 百万円違う
+246947e6ce6a5b5b	kessan-gaku	r3-kansui/saishutsu	value	11015954	円	kessan-r3-ikensho p.19	✓	kken78	2026-11-08	H4 4点 段2 に回った・別の出典と丸めの範囲でしか合わない。人が確認：一致（2026-11-08）。段2 一致（2人とも高）。シート03 と 1.02 百万円違う
 9c7f0d46338a1508	kessan-gaku	r3-kansui/sashihiki	value	82247	円	kessan-r3-ikensho p.19	✓	auto:pdftext	2026-11-08	
 68182fbe043da2e8	kessan-gaku	r3-kansui/jisshitsu	value	82247	円	kessan-r3-ikensho p.19	✓	auto:pdftext	2026-11-08	
 7c1b12c88bab8b6a	kessan-gaku	r3-koki/sainyu	value	283540537	円	kessan-r3-ikensho p.27	✓	auto:pdftext	2026-11-08	
@@ -353,7 +353,7 @@ f136049c93e9e591	kessan-gaku	r4-ippan/jisshitsu	value	823765760	円	kessan-r4-ik
 c4e70f2746789495	kessan-gaku	r4-kansui/sainyu	value	29915551	円	kessan-r4-ikensho p.19	✓	auto:ai	2026-11-08	段2 一致（2人とも高）。シート03 と 5.08 百万円違う
 8b77525e5a52d5a0	kessan-gaku	r4-kansui/saishutsu	value	15469745	円	kessan-r4-ikensho p.19	✓	auto:ai	2026-11-08	段2 一致（2人とも高）。シート03 と 16.53 百万円違う
 99a4c9dfa2cd5fc4	kessan-gaku	r4-kansui/sashihiki	value	14445806	円	kessan-r4-ikensho p.19	✓	auto:ai	2026-11-08	段2 一致（2人とも高）。シート03 と 11.45 百万円違う
-96ee9e3628e7ccc2	kessan-gaku	r4-kansui/jisshitsu	value	14445806	円	kessan-r4-ikensho p.19	✓	auto:ai	2026-11-08	要人確認:H4 4点 段2 に回った・別の出典と丸めの範囲でしか合わない。段2 一致（2人とも高）。シート03 と 11.45 百万円違う
+96ee9e3628e7ccc2	kessan-gaku	r4-kansui/jisshitsu	value	14445806	円	kessan-r4-ikensho p.19	✓	kken78	2026-11-08	H4 4点 段2 に回った・別の出典と丸めの範囲でしか合わない。人が確認：一致（2026-11-08）。段2 一致（2人とも高）。シート03 と 11.45 百万円違う
 03003503c80025a6	kessan-gaku	r4-koki/sainyu	value	293559637	円	kessan-r4-ikensho p.27	✓	auto:pdftext	2026-11-08	
 9756a2251fe83ba7	kessan-gaku	r4-koki/saishutsu	value	289433182	円	kessan-r4-ikensho p.27	✓	auto:pdftext	2026-11-08	
 7d7115a11c7ff331	kessan-gaku	r4-koki/sashihiki	value	4126455	円	kessan-r4-ikensho p.27	✓	auto:pdftext	2026-11-08	
@@ -384,7 +384,7 @@ b6c8f66d9362fbd4	kessan-gaku	r5-gesuido/shihon-shishutsu	value	785473703	円	kes
 c251054fdf1e24b4	kessan-gaku	r5-gesuido/soshueki	value	802	百万円	zaisei-r5-shiryoshu 03!R32C17	✓	auto:pdftext	2026-11-08	
 acf81ca78d56f2e3	kessan-gaku	r5-gesuido/sohiyo	value	743	百万円	zaisei-r5-shiryoshu 03!R32C22	✓	auto:pdftext	2026-11-08	
 1c4d0a5e8f2baf6e	kessan-gaku	r5-gesuido/junsoneki	value	59	百万円	zaisei-r5-shiryoshu 03!R32C27	✓	auto:pdftext	2026-11-08	
-bf18e43f18d93964	kessan-gaku	r5-ippan/sainyu	value	10741276823	円	kessan-r5-ikensho p.4	✓	auto:pdftext	2026-11-08	要人確認:H4 1点 別の出典と丸めの範囲でしか合わない
+bf18e43f18d93964	kessan-gaku	r5-ippan/sainyu	value	10741276823	円	kessan-r5-ikensho p.4	✓	kken78	2026-11-08	H4 1点 別の出典と丸めの範囲でしか合わない。人が確認：一致（2026-11-08）
 85ac1f3c9687d23c	kessan-gaku	r5-ippan/saishutsu	value	10089555733	円	kessan-r5-ikensho p.4	✓	auto:pdftext	2026-11-08	
 a049669e348a959d	kessan-gaku	r5-ippan/sashihiki	value	651721090	円	kessan-r5-ikensho p.4	✓	auto:pdftext	2026-11-08	
 7bc34f008dd0e76a	kessan-gaku	r5-ippan/jisshitsu	value	624324090	円	kessan-r5-ikensho p.4	✓	auto:pdftext	2026-11-08	
@@ -421,7 +421,7 @@ e3361685bf2c91bb	kessan-gaku	r6-gesuido/shueki-shunyu	value	798908936	円	kessan
 8b85bbb65e619365	kessan-gaku	r6-gesuido/shihon-shishutsu	value	709555771	円	kessan-r6-ikensho p.34	✓	auto:pdftext	2026-11-08	
 b8a42ff1ae42472d	kessan-gaku	r6-gesuido/soshueki	value	768	百万円	zaisei-r6-shiryoshu 03!R32C17	✓	auto:pdftext	2026-11-08	
 3644fb3813c4f0f3	kessan-gaku	r6-gesuido/sohiyo	value	763	百万円	zaisei-r6-shiryoshu 03!R32C22	✓	auto:pdftext	2026-11-08	
-5501008ab928740b	kessan-gaku	r6-gesuido/junsoneki	value	5	百万円	zaisei-r6-shiryoshu 03!R32C27	✓	auto:pdftext	2026-11-08	要人確認:H4 1点 値が0か1桁
+5501008ab928740b	kessan-gaku	r6-gesuido/junsoneki	value	5	百万円	zaisei-r6-shiryoshu 03!R32C27	✓	kken78	2026-11-08	H4 1点 値が0か1桁。人が確認：一致（2026-11-08）
 3362a4ad93f3644f	kessan-gaku	r6-ippan/sainyu	value	11000645903	円	kessan-r6-ikensho p.4	✓	auto:pdftext	2026-11-08	
 54aa46ebda68c0aa	kessan-gaku	r6-ippan/saishutsu	value	10232293135	円	kessan-r6-ikensho p.4	✓	auto:pdftext	2026-11-08	
 2c4e077372e12201	kessan-gaku	r6-ippan/sashihiki	value	768352768	円	kessan-r6-ikensho p.4	✓	auto:pdftext	2026-11-08	
@@ -456,7 +456,7 @@ aa858f1e484f5a5c	kessan-gaku	r6-suido/sohiyo	value	505	百万円	zaisei-r6-shiry
 9d51077ad99c0260	kessan-gaku	r7-gesuido/shueki-shunyu	value	744404116	円	kessan-r7-ikensho p.31	✓	auto:pdftext	2026-11-08	
 98ce3f8faa076fb3	kessan-gaku	r7-gesuido/shueki-shishutsu	value	778610710	円	kessan-r7-ikensho p.32	✓	auto:pdftext	2026-11-08	
 6f1c86d43a720f4b	kessan-gaku	r7-gesuido/shihon-shunyu	value	447776760	円	kessan-r7-ikensho p.32	✓	auto:pdftext	2026-11-08	
-b340fd0842d871fe	kessan-gaku	r7-gesuido/shihon-shishutsu	value	705755070	円	kessan-r7-ikensho p.32	✓	auto:pdftext	2026-11-08	要人確認:H4 0点
+b340fd0842d871fe	kessan-gaku	r7-gesuido/shihon-shishutsu	value	705755070	円	kessan-r7-ikensho p.32	✓	kken78	2026-11-08	H4 0点。人が確認：一致（2026-11-08）
 3471a771e3a559eb	kessan-gaku	r7-ippan/sainyu	value	12078567240	円	kessan-r7-ikensho p.4	✓	auto:pdftext	2026-11-08	
 e494fa847d73143d	kessan-gaku	r7-ippan/saishutsu	value	11334406401	円	kessan-r7-ikensho p.4	✓	auto:pdftext	2026-11-08	
 cf543791b37bf08a	kessan-gaku	r7-ippan/sashihiki	value	744160839	円	kessan-r7-ikensho p.4	✓	auto:pdftext	2026-11-08	
@@ -485,7 +485,7 @@ b1330edcde13bb03	kessan-gaku	r7-nishiyama/sainyu	value	2726123	円	kessan-r7-ike
 3d19d7180cca1d98	kessan-gaku	r7-suido/shueki-shishutsu	value	529235179	円	kessan-r7-ikensho p.24	✓	auto:pdftext	2026-11-08	
 f3e6d6a8c13f534b	kessan-gaku	r7-suido/shihon-shunyu	value	52261826	円	kessan-r7-ikensho p.25	✓	auto:pdftext	2026-11-08	
 afa56fc1481ff3a8	kessan-gaku	r7-suido/shihon-shishutsu	value	251792227	円	kessan-r7-ikensho p.25	✓	auto:pdftext	2026-11-08	
-7332ce64dab22435	kessan-uchiwake	h24-ippan/u001	name,value	町税|322610	万円	kessan-h24-gaiyou p.1	✓	auto:pdftext	2026-11-08	要人確認:H4 3点 億・万の字を万円に読んだ・円グラフの値が文字に2回出る
+7332ce64dab22435	kessan-uchiwake	h24-ippan/u001	name,value	町税|322610	万円	kessan-h24-gaiyou p.1	✓	kken78	2026-11-08	H4 3点 億・万の字を万円に読んだ・円グラフの値が文字に2回出る。人が確認：一致（2026-11-08）
 f3ad79b887cd4cd6	kessan-uchiwake	h24-ippan/u002	name,value	分担金及び負担金|24762	万円	kessan-h24-gaiyou p.1	✓	auto:pdftext	2026-11-08	
 0b799be09510490f	kessan-uchiwake	h24-ippan/u003	name,value	諸収入|11154	万円	kessan-h24-gaiyou p.1	✓	auto:pdftext	2026-11-08	
 cdaa5af5b2d02c7c	kessan-uchiwake	h24-ippan/u004	name,value	繰入金|14480	万円	kessan-h24-gaiyou p.1	✓	auto:pdftext	2026-11-08	
@@ -509,7 +509,7 @@ f9bfacbc4ace0ab8	kessan-uchiwake	h24-ippan/u020	name,value	消防費|30853	万�
 9fa655e2ff1f15e9	kessan-uchiwake	h24-ippan/u022	name,value	議会費|9063	万円	kessan-h24-gaiyou p.2	✓	auto:pdftext	2026-11-08	
 9b0abcf199f3ef0f	kessan-uchiwake	h24-ippan/u023	name,value	労働費|3078	万円	kessan-h24-gaiyou p.2	✓	auto:pdftext	2026-11-08	
 6a4080077257e05e	kessan-uchiwake	h24-ippan/u024	name,value	災害復旧費|10686	万円	kessan-h24-gaiyou p.2	✓	auto:pdftext	2026-11-08	
-f8d349c8cd8c85ca	kessan-uchiwake	h25-ippan/u001	name,value	町税|331398	万円	kessan-h25-gaiyou p.1	✓	auto:pdftext	2026-11-08	要人確認:H4 2点 億・万の字を万円に読んだ
+f8d349c8cd8c85ca	kessan-uchiwake	h25-ippan/u001	name,value	町税|331398	万円	kessan-h25-gaiyou p.1	✓	kken78	2026-11-08	H4 2点 億・万の字を万円に読んだ。人が確認：一致（2026-11-08）
 b8cad5ca1c80bafc	kessan-uchiwake	h25-ippan/u002	name,value	繰越金|40682	万円	kessan-h25-gaiyou p.1	✓	auto:pdftext	2026-11-08	
 7d2d205486b25a5d	kessan-uchiwake	h25-ippan/u003	name,value	分担金及び負担金|27322	万円	kessan-h25-gaiyou p.1	✓	auto:pdftext	2026-11-08	
 933af81d948c871b	kessan-uchiwake	h25-ippan/u004	name,value	国庫支出金|141674	万円	kessan-h25-gaiyou p.1	✓	auto:pdftext	2026-11-08	
@@ -533,7 +533,7 @@ f6dcca86e23b7f04	kessan-uchiwake	h25-ippan/u011	name,value	町債|141081	万円	
 f03af786a058ccc2	kessan-uchiwake	h25-ippan/u022	name,value	議会費|8360	万円	kessan-h25-gaiyou p.2	✓	auto:pdftext	2026-11-08	
 d97b97852cff05c8	kessan-uchiwake	h25-ippan/u023	name,value	総務費|150802	万円	kessan-h25-gaiyou p.2	✓	auto:pdftext	2026-11-08	
 27938ffeb6b90a4f	kessan-uchiwake	h25-ippan/u024	name,value	労働費|3709	万円	kessan-h25-gaiyou p.2	✓	auto:pdftext	2026-11-08	
-e2a66b9c24a42e81	kessan-uchiwake	h26-ippan/u001	name,value	町税|347074	万円	kessan-h26-gaiyou p.1	✓	auto:pdftext	2026-11-08	要人確認:H4 2点 億・万の字を万円に読んだ
+e2a66b9c24a42e81	kessan-uchiwake	h26-ippan/u001	name,value	町税|347074	万円	kessan-h26-gaiyou p.1	✓	kken78	2026-11-08	H4 2点 億・万の字を万円に読んだ。人が確認：一致（2026-11-08）
 637d2eb3713ec496	kessan-uchiwake	h26-ippan/u002	name,value	国庫支出金|87415	万円	kessan-h26-gaiyou p.1	✓	auto:pdftext	2026-11-08	
 f4591ed2dc09c469	kessan-uchiwake	h26-ippan/u003	name,value	県支出金|71962	万円	kessan-h26-gaiyou p.1	✓	auto:pdftext	2026-11-08	
 cbb30c77b53c11ce	kessan-uchiwake	h26-ippan/u004	name,value	町債|64674	万円	kessan-h26-gaiyou p.1	✓	auto:pdftext	2026-11-08	
@@ -567,7 +567,7 @@ b1b086087e17433e	kessan-uchiwake	h27-ippan/u007	name,value	県税交付金|52181
 fb8c973d309047c8	kessan-uchiwake	h27-ippan/u008	name,value	繰越金|47020	万円	kessan-h27-gaiyou p.1	✓	auto:pdftext	2026-11-08	
 40065359e63f9713	kessan-uchiwake	h27-ippan/u009	name,value	分担金及び負担金|17983	万円	kessan-h27-gaiyou p.1	✓	auto:pdftext	2026-11-08	
 bab68ee96fb99ba0	kessan-uchiwake	h27-ippan/u010	name,value	その他|21155	万円	kessan-h27-gaiyou p.2	✓	auto:ai	2026-11-08	段2 一致（2人とも高）。group は原典の画像で決めた
-5fb4dc77899b5eae	kessan-uchiwake	h27-ippan/u011	name,value	その他|11728	万円	kessan-h27-gaiyou p.2		auto:ai	2026-11-08	要人確認:H1 段2 の確信度が中（A 一致・中、B 一致・中）。group は原典の画像で決めた
+5fb4dc77899b5eae	kessan-uchiwake	h27-ippan/u011	name,value	その他|11728	万円	kessan-h27-gaiyou p.2	✓	kken78	2026-11-08	H1 段2 の確信度が中（A 一致・中、B 一致・中）。人が確認：一致（2026-11-08）。group は原典の画像で決めた
 13f730ea9045111c	kessan-uchiwake	h27-ippan/u012	name,value	農林水産業費|55321	万円	kessan-h27-gaiyou p.2	✓	auto:pdftext	2026-11-08	
 17b6cf851318f815	kessan-uchiwake	h27-ippan/u013	name,value	維持補修費|5935	万円	kessan-h27-gaiyou p.2	✓	auto:pdftext	2026-11-08	
 552528cf2adbb5ff	kessan-uchiwake	h27-ippan/u014	name,value	消防費|34260	万円	kessan-h27-gaiyou p.2	✓	auto:pdftext	2026-11-08	
@@ -576,10 +576,10 @@ f0f93f49afb2dfff	kessan-uchiwake	h27-ippan/u016	name,value	人件費|153246	万�
 3481f5752886c4f5	kessan-uchiwake	h27-ippan/u017	name,value	補助費|106968	万円	kessan-h27-gaiyou p.2	✓	auto:pdftext	2026-11-08	
 86bbd1ee8b7694dd	kessan-uchiwake	h27-ippan/u018	name,value	教育費|134238	万円	kessan-h27-gaiyou p.2	✓	auto:pdftext	2026-11-08	
 73d65332fa96c0a4	kessan-uchiwake	h27-ippan/u019	name,value	扶助費|146196	万円	kessan-h27-gaiyou p.2	✓	auto:pdftext	2026-11-08	
-12877b42df8e7058	kessan-uchiwake	h27-ippan/u020	name,value	公債費|59280	万円	kessan-h27-gaiyou p.2		auto:ai	2026-11-08	要人確認:H4 6点 段2 に回った・億・万の字を万円に読んだ・円グラフの値が文字に2回出る。要人確認:H1 段2 の確信度が中（A 一致・中、B 一致・中）。group は原典の画像で決めた
+12877b42df8e7058	kessan-uchiwake	h27-ippan/u020	name,value	公債費|59280	万円	kessan-h27-gaiyou p.2	✓	kken78	2026-11-08	H4 6点 段2 に回った・億・万の字を万円に読んだ・円グラフの値が文字に2回出る。人が確認：一致（2026-11-08）。H1 段2 の確信度が中（A 一致・中、B 一致・中）。group は原典の画像で決めた
 afd239f1ca3be824	kessan-uchiwake	h27-ippan/u021	name,value	物件費|129290	万円	kessan-h27-gaiyou p.2	✓	auto:pdftext	2026-11-08	
 ae3399a1b4403fc4	kessan-uchiwake	h27-ippan/u022	name,value	総務費|94897	万円	kessan-h27-gaiyou p.2	✓	auto:pdftext	2026-11-08	
-d29e505854327fd4	kessan-uchiwake	h27-ippan/u023	name,value	投資的経費|85691	万円	kessan-h27-gaiyou p.2		auto:ai	2026-11-08	要人確認:H1 段2 の確信度が中（A 一致・中、B 一致・中）。group は原典の画像で決めた
+d29e505854327fd4	kessan-uchiwake	h27-ippan/u023	name,value	投資的経費|85691	万円	kessan-h27-gaiyou p.2	✓	kken78	2026-11-08	H1 段2 の確信度が中（A 一致・中、B 一致・中）。人が確認：一致（2026-11-08）。group は原典の画像で決めた
 7ffd4838630cb264	kessan-uchiwake	h27-ippan/u024	name,value	土木費|77620	万円	kessan-h27-gaiyou p.2	✓	auto:pdftext	2026-11-08	
 ca99848b753edd19	kessan-uchiwake	h27-ippan/u025	name,value	公債費|59280	万円	kessan-h27-gaiyou p.2	✓	auto:ai	2026-11-08	段2 一致（2人とも高）。group は原典の画像で決めた
 c7e5bff9e9420de5	kessan-uchiwake	h27-ippan/u026	name,value	衛生費|57151	万円	kessan-h27-gaiyou p.2	✓	auto:pdftext	2026-11-08	
@@ -613,7 +613,7 @@ eba498e8a0890026	kessan-uchiwake	h28-ippan/u026	name,value	総務費|145843	万�
 8c3d1975d6e264a0	kessan-uchiwake	h28-ippan/u027	name,value	扶助費|156415	万円	kessan-h28-gaiyou p.2	✓	auto:pdftext	2026-11-08	
 0f88738a548aefcf	kessan-uchiwake	h28-ippan/u028	name,value	衛生費|59498	万円	kessan-h28-gaiyou p.2	✓	auto:pdftext	2026-11-08	
 e0dcedf705e208e2	kessan-uchiwake	h28-ippan/u029	name,value	物件費|129998	万円	kessan-h28-gaiyou p.2	✓	auto:pdftext	2026-11-08	
-fce167a30b2af338	kessan-uchiwake	h28-ippan/u030	name,value	投資的経費|122664	万円	kessan-h28-gaiyou p.2	✓	auto:ai	2026-11-08	要人確認:H4 6点 段2 に回った・億・万の字を万円に読んだ・円グラフの値が文字に2回出る。段2 一致（2人とも高）。group は原典の画像で決めた
+fce167a30b2af338	kessan-uchiwake	h28-ippan/u030	name,value	投資的経費|122664	万円	kessan-h28-gaiyou p.2	✓	kken78	2026-11-08	H4 6点 段2 に回った・億・万の字を万円に読んだ・円グラフの値が文字に2回出る。人が確認：一致（2026-11-08）。段2 一致（2人とも高）。group は原典の画像で決めた
 9ece3a682b157237	kessan-uchiwake	h28-ippan/u031	name,value	教育費|130197	万円	kessan-h28-gaiyou p.2	✓	auto:pdftext	2026-11-08	
 ee3bb0efcbf0b675	kessan-uchiwake	h28-ippan/u032	name,value	投資的経費|122664	万円	kessan-h28-gaiyou p.2	✓	auto:ai	2026-11-08	段2 一致（2人とも高）。group は原典の画像で決めた
 e0dc1da14c35ca57	kessan-uchiwake	h28-ippan/u033	name,value	土木費|79254	万円	kessan-h28-gaiyou p.2	✓	auto:pdftext	2026-11-08	
@@ -641,7 +641,7 @@ a2da7b1e83ab56f5	kessan-uchiwake	r2-ippan/u016	name,value	扶助費|162760	万�
 405fb2233e406e11	kessan-uchiwake	r2-ippan/u019	name,value	維持補修費|5705	万円	kessan-r2-gaiyou p.2	✓	auto:pdftext	2026-11-08	
 51aeacff237b40a1	kessan-uchiwake	r2-ippan/u020	name,value	人件費|202746	万円	kessan-r2-gaiyou p.2	✓	auto:pdftext	2026-11-08	
 e21fe3613d5cb3b9	kessan-uchiwake	r2-ippan/u021	name,value	一般行政経費|579324	万円	kessan-r2-gaiyou p.2	✓	auto:pdftext	2026-11-08	
-a2ceea92d43be468	kessan-uchiwake	r2-ippan/u022	name,value	公債費|75310	万円	kessan-r2-gaiyou p.2	✓	auto:pdftext	2026-11-08	要人確認:H4 3点 億・万の字を万円に読んだ・円グラフの値が文字に2回出る
+a2ceea92d43be468	kessan-uchiwake	r2-ippan/u022	name,value	公債費|75310	万円	kessan-r2-gaiyou p.2	✓	kken78	2026-11-08	H4 3点 億・万の字を万円に読んだ・円グラフの値が文字に2回出る。人が確認：一致（2026-11-08）
 f2a66d3884ce7474	kessan-uchiwake	r2-ippan/u023	name,value	義務的経費|440816	万円	kessan-r2-gaiyou p.2	✓	auto:pdftext	2026-11-08	
 5bee21ee5311d521	kessan-uchiwake	r2-ippan/u024	name,value	普通建設事業費|109071	万円	kessan-r2-gaiyou p.2	✓	auto:pdftext	2026-11-08	
 8e7cef9a7d542e94	kessan-uchiwake	r2-ippan/u025	name,value	その他経費|7038	万円	kessan-r2-gaiyou p.2	✓	auto:pdftext	2026-11-08	
@@ -660,7 +660,7 @@ aa9b126366107a0a	kessan-uchiwake	r3-ippan/u011	name,value	その他|14656	万円
 97d7b73d9677bd8d	kessan-uchiwake	r3-ippan/u013	name,value	依存財源|640059	万円	kessan-r3-gaiyou p.1	✓	auto:pdftext	2026-11-08	
 4af9915dad4a76bd	kessan-uchiwake	r3-ippan/u014	name,value	義務的経費|494875	万円	kessan-r3-gaiyou p.2	✓	auto:pdftext	2026-11-08	
 77145144a5152071	kessan-uchiwake	r3-ippan/u015	name,value	人件費|207984	万円	kessan-r3-gaiyou p.2	✓	auto:pdftext	2026-11-08	
-44a8de8d4151ce27	kessan-uchiwake	r3-ippan/u016	name,value	扶助費|209533	万円	kessan-r3-gaiyou p.2		auto:ai	2026-11-08	要人確認:H4 5点 段2 に回った・億・万の字を万円に読んだ。要人確認:H1 段2 の確信度が中（A 一致・中、B 一致・高）。画像で確かめた数字
+44a8de8d4151ce27	kessan-uchiwake	r3-ippan/u016	name,value	扶助費|209533	万円	kessan-r3-gaiyou p.2	✓	kken78	2026-11-08	H4 5点 段2 に回った・億・万の字を万円に読んだ。人が確認：一致（2026-11-08）。H1 段2 の確信度が中（A 一致・中、B 一致・高）。画像で確かめた数字
 0d6c1f5d1fc481c0	kessan-uchiwake	r3-ippan/u017	name,value	公債費|77358	万円	kessan-r3-gaiyou p.2	✓	auto:pdftext	2026-11-08	
 ee1c9a9a149d9685	kessan-uchiwake	r3-ippan/u018	name,value	普通建設事業費|98628	万円	kessan-r3-gaiyou p.2	✓	auto:pdftext	2026-11-08	
 f86cfe1ad00dae6d	kessan-uchiwake	r3-ippan/u019	name,value	物件費|136735	万円	kessan-r3-gaiyou p.2	✓	auto:pdftext	2026-11-08	
@@ -671,7 +671,7 @@ fa3066f31c1e4613	kessan-uchiwake	r3-ippan/u023	name,value	繰出金|84468	万円
 eebb931e9595e05f	kessan-uchiwake	r3-ippan/u024	name,value	その他経費|67363	万円	kessan-r3-gaiyou p.2	✓	auto:pdftext	2026-11-08	
 82006fe9183456a3	kessan-uchiwake	r3-ippan/u025	name,value	投資的経費|100405	万円	kessan-r3-gaiyou p.2	✓	auto:pdftext	2026-11-08	
 bb94abb56dda5d8b	kessan-uchiwake	r3-ippan/u026	name,value	一般行政経費|438317	万円	kessan-r3-gaiyou p.2	✓	auto:pdftext	2026-11-08	
-79fe57891d57401d	kessan-uchiwake	r4-ippan/u001	name,value	町税|378411	万円	kessan-r4-gaiyou p.1	✓	auto:pdftext	2026-11-08	要人確認:H4 3点 億・万の字を万円に読んだ・円グラフの値が文字に2回出る
+79fe57891d57401d	kessan-uchiwake	r4-ippan/u001	name,value	町税|378411	万円	kessan-r4-gaiyou p.1	✓	kken78	2026-11-08	H4 3点 億・万の字を万円に読んだ・円グラフの値が文字に2回出る。人が確認：一致（2026-11-08）
 e81f5c2394a44388	kessan-uchiwake	r4-ippan/u002	name,value	繰入金|2323	万円	kessan-r4-gaiyou p.1	✓	auto:pdftext	2026-11-08	
 2a7045f2e3f3d5e8	kessan-uchiwake	r4-ippan/u003	name,value	繰越金|75519	万円	kessan-r4-gaiyou p.1	✓	auto:pdftext	2026-11-08	
 23d994d7ce9eb197	kessan-uchiwake	r4-ippan/u004	name,value	分担金および負担金|13160	万円	kessan-r4-gaiyou p.1	✓	auto:pdftext	2026-11-08	
@@ -697,7 +697,7 @@ fa4286c76d7443b6	kessan-uchiwake	r4-ippan/u022	name,value	補助費等|154607	�
 148373a25d985651	kessan-uchiwake	r4-ippan/u024	name,value	その他経費|20226	万円	kessan-r4-gaiyou p.2	✓	auto:pdftext	2026-11-08	
 1fc7c215306faf32	kessan-uchiwake	r4-ippan/u025	name,value	投資的経費|93596	万円	kessan-r4-gaiyou p.2	✓	auto:pdftext	2026-11-08	
 473dd5e40251890d	kessan-uchiwake	r4-ippan/u026	name,value	一般行政経費|413223	万円	kessan-r4-gaiyou p.2	✓	auto:pdftext	2026-11-08	
-89f48df73f0662d4	kessan-uchiwake	r5-ippan/u001	name,value	町税|375295	万円	kessan-r5-gaiyou p.1	✓	auto:pdftext	2026-11-08	要人確認:H4 3点 億・万の字を万円に読んだ・円グラフの値が文字に2回出る
+89f48df73f0662d4	kessan-uchiwake	r5-ippan/u001	name,value	町税|375295	万円	kessan-r5-gaiyou p.1	✓	kken78	2026-11-08	H4 3点 億・万の字を万円に読んだ・円グラフの値が文字に2回出る。人が確認：一致（2026-11-08）
 8dd97f526d5f3c48	kessan-uchiwake	r5-ippan/u002	name,value	繰入金|6294	万円	kessan-r5-gaiyou p.1	✓	auto:pdftext	2026-11-08	
 7c39df2642f903c0	kessan-uchiwake	r5-ippan/u003	name,value	繰越金|92564	万円	kessan-r5-gaiyou p.1	✓	auto:pdftext	2026-11-08	
 0e929e18876edfe3	kessan-uchiwake	r5-ippan/u004	name,value	分担金および負担金|18724	万円	kessan-r5-gaiyou p.1	✓	auto:pdftext	2026-11-08	
@@ -722,7 +722,7 @@ adbccc54aa11d6de	kessan-uchiwake	r5-ippan/u019	name,value	物件費|135657	万�
 4b984ca3dda6a0a5	kessan-uchiwake	r5-ippan/u023	name,value	その他経費|32320	万円	kessan-r5-gaiyou p.2	✓	auto:pdftext	2026-11-08	
 83471977d5c4bbcd	kessan-uchiwake	r5-ippan/u024	name,value	投資的経費|94257	万円	kessan-r5-gaiyou p.2	✓	auto:pdftext	2026-11-08	
 5b862d2c0eb38b4f	kessan-uchiwake	r5-ippan/u025	name,value	一般行政経費|428395	万円	kessan-r5-gaiyou p.2	✓	auto:pdftext	2026-11-08	
-224e5c94bdda5964	kessan-uchiwake	r6-ippan/u001	name,value	町税|402892	万円	kessan-r6-gaiyou p.1	✓	auto:pdftext	2026-11-08	要人確認:H4 3点 億・万の字を万円に読んだ・円グラフの値が文字に2回出る
+224e5c94bdda5964	kessan-uchiwake	r6-ippan/u001	name,value	町税|402892	万円	kessan-r6-gaiyou p.1	✓	kken78	2026-11-08	H4 3点 億・万の字を万円に読んだ・円グラフの値が文字に2回出る。人が確認：一致（2026-11-08）
 65a7b8a40a9f3217	kessan-uchiwake	r6-ippan/u002	name,value	繰入金|4832	万円	kessan-r6-gaiyou p.1	✓	auto:pdftext	2026-11-08	
 6e5ccd46a3afeb23	kessan-uchiwake	r6-ippan/u003	name,value	繰越金|65172	万円	kessan-r6-gaiyou p.1	✓	auto:pdftext	2026-11-08	
 1c704b0e9f5cc992	kessan-uchiwake	r6-ippan/u004	name,value	その他|30349	万円	kessan-r6-gaiyou p.1	✓	auto:pdftext	2026-11-08	
