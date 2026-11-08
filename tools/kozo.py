@@ -7,6 +7,7 @@
 年度は r6 の形。起票は data/text_raw/ を基にし、data/text/ は企業会計の表の会計の名前にだけ使う。
 読めないもの・決まりで決まらないものは空にして note に書く。決まりに無いものが出たら止める（終了コード 2）。
 hosei-check は、検算が合わない回があれば終了コード 1 で終わる（台帳は書き、その回の行の checked を空にする）。
+hosei-check は、段4 の抜き取り（13.10 の H2・H4）の行の note を「要人確認:」で始める。
 """
 import copy
 import csv
@@ -884,18 +885,6 @@ def fill_amount(row, amt, notes):
         notes.append(f"金額の字「{amt}」を数に読めない")
 
 
-TOOL_NOTE = re.compile(r"^(数の字が|.*を数に読めない|合計の行の名前の字|会計の名前は data/text/ による|会計の名前を data/text/|"
-                       r"「.*」の.*の下の行|原典の金額は「－」|金額の字|2つめの列の見出しの字|"
-                       r"今回補正額の列の見出しの字|同じ資料に会計の額の表が無い|見出しの第|号の1つ前の回|13\.6 のただし書き|"
-                       r"p\.[0-9]+ の列の見出しの字|空欄の列は原典の文字から決まらないので|desc は空|desc はページの終わり|説明の文は)")
-
-
-def keep_human(old_note, new_note):
-    """既存の行の note のうち、この道具が書いたもの以外を残す。"""
-    keep = [x for x in (old_note or "").split("。") if x and not TOOL_NOTE.match(x)]
-    return join_note(new_note, *keep)
-
-
 def merge_kan(old, new, report):
     """款の行。key（回の id と key）で合わせる。"""
     oldmap = {(r["kai"], r["key"]): r for r in old}
@@ -910,10 +899,9 @@ def merge_kan(old, new, report):
             if o and [o[c] for c in AMT9 if o[c] != ""] == reread:
                 for c in AMT9:
                     r[c] = o[c]
-                r["note"] = keep_human(o["note"], "空欄の列は原典の文字から決まらないので、既存の行の値を保った")
                 report["kept_values"].append(f"{r['kai']}/{r['key']}")
-        elif o:
-            r["note"] = keep_human(o["note"], r["note"])
+        if o:
+            r["note"] = o["note"]   # 既存の行の note はそのまま保つ（道具の note は新しい行にだけ付ける）
         r["_ord"] = i
         out.append(r)
     for k, o in oldmap.items():
@@ -948,7 +936,8 @@ def merge_keyed(old, new, prefix_of, match_of, table, report):
         if hit is not None:
             used.add(id(hit))
             r["key"] = hit["key"]
-            r["note"] = keep_human(hit["note"], r["note"])
+            r["note"] = hit["note"]   # 既存の行の note はそのまま保つ
+            r["_old"] = True
         else:
             pending.append(r)
         out.append(r)
@@ -992,7 +981,7 @@ def kian(root, year, out=print):
         r = {c: str(k.get(c, "")) for c in KAI_COLS}
         o = next((x for x in old if x["id"] == r["id"]), None)
         if o:
-            r["note"] = keep_human(o["note"], r["note"])
+            r["note"] = o["note"]
         kai_rows.append(r)
     for o in old:
         if o["id"] not in newids:
@@ -1007,7 +996,7 @@ def kian(root, year, out=print):
     for s in b["shiryo"]:
         o = oldmap.get((s["kai"], s["doc"], s["part"]))
         if o:
-            s["note"] = keep_human(o["note"], s["note"])
+            s["note"] = o["note"]
         srows.append(s)
     allrows = keep + srows
     allrows.sort(key=lambda r: (r["kai"], r["doc"], PART_ORDER.index(r["part"]) if r["part"] in PART_ORDER else 99))
@@ -1028,6 +1017,8 @@ def kian(root, year, out=print):
     for rs in groups.values():
         if len(rs) > 1:
             for r in rs:
+                if r.get("_old"):
+                    continue
                 others = "、".join(x["key"] for x in rs if x is not r)
                 r["note"] = join_note(r["note"], f"説明の文は {others} と共有")
     write_table(os.path.join(sd, "hosei-maru.tsv"), MARU_COLS, other + sort_rows(maru_rows))
@@ -1482,8 +1473,104 @@ def check_jiko_heads(r, texts, fail, g, rid):
         fail("見出し", g, [rid], "kaikei", f"{rid}：kaikei_raw・kaikei が上の会計の見出し「{ka}」と合わない")
 
 
-def audit_rows(t, result, old_ledger, today=TODAY):
-    """検収の台帳の行。"""
+# ---- 段4 の抜き取り（13.10 の H2・H4） ----
+
+H4_TABLES = ("hosei-maru", "hosei-jiko")
+H2_NOTE = "要人確認:H2 出典の資料やページが無い"
+
+
+def amount_count(tok, page_lines):
+    """金額の字（カンマ付きの原典の形。符号と空白は除く）が、ページの原典の文字に現れる回数。"""
+    body = re.sub(r"^[△▲\-]\s*", "", tok.strip())
+    if not body or body == "－":
+        return 0
+    pat = r"(?<![0-9０-９,，.．])" + re.escape(body) + r"(?![0-9０-９,，.．])"
+    return len(re.findall(pat, "\n".join(page_lines)))
+
+
+def is_joined(line, page_lines):
+    """line がページの2行をつないだものか（名前が長く金額が次の行に送られた事項）。"""
+    ls = [x for x in page_lines if x]
+    if line in ls:
+        return False
+    return any(a + " " + b == line for a, b in zip(ls, ls[1:]))
+
+
+SHARE_NOTE = re.compile(r"説明の文は [a-z][0-9]{3}(?:、[a-z][0-9]{3})* と共有")
+
+
+def difficulty(table, r, texts, dan2=frozenset()):
+    """13.10 の難しさの点数。戻り値 (点数, 理由の並び)。"""
+    rid = f"{r['kai']}/{r['key']}"
+    pts, why = 0, []
+    if rid in dan2:
+        pts += 3
+        why.append("段2 に回った")
+    if table == "hosei-maru":
+        if r["desc"] == "":
+            pts += 2
+            why.append("desc が空")
+        elif SHARE_NOTE.search(r["note"]):   # 共有は 13.6 の note で見る（同じ字の別の説明は共有でない）
+            pts += 2
+            why.append("説明の文を共有")
+    page = texts.page("raw", r["doc"], r["page"])
+    m = re.search(AMT_TAIL + "$", r["line"])
+    if m and amount_count(m.group(1), page) >= 3:
+        pts += 2
+        why.append("同じ金額の字がページに3回以上")
+    if is_joined(r["line"], page):
+        pts += 2
+        why.append("line が2行をつないだもの")
+    a = r["amount"]
+    if a == "":
+        pts += 1
+        why.append("金額が空")
+    elif re.fullmatch(r"-?[0-9]+", a) and int(a) == 0:
+        pts += 1
+        why.append("金額が0")
+    elif re.fullmatch(r"-?[0-9]", a):
+        pts += 1
+        why.append("金額が1桁")
+    return pts, why
+
+
+def pick_marks(t, texts, result, dan2=None, h1=frozenset()):
+    """要人確認の印。戻り値 {(table, row): note の字}。
+    dan2 は段2 に回った行（None なら段1 で line が原典の文字に見つからなかった行）。h1 は段2 の結果で選んだ行と理由
+    （段2 の取り込みを足したときに使う。{(table, row): 理由}）。"""
+    if dan2 is None:
+        dan2 = {rw for f in result["fails"] if f["kind"] == "line" for rw in f["rows"]}
+    marks = {}
+
+    def add(k, note):
+        marks[k] = join_note(marks.get(k, ""), note)
+
+    for (table, rw), why in sorted(dict(h1).items()):
+        add((table, rw), f"要人確認:H1 {why}")
+    for table in ("hosei-kan", "hosei-maru", "hosei-jiko", "hosei-kaikei"):
+        for r in t[table]:
+            if not r["doc"] or not r["page"]:
+                add((table, f"{r['kai']}/{r['key']}"), H2_NOTE)
+    for table in H4_TABLES:
+        rows = t[table]
+        groups = {}
+        for r in rows:
+            groups.setdefault(r["kai"], []).append(r)
+        for kai, rs in sorted(groups.items()):
+            best = None
+            for r in rs:
+                rw = f"{r['kai']}/{r['key']}"
+                pts, why = difficulty(table, r, texts, dan2)
+                if best is None or pts > best[0] or (pts == best[0] and rw < best[1]):
+                    best = (pts, rw, why)
+            pts, rw, why = best
+            add((table, rw), f"要人確認:H4 {pts}点" + (" " + "・".join(why) if why else ""))
+    return marks
+
+
+def audit_rows(t, result, old_ledger, today=TODAY, marks=None):
+    """検収の台帳の行。marks は pick_marks の結果（要人確認の印。note の頭に付ける）。"""
+    marks = marks or {}
     fails = result["fails"]
     bad_groups = {f["group"] for f in fails if not f["excused"]}
     rowfail = {}
@@ -1518,13 +1605,21 @@ def audit_rows(t, result, old_ledger, today=TODAY):
             elif not ok:
                 notes.append("段1 不一致：同じ回か表のほかの行")
             new = dict(key=key, table=table, row=rw, cols=",".join(cols), value=value, unit=r["unit"], source=source,
-                       checked="✓" if ok else "", reviewer="auto:pdftext", date=today, note=join_note(*notes))
+                       checked="✓" if ok else "", reviewer="auto:pdftext", date=today,
+                       note=join_note(marks.get((table, rw), ""), *notes))
             o = old.get(key)
             if o:
                 human = o["reviewer"] and not o["reviewer"].startswith("auto:")
-                if human or o["note"].startswith("要人確認:"):
+                # 道具の印（H2・H4）は選び直して付け直す。それ以外の要人確認（段2 の H1 など）は前のとおり保つ
+                rest = [x for x in o["note"].split("。") if x and not x.startswith(("要人確認:H2", "要人確認:H4"))]
+                other_mark = any(x.startswith("要人確認:") for x in rest)
+                if human:   # 人の印の付いた行は変えない（13.10 の人の列を保つ）
                     for c in ("checked", "reviewer", "date", "note"):
                         new[c] = o[c]
+                elif other_mark:
+                    for c in ("checked", "reviewer", "date"):
+                        new[c] = o[c]
+                    new["note"] = join_note(marks.get((table, rw), ""), *rest)
                 elif o["checked"] == new["checked"] and o["reviewer"] == new["reviewer"]:
                     new["date"] = o["date"]
             out.append(new)
@@ -1538,10 +1633,12 @@ def hosei_check(root, year, out=print, today=TODAY):
     if not t["hosei-kai"]:
         raise Stop(f"data/struct/hosei-kai.tsv に {year} の回が無い（先に hosei-kian {year}）")
     docs = {r["doc"] for name in ("hosei-kan", "hosei-maru", "hosei-jiko", "hosei-kaikei") for r in t[name]}
-    res = run_check(t, Texts(root), load_issues(root, docs))
+    texts = Texts(root)
+    res = run_check(t, texts, load_issues(root, docs))
     path = os.path.join(struct_dir(root), "audit", f"hosei-{year}.tsv")
     old = htd.read_tsv(path, AUDIT_COLS) if os.path.exists(path) else []
-    rows, stats = audit_rows(t, res, old, today)
+    marks = pick_marks(t, texts, res)
+    rows, stats = audit_rows(t, res, old, today, marks)
     write_table(path, AUDIT_COLS, rows)
     bad = [f for f in res["fails"] if not f["excused"]]
     exc = [f for f in res["fails"] if f["excused"]]
@@ -1555,6 +1652,12 @@ def hosei_check(root, year, out=print, today=TODAY):
     out(f"合わなかった項目 {len(bad)}")
     for f in bad:
         out(f"  [{f['kind']}] {f['msg']}")
+    for h, name in (("H2", "H2（出典の資料やページの無い行）"), ("H4", "H4（回と表の組ごとの抜き取り）")):
+        hs = [r for r in rows if f"要人確認:{h}" in r["note"]]
+        out(f"{name} {len(hs)}")
+        for r in hs:
+            m = re.search(r"要人確認:H4 ([0-9]+)点 ?([^。]*)", r["note"]) if h == "H4" else None
+            out("  " + "\t".join([r["table"], r["row"]] + ([m.group(1) + "点", m.group(2)] if m else [])))
     code = 1 if bad else 0
     out(f"台帳：{os.path.relpath(path, root)}（{len(rows)} 行）。終了コード {code}")
     return code, res, rows, stats

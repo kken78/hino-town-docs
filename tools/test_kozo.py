@@ -569,6 +569,127 @@ class TestKianCheck(unittest.TestCase):
             shutil.rmtree(empty, ignore_errors=True)
 
 
+class FakeTexts:
+    """page(kind, doc, page) だけを持つ原典の文字の見本。"""
+
+    def __init__(self, pages):
+        self.pages = pages
+
+    def page(self, kind, doc, page):
+        return self.pages.get((doc, page), [])
+
+
+def mrow(kai, key, line, amount, desc="説明です。", note="", doc="d", page="1"):
+    return dict(kai=kai, key=key, kind="maru", mark="○", name="", amount=amount, unit="千円", line=line, desc=desc, sub="",
+                doc=doc, page=page, note=note)
+
+
+class TestH4(unittest.TestCase):
+    PAGE = ["○甲事業 100千円", "説明です。", "○乙事業 1,200千円", "合計 1,200 1,200", "○丙事業 5千円",
+            "・ とても長い名前の事業の債", "300 千円"]
+
+    def score(self, r, table="hosei-maru", dan2=frozenset()):
+        return kozo.difficulty(table, r, FakeTexts({("d", "1"): self.PAGE}), dan2)
+
+    def test_rules(self):
+        self.assertEqual(self.score(mrow("k", "m001", "○甲事業 100千円", "100")), (0, []))
+        # 段2 に回った行
+        self.assertEqual(self.score(mrow("k", "m001", "○甲事業 100千円", "100"), dan2={"k/m001"}), (3, ["段2 に回った"]))
+        # 説明の文を共有、desc が空
+        self.assertEqual(self.score(mrow("k", "m001", "○甲事業 100千円", "100", note="説明の文は m002 と共有")),
+                         (2, ["説明の文を共有"]))
+        self.assertEqual(self.score(mrow("k", "m001", "○甲事業 100千円", "100", desc="", note="説明の文は原典に無い")),
+                         (2, ["desc が空"]))
+        # 同じ金額の字がページに3回以上（「1,200」は3回。「100」は「1,200」の中の字を数えない）
+        self.assertEqual(self.score(mrow("k", "m001", "○乙事業 1,200千円", "1200")), (2, ["同じ金額の字がページに3回以上"]))
+        # line が2行をつないだもの
+        j = dict(kai="k", key="z001", kind="chihosai", name="とても長い名前の事業の債", amount="300", unit="千円",
+                 line="・ とても長い名前の事業の債 300 千円", doc="d", page="1", note="")
+        self.assertEqual(self.score(j, "hosei-jiko"), (2, ["line が2行をつないだもの"]))
+        # 金額が1桁・0・空
+        self.assertEqual(self.score(mrow("k", "m001", "○丙事業 5千円", "5")), (1, ["金額が1桁"]))
+        self.assertEqual(self.score(mrow("k", "m001", "○丁事業 0千円", "0"))[0], 1)
+        self.assertEqual(self.score(mrow("k", "m001", "○戊事業 －千円", "")), (1, ["金額が空"]))
+
+    def test_one_per_group_and_tie(self):
+        t = {name: [] for name in kozo.TABLES}
+        t["hosei-maru"] = [mrow("k1", "m002", "○甲事業 100千円", "100"), mrow("k1", "m001", "○甲事業 100千円", "100"),
+                           mrow("k1", "m003", "○丙事業 5千円", "5"), mrow("k2", "m002", "○甲事業 100千円", "100"),
+                           mrow("k2", "m001", "○甲事業 100千円", "100")]
+        t["hosei-jiko"] = [dict(kai="k1", key="z001", kind="saimu", name="甲", amount="100", unit="千円",
+                                line="・ 甲 100千円", doc="", page="", note="")]
+        res = dict(fails=[], rownotes={})
+        marks = kozo.pick_marks(t, FakeTexts({("d", "1"): self.PAGE}), res)
+        h4 = sorted(k for k, v in marks.items() if "要人確認:H4" in v)
+        # 回と表の組ごとに1行。k1 は点数の最も大きい m003、k2 は同点なので row の文字コード順で先の m001
+        self.assertEqual(h4, [("hosei-jiko", "k1/z001"), ("hosei-maru", "k1/m003"), ("hosei-maru", "k2/m001")])
+        self.assertEqual(marks[("hosei-maru", "k1/m003")], "要人確認:H4 1点 金額が1桁")
+        self.assertEqual(marks[("hosei-maru", "k2/m001")], "要人確認:H4 0点")
+        # H2（出典の資料やページの無い行）
+        self.assertTrue(marks[("hosei-jiko", "k1/z001")].startswith(kozo.H2_NOTE))
+        # 段1 で line が見つからなかった行は段2 に回った行として 3点
+        res = dict(fails=[dict(kind="line", group=("hosei-maru", "k2/m002"), rows=("k2/m002",), detail="", msg="")],
+                   rownotes={})
+        marks = kozo.pick_marks(t, FakeTexts({("d", "1"): self.PAGE}), res)
+        self.assertEqual(marks[("hosei-maru", "k2/m002")], "要人確認:H4 3点 段2 に回った")
+
+
+class TestH4Ledger(unittest.TestCase):
+    def setUp(self):
+        self.root = tempfile.mkdtemp(prefix="test-kozo-")
+        make_sample(self.root)
+        kozo.kian(self.root, SAMPLE_YEAR, out=quiet)
+
+    def tearDown(self):
+        shutil.rmtree(self.root, ignore_errors=True)
+
+    def test_marks_in_ledger_and_human_rows_kept(self):
+        code, res, rows, _ = kozo.hosei_check(self.root, SAMPLE_YEAR, out=quiet, today="2027-01-01")
+        self.assertEqual(code, 0)
+        h4 = {r["row"]: r for r in rows if r["note"].startswith("要人確認:H4")}
+        # 見本の主な内容の行は4回（r9-ippan-01・02、r9-kokuho-01、r9-suido-01）、事項は2回
+        self.assertEqual(sorted((r["table"], k) for k, r in h4.items()),
+                         [("hosei-jiko", "r9-ippan-01/z002"), ("hosei-jiko", "r9-ippan-02/z001"),
+                          ("hosei-maru", "r9-ippan-01/m002"), ("hosei-maru", "r9-ippan-02/m001"),
+                          ("hosei-maru", "r9-kokuho-01/t001"), ("hosei-maru", "r9-suido-01/t001")])
+        self.assertTrue(all((r["checked"], r["reviewer"]) == ("✓", "auto:pdftext") for r in h4.values()))
+        # 見本のページは「1」の字が多い（ページの番号「- 1 -」など）ので、1桁の金額は3回以上の規則にも当たる
+        self.assertEqual(h4["r9-ippan-01/m002"]["note"], "要人確認:H4 5点 説明の文を共有・同じ金額の字がページに3回以上・金額が1桁")
+        self.assertEqual(h4["r9-ippan-01/z002"]["note"], "要人確認:H4 3点 line が2行をつないだもの・金額が1桁")
+        # 人の印の付いた行の note は変えない。印の無い行の要人確認は付け直す
+        path = os.path.join(self.root, "data", "struct", "audit", f"hosei-{SAMPLE_YEAR}.tsv")
+        for r in rows:
+            if r["row"] == "r9-ippan-01/m002":
+                r.update(reviewer="kken78", date="2027-01-02", note="原典の画像で確かめた")
+            if r["row"] == "r9-ippan-02/m001":
+                r["note"] = ""
+        kozo.write_table(path, kozo.AUDIT_COLS, rows)
+        code, res, rows, _ = kozo.hosei_check(self.root, SAMPLE_YEAR, out=quiet, today="2027-01-03")
+        got = {r["row"]: r for r in rows}
+        self.assertEqual((got["r9-ippan-01/m002"]["reviewer"], got["r9-ippan-01/m002"]["note"]), ("kken78", "原典の画像で確かめた"))
+        self.assertEqual(got["r9-ippan-02/m001"]["note"], "要人確認:H4 3点 同じ金額の字がページに3回以上・金額が1桁")
+        self.assertEqual(sum(1 for r in rows if "要人確認:H4" in r["note"]), 5)
+
+    def test_kian_keeps_old_notes(self):
+        # 既存の行の note は、起票し直してもそのまま。道具の note を足したり前に付けたりしない
+        sd = os.path.join(self.root, "data", "struct")
+        maru = kozo.load_table(self.root, "hosei-maru")
+        for r in maru:
+            if r["kai"] == "r9-ippan-01" and r["key"] == "m002":
+                r["note"] = "人の注記"
+        kozo.write_table(os.path.join(sd, "hosei-maru.tsv"), kozo.MARU_COLS, maru)
+        kk = kozo.load_table(self.root, "hosei-kaikei")
+        for r in kk:
+            if r["table"] == "kigyo":
+                r["note"] = "会計の名前は data/text/ により、原典の画像で確かめた"
+        kozo.write_table(os.path.join(sd, "hosei-kaikei.tsv"), kozo.KAIKEI_COLS, kk)
+        kozo.kian(self.root, SAMPLE_YEAR, out=quiet)
+        m = next(r for r in kozo.load_table(self.root, "hosei-maru") if r["kai"] == "r9-ippan-01" and r["key"] == "m002")
+        self.assertEqual(m["note"], "人の注記")
+        notes = {r["note"] for r in kozo.load_table(self.root, "hosei-kaikei") if r["table"] == "kigyo"}
+        self.assertEqual(notes, {"会計の名前は data/text/ により、原典の画像で確かめた"})
+
+
 class TestReal(unittest.TestCase):
     PATH = os.path.join(kozo.ROOT, "data", "text_raw", "yosan-r6-hosei-03.txt")
 
