@@ -22,8 +22,23 @@
 | `data/text/` | 原典から取り出した文字（PDF は pdftotext。Excel はシートごとの TSV を `data/text/<id>/` に、町のサイトのページは本文の文字） |
 | `data/text_raw/` | 同じ原典から、PDF の中で書かれた順に取り出した文字（pdftotext -raw。表や縦書きの段で文がつながりやすい） |
 | `data/ocr/` | ページの画像から機械で読んだ文字（OCR の下書き。数字の桁の違いを含む読み違いがあり、数字の出典には使わない） |
+| `data/struct/` | 補正予算・決算・財政指標の数字と名前を、回と行のキーで持つ表と、その検収の台帳（構造化の層。下の「構造化の層」。いまは文書だけで、表はまだ無い） |
 
 文字は、原典の文字・OCR の下書き・校正済みの読みの3つの層に分けて置く（[DOCS_SCHEMA.md](DOCS_SCHEMA.md) §9）。OCR の下書きは、国立国会図書館の [NDLOCR-Lite](https://github.com/ndl-lab/ndlocr-lite)（CC BY 4.0。同梱の学習済みモデルは DINOv3 License に従う）で作る。
+
+## 構造化の層
+
+補正予算の概要・決算の資料・財政状況資料集の数字と名前を、回と行のキーで指せる表にして `data/struct/` に置く（[DOCS_SCHEMA.md](DOCS_SCHEMA.md) §13）。原典の文字の層とは別の層で、原典を見て起票し、行ごとに検収する。
+
+| 表 | 中身 |
+| --- | --- |
+| `hosei-kai.tsv`・`hosei-shiryo.tsv` | 補正予算の回（年度・会計・号。例 `r6-ippan-03`）と、回と資料のページの対応 |
+| `hosei-kan.tsv`・`hosei-maru.tsv`・`hosei-jiko.tsv`・`hosei-kaikei.tsv` | 款の表の行、歳出の主な内容の○の行と特別会計・企業会計の主な内容の行、繰越明許費・債務負担行為・地方債の事項、会計ごとの額 |
+| `kessan-kai.tsv`・`kessan-gaku.tsv`・`kessan-uchiwake.tsv` | 決算の回（年度・会計。例 `r6-ippan`）と、会計ごとの歳入歳出の額、一般会計の内訳 |
+| `zaisei-shihyo.tsv`・`zaisei-futsu.tsv`・`zaisei-ichi.tsv` | 財政状況資料集の指標（年度を列にする）、普通会計の状況、値の原典の中の位置 |
+| `audit/`・`issues/` | 検収の台帳と、原典の誤りの記録 |
+
+検収は shiga-hino-plans の段1〜段4 を写して使う。論点ノート（hino-ronten）は、検収の済んだ行だけを、`hs:`・`hj:`・`hk:`・`hz:` のキーで指す。いまは文書だけを入れてあり、道具と表はこれから作る（令和6年度の補正予算から）。
 
 ## 町のサイトの巡回
 
@@ -46,6 +61,6 @@
 
 - プログラム（tools/）：GNU Affero General Public License v3.0 以降（AGPL-3.0-or-later、[LICENSE](LICENSE)）
 - 台帳と一覧の構造（列の作り方、id、検収の記録）：CC BY 4.0
-- 原典の資料名・本文から写したもの（一覧と台帳の資料名、`data/text/`・`data/text_raw/`・`data/ocr/` の文字）：このリポジトリのライセンスの対象外（著作権は日野町など各発行者にある）
+- 原典の資料名・本文から写したもの（一覧と台帳の資料名、`data/text/`・`data/text_raw/`・`data/ocr/` の文字、`data/struct/` の表のうち原典から写した数と名前）：このリポジトリのライセンスの対象外（著作権は日野町など各発行者にある）。`data/struct/` のキーと列の作り方は、台帳の構造と同じく CC BY 4.0
 
 Copyright (C) 2026 Kenjiro HIGASHI
