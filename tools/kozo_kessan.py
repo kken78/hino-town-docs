@@ -845,8 +845,8 @@ def audit(t, res, old_ledger, today=TODAY):
             rw = f"{r['kai']}/{r['key']}"
             if not r["doc"] or not r["page"]:
                 marks[(table, rw)] = kozo.H2_NOTE
-            groups.setdefault(r["kai"], []).append(r)
-        for kai, rs in sorted(groups.items()):
+            groups.setdefault(r["kai"].split("-")[0], []).append(r)  # 組は年度と表（13.10）
+        for year, rs in sorted(groups.items()):
             best = None
             for r in rs:
                 rw = f"{r['kai']}/{r['key']}"

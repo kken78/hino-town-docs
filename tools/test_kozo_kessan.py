@@ -202,9 +202,9 @@ class TestFlow(unittest.TestCase):
         fujo = [r for r in rows if r["table"] == "kessan-uchiwake" and r["value"].startswith("扶助費|")][0]
         self.assertIn("段2 に回す。画像で確かめた数字", fujo["note"])   # 扶助費は段2
         self.assertEqual(fujo["checked"], "")
-        # H4 は回と表の組に1行
+        # H4 は年度と表の組に1行（13.10。2026-11-08 の依頼者の決定）
         h4 = [r for r in rows if "要人確認:H4" in r["note"]]
-        groups = {(r["table"], r["row"].split("/")[0]) for r in rows}
+        groups = {(r["table"], r["row"].split("-")[0]) for r in rows}
         self.assertEqual(len(h4), len(groups))
 
     def test_check_fail(self):
