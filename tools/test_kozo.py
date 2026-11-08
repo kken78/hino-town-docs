@@ -323,11 +323,22 @@ class TestRead(unittest.TestCase):
         m = b["maru"]
         self.assertEqual([x["line"] for x in m], ["○甲事業 5千円", "〇乙事業 1千円", "○丙事業 △ 1千円"])
         self.assertEqual(m[0]["desc"], "甲事業の説明のつづきです。")
-        self.assertEqual(m[1]["desc"], "")
-        self.assertEqual(m[1]["desc_empty"], "next")
+        self.assertEqual(m[1]["desc"], "乙事業と丙事業の説明です。")
         self.assertEqual(m[2]["desc"], "乙事業と丙事業の説明です。")
+        self.assertEqual(m[1]["group"], m[2]["group"])
+        self.assertNotEqual(m[0]["group"], m[1]["group"])
         self.assertEqual(kozo.item_fields(m[2]), ("○", "丙事業", "△ 1"))
         self.assertEqual(b["last"], 2)
+
+    def test_desc_shared_across_page(self):
+        p = pages_of(["- 1 -\n（３） 歳出の主な内容\n○甲事業 1千円\n", "- 2 -\n○乙事業 2千円\n甲と乙の説明です。\n"
+                      "○丙事業 3千円\n３ 特別会計補正予算の概要\n"])
+        m = kozo.read_body(p)["maru"]
+        self.assertEqual([x["desc"] for x in m], ["甲と乙の説明です。", "甲と乙の説明です。", ""])
+        self.assertEqual(m[0]["group"], m[1]["group"])
+        notes = []
+        kozo.desc_notes(m[2], notes)
+        self.assertEqual(notes, ["説明の文は原典に無い"])
 
     def test_toku_line(self):
         b = kozo.read_body(pages_of(SAMPLE_B))
@@ -419,6 +430,10 @@ class TestKianCheck(unittest.TestCase):
         self.assertEqual([(m["kai"], m["key"], m["kind"]) for m in maru],
                          [("r9-ippan-01", "m001", "maru"), ("r9-ippan-01", "m002", "maru"), ("r9-ippan-01", "m003", "maru"),
                           ("r9-ippan-02", "m001", "maru"), ("r9-kokuho-01", "t001", "toku"), ("r9-suido-01", "t001", "toku")])
+        notes = {(m["kai"], m["key"]): (m["desc"], m["note"]) for m in maru}
+        self.assertEqual(notes[("r9-ippan-01", "m001")], ("甲事業の説明のつづきです。", ""))
+        self.assertEqual(notes[("r9-ippan-01", "m002")], ("乙事業と丙事業の説明です。", "説明の文は m003 と共有"))
+        self.assertEqual(notes[("r9-ippan-01", "m003")], ("乙事業と丙事業の説明です。", "説明の文は m002 と共有"))
         shiryo = self.table("hosei-shiryo")
         self.assertIn(dict(kai="r9-ippan-01", doc=DOC_A, part="kan", pages="3-4", note=""), shiryo)
         self.assertIn(dict(kai="r9-suido-01", doc=DOC_B, part="kigyo", pages="4", note=""), shiryo)
@@ -453,24 +468,37 @@ class TestKianCheck(unittest.TestCase):
         self.assertEqual(got[("r9-ippan-01", "〇乙事業 1千円")], "m009")
 
     def test_kan_keep_blank_values(self):
+        # 8つの数の行（今回補正額（総額）が原典で空欄）。人が hosei を空、hosei_ippan を 0 と書いた行は、起票し直しても保たれる
         raw = os.path.join(self.root, "data", "text_raw", DOC_A + ".txt")
         with open(raw, encoding="utf-8") as f:
             s = f.read()
         with open(raw, "w", encoding="utf-8") as f:
-            f.write(s.replace("1 町 税 100 100 100 100 10 10 110 110 10.0", "1 町 税 100 100 100 100 10 110 110 10.0"))
+            f.write(s.replace("甲 譲 与 税 30 30 30 30 0 0 30 30 0.0", "甲 譲 与 税 30 30 30 30 0 30 30 0.0"))
         kozo.kian(self.root, SAMPLE_YEAR, out=quiet)
+        row = next(x for x in self.table("hosei-kan") if x["kai"] == "r9-ippan-01" and x["key"] == "in-02-1")
+        self.assertEqual([row[c] for c in kozo.AMT9], [""] * 9)
         path = os.path.join(self.root, "data", "struct", "hosei-kan.tsv")
         rows = self.table("hosei-kan")
         for r in rows:
-            if r["kai"] == "r9-ippan-01" and r["key"] == "in-01":
-                r.update(tosho="100", tosho_ippan="100", mae="100", mae_ippan="100", hosei="10", hosei_ippan="",
-                         hoseigo="110", hoseigo_ippan="110", taitosho="10.0", note="hosei_ippan は原典で空欄")
+            if r["kai"] == "r9-ippan-01" and r["key"] == "in-02-1":
+                r.update(tosho="30", tosho_ippan="30", mae="30", mae_ippan="30", hosei="", hosei_ippan="0",
+                         hoseigo="30", hoseigo_ippan="30", taitosho="0.0", note="hosei は原典で空欄")
         kozo.write_table(path, kozo.KAN_COLS, rows)
         r = kozo.kian(self.root, SAMPLE_YEAR, out=quiet)
-        self.assertEqual(r["kept"], ["r9-ippan-01/in-01"])
-        row = next(x for x in self.table("hosei-kan") if x["kai"] == "r9-ippan-01" and x["key"] == "in-01")
-        self.assertEqual((row["hosei"], row["hosei_ippan"]), ("10", ""))
-        self.assertIn("hosei_ippan は原典で空欄", row["note"])
+        self.assertEqual(r["kept"], ["r9-ippan-01/in-02-1"])
+        row = next(x for x in self.table("hosei-kan") if x["kai"] == "r9-ippan-01" and x["key"] == "in-02-1")
+        self.assertEqual([row[c] for c in kozo.AMT9], ["30", "30", "30", "30", "", "0", "30", "30", "0.0"])
+        self.assertIn("hosei は原典で空欄", row["note"])
+        code, res, rows, _ = kozo.hosei_check(self.root, SAMPLE_YEAR, out=quiet)
+        self.assertEqual(code, 0, [f["msg"] for f in res["fails"]])
+        a = next(x for x in rows if x["row"] == "r9-ippan-01/in-02-1")
+        self.assertEqual(a["checked"], "✓")
+        self.assertIn("hoseiは原典で空欄", a["note"])
+        # 数の字の並びが変われば、保たない
+        with open(raw, "w", encoding="utf-8") as f:
+            f.write(s.replace("甲 譲 与 税 30 30 30 30 0 0 30 30 0.0", "甲 譲 与 税 30 30 30 30 0 31 30 0.0"))
+        r = kozo.kian(self.root, SAMPLE_YEAR, out=quiet)
+        self.assertEqual(r["kept"], [])
 
     def test_row_key(self):
         want = hashlib.sha256("\x1f".join(["hosei-kan", "r6-ippan-03/in-01", "tosho", "1", "千円", "d p.3"]).encode()).hexdigest()[:16]

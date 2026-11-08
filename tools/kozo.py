@@ -348,29 +348,31 @@ def read_body(pages):
     sec = None
     jigyo_head = ka = None
     kind = kubun_raw = kaikei_raw = None
-    cur = [None]      # 説明の文を待っている行
+    cur = []          # 説明の文を待っている印の行（続いた行の組）
     desc = []
     sub = []
+    gid = [0]
 
-    def close(why):
-        """cur の行の desc を決める。why は desc を切ったわけ（next：次の印の行、head：見出し、page：ページの終わり）。"""
-        it = cur[0]
-        if it is not None:
-            it["desc"] = "".join(desc)
-            it["sub"] = "".join(sub)
-            if not desc:
-                it["desc_empty"] = why
-        cur[0] = None
+    def close():
+        """cur の組の行に desc を書く。印の行が続いたあとの説明の文は、続いた行すべてのもの（13.6）。"""
+        if cur:
+            gid[0] += 1
+            for it in cur:
+                it["desc"] = "".join(desc)
+                it["sub"] = "".join(sub)
+                it["group"] = gid[0]
+        cur.clear()
         desc.clear()
         sub.clear()
 
     def start(it):
-        close("next")
-        cur[0] = it
+        if desc or sub:
+            close()
+        cur.append(it)
 
     for pi in range(1, last + 1):
-        if cur[0] is not None:
-            close("page")
+        if desc or sub:
+            close()       # 説明の文はページの終わりまで。説明の文がまだ無い組は次のページへ続ける
         lines = pages[pi - 1]
         i = 0
         while i < len(lines):
@@ -380,7 +382,7 @@ def read_body(pages):
                 continue
             n = norm(ln)
             if FW_HEAD.match(ln):
-                close("head")
+                close()
                 if re.search(r"(特別会計|企業会計)補正予算の概要", n):
                     sec = "toku"
                 elif "その他" in n:
@@ -389,7 +391,7 @@ def read_body(pages):
                     sec = None
                 continue
             if SUB_HEAD.match(ln):
-                close("head")
+                close()
                 if "歳出の主な内容" in n:
                     sec = "maru"
                 elif "補正の事業内容" in n:
@@ -423,7 +425,7 @@ def read_body(pages):
                                      kaikei_raw=kaikei_raw or ""))
                 continue
             if KA_HEAD.match(ln):
-                close("head")
+                close()
                 if sec == "jigyo":
                     ka = ln
                 continue
@@ -444,7 +446,7 @@ def read_body(pages):
                     toku.append(it)
                     start(it)
                     continue
-            if cur[0] is not None:
+            if cur:
                 if sec == "toku" and ln.startswith("※"):
                     sub.append(ln)
                 else:
@@ -454,7 +456,7 @@ def read_body(pages):
                 prev = (maru + toku)[-1] if (maru or toku) else None
                 if prev is not None and prev["page"] == pi - 1:
                     prev.setdefault("cont", []).append(ln)
-    close("page")
+    close()
     return dict(maru=maru, toku=toku, jiko=jiko, last=last)
 
 
@@ -785,6 +787,7 @@ def build(root, year):
             fill_amount(row, amt, notes)
             desc_notes(it, notes)
             row["note"] = join_note(*notes)
+            row["_group"] = (doc, it.get("group"))
             maru.append(row)
         tk_kai = {}
         tbl = rd["tables"]
@@ -820,6 +823,7 @@ def build(root, year):
             fill_amount(row, amt, notes)
             desc_notes(it, notes)
             row["note"] = join_note(*notes)
+            row["_group"] = (doc, it.get("group"))
             maru.append(row)
         # 事項
         for it in rd["body"]["jiko"]:
@@ -860,17 +864,11 @@ def build(root, year):
 
 
 def desc_notes(it, notes):
-    """desc を決まりどおりに切ったときの注記。説明の文を共有するかどうかは道具で決めない（13.6）。"""
-    why = it.get("desc_empty")
-    if why == "next":
-        notes.append("desc は空（次の行が印の行。説明の文を次の行と共有するかは決まりで決まらない）")
-    elif why == "page":
-        notes.append("desc は空（ページの終わり）")
-    elif why == "head":
-        notes.append("desc は空（次の行が見出し）")
+    """説明の文が無い行と、ページの頭のどの行にも付かない字の注記。共有の注記は key が決まってから書く（kian）。"""
+    if not it.get("desc"):
+        notes.append("説明の文は原典に無い")
     if it.get("cont"):
-        notes.append("desc は空（ページの終わりで切った。次のページの頭に、どの行にも付かない字がある）" if not it.get("desc")
-                     else "desc はページの終わりで切った（次のページの頭に、どの行にも付かない字がある）")
+        notes.append("desc はページの終わりで切った（次のページの頭に、どの行にも付かない字がある）")
 
 
 def fill_amount(row, amt, notes):
@@ -889,7 +887,7 @@ def fill_amount(row, amt, notes):
 TOOL_NOTE = re.compile(r"^(数の字が|.*を数に読めない|合計の行の名前の字|会計の名前は data/text/ による|会計の名前を data/text/|"
                        r"「.*」の.*の下の行|原典の金額は「－」|金額の字|2つめの列の見出しの字|"
                        r"今回補正額の列の見出しの字|同じ資料に会計の額の表が無い|見出しの第|号の1つ前の回|13\.6 のただし書き|"
-                       r"p\.[0-9]+ の列の見出しの字|空欄の列は原典の文字から決まらないので|desc は空)")
+                       r"p\.[0-9]+ の列の見出しの字|空欄の列は原典の文字から決まらないので|desc は空|desc はページの終わり|説明の文は)")
 
 
 def keep_human(old_note, new_note):
@@ -1022,6 +1020,16 @@ def kian(root, year, out=print):
     other, old = split_old("hosei-maru")
     maru_rows = merge_keyed(old, b["maru"], lambda r: "m" if r["kind"] == "maru" else "t",
                             lambda r: (r["kai"], r["kind"], r["line"]), "hosei-maru", report)
+    groups = {}
+    for r in maru_rows:
+        g = r.get("_group")
+        if g and g[1] is not None and r.get("desc"):
+            groups.setdefault(g, []).append(r)
+    for rs in groups.values():
+        if len(rs) > 1:
+            for r in rs:
+                others = "、".join(x["key"] for x in rs if x is not r)
+                r["note"] = join_note(r["note"], f"説明の文は {others} と共有")
     write_table(os.path.join(sd, "hosei-maru.tsv"), MARU_COLS, other + sort_rows(maru_rows))
     # 事項
     other, old = split_old("hosei-jiko")
