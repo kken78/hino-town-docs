@@ -1777,6 +1777,9 @@ def selftest(root=ROOT, out=print):
 
 
 def main(argv):
+    if len(argv) == 2 and argv[1] in ("zaisei-kian", "zaisei-check", "zaisei-selftest"):
+        import kozo_zaisei
+        return kozo_zaisei.main(argv)
     if len(argv) >= 2 and argv[1] == "selftest" and len(argv) == 2:
         return selftest()
     if len(argv) == 3 and argv[1] in ("hosei-kian", "hosei-check"):
