@@ -49,6 +49,8 @@ HIKAKU_IND = [  # (指標の略, 指標の名前の図形の字)
     ("jisshitsu-kosaihi", "実質公債費比率"), ("shorai-futan", "将来負担比率"), ("rasupairesu", "ラスパイレス指数"),
     ("jinkenhi", "人口1人当たり人件費・物件費等決算額"),
 ]
+# 指標の名前の図形の字が年度で違うもの（13.8 のキーの表）。どの字でも探す
+HIKAKU_ALT = {"shokuin": ["人口千人当たり職員数"]}
 HIKAKU_ITEMS = [("juni", "類似団体内順位"), ("zenkoku", "全国平均"), ("ken", "滋賀県平均")]
 HIKAKU_ITEMS_RASU = [("juni", "類似団体内順位"), ("zenkoku-shi", "全国市平均"), ("zenkoku-choson", "全国町村平均")]
 
@@ -227,10 +229,21 @@ def prev_column(grid, vcol, ylab, plab):
     return min(hits) if hits else None
 
 
-def soukatsu_unit(head_text, ylab):
-    """列の見出しから読める単位。「(千円)」は千円。「(千円･％)」は行ごとに決められないので空。"""
+def soukatsu_unit(head_text, ylab, label):
+    """13.8 の unit の箇条。「(千円)」の列は千円。「(千円･％)」の列は、見出しの字に「比率」を含めば ％、
+    「指数」を含めば空（無単位）、ほかは千円。ただし見出しの字が「(※」で始まる行（経常収支比率の (※1)）は
+    決まりで決まらないので None（空にして note）。"""
     suffix = head_text.strip()[len(ylab):]
-    return "千円" if suffix == "(千円)" else ""
+    if suffix == "(千円)":
+        return "千円"
+    lab = ws(label)
+    if "比率" in lab:
+        return "％"
+    if "指数" in lab:
+        return ""
+    if lab.startswith("(※"):
+        return None
+    return "千円"
 
 
 # ---- 健全化判断比率（シート03） ----
@@ -270,11 +283,11 @@ def read_fig_value(item, text):
         m = BRACKET.match(t)
         if not m:
             return "", f"当該団体の値の図形の字「{t}」が「[ ]」の形でない"
-        body = m.group(1).replace("%", "")
+        body = re.sub(r"[%人円]$", "", m.group(1))
         try:
             return kozo.read_num(body), ""
         except ValueError:
-            return "", f"図形の字「{t}」から「[」「]」「%」を除いた「{body}」を数に読めない（13.8 に除き方の決まりが無い）"
+            return "", f"図形の字「{t}」から「[」「]」と単位の字を除いた「{body}」を数に読めない"
     if item == "juni":
         if re.fullmatch(r"[0-9]+/[0-9]+", t):
             return t, ""
@@ -294,14 +307,24 @@ def fig_unit(item, text):
     m = BRACKET.match(text.strip())
     if not m:
         return ""
-    u = re.sub(r"^[0-9,.\-]+", "", m.group(1))
+    u = m.group(1)[-1:] if m.group(1)[-1:] in ("%", "人", "円") else ""
     return "％" if u == "%" else u
+
+
+def ind_names(ind_name):
+    """指標の名前の図形の字（年度で違う字を含む）。"""
+    ind = [k for k, n in HIKAKU_IND if n == ind_name][0]
+    return [ind_name] + HIKAKU_ALT.get(ind, [])
+
+
+def is_ind_name(text, ind_name):
+    return ws(text) in {ws(n) for n in ind_names(ind_name)}
 
 
 def locate_hikaku(figs, ind_name, item, head):
     """13.8 の図形の位置の決まり。戻り値 dict(status, cell, label, text, nextrow, note)。
     status は ok・none（当たらない）・multi（1つに決まらない）。"""
-    names = [f for f in figs if ws(f["text"]) == ws(ind_name)]
+    names = [f for f in figs if is_ind_name(f["text"], ind_name)]
     if len(names) != 1:
         return dict(status="none" if not names else "multi", cell=None, label=None, text="", nextrow=False,
                     note=f"指標の名前の図形「{ind_name}」が {len(names)} 個")
@@ -465,7 +488,7 @@ def build(root, src=None):
             note = "" if v != "" else "原典で空欄"
             shihyo[key][y] = v
             shihyo[key]["name"] = src.at(doc, SHEET_SOUKATSU, *loc["label"])
-            units.setdefault(key, {})[y] = soukatsu_unit(loc["head"][2], ylab)
+            units.setdefault(key, {})[y] = soukatsu_unit(loc["head"][2], ylab, src.at(doc, SHEET_SOUKATSU, *loc["label"]))
             ichi.append(dict(key=key, col="", year=y, doc=doc, sheet=SHEET_SOUKATSU, cell=cell_id(*loc["cell"]),
                              label_cell=cell_id(*loc["label"]), src="cell", note=note))
         g3 = src.grid(doc, SHEET_KENZENKA)
@@ -492,7 +515,7 @@ def build(root, src=None):
                 continue
             v, why = read_fig_value(item, loc["text"])
             shihyo[key][y] = v
-            nfig = [f for f in figs if ws(f["text"]) == ws(ind_name)][0]["text"]
+            nfig = [f for f in figs if is_ind_name(f["text"], ind_name)][0]["text"]
             shihyo[key]["name"] = nfig if item == "tokai" else f"{nfig} {head}"
             if item == "tokai":
                 units.setdefault(key, {})[y] = fig_unit(item, loc["text"])
@@ -509,26 +532,35 @@ def build(root, src=None):
                 continue
             for rw in p["rows"]:
                 futsu_obs.append((y, doc, t, rw["name"], dict(p, row=rw)))
-    # 単位
+    # 単位（13.8 の unit の箇条）
     for key, row in shihyo.items():
         us = units.get(key, {})
         vals = sorted(set(us.values()))
         if row["table"] == "soukatsu":
-            if vals == ["千円"]:
-                row["unit"] = "千円"
+            if len(vals) != 1:
+                row["note"] = join_note(row["note"], "単位の読みが年度で違う（" + "・".join(f"{y} {u or '無し'}" for y, u in sorted(us.items())) + "）")
+            elif vals[0] is None:
+                row["note"] = join_note(row["note"], "単位は決まりで決まらない（「(千円･％)」の列で、見出しの字に「比率」も「指数」も無いが、千円の額でもない）")
             else:
-                row["note"] = join_note(row["note"], "単位は列の見出し「(千円･％)」で、行ごとに決められない")
+                row["unit"] = vals[0]
         elif row["table"] == "kenzenka":
-            row["note"] = join_note(row["note"], "単位はシート03 の健全化判断比率の表に書かれていない")
-        else:
-            _, item, _ = hikaku_spec(key)
-            if item == "tokai":
-                if len(vals) == 1:
-                    row["unit"] = vals[0]
-                elif vals:
-                    row["note"] = join_note(row["note"], "単位の字が年度で違う（" + "・".join(f"{y} {u or '無し'}" for y, u in sorted(us.items())) + "）")
-            elif item != "juni":
-                row["note"] = join_note(row["note"], "単位は図形に書かれていない")
+            row["unit"] = "％"
+    for key, row in shihyo.items():
+        if row["table"] != "hikaku":
+            continue
+        _, item, _ = hikaku_spec(key)
+        if item == "juni":
+            continue
+        tk = key.rsplit("-", 1)[0] if item != "tokai" else key
+        if item in ("zenkoku-shi", "zenkoku-choson"):
+            tk = key[: -len("-" + item)]
+        tk = tk if tk.endswith("-tokai") else tk + "-tokai"
+        us = units.get(tk, {})
+        vals = sorted(set(us.values()))
+        if len(vals) == 1:
+            row["unit"] = vals[0]
+        elif vals:
+            row["note"] = join_note(row["note"], "当該団体の値の単位の字が年度で違う（" + "・".join(f"{y} {u or '無し'}" for y, u in sorted(us.items())) + "）")
     # 空の値の注記（年度をまとめる）
     for key, row in shihyo.items():
         empt = [y for y in years if row[y] == ""]
@@ -538,8 +570,8 @@ def build(root, src=None):
                 ichi=ichi, problems=problems)
 
 
-def futsu_unit_note():
-    return "単位は表の題「（単位 千円・％）」で、列ごとに決められない"
+FUTSU_UNIT = {"gaku": "千円", "keijo": "千円", "ippan": "千円", "futsuken": "千円", "choka": "千円",
+              "kosei": "％", "keijo_kosei": "％", "keijo_hiritsu": "％"}
 
 
 def kian(root, out=print, src=None):
@@ -599,6 +631,7 @@ def kian(root, out=print, src=None):
             fr = futsu.setdefault((key, a), dict(key=key, col=a, name=name, col_name="", unit="", note="",
                                                  **{yy: "" for yy in years}))
             fr["name"] = name   # いちばん新しい年度の字（同じ key は同じ字）
+            fr["unit"] = FUTSU_UNIT[a]
             fr["col_name"] = p["heads"][a][1]
             r0, c0 = rw["vals"][a]
             from_src = src.at(doc, SHEET_FUTSU, r0, c0)
@@ -622,7 +655,7 @@ def kian(root, out=print, src=None):
                     kept.append(f"zaisei-futsu {k[0]}/{k[1]}/{y}")
         else:
             miss = [y for y in years if y not in present[fr["key"]]]
-            notes = [futsu_unit_note()]
+            notes = []
             if miss:
                 notes.append("、".join(miss) + " は区分の行が無い")
             empt = [y for y in present[fr["key"]] if fr[y] == ""]
@@ -780,7 +813,7 @@ def run_check(t, src, years, issues=()):
                     msgs.append(f"表の値「{val}」≠ 図形の字「{at[0]['text']}」の読み「{v}」")
             labf = [f for f in figs if lab and (f["r"], f["c"]) == lab]
             want = ind_name if item == "tokai" else head
-            if len(labf) != 1 or ws(labf[0]["text"]) != ws(want):
+            if len(labf) != 1 or not (is_ind_name(labf[0]["text"], ind_name) if item == "tokai" else ws(labf[0]["text"]) == ws(want)):
                 msgs.append(f"label_cell {r['label_cell']} の図形が「{want}」でない")
             if msgs:
                 info[rid]["dan2"] = True

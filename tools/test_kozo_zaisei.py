@@ -146,7 +146,7 @@ def zukei(y):
     panel(L, 31, 32, 32, "財政力指数", f"[{sval('zaiseiryoku', y)}]", vals=(f"2{yi}/49", "0.51", "0.70"))
     panel(R, 31, 32, 32, "実質公債費比率", f"[{sval('jisshitsu-kosaihi', y)}%]", vals=(f"1{yi}/49", "6.4", "6.7"))
     panel(L, 53, 54, 55, "経常収支比率", f"[{sval('keijo', y)}%]", vals=(f"4{yi}/49", "92.8", "91.2"))
-    panel(R, 53, 54, 55, "人口1,000人当たり職員数", "[9.17人]", vals=(f"3{yi}/49", "7.91", "7.09"))
+    panel(R, 53, 54, 55, "人口千人当たり職員数" if y == "h28" else "人口1,000人当たり職員数", "[9.17人]", vals=(f"3{yi}/49", "7.91", "7.09"))
     panel(L, 76, 76, 77, "人口1人当たり人件費・物件費等決算額", "[129,100円]", vals=(f"2{yi}/49", "131,654", "121,791"))
     panel(R, 76, 76, 77, "ラスパイレス指数", "[98.5]", heads=("類似団体内順位", "全国市平均", "全国町村平均"),
           vals=(f"3{yi}/49", "99.1", "96.4"))
@@ -219,7 +219,12 @@ class TestNames(unittest.TestCase):
     def test_fig_value(self):
         self.assertEqual(kz.read_fig_value("tokai", "[0.66]"), ("0.66", ""))
         self.assertEqual(kz.read_fig_value("tokai", "[16.3%]"), ("16.3", ""))
-        self.assertEqual(kz.read_fig_value("tokai", "[182,036円]")[0], "")   # 「円」を除く決まりが無い
+        self.assertEqual(kz.read_fig_value("tokai", "[182,036円]"), ("182036", ""))
+        self.assertEqual(kz.read_fig_value("tokai", "[9.31人]"), ("9.31", ""))
+        self.assertEqual(kz.fig_unit("tokai", "[9.31人]"), "人")
+        self.assertEqual(kz.fig_unit("tokai", "[126,433円]"), "円")
+        self.assertEqual(kz.fig_unit("tokai", "[0.66]"), "")
+        self.assertEqual(kz.read_fig_value("tokai", "[0.66千]")[0], "")   # 決まりに無い単位の字は読まない
         self.assertEqual(kz.read_fig_value("juni", "20/37"), ("20/37", ""))
         self.assertEqual(kz.read_fig_value("zenkoku", "0.0"), ("0.0", ""))
         self.assertEqual(kz.read_fig_value("zenkoku", "169,281"), ("169281", ""))
@@ -292,9 +297,33 @@ class TestKian(Base):
         self.assertEqual(self.shihyo("hikaku-keijo-zenkoku")["h29"], "92.8")
         self.assertEqual(self.shihyo("hikaku-rasupairesu-zenkoku-choson")["h28"], "96.4")
         self.assertEqual(self.shihyo("hikaku-jinkenhi-zenkoku")["h28"], "131654")
-        # 「[129,100円]」は読めないので空にして note
-        self.assertEqual(self.shihyo("hikaku-jinkenhi-tokai")["h28"], "")
-        self.assertIn("数に読めない", self.ichi("hikaku-jinkenhi-tokai", "h28")["note"])
+        # 単位の字を除いて読み、unit に書く。平均は tokai と同じ単位、順位は空
+        self.assertEqual(self.shihyo("hikaku-jinkenhi-tokai")["h28"], "129100")
+        self.assertEqual(self.shihyo("hikaku-jinkenhi-tokai")["unit"], "円")
+        self.assertEqual(self.shihyo("hikaku-jinkenhi-zenkoku")["unit"], "円")
+        self.assertEqual(self.shihyo("hikaku-jinkenhi-juni")["unit"], "")
+        self.assertEqual(self.shihyo("hikaku-shorai-futan-ken")["unit"], "％")
+        self.assertEqual(self.shihyo("hikaku-rasupairesu-zenkoku-choson")["unit"], "")
+        self.assertEqual(self.shihyo("hikaku-zaiseiryoku-tokai")["unit"], "")
+        # 指標の名前の図形の字が年度で違う（h28 は「人口千人当たり職員数」）。name はいちばん新しい年度の字
+        self.assertEqual(self.shihyo("hikaku-shokuin-ken")["h28"], "7.09")
+        self.assertEqual(self.shihyo("hikaku-shokuin-tokai")["h28"], "9.17")
+        self.assertEqual(self.shihyo("hikaku-shokuin-tokai")["unit"], "人")
+        self.assertEqual(self.shihyo("hikaku-shokuin-tokai")["name"], "人口1,000人当たり職員数")
+
+    def test_units(self):
+        """13.8 の unit の箇条。"""
+        self.assertEqual(self.shihyo("chihosai")["unit"], "千円")
+        self.assertEqual(self.shihyo("hyojun")["unit"], "千円")
+        self.assertEqual(self.shihyo("jisshitsu-hiritsu")["unit"], "％")
+        self.assertEqual(self.shihyo("shikin-fusoku")["unit"], "％")
+        self.assertEqual(self.shihyo("zaiseiryoku")["unit"], "")
+        self.assertEqual(self.shihyo("soki-shorai-futan")["unit"], "％")
+        f = {(r["key"], r["col"]): r["unit"] for r in self.table("zaisei-futsu")}
+        self.assertEqual(f[("sainyu-001", "gaku")], "千円")
+        self.assertEqual(f[("sainyu-001", "keijo_kosei")], "％")
+        self.assertEqual(f[("seishitsu-001", "keijo_hiritsu")], "％")
+        self.assertEqual(f[("chihozei-001", "choka")], "千円")
 
     def test_keep_on_rerun(self):
         """2回目の起票で、key と note を保つ。"""
@@ -323,8 +352,9 @@ class TestCheck(Base):
         self.assertEqual(led["sainyu-001/gaku/h28"]["table"], "zaisei-futsu")
         self.assertEqual(led["hikaku-zaiseiryoku-juni/h28"]["reviewer"], "auto:pdftext")
         self.assertEqual(led["hikaku-zaiseiryoku-juni/h28"]["checked"], "✓")
-        self.assertIn("段2 に回す", led["hikaku-jinkenhi-tokai/h28"]["note"])
-        self.assertEqual(led["hikaku-jinkenhi-tokai/h28"]["checked"], "")
+        self.assertEqual(led["hikaku-jinkenhi-tokai/h28"]["checked"], "✓")
+        self.assertEqual(led["hikaku-shokuin-tokai/h28"]["checked"], "✓")
+        self.assertEqual(res["fig"], [])
         h4 = [r for r in rows if "要人確認:H4" in r["note"]]
         self.assertEqual(sorted(r["row"].rsplit("/", 1)[1] for r in h4), ["h28", "h29"])   # 年度ごとに1行
 
