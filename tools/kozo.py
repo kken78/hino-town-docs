@@ -1787,6 +1787,9 @@ def main(argv):
             kian(ROOT, argv[2])
             return 0
         return hosei_check(ROOT, argv[2])[0]
+    if len(argv) == 2 and argv[1] in ("kessan-kian", "kessan-check", "kessan-selftest"):
+        import kozo_kessan
+        return kozo_kessan.main(argv)
     print(__doc__)
     return 2
 
