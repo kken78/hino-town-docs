@@ -316,6 +316,8 @@ class TestKian(Base):
         self.assertEqual(self.shihyo("chihosai")["unit"], "千円")
         self.assertEqual(self.shihyo("hyojun")["unit"], "千円")
         self.assertEqual(self.shihyo("jisshitsu-hiritsu")["unit"], "％")
+        self.assertEqual(self.shihyo("keijo-1")["unit"], "％")   # キーの表の指標の名前「経常収支比率（…）」で決める
+        self.assertEqual(self.shihyo("keijo-1")["note"], "")
         self.assertEqual(self.shihyo("shikin-fusoku")["unit"], "％")
         self.assertEqual(self.shihyo("zaiseiryoku")["unit"], "")
         self.assertEqual(self.shihyo("soki-shorai-futan")["unit"], "％")

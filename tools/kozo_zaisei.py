@@ -39,6 +39,9 @@ SOUKATSU = [  # (key, 総括表の見出しの字)
     ("kosaihi-futan", "公債費負担比率"), ("jisshitsu-akaji", "実質赤字比率"), ("renketsu-akaji", "連結実質赤字比率"),
     ("jisshitsu-kosaihi", "実質公債費比率"), ("shorai-futan", "将来負担比率"), ("shikin-fusoku", "資金不足比率 (※4)"),
 ]
+# 13.8 のキーの表の「指標」の欄の名前のうち、総括表の見出しの字と違うもの（unit の決まりに使う）
+SOUKATSU_SHIHYO = {"keijo-1": "経常収支比率（減収補塡債（特例分）と臨時財政対策債を除いたもの）",
+                   "shikin-fusoku": "資金不足比率"}
 KEIJO_1_PARENT = "経常収支比率"   # (※1) は、この見出しのすぐ下の行のセル
 RATIOS = [("jisshitsu-akaji", "実質赤字比率"), ("renketsu-akaji", "連結実質赤字比率"),
           ("jisshitsu-kosaihi", "実質公債費比率"), ("shorai-futan", "将来負担比率")]
@@ -229,20 +232,17 @@ def prev_column(grid, vcol, ylab, plab):
     return min(hits) if hits else None
 
 
-def soukatsu_unit(head_text, ylab, label):
-    """13.8 の unit の箇条。「(千円)」の列は千円。「(千円･％)」の列は、見出しの字に「比率」を含めば ％、
-    「指数」を含めば空（無単位）、ほかは千円。ただし見出しの字が「(※」で始まる行（経常収支比率の (※1)）は
-    決まりで決まらないので None（空にして note）。"""
+def soukatsu_unit(head_text, ylab, key):
+    """13.8 の unit の箇条。「(千円)」の列は千円。「(千円･％)」の列は、13.8 のキーの表の「指標」の欄の名前に
+    「比率」を含めば ％、「指数」を含めば空（無単位）、ほかは千円。"""
     suffix = head_text.strip()[len(ylab):]
     if suffix == "(千円)":
         return "千円"
-    lab = ws(label)
-    if "比率" in lab:
+    name = SOUKATSU_SHIHYO.get(key, dict(SOUKATSU)[key])
+    if "比率" in name:
         return "％"
-    if "指数" in lab:
+    if "指数" in name:
         return ""
-    if lab.startswith("(※"):
-        return None
     return "千円"
 
 
@@ -488,7 +488,7 @@ def build(root, src=None):
             note = "" if v != "" else "原典で空欄"
             shihyo[key][y] = v
             shihyo[key]["name"] = src.at(doc, SHEET_SOUKATSU, *loc["label"])
-            units.setdefault(key, {})[y] = soukatsu_unit(loc["head"][2], ylab, src.at(doc, SHEET_SOUKATSU, *loc["label"]))
+            units.setdefault(key, {})[y] = soukatsu_unit(loc["head"][2], ylab, key)
             ichi.append(dict(key=key, col="", year=y, doc=doc, sheet=SHEET_SOUKATSU, cell=cell_id(*loc["cell"]),
                              label_cell=cell_id(*loc["label"]), src="cell", note=note))
         g3 = src.grid(doc, SHEET_KENZENKA)
@@ -539,8 +539,6 @@ def build(root, src=None):
         if row["table"] == "soukatsu":
             if len(vals) != 1:
                 row["note"] = join_note(row["note"], "単位の読みが年度で違う（" + "・".join(f"{y} {u or '無し'}" for y, u in sorted(us.items())) + "）")
-            elif vals[0] is None:
-                row["note"] = join_note(row["note"], "単位は決まりで決まらない（「(千円･％)」の列で、見出しの字に「比率」も「指数」も無いが、千円の額でもない）")
             else:
                 row["unit"] = vals[0]
         elif row["table"] == "kenzenka":
