@@ -1338,8 +1338,10 @@ def run_check(t, texts, issues=()):
             base = {r["key"]: r for r in kan_by.get(first, [])}
             for key, r in rows.items():
                 b0 = base.get(key)
+                if b0 is None:
+                    rn("hosei-kan", f"{kai}/{key}", f"年度の最初の回 {first} に同じ key の行が無いので、当初予算額は0とみなした")
                 for c in ("tosho", "tosho_ippan"):
-                    bv = b0[c] if b0 else ""
+                    bv = b0[c] if b0 else "0"
                     if r[c] != bv:
                         fail("当初", g, [f"{kai}/{key}"], c, f"{kai}/{key}：{c} {r[c]} が {first} の {bv or '（行が無い）'} と違う")
         if k["prev"]:
