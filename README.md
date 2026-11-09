@@ -36,7 +36,7 @@
 | `hosei-kan.tsv`・`hosei-maru.tsv`・`hosei-jiko.tsv`・`hosei-kaikei.tsv` | 款の表の行、歳出の主な内容の○の行と特別会計・企業会計の主な内容の行、繰越明許費・債務負担行為・地方債の事項、会計ごとの額 |
 | `kessan-kai.tsv`・`kessan-gaku.tsv`・`kessan-uchiwake.tsv` | 決算の回（年度・会計。例 `r6-ippan`）と、会計ごとの歳入歳出の額、一般会計の内訳 |
 | `zaisei-shihyo.tsv`・`zaisei-futsu.tsv`・`zaisei-ichi.tsv` | 財政状況資料集の指標（年度を列にする）、普通会計の状況、値の原典の中の位置 |
-| `kotei-shisan.tsv`・`kotei-shisetsu.tsv`・`kotei-taio.tsv`・`kotei-nashi.tsv` | 固定資産台帳の資産の行の値（財産番号と財産枝番の組ごとに全行。1円の行の区分を付ける）、計画の施設の表、資産の行と施設の対応（依頼者が確かめた行だけ。台帳の「施設名称」の列と同じく1行に1施設）、台帳に施設の行が無いと確かめた組。いまは文書だけで、表はまだ無い。財務書類の附属明細書との照合は道具の検算で、表は作らない |
+| `kotei-shisan.tsv`・`kotei-shisetsu.tsv`・`kotei-taio.tsv`・`kotei-nashi.tsv` | 固定資産台帳の資産の行の値（財産番号と財産枝番の組ごとに全行。1円の行の区分を付ける）、計画の施設の表、資産の行と施設の対応（依頼者が確かめた行だけ。台帳の「施設名称」の列と同じく1行に1施設）、台帳に施設の行が無いと確かめた組。資産の行の値は令和6年度末の台帳の9,896行。施設の表・対応表・対応なしの表はまだ見出しだけ。財務書類の附属明細書との照合は道具の検算で、表は作らない |
 | `audit/`・`issues/` | 検収の台帳と、原典の誤りの記録 |
 
 - `python3 -B tools/kozo.py hosei-kian r6`：令和6年度の補正予算の概要の原典の文字（`data/text_raw/`）から、補正予算の6つの表を起票する。既存の行の key は保つ。道具が値を出せなかった列で人が書いた値（回の表の label_mae・label_hosei、主な内容の行の amount・sub、事項の amount、款の行の額）も保つ（DOCS_SCHEMA.md §13.9・§13.11）
@@ -48,6 +48,9 @@
 - `python3 -B tools/kozo.py kessan-kian`：決算審査意見書・決算の概要・財政状況資料集のシート03 から、決算の回・額・一般会計の内訳の3つの表を起票する（tools/kozo_kessan.py）。既存の行の key と、画像で確かめた行の値と note は保つ
 - `python3 -B tools/kozo.py kessan-check`：決算の表を原典の文字で照合し、選ばなかった出典と丸めの範囲で突き合わせ（段1）、検収の台帳 `data/struct/audit/kessan.tsv` を書く。合わない項目があれば終了コード 1。段2 に回す行と H2・H4 の抜き取りの印も付ける
 - `python3 -B tools/kozo.py kessan-selftest`：決算の表を一時の場所に写して誤りを1つずつ入れ、段1 が見つけることを確かめる（表が無ければ検査の見本で確かめる）
+- `python3 -B tools/kotei.py kian`：固定資産台帳の原典の文字（`data/text/zaisei-r6-kotei/01.tsv`）から `kotei-shisan.tsv` を全行起票する。取得年度の西暦の読み替えと1円の行の区分を付け、検算が1行でも合わなければ書かない（DOCS_SCHEMA.md §13.14）
+- `python3 -B tools/kotei.py zaimu`：一般会計の資産の行を、財務書類の一般会計等の附属明細書（①有形固定資産の明細、②行政目的別明細）と比べる。原典の誤りの記録（`issues/zaisei-r6-kotei.tsv`）に書いた差だけを許し、ほかに差があれば終了コード 1
+- `python3 -B tools/kotei.py check`：資産の行の値を原典の文字で照合・検算し（段1）、施設の表・対応表・対応なしの表の形を確かめて、検収の台帳 `data/struct/audit/kotei.tsv` を書く。`python3 -B tools/kotei.py mei` は、資産名称に「宅」「氏」の字のある行を一覧にするだけ
 
 検収は shiga-hino-plans の段1〜段4 を写して使う。論点ノート（hino-ronten）は、検収の済んだ行だけを、`hs:`・`hj:`・`hk:`・`hz:` のキーで指す。いまは文書だけを入れてあり、道具と表はこれから作る（令和6年度の補正予算から）。
 
