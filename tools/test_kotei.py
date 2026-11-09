@@ -57,12 +57,17 @@ def write_daicho(root, assets, heads=HEADS):
 
 
 def meisai_text(assets, bump=None):
-    """見本の台帳から、合う附属明細書の原典の文字を作る。bump=(区分, 列の番号, 足す数) で1つずらせる。"""
+    """見本の台帳から、合う附属明細書の原典の文字を作る。bump=(区分, 列の番号, 足す数) で1つの内訳の行（と親と合計の行）をずらせる。"""
     agg = collections.defaultdict(lambda: [0] * 7)
     moku = collections.defaultdict(lambda: collections.Counter())
+    base = {a["財産番号"]: a for a in assets if a["財産枝番"] == "0"}
     for a in assets:
-        if a["補助科目名称"] in kotei.NOT_TANGIBLE:
+        if a["補助科目名称"] in kotei.NOT_TANGIBLE or a["会計名称"] != "一般会計":
             continue
+        mk = a["目的別資産区分"]
+        if mk == "" and a["財産枝番"] != "0" and a["財産番号"] in base:
+            mk = base[a["財産番号"]]["目的別資産区分"]
+        mk = mk or "その他"
         k = kotei.HOJO[a["補助科目名称"]]
         d, e, g = int(a["取得価額"]), int(a["減価償却累計額"]), int(a["期末簿価"])
         for kk in {k, (k[0], ""), ("合計", "")}:
@@ -71,12 +76,12 @@ def meisai_text(assets, bump=None):
             v[3] += d
             v[4] += e
             v[6] += g
-            moku[kk][a["目的別資産区分"]] += g
+            moku[kk][mk] += g
     cols = ["生活インフラ・国土保全", "教育", "総務", "その他"]
     rows1, rows2 = [], []
     for k in kotei.MEISAI_ROWS:
         v = list(agg[k])
-        if bump and bump[0] == k:
+        if bump and k in (bump[0], (bump[0][0], ""), ("合計", "")):   # 内訳の行と、その親の行と合計の行
             v[bump[1]] += bump[2]
             if bump[1] == 3:
                 v[0] += bump[2]
@@ -97,21 +102,9 @@ def write_meisai(root, text):
         f.write(text)
 
 
-def write_mei(root, kime="写さない"):
-    """見本の個人の名前らしい字の候補を、すべて同じ決めで書いた TSV。"""
-    d = kotei.Daicho(root, SAMPLE_DOC)
-    rows = kotei.mei_candidates(d)
-    for r in rows:
-        r.update(kime=kime, kettei="tester", kettei_date="2026-11-10")
-    path = os.path.join(root, "mei.tsv")
-    kotei.write_table(path, kotei.MEI_COLS, rows)
-    return path
-
-
 def make_sample(root):
     write_daicho(root, sample_assets())
     write_meisai(root, meisai_text(sample_assets()))
-    write_mei(root)
 
 
 def quiet(*a):
@@ -129,8 +122,8 @@ class Base(unittest.TestCase):
     def shisan_path(self):
         return os.path.join(self.tmp, "data", "struct", "kotei-shisan.tsv")
 
-    def kian(self, mei=True):
-        return kotei.kian(self.tmp, SAMPLE_DOC, os.path.join(self.tmp, "mei.tsv") if mei else None, out=quiet)
+    def kian(self):
+        return kotei.kian(self.tmp, SAMPLE_DOC, out=quiet)
 
 
 class TestYomi(unittest.TestCase):
@@ -176,35 +169,25 @@ class TestKian(Base):
         self.assertEqual(by[("工作物_0000003_1", "0")]["kubun_1en"], "1円で載せた償却資産")
         # 減価償却累計額(参考額) ではなく 減価償却累計額 の列
         self.assertEqual(by[("建物_0000004_1", "1")]["gensho_ruikei"], "500")
-        # 個人の名前らしい字の行は name を空にし、note に理由と決めた人と日
+        # 個人の名前らしい字の候補の行も、資産名称を写す（13.14。2026-11-10 の決定）
         h = by[("工作物_0000003_1", "0")]
-        self.assertEqual(h["name"], "")
-        self.assertIn(kotei.MEI_NOTE, h["note"])
-        self.assertIn("tester が 2026-11-10 に決めた", h["note"])
+        self.assertEqual(h["name"], "〇〇宅前　有蓋水槽")
+        self.assertEqual(h["note"], kotei.UNIT_NOTE)
         self.assertTrue(all(r["unit"] == "" and kotei.UNIT_NOTE in r["note"] for r in rows))
         for n in ("kotei-shisetsu.tsv", "kotei-taio.tsv", "kotei-nashi.tsv"):
             with open(os.path.join(self.tmp, "data", "struct", n), encoding="utf-8") as f:
                 self.assertEqual(len(f.read().splitlines()), 1)
 
-    def test_keep_name(self):
-        write_mei(self.tmp, "写す")
-        self.assertEqual(self.kian(), 0)
-        rows = htd.read_tsv(self.shisan_path(), kotei.SHISAN_COLS)
-        h = [r for r in rows if r["zaisan_no"] == "工作物_0000003_1"][0]
-        self.assertEqual(h["name"], "〇〇宅前　有蓋水槽")
-        self.assertIn(kotei.MEI_KEEP_NOTE, h["note"])
-
-    def test_mei_undecided(self):
-        with self.assertRaises(kotei.Stop):
-            self.kian(mei=False)
+    def test_mei_list_only(self):
+        """mei は候補の行を一覧にするだけで、表を書かない。"""
+        lines = []
+        self.assertEqual(kotei.mei(self.tmp, SAMPLE_DOC, out=lines.append), 0)
+        self.assertIn("資産名称に「宅」「氏」の字のある行 1", lines[0])
+        self.assertTrue(any("工作物_0000003_1" in x and "〇〇宅前" in x for x in lines))
         self.assertFalse(os.path.exists(self.shisan_path()))
 
-    def test_mei_kept_from_table(self):
-        """一度起票したあとは、--mei を渡さなくても、表の note から決めを読む。"""
-        self.assertEqual(self.kian(), 0)
-        self.assertEqual(self.kian(mei=False), 0)
-        rows = htd.read_tsv(self.shisan_path(), kotei.SHISAN_COLS)
-        self.assertEqual([r for r in rows if r["zaisan_no"] == "工作物_0000003_1"][0]["name"], "")
+    def test_no_mei_option(self):
+        self.assertEqual(kotei.main(["kotei.py", "kian", "--mei", "x.tsv"]), 2)
 
     def test_bad_boka(self):
         a = sample_assets()
@@ -300,15 +283,35 @@ class TestCheck(Base):
         self.assertEqual(kotei.selftest(self.tmp, out=quiet), 0)
 
 
+def write_issue(root, where, status="未判断", no="1"):
+    p = os.path.join(root, "data", "struct", "issues", SAMPLE_DOC + ".tsv")
+    os.makedirs(os.path.dirname(p), exist_ok=True)
+    kotei.write_table(p, kotei.kozo.ISSUE_COLS, [dict(no=no, kind="原典の食い違い", page="01!X6", where=where, issue="見本",
+                                                      evidence="見本", confidence="高", status=status, action="")])
+
+
 class TestZaimu(Base):
-    def zaimu(self, **kw):
-        return kotei.zaimu(self.tmp, SAMPLE_DOC, SAMPLE_ZAIMU, out=quiet, **kw)
+    def zaimu(self):
+        return kotei.zaimu(self.tmp, SAMPLE_DOC, SAMPLE_ZAIMU, out=quiet)
 
     def test_ok(self):
         self.assertEqual(self.kian(), 0)
-        code, diffs = self.zaimu()
-        self.assertEqual((code, diffs), (0, []))
-        self.assertEqual(self.zaimu(meisai="全体")[0], 0)
+        self.assertEqual(self.zaimu(), (0, []))
+
+    def test_other_kaikei_not_compared(self):
+        """特別会計の行は比べない（明細は一般会計の行だけから作った）。"""
+        a = sample_assets()
+        a.append(asset("工作物_0000008_1", "0", "配水池", "工作物", "生活インフラ・国土保全", "償却対象", "1円残しする",
+                       "平成10年度", "1998/06/01", "900", "500", "400", "0", "0", "500"))
+        a[-1]["会計名称"] = "簡易水道特別会計"
+        write_daicho(self.tmp, a)
+        write_meisai(self.tmp, meisai_text(a))
+        self.assertEqual(self.kian(), 0)
+        self.assertEqual(self.zaimu()[0], 0)
+        a[-1]["会計名称"] = "一般会計"   # 一般会計なら差が出る（明細は特別会計として作ったまま）
+        write_daicho(self.tmp, a)
+        self.assertEqual(self.kian(), 0)
+        self.assertEqual(self.zaimu()[0], 1)
 
     def test_diff(self):
         self.assertEqual(self.kian(), 0)
@@ -316,18 +319,55 @@ class TestZaimu(Base):
         with self.assertRaises(kotei.Stop):   # 明細の中の検算（G＝D−E）が合わない読みは止める
             self.zaimu()
         a = sample_assets()
-        a[3]["目的別資産区分"] = ""
+        a[3]["目的別資産区分"] = ""   # 枝番0 の空の行は「その他」に入る
         write_meisai(self.tmp, meisai_text(sample_assets()))
         write_daicho(self.tmp, a)
         self.assertEqual(self.kian(), 0)
         code, diffs = self.zaimu()
         self.assertEqual(code, 1)
-        self.assertIn(("②", "（空）", 1, (1,)), diffs)
+        self.assertIn(("②", "その他", 1, (1,)), diffs)
+        self.assertIn(("②", "教育", 1, (-1,)), diffs)
 
-    def test_renketsu_not_read(self):
+    def test_branch(self):
+        """空の枝番の行は枝番0 の区分でまとめる。空でない枝番の行は、その行の区分のまま。"""
+        a = sample_assets()
+        a[4]["目的別資産区分"] = ""
+        write_daicho(self.tmp, a)
         self.assertEqual(self.kian(), 0)
+        self.assertEqual(self.zaimu(), (0, []))   # 明細は枝番1 を「教育」として作ったまま
+        a[4]["目的別資産区分"] = "総務"
+        write_daicho(self.tmp, a)
+        write_meisai(self.tmp, meisai_text(a))
+        self.assertEqual(self.kian(), 0)
+        self.assertEqual(self.zaimu(), (0, []))
+        write_meisai(self.tmp, meisai_text(sample_assets()))   # 枝番0 の「教育」に読み替えはしない
+        self.assertEqual(self.zaimu()[0], 1)
+
+    def test_issue(self):
+        """原典の誤りの記録に書いた差だけを許す。額が違う、対象外、記録の区分に差が無い、は通さない。"""
+        self.assertEqual(self.kian(), 0)
+        write_meisai(self.tmp, meisai_text(sample_assets(), bump=(("事業用資産", "建物"), 3, 7)))
+        self.assertEqual(self.zaimu()[0], 1)
+        row = "kotei-shisan zaisei-r6-kotei/建物_0000004_1/0"
+        ok = f"A 財務書類との照合 ①事業用資産 建物 取得価額 差 -7、①事業用資産 建物 期末簿価 差 -7。{row}"
+        write_issue(self.tmp, ok)
+        self.assertEqual(self.zaimu(), (0, []))
+        write_issue(self.tmp, ok, status="原典のまま持つ")
+        self.assertEqual(self.zaimu()[0], 0)
+        write_issue(self.tmp, ok, status="対象外")
+        self.assertEqual(self.zaimu()[0], 1)
+        write_issue(self.tmp, ok.replace("期末簿価 差 -7", "期末簿価 差 -6"))
+        self.assertEqual(self.zaimu()[0], 1)
+        write_issue(self.tmp, ok.replace("。", "、②警察 差 5。"))   # 差の無い区分の記録
+        code, diffs = self.zaimu()
+        self.assertEqual(code, 1)
+        self.assertIn(("記録", "②警察", 0, (5,)), diffs)
+        write_issue(self.tmp, ok.replace("/0", "/9"))   # 記録の row が表に無い
         with self.assertRaises(kotei.Stop):
-            self.zaimu(meisai="連結")
+            self.zaimu()
+        write_issue(self.tmp, ok.replace("①事業用資産 建物 取得価額", "①事業用資産 取得価額"))   # 内訳の行でない
+        with self.assertRaises(kotei.Stop):
+            self.zaimu()
 
 
 if __name__ == "__main__":

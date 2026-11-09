@@ -1,21 +1,22 @@
 """hino-town-docs の構造化の層の道具のうち、固定資産台帳の部分（DOCS_SCHEMA.md §13.14・13.10）。
 標準ライブラリだけで動く。
 
-  python3 -B tools/kotei.py mei [<資料の id>] [--out <ファイル>]
-      資産名称に「宅」「氏」の字のある行（個人の名前らしい字の候補）を一覧にする。--out を付けると、
-      依頼者が行ごとに決めるための TSV（kime・kettei・kettei_date が空）を書く
-  python3 -B tools/kotei.py kian [<資料の id>] [--mei <決めた TSV>]
-      原典の文字 data/text/<資料の id>/01.tsv から kotei-shisan.tsv を起票する（全行）。取得年度の西暦の読み替えと、
-      1円の行の区分（kubun_1en）を付ける。検算（期首簿価から期末簿価、取得日の年度と取得年度、5区分、行のキー）が
-      1行でも合わなければ、何も書かずに、その行を示して終了コード 1。個人の名前らしい字の候補の行が1つでも
-      決まっていなければ、何も書かずに止まる（終了コード 2）。施設の表・対応表・対応なしの表が無ければ見出しだけで作る
+  python3 -B tools/kotei.py mei [<資料の id>]
+      資産名称に「宅」「氏」の字のある行（個人の名前らしい字の候補）を一覧にするだけ。表の値は変えない
+  python3 -B tools/kotei.py kian [<資料の id>]
+      原典の文字 data/text/<資料の id>/01.tsv から kotei-shisan.tsv を起票する（全行。資産名称もすべて写す）。
+      取得年度の西暦の読み替えと、1円の行の区分（kubun_1en）を付ける。検算（期首簿価から期末簿価、取得日の年度と
+      取得年度、5区分、行のキー）が1行でも合わなければ、何も書かずに、その行を示して終了コード 1。
+      施設の表・対応表・対応なしの表が無ければ見出しだけで作る
   python3 -B tools/kotei.py check
       kotei-shisan を原典の文字で照合・検算し（段1）、施設の表・対応表・対応なしの表の形を確かめてから、
       検収の台帳 data/struct/audit/kotei.tsv を書く。表の形が合わなければ何も書かずに止まる。
       段1 で合わない行があれば終了コード 1（台帳は書く）
-  python3 -B tools/kotei.py zaimu [<資料の id>] [--zaimu <財務書類の資料の id>] [--kaikei <会計名称>]... [--meisai 一般会計等|全体|連結]
-      A 財務書類との照合。kotei-shisan の行を補助科目名称と目的別資産区分で足し、附属明細書の
-      「①有形固定資産の明細」「②有形固定資産の行政目的別明細」の額と比べる。合わなければ差を示して終了コード 1
+  python3 -B tools/kotei.py zaimu [<資料の id>] [--zaimu <財務書類の資料の id>]
+      A 財務書類との照合。kotei-shisan の一般会計の行を補助科目名称と目的別資産区分で足し、一般会計等の附属明細書の
+      「①有形固定資産の明細」「②有形固定資産の行政目的別明細」の額と比べる。目的別資産区分が空の枝番の行は
+      枝番0 の区分で、空の行は「その他」の列でまとめる。原典の誤りの記録（issues/<資料の id>.tsv）の where に
+      書いた差だけを許し、差と記録の額が合わなければ差を示して終了コード 1
   python3 -B tools/kotei.py selftest
       段1 の道具に、誤りを入れた表と原典を読ませて、誤りを見つけることを確かめる
 
@@ -75,11 +76,7 @@ ATAMA_NASHI = ("建物", "土地", "工作物")
 HIKITSUGI_COLS = ("name", "shutoku_nendo", "shutoku_date", "shutoku_kagaku")   # 次の年度の台帳とのつなぎ
 
 UNIT_NOTE = "金額の列の見出しと1行目に単位の字が無い"
-MEI_NOTE = "資産名称は個人の名前らしい字を含むので写さない"
-MEI_KEEP_NOTE = "資産名称に個人の名前らしい字の候補の字があるが写す"
 MEI_CHARS = ("宅", "氏")
-MEI_COLS = ["row", "zaisan_no", "edaban", "atama", "hit", "name", "kime", "kettei", "kettei_date"]
-KIME = ("写さない", "写す")
 
 ERA = {"明治": 1867, "大正": 1911, "昭和": 1925, "平成": 1988, "令和": 2018}
 NENDO_RE = re.compile(r"^(明治|大正|昭和|平成|令和)(元|[0-9]+)年度$")
@@ -188,8 +185,7 @@ def mei_candidates(d):
         hit = "".join(ch for ch in MEI_CHARS if ch in nm)
         if hit:
             zn = d.value(er, "zaisan_no")
-            out.append(dict(row=str(er), zaisan_no=zn, edaban=d.value(er, "edaban"), atama=atama(zn), hit=hit, name=nm,
-                            kime="", kettei="", kettei_date=""))
+            out.append(dict(row=str(er), zaisan_no=zn, edaban=d.value(er, "edaban"), atama=atama(zn), hit=hit, name=nm))
     return out
 
 
@@ -211,41 +207,11 @@ def ensure_empty_tables(root, out=print):
             out(f"{os.path.relpath(path, root)} を見出しだけで作った")
 
 
-def mei_decisions(root, doc, d, mei_path):
-    """個人の名前らしい字の候補の行ごとの決め（{row: (kime, kettei, kettei_date)}）。
-    --mei の TSV と、既存の kotei-shisan の行の note から読む。"""
-    cands = {c["row"]: c for c in mei_candidates(d)}
-    dec = {}
-    for r in load(root, "kotei-shisan"):
-        if r["doc"] != doc or r["row"] not in cands:
-            continue
-        m = re.search(r"(?:^|。)(" + re.escape(MEI_NOTE) + "|" + re.escape(MEI_KEEP_NOTE) + r")。([^。]+) が ([0-9]{4}-[0-9]{2}-[0-9]{2}) に決めた", r["note"])
-        if m:
-            dec[r["row"]] = ("写さない" if m.group(1) == MEI_NOTE else "写す", m.group(2), m.group(3))
-    if mei_path:
-        bad = []
-        for x in htd.read_tsv(mei_path, MEI_COLS):
-            c = cands.get(x["row"])
-            if not c or (c["zaisan_no"], c["edaban"]) != (x["zaisan_no"], x["edaban"]):
-                bad.append(f"行 {x['row']}（{x['zaisan_no']}/{x['edaban']}）は候補の一覧に無い")
-                continue
-            if x["kime"] == "" and x["kettei"] == "" and x["kettei_date"] == "":
-                continue   # まだ決めていない行
-            if x["kime"] not in KIME or not x["kettei"] or not re.fullmatch(r"[0-9]{4}-[0-9]{2}-[0-9]{2}", x["kettei_date"]):
-                bad.append(f"行 {x['row']}：kime は「写さない」か「写す」、kettei と kettei_date（YYYY-MM-DD）が要る")
-                continue
-            dec[x["row"]] = (x["kime"], x["kettei"], x["kettei_date"])
-        if bad:
-            raise Stop("--mei の TSV に決まりに合わない行がある：" + "／".join(bad))
-    return cands, dec
-
-
 # ---- 起票 ----
 
-def build(root, doc, d=None, dec=None):
-    """資産の行の値（kotei-shisan）を作る。dec は個人の名前らしい字の候補の行ごとの決め。"""
+def build(root, doc, d=None):
+    """資産の行の値（kotei-shisan）を作る。資産名称もすべて写す（13.14 原典の字の扱い）。"""
     d = d or Daicho(root, doc)
-    dec = dec or {}
     rows = []
     for er in d.rows():
         r = dict(doc=doc, page=SHEET, row=str(er))
@@ -258,13 +224,6 @@ def build(root, doc, d=None, dec=None):
             notes.append(f"取得年度「{r['shutoku_nendo']}」は西暦の年度に読み替えられない")
         hits = kubun_hits(r)
         r["kubun_1en"] = hits[0] if len(hits) == 1 else ""
-        k = dec.get(str(er))
-        if k:
-            if k[0] == "写さない":
-                r["name"] = ""
-                notes += [MEI_NOTE, f"{k[1]} が {k[2]} に決めた"]
-            else:
-                notes += [MEI_KEEP_NOTE, f"{k[1]} が {k[2]} に決めた"]
         r["unit"] = ""
         r["note"] = join_note(*notes)
         rows.append(r)
@@ -299,12 +258,7 @@ def run_checks(rows, d):
             fails.append((rid, "キー", f"組が原典の行 {r['row']} に1回だけある、になっていない（原典の行 {ers}）"))
             continue
         er = ers[0]
-        hidden = MEI_NOTE in r["note"].split("。")
         for c in HEAD:
-            if c == "name" and hidden:
-                if r["name"] != "":
-                    fails.append((rid, "値", "資産名称を写さない行の name が空でない"))
-                continue
             if r[c] != d.value(er, c):
                 fails.append((rid, "値", f"{c}「{r[c]}」が原典の「{d.value(er, c)}」と違う"))
         y, fy = nendo_y(d.value(er, "shutoku_nendo")), date_fy(d.value(er, "shutoku_date"))
@@ -347,14 +301,9 @@ def show_fails(fails, out, limit=50):
         out(f"  ほか {len(fails) - limit}")
 
 
-def kian(root, doc=DOC, mei_path=None, out=print):
+def kian(root, doc=DOC, out=print):
     d = Daicho(root, doc)
-    cands, dec = mei_decisions(root, doc, d, mei_path)
-    rest = [c for r, c in cands.items() if r not in dec]
-    if rest:
-        raise Stop(f"個人の名前らしい字の候補の行 {len(cands)} のうち {len(rest)} がまだ決まっていない（13.14。"
-                   f"`python3 -B tools/kotei.py mei --out <ファイル>` の一覧で依頼者が行ごとに決め、--mei で渡す）。何も書いていない")
-    rows = build(root, doc, d, dec)
+    rows = build(root, doc, d)
     fails, counts = run_checks(rows, d)
     out(f"{doc}：資産の行 {len(rows)}")
     if fails:
@@ -373,8 +322,6 @@ def kian(root, doc=DOC, mei_path=None, out=print):
     out("頭の字ごとの行")
     for k, v in collections.Counter(atama(r["zaisan_no"]) for r in rows).most_common():
         out(f"  {k}\t{v}")
-    hidden = sum(1 for r in rows if MEI_NOTE in r["note"].split("。"))
-    out(f"資産名称を写さない行 {hidden}（候補 {len(cands)}）")
     out(f"{os.path.relpath(path, root)}（{len(allrows)} 行）を書いた。終了コード 0")
     return 0
 
@@ -635,25 +582,75 @@ def meisai_fails(m):
     return bad
 
 
-def zaimu(root, doc=DOC, zdoc=None, kaikei=None, meisai="一般会計等", out=print):
+KAIKEI = "一般会計"          # 比べる行の会計名称（13.14 範囲）
+MEISAI = "一般会計等"        # 比べる附属明細書
+SONOTA = "その他"            # 目的別資産区分が空の行を比べる②の列（13.14）
+ISSUE_HEAD = "A 財務書類との照合 "
+ISSUE_STATUS = ("未判断", "原典のまま持つ")
+COL1 = ("取得価額", "減価償却累計額", "期末簿価")
+ISSUE_ITEM_RE = re.compile(r"^(①|②)(.+?) 差 (-?[0-9][0-9,]*)$")
+
+
+def mokuteki_of(r, base):
+    """②でまとめる目的。空の枝番の行は枝番0 の区分、空の行は「その他」（13.14）。"""
+    m = r["mokuteki"]
+    if m == "" and r["edaban"] != "0":
+        b = base.get((r["doc"], r["zaisan_no"]))
+        if b is not None:
+            m = b["mokuteki"]
+    return m or SONOTA
+
+
+def read_zaimu_issues(root, doc, shisan_ids):
+    """原典の誤りの記録のうち A の照合の差を許す行を読む。{区分: [(no, 額)]} と、形の誤りの一覧を返す。"""
+    path = os.path.join(sdir(root), "issues", doc + ".tsv")
+    allow, bad = collections.defaultdict(list), []
+    if not os.path.exists(path):
+        return allow, bad
+    for r in htd.read_tsv(path, kozo.ISSUE_COLS):
+        if r["status"] not in ISSUE_STATUS or not r["where"].startswith(ISSUE_HEAD):
+            continue
+        body, _, tail = r["where"][len(ISSUE_HEAD):].partition("。")
+        m = re.fullmatch(r"kotei-shisan (\S+)", tail.strip())
+        if not m:
+            bad.append(f"issues/{doc}.tsv no.{r['no']}：where の「。」のあとに kotei-shisan の row が無い")
+        elif m.group(1) not in shisan_ids:
+            bad.append(f"issues/{doc}.tsv no.{r['no']}：row {m.group(1)} が kotei-shisan に無い")
+        for item in body.split("、"):
+            x = ISSUE_ITEM_RE.match(item.strip())
+            if not x:
+                bad.append(f"issues/{doc}.tsv no.{r['no']}：「{item}」が「<区分> 差 <額>」の形でない")
+                continue
+            if x.group(1) == "①":
+                lab, _, col = x.group(2).rpartition(" ")
+                if col not in COL1 or not any(label(k) == lab and k[1] for k in MEISAI_ROWS):
+                    bad.append(f"issues/{doc}.tsv no.{r['no']}：「{item}」の①の区分が明細の内訳の行と列でない")
+                    continue
+            allow[x.group(1) + x.group(2)].append((r["no"], int(x.group(3).replace(",", ""))))
+    return allow, bad
+
+
+def zaimu(root, doc=DOC, zdoc=None, out=print):
     zdoc = zdoc or ZAIMU.get(doc)
     if not zdoc:
         raise Stop(f"{doc} と比べる財務書類の資料の id が決まっていない（--zaimu で渡す）")
     t = load_all(root)
-    rows = [r for r in t["kotei-shisan"] if r["doc"] == doc]
-    if not rows:
+    alldoc = [r for r in t["kotei-shisan"] if r["doc"] == doc]
+    if not alldoc:
         raise Stop(f"data/struct/kotei-shisan.tsv に {doc} の行が無い（先に kian）")
-    if kaikei:
-        rows = [r for r in rows if r["kaikei_name"] in kaikei]
+    rows = [r for r in alldoc if r["kaikei_name"] == KAIKEI]
     m = read_meisai(root, zdoc)
     mb = meisai_fails(m)
     if mb:
         raise Stop(f"{zdoc} の明細の読みが検算で合わない：" + "／".join(mb))
-    if meisai not in m["①"]:
-        raise Stop(f"{zdoc} に {meisai} の①有形固定資産の明細（D・E・G の列の形）が無い。読まなかったもの：" + "・".join(m["skip"]))
+    if MEISAI not in m["①"] or not m["②"]:
+        raise Stop(f"{zdoc} に{MEISAI}の①有形固定資産の明細か②行政目的別明細が無い")
     unknown = sorted({r["hojo"] for r in rows if r["hojo"] not in HOJO and r["hojo"] not in NOT_TANGIBLE})
     if unknown:
         raise Stop(f"補助科目名称 {unknown} の明細の区分が 13.14 の表に無い")
+    allow, ibad = read_zaimu_issues(root, doc, {f"{r['doc']}/{r['zaisan_no']}/{r['edaban']}" for r in alldoc})
+    if ibad:
+        raise Stop("原典の誤りの記録の形が合わない：" + "／".join(ibad))
     tang = [r for r in rows if r["hojo"] not in NOT_TANGIBLE]
     agg = collections.defaultdict(lambda: [0, 0, 0, 0])
 
@@ -669,46 +666,77 @@ def zaimu(root, doc=DOC, zdoc=None, kaikei=None, meisai="一般会計等", out=p
         if k[1]:
             add((k[0], ""), r)
         add(("合計", ""), r)
-    scope = "・".join(kaikei) if kaikei else "全会計"
-    out(f"A 財務書類との照合：{doc}（{scope}、ソフトウェア {len(rows) - len(tang)} 行を除く {len(tang)} 行）と {zdoc} の{meisai}の附属明細書")
-    out("①有形固定資産の明細（台帳は取得価額・減価償却累計額・期末簿価の和、明細は D・E・G。差＝台帳−明細）")
-    out("  区分\t行\t台帳 取得価額\t明細 D\t差\t台帳 減価償却累計額\t明細 E\t差\t台帳 期末簿価\t明細 G\t差")
+
+    def allowed(cell):
+        return sum(v for _, v in allow.get(cell, []))
+
+    def allowed1(k, ci):
+        """①の区分 k・列 ci の許す差。親の行は内訳の行の和。"""
+        if k[1]:
+            return allowed(f"①{label(k)} {COL1[ci]}")
+        kids = [x for x in MEISAI_ROWS if x[1] and (k[0] == "合計" or x[0] == k[0])]
+        return sum(allowed(f"①{label(x)} {COL1[ci]}") for x in kids)
+
+    used = set()
     diffs = []
-    for k, v in m["①"][meisai].items():
+    out(f"A 財務書類との照合：{doc}（{KAIKEI}の行。ソフトウェア {len(rows) - len(tang)} 行を除く {len(tang)} 行。"
+        f"ほかの会計の行 {len(alldoc) - len(rows)} は比べない）と {zdoc} の{MEISAI}の附属明細書")
+    out("①有形固定資産の明細（台帳は取得価額・減価償却累計額・期末簿価の和、明細は D・E・G。差＝台帳−明細。許す差は原典の誤りの記録の額）")
+    out("  区分\t行\t台帳 取得価額\t明細 D\t差\t台帳 減価償却累計額\t明細 E\t差\t台帳 期末簿価\t明細 G\t差\t許す差（D・E・G）")
+    for k, v in m["①"][MEISAI].items():
         s = agg.get(k, [0, 0, 0, 0])
         dd = (s[1] - v[3], s[2] - v[4], s[3] - v[6])
-        if s[0] == 0 and not any(v):
+        al = tuple(allowed1(k, ci) for ci in range(3))
+        if k[1]:
+            used.update(f"①{label(k)} {c}" for c in COL1)
+        if s[0] == 0 and not any(v) and not any(al):
             continue
-        out(f"  {label(k)}\t{s[0]}\t{s[1]:,}\t{v[3]:,}\t{dd[0]:,}\t{s[2]:,}\t{v[4]:,}\t{dd[1]:,}\t{s[3]:,}\t{v[6]:,}\t{dd[2]:,}")
-        if any(dd):
-            diffs.append(("①", label(k), s[0], dd))
-    if meisai == "一般会計等" and m["②"]:
-        cols = m["②"]["cols"]
-        tot = m["②"]["rows"][("合計", "")]
-        mk = collections.defaultdict(lambda: [0, 0])
-        for r in tang:
-            mk[r["mokuteki"]][0] += 1
-            mk[r["mokuteki"]][1] += ival(r["kimatsu"])
-        for k, v in m["②"]["rows"].items():
-            if sum(v[:-1]) != v[-1]:
-                out(f"注：②の {label(k)} の行で、目的の列の和 {sum(v[:-1]):,} が合計の列 {v[-1]:,} と {v[-1] - sum(v[:-1]):,} 違う（明細の中の食い違い）")
-        out("②有形固定資産の行政目的別明細（台帳は目的別資産区分ごとの期末簿価の和、明細は合計の行。差＝台帳−明細）")
-        out("  目的\t行\t台帳 期末簿価\t明細\t差")
-        names = list(cols[:-1]) + sorted(x for x in mk if x not in cols)
-        for c in names:
-            n, s = mk.get(c, [0, 0])
-            v = tot[cols.index(c)] if c in cols else 0
-            out(f"  {c or '（空）'}\t{n}\t{s:,}\t{v:,}\t{s - v:,}" + ("" if c in cols else "\t明細に列が無い"))
-            if s != v:
-                diffs.append(("②", c or "（空）", n, (s - v,)))
-        s_all = sum(x[1] for x in mk.values())
-        out(f"  合計\t{sum(x[0] for x in mk.values())}\t{s_all:,}\t{tot[-1]:,}\t{s_all - tot[-1]:,}")
-        if s_all != tot[-1]:
-            diffs.append(("②", "合計", len(tang), (s_all - tot[-1],)))
-    elif meisai != "一般会計等":
-        out(f"②行政目的別明細は一般会計等の附属明細書にだけあるので、{meisai}とは比べない")
+        out(f"  {label(k)}\t{s[0]}\t{s[1]:,}\t{v[3]:,}\t{dd[0]:,}\t{s[2]:,}\t{v[4]:,}\t{dd[1]:,}\t{s[3]:,}\t{v[6]:,}\t{dd[2]:,}"
+            + (f"\t{al[0]:,}・{al[1]:,}・{al[2]:,}" if any(al) else ""))
+        if dd != al:
+            diffs.append(("①", label(k), s[0], tuple(a - b for a, b in zip(dd, al))))
+    cols = m["②"]["cols"]
+    tot = m["②"]["rows"][("合計", "")]
+    base = {(r["doc"], r["zaisan_no"]): r for r in alldoc if r["edaban"] == "0"}
+    mk = collections.defaultdict(lambda: [0, 0])
+    moved = 0
+    for r in tang:
+        g = mokuteki_of(r, base)
+        if r["mokuteki"] == "" and r["edaban"] != "0" and g != SONOTA:
+            moved += 1
+        mk[g][0] += 1
+        mk[g][1] += ival(r["kimatsu"])
+    for k, v in m["②"]["rows"].items():
+        if sum(v[:-1]) != v[-1]:
+            out(f"注：②の {label(k)} の行で、目的の列の和 {sum(v[:-1]):,} が合計の列 {v[-1]:,} と {v[-1] - sum(v[:-1]):,} 違う（明細の中の食い違い）")
+    empty = sum(1 for r in tang if mokuteki_of(r, base) == SONOTA and r["mokuteki"] == "")
+    out(f"②有形固定資産の行政目的別明細（台帳は目的ごとの期末簿価の和、明細は合計の行。差＝台帳−明細。"
+        f"空の枝番の行で枝番0 の区分に入れた行 {moved}、空のまま「{SONOTA}」に入れた行 {empty}）")
+    out("  目的\t行\t台帳 期末簿価\t明細\t差\t許す差")
+    names = list(cols[:-1]) + sorted(x for x in mk if x not in cols)
+    for c in names:
+        n, s = mk.get(c, [0, 0])
+        v = tot[cols.index(c)] if c in cols else 0
+        al = allowed("②" + c)
+        used.add("②" + c)
+        out(f"  {c}\t{n}\t{s:,}\t{v:,}\t{s - v:,}\t{al:,}" + ("" if c in cols else "\t明細に列が無い"))
+        if s - v != al:
+            diffs.append(("②", c, n, (s - v - al,)))
+    s_all = sum(x[1] for x in mk.values())
+    al = allowed1(("合計", ""), 2)
+    out(f"  合計\t{sum(x[0] for x in mk.values())}\t{s_all:,}\t{tot[-1]:,}\t{s_all - tot[-1]:,}\t{al:,}")
+    if s_all - tot[-1] != al:
+        diffs.append(("②", "合計", len(tang), (s_all - tot[-1] - al,)))
+    for cell in sorted(set(allow) - used):
+        diffs.append(("記録", cell, 0, (sum(v for _, v in allow[cell]),)))
+        out(f"  記録の区分「{cell}」が明細の区分と目的に無い（" + "・".join(f"no.{n}" for n, _ in allow[cell]) + "）")
+    if allow:
+        out("原典の誤りの記録で許した差：" + "、".join(f"{c} {sum(v for _, v in xs):,}（" + "・".join(f"issues/{doc}.tsv no.{n}" for n, _ in xs) + "）"
+                                        for c, xs in sorted(allow.items())))
     code = 1 if diffs else 0
-    out(f"合わなかった区分 {len(diffs)}。終了コード {code}")
+    out(f"合わなかった区分 {len(diffs)}（差は許す差を引いた残り）。終了コード {code}")
+    for d in diffs:
+        out(f"  {d[0]} {d[1]}：行 {d[2]}、残りの差 " + "・".join(f"{x:,}" for x in d[3]))
     return code, diffs
 
 
@@ -740,7 +768,7 @@ def selftest(root=ROOT, out=print):
         else:
             import test_kotei
             test_kotei.make_sample(tmp)
-            kian(tmp, test_kotei.SAMPLE_DOC, os.path.join(tmp, "mei.tsv"), out=lambda *a: None)
+            kian(tmp, test_kotei.SAMPLE_DOC, out=lambda *a: None)
             data_root = tmp
             out("data/struct/ に表が無いので、tools/test_kotei.py の見本で確かめる")
         t = load_all(data_root)
@@ -839,19 +867,16 @@ def selftest(root=ROOT, out=print):
 
 # ---- 個人の名前らしい字の候補の一覧 ----
 
-def mei(root, doc=DOC, out_path=None, out=print):
+def mei(root, doc=DOC, out=print):
+    """候補の行を一覧にするだけ（13.14。資産名称は写す。施設へのまとめや別の資料との照合で個人と結び付けない）。"""
     d = Daicho(root, doc)
     cands = mei_candidates(d)
     by = collections.Counter((c["atama"], c["hit"]) for c in cands)
-    out(f"{doc}：資産名称に「宅」「氏」の字のある行 {len(cands)}")
+    out(f"{doc}：資産名称に「宅」「氏」の字のある行 {len(cands)}（候補の一覧。表の値は変えない）")
     for (a, h), n in sorted(by.items()):
         out(f"  {a}\t「{h}」\t{n}")
-    if out_path:
-        write_table(out_path, MEI_COLS, cands)
-        out(f"{out_path} に書いた（kime に「写さない」か「写す」、kettei に GitHub のユーザー名、kettei_date に決めた日を書いて kian の --mei に渡す）")
-    else:
-        for c in cands:
-            out("\t".join([c["row"], c["zaisan_no"], c["edaban"], c["hit"], c["name"]]))
+    for c in cands:
+        out("\t".join([c["row"], c["zaisan_no"], c["edaban"], c["hit"], c["name"]]))
     return 0
 
 
@@ -862,7 +887,7 @@ def main(argv):
         return 2
     cmd, rest = args[0], args[1:]
     opts, pos = {}, []
-    multi = {"--kaikei"}
+    multi = set()
     i = 0
     while i < len(rest):
         if rest[i].startswith("--"):
@@ -878,14 +903,17 @@ def main(argv):
             pos.append(rest[i])
             i += 1
     doc = pos[0] if pos else DOC
+    if any(k != "--zaimu" or cmd != "zaimu" for k in opts):
+        print(__doc__)
+        return 2
     if cmd == "mei":
-        return mei(ROOT, doc, opts.get("--out"))
+        return mei(ROOT, doc)
     if cmd == "kian":
-        return kian(ROOT, doc, opts.get("--mei"))
+        return kian(ROOT, doc)
     if cmd == "check" and not pos:
         return check(ROOT)
     if cmd == "zaimu":
-        return zaimu(ROOT, doc, opts.get("--zaimu"), opts.get("--kaikei"), opts.get("--meisai", "一般会計等"))[0]
+        return zaimu(ROOT, doc, opts.get("--zaimu"))[0]
     if cmd == "selftest" and not pos:
         return selftest()
     print(__doc__)
