@@ -163,3 +163,42 @@ r5-ippan-08	a014	kigyo	下 水 道 事 業 会 計	gesuido	shishutsu	shueki	8073
 r5-ippan-08	a015	kigyo	下 水 道 事 業 会 計	gesuido	shishutsu	shihon	748280	816919	-33600	783319	千円	yosan-r5-hosei-03	9	会計の名前は data/text/ により、原典の画像で確かめた
 r5-ippan-08	a016	kigyo	合 計		shishutsu	shueki	1414429	1415348	0	1415348	千円	yosan-r5-hosei-03	9	
 r5-ippan-08	a017	kigyo	合 計		shishutsu	shihon	1070541	1139180	38400	1177580	千円	yosan-r5-hosei-03	9	
+r7-ippan-04	a001	toku	国 民 健 康 保 険 特 別 会 計	kokuho			2067000	2067000	24013	2091013	千円	yosan-r7-hosei-09	7	
+r7-ippan-04	a002	toku	介 護 保 険 特 別 会 計	kaigo			2241890	2241890	63213	2305103	千円	yosan-r7-hosei-09	7	
+r7-ippan-04	a003	toku	後期高齢者医療特別会計	koki			344800	344800	1320	346120	千円	yosan-r7-hosei-09	7	
+r7-ippan-04	a004	toku	西 山 財 産 区 会 計	nishiyama			2321	2321	0	2321	千円	yosan-r7-hosei-09	7	
+r7-ippan-04	a005	toku	合 計				4656011	4656011	88546	4744557	千円	yosan-r7-hosei-09	7	
+r7-ippan-05	a001	toku	国 民 健 康 保 険 特 別 会 計	kokuho			2067000	2091013	7260	2098273	千円	yosan-r7-hosei-12	8	
+r7-ippan-05	a002	toku	介 護 保 険 特 別 会 計	kaigo			2241890	2305103	3226	2308329	千円	yosan-r7-hosei-12	8	
+r7-ippan-05	a003	toku	後期高齢者医療特別会計	koki			344800	346120	31771	377891	千円	yosan-r7-hosei-12	8	
+r7-ippan-05	a004	toku	西 山 財 産 区 会 計	nishiyama			2321	2321	0	2321	千円	yosan-r7-hosei-12	8	
+r7-ippan-05	a005	toku	合 計				4656011	4744557	42257	4786814	千円	yosan-r7-hosei-12	8	
+r7-ippan-05	a006	kigyo	水 道 事 業 会 計	suido	shunyu	shueki	622095	622095	0	622095	千円	yosan-r7-hosei-12	9	会計の名前は data/text/ により、原典の画像で確かめた
+r7-ippan-05	a007	kigyo	水 道 事 業 会 計	suido	shunyu	shihon	92885	92885	0	92885	千円	yosan-r7-hosei-12	9	会計の名前は data/text/ により、原典の画像で確かめた
+r7-ippan-05	a008	kigyo	下 水 道 事 業 会 計	gesuido	shunyu	shueki	764851	764851	0	764851	千円	yosan-r7-hosei-12	9	会計の名前は data/text/ により、原典の画像で確かめた
+r7-ippan-05	a009	kigyo	下 水 道 事 業 会 計	gesuido	shunyu	shihon	466055	466055	0	466055	千円	yosan-r7-hosei-12	9	会計の名前は data/text/ により、原典の画像で確かめた
+r7-ippan-05	a010	kigyo	合 計		shunyu	shueki	1386946	1386946	0	1386946	千円	yosan-r7-hosei-12	9	
+r7-ippan-05	a011	kigyo	合 計		shunyu	shihon	558940	558940	0	558940	千円	yosan-r7-hosei-12	9	
+r7-ippan-05	a012	kigyo	水 道 事 業 会 計	suido	shishutsu	shueki	561582	561582	5315	566897	千円	yosan-r7-hosei-12	9	会計の名前は data/text/ により、原典の画像で確かめた
+r7-ippan-05	a013	kigyo	水 道 事 業 会 計	suido	shishutsu	shihon	221778	221778	0	221778	千円	yosan-r7-hosei-12	9	会計の名前は data/text/ により、原典の画像で確かめた
+r7-ippan-05	a014	kigyo	下 水 道 事 業 会 計	gesuido	shishutsu	shueki	819342	819342	0	819342	千円	yosan-r7-hosei-12	9	会計の名前は data/text/ により、原典の画像で確かめた
+r7-ippan-05	a015	kigyo	下 水 道 事 業 会 計	gesuido	shishutsu	shihon	683110	683110	0	683110	千円	yosan-r7-hosei-12	9	会計の名前は data/text/ により、原典の画像で確かめた
+r7-ippan-05	a016	kigyo	合 計		shishutsu	shueki	1380924	1380924	5315	1386239	千円	yosan-r7-hosei-12	9	
+r7-ippan-05	a017	kigyo	合 計		shishutsu	shihon	904888	904888	0	904888	千円	yosan-r7-hosei-12	9	
+r7-ippan-08	a001	toku	国 民 健 康 保 険 特 別 会 計	kokuho			2067000	2098273	-42283	2055990	千円	yosan-r7-hosei-03	8	
+r7-ippan-08	a002	toku	介 護 保 険 特 別 会 計	kaigo			2241890	2308329	68926	2377255	千円	yosan-r7-hosei-03	8	
+r7-ippan-08	a003	toku	後期高齢者医療特別会計	koki			344800	377891	-8791	369100	千円	yosan-r7-hosei-03	8	
+r7-ippan-08	a004	toku	西 山 財 産 区 会 計	nishiyama			2321	2321	0	2321	千円	yosan-r7-hosei-03	8	
+r7-ippan-08	a005	toku	合 計				4656011	4786814	17852	4804666	千円	yosan-r7-hosei-03	8	
+r7-ippan-08	a006	kigyo	水 道 事 業 会 計	suido	shunyu	shueki	622095	622095	0	622095	千円	yosan-r7-hosei-03	9	会計の名前は data/text/ により、原典の画像で確かめた
+r7-ippan-08	a007	kigyo	水 道 事 業 会 計	suido	shunyu	shihon	92885	92885	8025	100910	千円	yosan-r7-hosei-03	9	会計の名前は data/text/ により、原典の画像で確かめた
+r7-ippan-08	a008	kigyo	下 水 道 事 業 会 計	gesuido	shunyu	shueki	764851	764851	0	764851	千円	yosan-r7-hosei-03	9	会計の名前は data/text/ により、原典の画像で確かめた
+r7-ippan-08	a009	kigyo	下 水 道 事 業 会 計	gesuido	shunyu	shihon	466055	466055	-34350	431705	千円	yosan-r7-hosei-03	9	会計の名前は data/text/ により、原典の画像で確かめた
+r7-ippan-08	a010	kigyo	合 計		shunyu	shueki	1386946	1386946	0	1386946	千円	yosan-r7-hosei-03	9	
+r7-ippan-08	a011	kigyo	合 計		shunyu	shihon	558940	558940	-26325	532615	千円	yosan-r7-hosei-03	9	
+r7-ippan-08	a012	kigyo	水 道 事 業 会 計	suido	shishutsu	shueki	561582	566897	0	566897	千円	yosan-r7-hosei-03	9	会計の名前は data/text/ により、原典の画像で確かめた
+r7-ippan-08	a013	kigyo	水 道 事 業 会 計	suido	shishutsu	shihon	221778	221778	21747	243525	千円	yosan-r7-hosei-03	9	会計の名前は data/text/ により、原典の画像で確かめた
+r7-ippan-08	a014	kigyo	下 水 道 事 業 会 計	gesuido	shishutsu	shueki	819342	819342	0	819342	千円	yosan-r7-hosei-03	9	会計の名前は data/text/ により、原典の画像で確かめた
+r7-ippan-08	a015	kigyo	下 水 道 事 業 会 計	gesuido	shishutsu	shihon	683110	683110	-36666	646444	千円	yosan-r7-hosei-03	9	会計の名前は data/text/ により、原典の画像で確かめた
+r7-ippan-08	a016	kigyo	合 計		shishutsu	shueki	1380924	1386239	0	1386239	千円	yosan-r7-hosei-03	9	
+r7-ippan-08	a017	kigyo	合 計		shishutsu	shihon	904888	904888	-14919	889969	千円	yosan-r7-hosei-03	9	
