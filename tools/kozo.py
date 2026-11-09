@@ -1483,7 +1483,13 @@ def run_check(t, texts, issues=()):
                 if not cand:
                     fail("主な内容の金額", g, [rid], "", f"{rid}：同じ資料の会計の額の表に {ab} の行が無い")
                 elif r["amount"] == "":
-                    rn(table, rid, "金額が空なので会計の額の表との検算を飛ばした")
+                    # 13.10：金額が空（原典は「－千円」）の行は、繰越明許費だけを定める回であることを事項の表で確かめる
+                    js = [x for x in t["hosei-jiko"] if x["kai"] == r["kai"] and x["kind"] == "kurikoshi" and x["kaikei"] in ("", ab)]
+                    if "繰越明許費のみ" in norm(r["desc"]) and js:
+                        keys = "・".join(f"{x['kai']}/{x['key']}" for x in js)
+                        rn(table, rid, f"金額が空（原典は「－千円」）。繰越明許費のみの回で、事項の表の繰越明許費の行（{keys}）と照合した。会計の額の表との検算は飛ばした")
+                    else:
+                        fail("主な内容の金額", g, [rid], "", f"{rid}：金額が空の行に、説明の「繰越明許費のみ」の字か、同じ回の繰越明許費の事項の行が無い")
                 else:
                     s = sum(num(x, "hosei", g, rid) for x in cand)
                     if not re.fullmatch(r"-?[0-9]+", r["amount"]) or s != int(r["amount"]):
