@@ -690,10 +690,18 @@ def pick_label(cands, what, notes):
 
 
 GOU_HEAD = re.compile(r"^第?([0-9]+)号補正後予算額$")
+TSUKI_HEAD = re.compile(r"^([0-9]+)月当初補正後予算額$")
+DOC_TSUKI = re.compile(r"^(yosan-[hr][0-9]+-hosei-)([0-9]{2})(-.+)?$")
 
 
-def decide_prev(kais):
-    """13.6「回の順」。kais は同じ年度の回の dict のリスト（id・kaikei・gou・label_mae・note を持つ）。prev・prev_from を書く。"""
+def decide_prev(kais, shiryo=None):
+    """13.6「回の順」。kais は同じ年度の回の dict のリスト（id・kaikei・gou・label_mae・note を持つ）。prev・prev_from を書く。
+    shiryo は回と資料のページの対応の行のリスト（kai・doc・part）。見出しが「N月当初補正後予算額」のとき、その月の
+    定例会議の当初提案の資料（yosan-<年度>-hosei-<月>。追加分・専決でないもの）を持つ同じ会計の回を前の回にするのに使う。"""
+    gdoc = {}
+    for s_ in shiryo or []:
+        if s_.get("part") == "gaiyou" and DOC_TSUKI.match(s_.get("doc", "")):
+            gdoc.setdefault(s_["kai"], s_["doc"])
     by = {}
     for k in kais:
         by.setdefault(k["kaikei"], []).append(k)
@@ -703,7 +711,9 @@ def decide_prev(kais):
         named = set()
         for k in lst:
             k["prev"], k["prev_from"] = "", ""
-            m = GOU_HEAD.match(norm(k["label_mae"]))
+            lab = norm(k["label_mae"])
+            m = GOU_HEAD.match(lab)
+            mt = TSUKI_HEAD.match(lab)
             if m:
                 n = int(m.group(1))
                 if n in gmap:
@@ -711,6 +721,18 @@ def decide_prev(kais):
                     named.add(n)
                 else:
                     k["note"] = join_note(k["note"], f"見出しの第{n}号の回が表に無い")
+            elif mt:
+                mm = int(mt.group(1))
+                own = DOC_TSUKI.match(gdoc.get(k["id"], ""))
+                hit = []
+                if own:
+                    want = f"{own.group(1)}{mm:02d}"
+                    hit = [x for x in lst if gdoc.get(x["id"]) == want and x is not k]
+                if len(hit) == 1:
+                    k["prev"], k["prev_from"] = hit[0]["id"], "見出し"
+                    named.add(hit[0]["gou"])
+                else:
+                    k["note"] = join_note(k["note"], f"見出しの{mm}月の当初提案の回が表に無いか1つでない")
         rest = []
         for k in lst:
             if k["prev_from"] or k["gou"] == lst[0]["gou"]:
@@ -860,7 +882,7 @@ def build(root, year):
             for r in t["rows"]:
                 r.update(kai=ip, unit="千円", doc=doc)
                 kaikei.append(r)
-    decide_prev(kai)
+    decide_prev(kai, shiryo)
     return dict(docs=docs, kai=kai, shiryo=shiryo, kan=kan, maru=maru, jiko=jiko, kaikei=kaikei)
 
 

@@ -390,6 +390,20 @@ class TestPrev(unittest.TestCase):
         self.assertEqual([(k["prev"], k["prev_from"]) for k in ks],
                          [("", ""), ("r3-ippan-01", "号の順"), ("r3-ippan-02", "見出し")])
 
+    def test_prev_tsuki(self):
+        """13.6：見出しが「N月当初補正後予算額」のときは、その月の当初提案の資料を持つ同じ会計の回が前の回（prev_from は 見出し）"""
+        ks = [self.kai(1, "補正前予算額"), self.kai(2, "現計予算額"), self.kai(3, "12月当初補正後予算額")]
+        sh = [dict(kai=ks[0]["id"], doc="yosan-r6-hosei-06", part="gaiyou"),
+              dict(kai=ks[1]["id"], doc="yosan-r6-hosei-12", part="gaiyou"),
+              dict(kai=ks[2]["id"], doc="yosan-r6-hosei-12-tsuika", part="gaiyou")]
+        kozo.decide_prev(ks, sh)
+        self.assertEqual((ks[2]["prev"], ks[2]["prev_from"]), (ks[1]["id"], "見出し"))
+        self.assertEqual((ks[1]["prev"], ks[1]["prev_from"]), (ks[0]["id"], "号の順"))
+        ks2 = [self.kai(1, "現計予算額"), self.kai(2, "12月当初補正後予算額")]
+        kozo.decide_prev(ks2, [dict(kai=ks2[1]["id"], doc="yosan-r6-hosei-12-tsuika", part="gaiyou")])
+        self.assertEqual((ks2[1]["prev"], ks2[1]["prev_from"]), (ks2[0]["id"], "号の順"))
+        self.assertIn("12月の当初提案の回が表に無い", ks2[1]["note"])
+
     def test_proviso(self):
         # 13.6 のただし書きの例（令和3年度の第6号〜第9号）
         ks = kozo.decide_prev([self.kai(6, "現計予算額"), self.kai(7, "8号補正後予算額"), self.kai(8, "6号補正後予算額"),
