@@ -38,7 +38,7 @@
 | `zaisei-shihyo.tsv`・`zaisei-futsu.tsv`・`zaisei-ichi.tsv` | 財政状況資料集の指標（年度を列にする）、普通会計の状況、値の原典の中の位置 |
 | `audit/`・`issues/` | 検収の台帳と、原典の誤りの記録 |
 
-- `python3 -B tools/kozo.py hosei-kian r6`：令和6年度の補正予算の概要の原典の文字（`data/text_raw/`）から、補正予算の6つの表を起票する。既存の行の key は保つ
+- `python3 -B tools/kozo.py hosei-kian r6`：令和6年度の補正予算の概要の原典の文字（`data/text_raw/`）から、補正予算の6つの表を起票する。既存の行の key は保つ。道具が値を出せなかった列で人が書いた値（回の表の label_mae・label_hosei、主な内容の行の amount・sub、事項の amount、款の行の額）も保つ（DOCS_SCHEMA.md §13.9・§13.11）
 - `python3 -B tools/kozo.py hosei-check r6`：表を原典の文字で照合・検算し（段1）、検収の台帳 `data/struct/audit/hosei-r6.tsv` を書く。合わない項目があれば終了コード 1。H2・H4 の抜き取りの印も付ける
 - `python3 -B tools/kozo.py selftest`：表を一時の場所に写して誤りを1つずつ入れ、段1 が見つけることを確かめる（表が無ければ検査の見本で確かめる）
 - `python3 -B tools/kozo.py zaisei-kian`：財政状況資料集10本のセルの値と図形の字から、`zaisei-shihyo.tsv`・`zaisei-futsu.tsv`・`zaisei-ichi.tsv` を起票する。値の位置は見出しの字で決め、当たらないものは空にして note に書く

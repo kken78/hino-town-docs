@@ -162,13 +162,31 @@ KIGYO_TITLE = re.compile(r"^令和([0-9]+)年度日野町企業会計補正予�
 TOTAL_NAME = {"in-total": "歳入合計", "out-total": "歳出合計(目的別)", "sei-total": "歳出合計(性質別)"}
 
 
+def label_cands(ln):
+    """行の中の見出しの候補の字。1字ずつ空白で分かれた字の並び（「現 計 予 算 額」）は、
+    その並びを1つの候補にする（13.6。字は原典の字のまま、字の間の空白を残す）。"""
+    spans = [(m.start(), m.end()) for m in re.finditer(r"\S+", ln)]
+    out = []
+    i = 0
+    while i < len(spans):
+        a, b = spans[i]
+        if b - a == 1:
+            j = i
+            while j + 1 < len(spans) and spans[j + 1][1] - spans[j + 1][0] == 1:
+                j += 1
+            out.append(ln[a:spans[j][1]])
+            i = j + 1
+            continue
+        out.append(ln[a:b])
+        i += 1
+    return out
+
+
 def find_label(lines):
     """2つめの列と今回補正額の列の見出しの字。(label_mae の候補, label_hosei の候補)"""
     mae, hosei = [], []
     for ln in lines:
-        toks = ln.split()
-        cands = [ln] if toks and all(len(t) == 1 for t in toks) else toks
-        for t in cands:
+        for t in label_cands(ln):
             n = norm(t)
             if n.endswith("予算額") and n not in ("当初予算額", "補正後予算額") and not re.search(r"[①-⑳]", n):
                 if norm(t) not in [norm(x) for x in mae]:
@@ -311,6 +329,7 @@ KA_HEAD = re.compile(r"^【[^】]*】$")
 PAGE_NO = re.compile(r"^-\s*[0-9０-９]+\s*-$")
 AMT_TAIL = r"([△▲\-]?\s*[0-9０-９][0-9０-９,，]*|－)\s*千円"
 MARU_RE = re.compile(r"^([○〇◯●・])\s*(.*?)\s*" + AMT_TAIL + "$")
+UCHIWAKE_HEAD = ("※", "【収入】", "【支出】")   # 特別会計・企業会計の内訳の行の頭（13.6）
 TOKU_RE = re.compile(r"^([①-⑳]?)\s*(.+?)\s*" + AMT_TAIL + "$")
 TOKU_NAME = re.compile(r"^(.+?会計)(補正予算)?\(第([0-9]+)号\)$")
 AMT_ONLY = re.compile(r"^" + AMT_TAIL + "$")
@@ -448,7 +467,7 @@ def read_body(pages):
                     start(it)
                     continue
             if cur:
-                if sec == "toku" and ln.startswith("※"):
+                if sec == "toku" and ln.startswith(UCHIWAKE_HEAD):
                     sub.append(ln)
                 else:
                     desc.append(ln)
@@ -935,8 +954,17 @@ def merge_kan(old, new, report):
     return out
 
 
-def merge_keyed(old, new, prefix_of, match_of, table, report):
-    """主な内容の行・事項・会計の額。（kai と種類と line か名前）で既存の行と合わせ、合う行は key を保つ。"""
+def keep_human(r, o, cols, where, report):
+    """13.9：道具が値を出せなかった列（空）で、既存の行に人が書いた値があるときは、その値を保つ。"""
+    for c in cols:
+        if r.get(c, "") == "" and o.get(c, ""):
+            r[c] = o[c]
+            report["kept_cols"].append(f"{where} {c}")
+
+
+def merge_keyed(old, new, prefix_of, match_of, table, report, keep_cols=()):
+    """主な内容の行・事項・会計の額。（kai と種類と line か名前）で既存の行と合わせ、合う行は key を保つ。
+    keep_cols の列は、13.9 のとおり人が書いた値を保つ。"""
     by_kai = {}
     for o in old:
         by_kai.setdefault(o["kai"], []).append(o)
@@ -960,6 +988,7 @@ def merge_keyed(old, new, prefix_of, match_of, table, report):
             r["key"] = hit["key"]
             r["note"] = hit["note"]   # 既存の行の note はそのまま保つ
             r["_old"] = True
+            keep_human(r, hit, keep_cols, f"{table} {r['kai']}/{r['key']}", report)
         else:
             pending.append(r)
         out.append(r)
@@ -987,7 +1016,7 @@ def kian(root, year, out=print):
     b = build(root, year)
     out(f"資料 {len(b['docs'])} 本：{' '.join(b['docs'])}")
     pre = year + "-"
-    report = dict(left=[], kept_values=[])
+    report = dict(left=[], kept_values=[], kept_cols=[])
     sd = struct_dir(root)
     os.makedirs(sd, exist_ok=True)
 
@@ -1004,11 +1033,22 @@ def kian(root, year, out=print):
         o = next((x for x in old if x["id"] == r["id"]), None)
         if o:
             r["note"] = o["note"]
+            keep_human(r, o, ("label_mae", "label_hosei"), f"hosei-kai {r['id']}", report)
         kai_rows.append(r)
     for o in old:
         if o["id"] not in newids:
             kai_rows.append(o)
             report["left"].append(f"hosei-kai {o['id']}")
+    if report["kept_cols"]:
+        # prev は label_mae で決まるので、保った label_mae で決め直す（13.6「回の順」）
+        byid = {k["id"]: k for k in b["kai"]}
+        for r in kai_rows:
+            if r["id"] in byid:
+                byid[r["id"]]["label_mae"] = r["label_mae"]
+        decide_prev(b["kai"], b["shiryo"])
+        for r in kai_rows:
+            if r["id"] in byid:
+                r["prev"], r["prev_from"] = byid[r["id"]]["prev"], byid[r["id"]]["prev_from"]
     write_table(os.path.join(sd, "hosei-kai.tsv"), KAI_COLS, sorted(other + kai_rows, key=lambda r: r["id"]))
     # 資料
     rows = load_table(root, "hosei-shiryo")
@@ -1030,7 +1070,7 @@ def kian(root, year, out=print):
     # 主な内容の行
     other, old = split_old("hosei-maru")
     maru_rows = merge_keyed(old, b["maru"], lambda r: "m" if r["kind"] == "maru" else "t",
-                            lambda r: (r["kai"], r["kind"], r["line"]), "hosei-maru", report)
+                            lambda r: (r["kai"], r["kind"], r["line"]), "hosei-maru", report, keep_cols=("amount", "sub"))
     groups = {}
     for r in maru_rows:
         g = r.get("_group")
@@ -1046,7 +1086,8 @@ def kian(root, year, out=print):
     write_table(os.path.join(sd, "hosei-maru.tsv"), MARU_COLS, other + sort_rows(maru_rows))
     # 事項
     other, old = split_old("hosei-jiko")
-    jiko_rows = merge_keyed(old, b["jiko"], lambda r: "z", lambda r: (r["kai"], r["kind"], r["line"]), "hosei-jiko", report)
+    jiko_rows = merge_keyed(old, b["jiko"], lambda r: "z", lambda r: (r["kai"], r["kind"], r["line"]), "hosei-jiko", report,
+                            keep_cols=("amount",))
     write_table(os.path.join(sd, "hosei-jiko.tsv"), JIKO_COLS, other + sort_rows(jiko_rows))
     # 会計の額
     other, old = split_old("hosei-kaikei")
@@ -1077,10 +1118,12 @@ def kian(root, year, out=print):
         out("  " + "\t".join(x))
     if report["kept_values"]:
         out(f"既存の行の値を保った款の行 {len(report['kept_values'])}：{' '.join(report['kept_values'])}")
+    if report["kept_cols"]:
+        out(f"人が書いた値を保った列 {len(report['kept_cols'])}：{' '.join(report['kept_cols'])}")
     out(f"既存にあって今回の読みに無い行（消さずに残した） {len(report['left'])}")
     for x in report["left"]:
         out("  " + x)
-    return dict(counts=dict(counts), noted=noted, left=report["left"], kept=report["kept_values"])
+    return dict(counts=dict(counts), noted=noted, left=report["left"], kept=report["kept_values"], kept_cols=report["kept_cols"])
 
 
 # ---- 段1 の照合と検算 ----
@@ -1295,8 +1338,10 @@ def run_check(t, texts, issues=()):
             base = {r["key"]: r for r in kan_by.get(first, [])}
             for key, r in rows.items():
                 b0 = base.get(key)
+                if b0 is None:
+                    rn("hosei-kan", f"{kai}/{key}", f"年度の最初の回 {first} に同じ key の行が無いので、当初予算額は0とみなした")
                 for c in ("tosho", "tosho_ippan"):
-                    bv = b0[c] if b0 else ""
+                    bv = b0[c] if b0 else "0"
                     if r[c] != bv:
                         fail("当初", g, [f"{kai}/{key}"], c, f"{kai}/{key}：{c} {r[c]} が {first} の {bv or '（行が無い）'} と違う")
         if k["prev"]:
@@ -1438,7 +1483,19 @@ def run_check(t, texts, issues=()):
                 if not cand:
                     fail("主な内容の金額", g, [rid], "", f"{rid}：同じ資料の会計の額の表に {ab} の行が無い")
                 elif r["amount"] == "":
-                    rn(table, rid, "金額が空なので会計の額の表との検算を飛ばした")
+                    # 13.10：金額が空（原典は「－千円」）の行は、繰越明許費だけを定める回であることを事項の表で確かめる
+                    # 歳入歳出予算を補正せず繰越明許費だけを定める回。説明の字、同じ回の繰越明許費の事項の行、
+                    # 会計の額の表の今回補正額 0 の3つで確かめる
+                    js = [x for x in t["hosei-jiko"] if x["kai"] == r["kai"] and x["kind"] == "kurikoshi" and x["kaikei"] in ("", ab)]
+                    zero = all(x["hosei"] in ("0", "") for x in cand)
+                    miss = [w for w, ok in (("説明の「繰越明許費のみ」の字", "繰越明許費のみ" in norm(r["desc"])),
+                                            ("同じ回の繰越明許費の事項の行", bool(js)),
+                                            ("会計の額の表の今回補正額が 0 であること", zero)) if not ok]
+                    if not miss:
+                        keys = "・".join(f"{x['kai']}/{x['key']}" for x in js)
+                        rn(table, rid, f"金額が空（原典は「－千円」）。繰越明許費だけを定める回で、事項の表の繰越明許費の行（{keys}）と、会計の額の表の今回補正額 0 を確かめた")
+                    else:
+                        fail("主な内容の金額", g, [rid], "", f"{rid}：金額が空の行で確かめられないもの：{'、'.join(miss)}")
                 else:
                     s = sum(num(x, "hosei", g, rid) for x in cand)
                     if not re.fullmatch(r"-?[0-9]+", r["amount"]) or s != int(r["amount"]):

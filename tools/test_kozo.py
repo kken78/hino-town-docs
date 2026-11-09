@@ -349,6 +349,28 @@ class TestRead(unittest.TestCase):
         self.assertIsNone(kozo.read_toku_line("○甲事業 5千円"))
         self.assertEqual(kozo.read_toku_line("④ 後期高齢者医療特別会計（第１号） 4,186 千円")[2:4], ("後期高齢者医療特別会計", 1))
 
+    def test_label_spaced(self):
+        # 13.6：1字ずつ空白で分かれた見出しがほかの見出しと同じ行に並ぶもの（令和3年度の特別会計の表）
+        self.assertEqual(kozo.find_label(["当初予算額 現 計 予 算 額 今回補正額 補正後予算額"]), (["現 計 予 算 額"], ["今回補正額"]))
+        self.assertEqual(kozo.find_label(["現 計 予 算 額", "今回補正額"]), (["現 計 予 算 額"], ["今回補正額"]))
+        self.assertEqual(kozo.find_label(["当初予算額 現計予算額 今回補正額 補正後予算額"]), (["現計予算額"], ["今回補正額"]))
+        self.assertEqual(kozo.label_cands("令和３年度 伸 率"), ["令和３年度", "伸 率"])
+        p = [list(x) for x in pages_of(SAMPLE_A)]
+        i = p[4].index("当初予算額 現計予算額 今回補正額 補正後予算額")
+        p[4][i] = "当初予算額 現 計 予 算 額 今回補正額 補正後予算額"
+        t = kozo.read_kaikei_tables(p, None)["toku"]
+        self.assertEqual((t["label_mae"], t["label_hosei"]), (["現 計 予 算 額"], ["今回補正額"]))
+
+    def test_uchiwake_without_kome(self):
+        # 13.6：「※」の無い「【支出】…」の行も sub に入れる（yosan-r3-hosei-09-tsuika の3ページの形）
+        p = pages_of(["- 1 -\n４ 企業会計補正予算の概要\n（１） 補正予算の主な内容\n① 水道事業会計補正予算（第２号） 500 千円\n"
+                      "水道の説明の\nつづきです。\n※【収入】給水収益△30,800 千円、一般会計補助金 31,300 千円\n"
+                      "【支出】システム改修経費 500 千円\n※補正規模の 500 千円は、支出額のみを表示しています。\n"])
+        t = kozo.read_body(p)["toku"][0]
+        self.assertEqual(t["desc"], "水道の説明のつづきです。")
+        self.assertEqual(t["sub"], "※【収入】給水収益△30,800 千円、一般会計補助金 31,300 千円【支出】システム改修経費 500 千円"
+                                   "※補正規模の 500 千円は、支出額のみを表示しています。")
+
     def test_jiko_heads_both_orders(self):
         a = kozo.read_body(pages_of(SAMPLE_A))["jiko"]
         self.assertEqual([(x["kind"], x["kubun_raw"], x["kaikei_raw"]) for x in a],
@@ -513,6 +535,65 @@ class TestKianCheck(unittest.TestCase):
             f.write(s.replace("甲 譲 与 税 30 30 30 30 0 0 30 30 0.0", "甲 譲 与 税 30 30 30 30 0 31 30 0.0"))
         r = kozo.kian(self.root, SAMPLE_YEAR, out=quiet)
         self.assertEqual(r["kept"], [])
+
+    def test_keep_human_values(self):
+        # 13.9：道具が値を出せなかった列（空）で、人が書いた値は、動かし直しで保つ
+        raw = os.path.join(self.root, "data", "text_raw", DOC_A + ".txt")
+        rawb = os.path.join(self.root, "data", "text_raw", DOC_B + ".txt")
+        with open(raw, encoding="utf-8") as f:
+            s = f.read()
+        with open(rawb, encoding="utf-8") as f:
+            sb = f.read()
+        with open(raw, "w", encoding="utf-8") as f:
+            f.write(s.replace("当初予算額 現計予算額 今回補正額 補正後予算額", "当初予算額 今回補正額 補正後予算額")
+                    .replace("・ 甲事業 12 千円", "・ 甲事業 千円"))
+        with open(rawb, "w", encoding="utf-8") as f:
+            f.write(sb.replace("※【収入】一般会計補助金 3 千円【支出】改良費 3 千円\n", ""))
+        kozo.kian(self.root, SAMPLE_YEAR, out=quiet)
+        kai = {k["id"]: k for k in self.table("hosei-kai")}
+        self.assertEqual(kai["r9-kokuho-01"]["label_mae"], "")
+        sd = os.path.join(self.root, "data", "struct")
+        rows = self.table("hosei-kai")
+        for r in rows:
+            if r["id"] == "r9-kokuho-01":
+                r.update(label_mae="現 計 予 算 額", note="2つめの列の見出しは画像で確かめた")
+        kozo.write_table(os.path.join(sd, "hosei-kai.tsv"), kozo.KAI_COLS, rows)
+        rows = self.table("hosei-maru")
+        for r in rows:
+            if r["kai"] == "r9-suido-01":
+                self.assertEqual(r["sub"], "")
+                r["sub"] = "※【収入】一般会計補助金 3 千円【支出】改良費 3 千円"
+        kozo.write_table(os.path.join(sd, "hosei-maru.tsv"), kozo.MARU_COLS, rows)
+        rows = self.table("hosei-jiko")
+        for r in rows:
+            if r["kai"] == "r9-ippan-01" and r["key"] == "z001":
+                self.assertEqual(r["amount"], "")
+                r["amount"] = "12"
+        kozo.write_table(os.path.join(sd, "hosei-jiko.tsv"), kozo.JIKO_COLS, rows)
+        res = kozo.kian(self.root, SAMPLE_YEAR, out=quiet)
+        self.assertEqual(sorted(res["kept_cols"]), ["hosei-jiko r9-ippan-01/z001 amount", "hosei-kai r9-kokuho-01 label_mae",
+                                                    "hosei-maru r9-suido-01/t001 sub"])
+        kai = {k["id"]: k for k in self.table("hosei-kai")}
+        self.assertEqual(kai["r9-kokuho-01"]["label_mae"], "現 計 予 算 額")
+        self.assertEqual(kai["r9-kokuho-01"]["note"], "2つめの列の見出しは画像で確かめた")
+        t = next(r for r in self.table("hosei-maru") if r["kai"] == "r9-suido-01")
+        self.assertEqual(t["sub"], "※【収入】一般会計補助金 3 千円【支出】改良費 3 千円")
+        z = next(r for r in self.table("hosei-jiko") if r["kai"] == "r9-ippan-01" and r["key"] == "z001")
+        self.assertEqual(z["amount"], "12")
+        # 道具が値を出せるときは、道具の値を書く
+        with open(raw, "w", encoding="utf-8") as f:
+            f.write(s)
+        with open(rawb, "w", encoding="utf-8") as f:
+            f.write(sb)
+        rows = self.table("hosei-kai")
+        for r in rows:
+            if r["id"] == "r9-kokuho-01":
+                r["label_mae"] = "人の字"
+        kozo.write_table(os.path.join(sd, "hosei-kai.tsv"), kozo.KAI_COLS, rows)
+        res = kozo.kian(self.root, SAMPLE_YEAR, out=quiet)
+        self.assertEqual(res["kept_cols"], [])
+        kai = {k["id"]: k for k in self.table("hosei-kai")}
+        self.assertEqual(kai["r9-kokuho-01"]["label_mae"], "現計予算額")
 
     def test_row_key(self):
         want = hashlib.sha256("\x1f".join(["hosei-kan", "r6-ippan-03/in-01", "tosho", "1", "千円", "d p.3"]).encode()).hexdigest()[:16]
