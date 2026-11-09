@@ -164,3 +164,41 @@ r8-ippan-04	z003	chihosai	① 変更	henko			公共事業等債（社会資本�
 r8-ippan-04	z004	chihosai	① 変更	henko			緊急自然災害防止対策事業債	12200	千円	・緊急自然災害防止対策事業債 12,200 千円	yosan-r8-hosei-09	4	
 r8-ippan-04	z005	chihosai	① 変更	henko			公共事業等債（公園管理運営事業）	4200	千円	・公共事業等債（公園管理運営事業） 4,200 千円	yosan-r8-hosei-09	4	
 r8-ippan-04	z006	chihosai	① 変更	henko			緊急防災・減災事業債（中学校管理運営事業）	8600	千円	・緊急防災・減災事業債（中学校管理運営事業） 8,600 千円	yosan-r8-hosei-09	4	
+r4-ippan-05	z001	saimu	① 追加	tsuika			日野町外国語指導講師派遣事業委託業務	10300	千円	・ 日野町外国語指導講師派遣事業委託業務 10,300 千円	yosan-r4-hosei-09	4	
+r4-ippan-05	z002	chihosai	① 追加	tsuika			公共事業等債（交通安全対策事業（通学路緊急対策））	28100	千円	・ 公共事業等債（交通安全対策事業（通学路緊急対策）） 28,100 千円	yosan-r4-hosei-09	4	
+r4-ippan-05	z003	chihosai	② 変更	henko			上水道一般会計出資債	1600	千円	・ 上水道一般会計出資債 1,600 千円	yosan-r4-hosei-09	4	
+r4-ippan-05	z004	chihosai	② 変更	henko			公共事業等債（道路メンテナンス補助事業）	-9800	千円	・ 公共事業等債（道路メンテナンス補助事業） △9,800 千円	yosan-r4-hosei-09	4	
+r4-ippan-05	z005	chihosai	② 変更	henko			公共事業等債（社会資本整備総合交付金事業（防災・安全））	7600	千円	・ 公共事業等債（社会資本整備総合交付金事業（防災・安全）） 7,600 千円	yosan-r4-hosei-09	4	
+r4-ippan-05	z006	chihosai	② 変更	henko			臨時財政対策債	-16987	千円	・ 臨時財政対策債 △16,987 千円	yosan-r4-hosei-09	4	
+r4-ippan-05	z007	chihosai	③廃止	haishi			公共事業等債（社会資本整備総合交付金事業）	-40500	千円	・ 公共事業等債（社会資本整備総合交付金事業） △40,500 千円	yosan-r4-hosei-09	4	
+r4-ippan-07	z001	kurikoshi					日野町役場庁舎別館太陽光発電設備追加工事	2708	千円	・日野町役場庁舎別館太陽光発電設備追加工事 2,708 千円	yosan-r4-hosei-12	3	
+r4-ippan-07	z002	kurikoshi					必佐小学校太陽光発電設備追加工事	3101	千円	・必佐小学校太陽光発電設備追加工事 3,101 千円	yosan-r4-hosei-12	3	
+r4-ippan-07	z003	kurikoshi					日野町立図書館空気調和設備更新工事	35000	千円	・日野町立図書館空気調和設備更新工事 35,000 千円	yosan-r4-hosei-12	3	
+r4-ippan-08	z001	kurikoshi			【一般会計】	ippan	日野中学校太陽光発電設備追加工事	3500	千円	・日野中学校太陽光発電設備追加工事 3,500 千円	yosan-r4-hosei-01	3	
+r4-ippan-08	z002	kurikoshi			【一般会計】	ippan	町民会館わたむきホール虹自動火災報知設備受信機更新工事	5775	千円	・町民会館わたむきホール虹自動火災報知設備受信機更新工事 5,775 千円	yosan-r4-hosei-01	3	
+r4-ippan-08	z003	chihosai	①追加	tsuika	【一般会計】	ippan	防災・減災・国土強靭化緊急対策事業債（防災・安全）	27500	千円	・ 防災・減災・国土強靭化緊急対策事業債（防災・安全） 27,500 千円	yosan-r4-hosei-01	3	
+r4-ippan-08	z004	chihosai	②変更	henko	【一般会計】	ippan	公共事業等債（交通安全対策事業（通学路緊急対策））	9000	千円	・ 公共事業等債（交通安全対策事業（通学路緊急対策）） 9,000 千円	yosan-r4-hosei-01	3	
+r4-ippan-09	z001	kurikoshi	①追加	tsuika	【一般会計】	ippan	庁舎ヒートポンプチラー修繕工事	245	千円	・ 庁舎ヒートポンプチラー修繕工事 245 千円	yosan-r4-hosei-03	3	
+r4-ippan-09	z002	kurikoshi	①追加	tsuika	【一般会計】	ippan	日野町環境基本計画町民意識調査実施支援業務	2497	千円	・ 日野町環境基本計画町民意識調査実施支援業務 2,497 千円	yosan-r4-hosei-03	3	
+r4-ippan-09	z003	kurikoshi	①追加	tsuika	【一般会計】	ippan	肥料価格高騰対策緊急支援事業	6604	千円	・ 肥料価格高騰対策緊急支援事業 6,604 千円	yosan-r4-hosei-03	3	
+r4-ippan-09	z004	kurikoshi	①追加	tsuika	【一般会計】	ippan	土地改良事務事業	5100	千円	・ 土地改良事務事業 5,100 千円	yosan-r4-hosei-03	3	
+r4-ippan-09	z005	kurikoshi	①追加	tsuika	【一般会計】	ippan	県営農業農村整備事業負担金	2520	千円	・ 県営農業農村整備事業負担金 2,520 千円	yosan-r4-hosei-03	3	
+r4-ippan-09	z006	kurikoshi	①追加	tsuika	【一般会計】	ippan	農業水路等長寿命化事業	8395	千円	・ 農業水路等長寿命化事業 8,395 千円	yosan-r4-hosei-03	3	
+r4-ippan-09	z007	kurikoshi	①追加	tsuika	【一般会計】	ippan	畜産・酪農収益力強化整備等特別対策事業	334189	千円	・ 畜産・酪農収益力強化整備等特別対策事業 334,189 千円	yosan-r4-hosei-03	3	
+r4-ippan-09	z008	kurikoshi	①追加	tsuika	【一般会計】	ippan	地域経済緊急支援事業	49000	千円	・ 地域経済緊急支援事業 49,000 千円	yosan-r4-hosei-03	3	
+r4-ippan-09	z009	kurikoshi	①追加	tsuika	【一般会計】	ippan	道路維持補修事業	12540	千円	・ 道路維持補修事業 12,540 千円	yosan-r4-hosei-03	3	
+r4-ippan-09	z010	kurikoshi	①追加	tsuika	【一般会計】	ippan	道路メンテナンス補助事業	24170	千円	・ 道路メンテナンス補助事業 24,170 千円	yosan-r4-hosei-03	3	
+r4-ippan-09	z011	kurikoshi	①追加	tsuika	【一般会計】	ippan	社会資本整備総合交付金事業	114700	千円	・ 社会資本整備総合交付金事業 114,700 千円	yosan-r4-hosei-03	3	
+r4-ippan-09	z012	kurikoshi	①追加	tsuika	【一般会計】	ippan	社会資本整備総合交付金事業（防災・安全）	65650	千円	・ 社会資本整備総合交付金事業（防災・安全） 65,650 千円	yosan-r4-hosei-03	3	
+r4-ippan-09	z013	kurikoshi	①追加	tsuika	【一般会計】	ippan	公園管理運営事業	3500	千円	・ 公園管理運営事業 3,500 千円	yosan-r4-hosei-03	3	
+r4-ippan-09	z014	kurikoshi	①追加	tsuika	【一般会計】	ippan	小学校管理運営事業（寄附金分）	17087	千円	・ 小学校管理運営事業（寄附金分） 17,087 千円	yosan-r4-hosei-03	3	
+r4-ippan-09	z015	kurikoshi	①追加	tsuika	【一般会計】	ippan	小学校教育振興事業（寄附金分）	2913	千円	・ 小学校教育振興事業（寄附金分） 2,913 千円	yosan-r4-hosei-03	3	
+r4-ippan-09	z016	kurikoshi	①追加	tsuika	【一般会計】	ippan	図書館備品・家具等購入費	20000	千円	・ 図書館備品・家具等購入費 20,000 千円	yosan-r4-hosei-03	3	
+r4-ippan-09	z017	saimu	①追加	tsuika	【一般会計】	ippan	セーフティネット資金利子補給事業	400	千円	・ セーフティネット資金利子補給事業 400 千円	yosan-r4-hosei-03	3	
+r4-ippan-09	z018	chihosai	①追加	tsuika	【一般会計】	ippan	公共施設等適正管理推進事業債（図書館管理事業）	32800	千円	・ 公共施設等適正管理推進事業債（図書館管理事業） 32,800 千円	yosan-r4-hosei-03	4	
+r4-ippan-09	z019	chihosai	①追加	tsuika	【一般会計】	ippan	防災・減災・国土強靭化緊急対策事業債（県営負担金）	2500	千円	・ 防災・減災・国土強靭化緊急対策事業債（県営負担金） 2,500 千円	yosan-r4-hosei-03	4	
+r4-ippan-09	z020	chihosai	②変更	henko	【一般会計】	ippan	緊急自然災害防止対策事業債	12500	千円	・ 緊急自然災害防止対策事業債 12,500 千円	yosan-r4-hosei-03	4	
+r4-ippan-09	z021	chihosai	②変更	henko	【一般会計】	ippan	公共施設等適正管理推進事業債（公園管理運営事業）	-2400	千円	・ 公共施設等適正管理推進事業債（公園管理運営事業） △2,400 千円	yosan-r4-hosei-03	4	
+r4-ippan-09	z022	chihosai	②変更	henko	【一般会計】	ippan	公共事業等債（公園管理運営事業）	-7400	千円	・ 公共事業等債（公園管理運営事業） △7,400 千円	yosan-r4-hosei-03	4	
+r4-noshu-01	z001	chihosai	①変更	henko	【農業集落排水事業特別会計】	noshu	公営企業会計適用債	2100	千円	・ 公営企業会計適用債 2,100 千円	yosan-r4-hosei-12	3	
+r4-noshu-03	z001	kurikoshi	①追加	tsuika	【農業集落排水事業特別会計】	noshu	農業集落排水事業（機能強化対策）	13200	千円	・ 農業集落排水事業（機能強化対策） 13,200 千円	yosan-r4-hosei-03	3	
