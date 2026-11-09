@@ -157,3 +157,10 @@ r7-ippan-08	z024	chihosai	②変更	henko	【一般会計】	ippan	緊急防災�
 r7-ippan-08	z025	chihosai	③廃止	haishi	【一般会計】	ippan	脱炭素化推進事業債（公用車管理事業）	-4200	千円	・ 脱炭素化推進事業債（公用車管理事業） △4,200 千円	yosan-r7-hosei-03	4	
 r7-ippan-09	z001	kurikoshi	①追加	tsuika			振り仮名の一括登録にかかる住基ネット連携等改修業務	935	千円	・ 振り仮名の一括登録にかかる住基ネット連携等改修業務 935 千円	yosan-r7-hosei-03-tsuika	2	
 r7-ippan-09	z002	kurikoshi	②変更	henko			社会資本整備総合交付金事業（防災・安全）	11000	千円	・ 社会資本整備総合交付金事業（防災・安全） 11,000 千円	yosan-r7-hosei-03-tsuika	2	
+r8-ippan-01	z001	chihosai	① 追加	tsuika			デジタル活用推進事業債（財政管理事業）	3600	千円	・デジタル活用推進事業債（財政管理事業） 3,600千円	yosan-r8-hosei-06	2	
+r8-ippan-04	z001	chihosai	① 変更	henko			公共事業等債（道路メンテナンス補助事業）	1700	千円	・公共事業等債（道路メンテナンス補助事業） 1,700 千円	yosan-r8-hosei-09	4	
+r8-ippan-04	z002	chihosai	① 変更	henko			公共事業等債（社会資本整備総合交付金事業）	6000	千円	・公共事業等債（社会資本整備総合交付金事業） 6,000 千円	yosan-r8-hosei-09	4	
+r8-ippan-04	z003	chihosai	① 変更	henko			公共事業等債（社会資本整備総合交付金事業（防災・安全））	-12100	千円	・公共事業等債（社会資本整備総合交付金事業（防災・安全）） △12,100 千円	yosan-r8-hosei-09	4	
+r8-ippan-04	z004	chihosai	① 変更	henko			緊急自然災害防止対策事業債	12200	千円	・緊急自然災害防止対策事業債 12,200 千円	yosan-r8-hosei-09	4	
+r8-ippan-04	z005	chihosai	① 変更	henko			公共事業等債（公園管理運営事業）	4200	千円	・公共事業等債（公園管理運営事業） 4,200 千円	yosan-r8-hosei-09	4	
+r8-ippan-04	z006	chihosai	① 変更	henko			緊急防災・減災事業債（中学校管理運営事業）	8600	千円	・緊急防災・減災事業債（中学校管理運営事業） 8,600 千円	yosan-r8-hosei-09	4	
