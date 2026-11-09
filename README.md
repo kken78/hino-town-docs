@@ -28,7 +28,7 @@
 
 ## 構造化の層
 
-補正予算の概要・決算の資料・財政状況資料集の数字と名前を、回と行のキーで指せる表にして `data/struct/` に置く（[DOCS_SCHEMA.md](DOCS_SCHEMA.md) §13）。原典の文字の層とは別の層で、原典を見て起票し、行ごとに検収する。
+補正予算の概要・決算の資料・財政状況資料集の数字と名前を、回と行のキーで指せる表にして `data/struct/` に置く。固定資産台帳の資産の行の値と、資産の行と施設の対応もここに置く（§13.14）（[DOCS_SCHEMA.md](DOCS_SCHEMA.md) §13）。原典の文字の層とは別の層で、原典を見て起票し、行ごとに検収する。
 
 | 表 | 中身 |
 | --- | --- |
@@ -36,6 +36,7 @@
 | `hosei-kan.tsv`・`hosei-maru.tsv`・`hosei-jiko.tsv`・`hosei-kaikei.tsv` | 款の表の行、歳出の主な内容の○の行と特別会計・企業会計の主な内容の行、繰越明許費・債務負担行為・地方債の事項、会計ごとの額 |
 | `kessan-kai.tsv`・`kessan-gaku.tsv`・`kessan-uchiwake.tsv` | 決算の回（年度・会計。例 `r6-ippan`）と、会計ごとの歳入歳出の額、一般会計の内訳 |
 | `zaisei-shihyo.tsv`・`zaisei-futsu.tsv`・`zaisei-ichi.tsv` | 財政状況資料集の指標（年度を列にする）、普通会計の状況、値の原典の中の位置 |
+| `kotei-shisetsu.tsv`・`kotei-taio.tsv`・`kotei-nashi.tsv`・`kotei-shisan.tsv` | 固定資産台帳の施設の表、資産の行と施設の対応（依頼者が確かめた行だけ。本体と付随）、台帳に施設の行が無いと確かめた組、資産の行の値（財産番号と財産枝番の組ごと。いまは文書だけで、表はまだ無い） |
 | `audit/`・`issues/` | 検収の台帳と、原典の誤りの記録 |
 
 - `python3 -B tools/kozo.py hosei-kian r6`：令和6年度の補正予算の概要の原典の文字（`data/text_raw/`）から、補正予算の6つの表を起票する。既存の行の key は保つ。道具が値を出せなかった列で人が書いた値（回の表の label_mae・label_hosei、主な内容の行の amount・sub、事項の amount、款の行の額）も保つ（DOCS_SCHEMA.md §13.9・§13.11）
