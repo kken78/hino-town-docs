@@ -666,7 +666,7 @@ eff6d30407513927	hosei-maru	r4-kokuho-01/t001	name,amount	国民健康保険特�
 b27a4340aa6a95a8	hosei-maru	r4-kokuho-02/t001	name,amount	国民健康保険特別会計補正予算（第２号）|-21703	千円	yosan-r4-hosei-03 p.2	✓	kken78	2026-11-09	H4 0点。人が確認：一致（2026-11-09）
 5a2639b00d272f52	hosei-maru	r4-noshu-01/t001	name,amount	農業集落排水事業特別会計補正予算（第１号）|-3256	千円	yosan-r4-hosei-12 p.2	✓	kken78	2026-11-09	H4 0点。人が確認：一致（2026-11-09）
 4abf8e45ec8fd3fc	hosei-maru	r4-noshu-02/t001	name,amount	農業集落排水事業特別会計補正予算（第２号）|871	千円	yosan-r4-hosei-01 p.3	✓	kken78	2026-11-09	H4 0点。人が確認：一致（2026-11-09）
-70f9ef7e538031b8	hosei-maru	r4-noshu-03/t001	name,amount	農業集落排水事業特別会計補正予算（第３号）|	千円	yosan-r4-hosei-03 p.2	✓	auto:pdftext	2026-11-09	要人確認:H4 1点 金額が空。金額が空（原典は「－千円」）。繰越明許費だけを定める回で、事項の表の繰越明許費の行（r4-noshu-03/z001）と、会計の額の表の今回補正額 0 を確かめた
+70f9ef7e538031b8	hosei-maru	r4-noshu-03/t001	name,amount	農業集落排水事業特別会計補正予算（第３号）|	千円	yosan-r4-hosei-03 p.2	✓	kken78	2026-11-09	H4 1点 金額が空。金額が空（原典は「－千円」）。繰越明許費だけを定める回で、事項の表の繰越明許費の行（r4-noshu-03/z001）と、会計の額の表の今回補正額 0 を確かめた。人が確認：一致（2026-11-09。確認ページでは「判断できない」。繰越明許費の根拠の調べと 13.10 の3つの照合のあと、依頼者が会話で一致と明言）
 274156404865ec36	hosei-maru	r4-suido-01/t001	name,amount	水道事業会計補正予算（第１号）|0	千円	yosan-r4-hosei-09 p.4	✓	kken78	2026-11-09	H4 1点 金額が0。人が確認：一致（2026-11-09）
 05778fc3ce22d512	hosei-maru	r4-suido-02/t001	name,amount	水道事業会計補正予算（第２号）|780	千円	yosan-r4-hosei-01 p.3	✓	kken78	2026-11-09	H4 0点。人が確認：一致（2026-11-09）
 55ffb7f7f9765e45	hosei-jiko	r4-ippan-05/z001	kind,kubun,kaikei,name,amount	saimu|tsuika||日野町外国語指導講師派遣事業委託業務|10300	千円	yosan-r4-hosei-09 p.4	✓	kken78	2026-11-09	H4 0点。人が確認：一致（2026-11-09）
