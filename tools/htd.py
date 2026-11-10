@@ -47,8 +47,12 @@ NDLOCR_PYTHON = os.path.expanduser(os.environ.get("HTD_NDLOCR_PYTHON", "~/ocr/ve
 OCR_DPI = 300   # §10
 RAW_DIR = os.path.join(ROOT, "sources_raw")
 COLUMNS = ["id", "category", "title", "fiscal_year", "date", "page_url", "url", "format", "bytes", "sha256", "pages",
-           "text_chars", "text_method", "ocr_method", "ocr_date", "fetched", "check", "note"]
-COLUMNS_V1 = [c for c in COLUMNS if c not in ("ocr_method", "ocr_date")]   # 0c64af5 より前の台帳。読むときに2列を空で足す
+           "text_chars", "text_method", "ocr_method", "ocr_date", "fetched", "check",
+           "removed", "removed_judgment", "archive_url", "note"]
+REMOVED_COLUMNS = ("removed", "removed_judgment", "archive_url")   # §4：外れた資料の扱い（2026-11-10 に足した）
+COLUMNS_V2 = [c for c in COLUMNS if c not in REMOVED_COLUMNS]   # 2026-11-10 より前の台帳。読むときに3列を空で足す
+COLUMNS_V1 = [c for c in COLUMNS_V2 if c not in ("ocr_method", "ocr_date")]   # 0c64af5 より前の台帳。読むときに2列を空で足す
+REMOVED_JUDGMENTS = ("", "replaced", "withheld")
 REQUEST_COLUMNS = ["id", "category", "title", "fiscal_year", "date", "page_url", "url", "size_label"]
 REQUEST_COLUMNS_ARCHIVE = REQUEST_COLUMNS + ["archive_url"]   # §6：Webアーカイブの保存版から取るとき
 ARCHIVE_RE = re.compile(r"https://web\.archive\.org/web/([0-9]{14})id_/(.+)")
@@ -104,8 +108,29 @@ def read_sources():
         rows = read_tsv(SOURCES, COLUMNS_V1)
         for r in rows:
             r["ocr_method"] = r["ocr_date"] = ""
-        return rows
-    return read_tsv(SOURCES, COLUMNS)
+    elif head == COLUMNS_V2:
+        rows = read_tsv(SOURCES, COLUMNS_V2)
+    else:
+        rows = read_tsv(SOURCES, COLUMNS)
+    for r in rows:
+        for c in REMOVED_COLUMNS:
+            r.setdefault(c, "")
+        check_removed(r)
+    return rows
+
+
+def check_removed(r):
+    """§4：removed・removed_judgment・archive_url の形。合わなければ止める。"""
+    if r["removed"] and not re.fullmatch(r"\d{4}-\d{2}-\d{2}", r["removed"]):
+        raise Stop(f"{r['id']} の removed が YYYY-MM-DD でない（{r['removed']}）")
+    if r["removed_judgment"] not in REMOVED_JUDGMENTS:
+        raise Stop(f"{r['id']} の removed_judgment が replaced・withheld・空のどれでもない（{r['removed_judgment']}）")
+    if r["removed_judgment"] and not r["removed"]:
+        raise Stop(f"{r['id']} は removed が空なのに removed_judgment がある")
+    if r["archive_url"]:
+        m = ARCHIVE_RE.fullmatch(r["archive_url"])
+        if not m or m.group(2) != r["url"]:
+            raise Stop(f"{r['id']} の archive_url が url の保存版の形でない（{r['archive_url']}）")
 
 
 def write_atomic(path, write):
@@ -818,6 +843,9 @@ def fetch(req_path, opener=download, today=None):
         row = {c: q.get(c, "") for c in COLUMNS}
         row["fetched"] = (today or date.today()).isoformat()
         row["note"] = archive_note(q["archive_url"]) if q.get("archive_url") else ""
+        if q.get("archive_url"):   # §6：保存版から取るときは、町のサイトに無いことを確かめてある。removed_judgment は依頼者が書く
+            row["archive_url"] = q["archive_url"]
+            row["removed"] = row["fetched"]
         want = size_bytes(q.get("size_label"))
         if want and abs(len(data) - want) / want >= SIZE_TOLERANCE:
             row["note"] = join_note(row["note"], f"掲載ページの大きさ {q['size_label']}・取得したファイル {len(data):,} バイト")
