@@ -7,7 +7,7 @@
 
 依頼の TSV（UTF-8、タブ区切り、1行目は見出し）の列：id・category・title・fiscal_year・date・page_url・url・size_label
 （size_label は掲載ページに書かれた大きさ。例「1.23MB」。無ければ空）。最後に archive_url の列を足してもよい。
-archive_url は、町のサイトから外された資料を Webアーカイブの保存版から取るときだけ書く（§6。
+archive_url は、町のサイトでの掲載が終わった資料を Webアーカイブの保存版から取るときだけ書く（§6。
 https://web.archive.org/web/<14桁の保存日時>id_/<url> の形）。台帳の url は町の元の URL のままとし、note に取得元を書く。依頼の id が台帳にすでにあれば、何もせずに止める。
 取得は1秒に1件以内（Webアーカイブの保存版から取るときも同じ）。町のサイトか Webアーカイブから断られたとき（HTTP のエラー、
 つながらない）は、そこで止めて報告する。
@@ -49,7 +49,7 @@ RAW_DIR = os.path.join(ROOT, "sources_raw")
 COLUMNS = ["id", "category", "title", "fiscal_year", "date", "page_url", "url", "format", "bytes", "sha256", "pages",
            "text_chars", "text_method", "ocr_method", "ocr_date", "fetched", "check",
            "removed", "removed_judgment", "archive_url", "note"]
-REMOVED_COLUMNS = ("removed", "removed_judgment", "archive_url")   # §4：外れた資料の扱い（2026-11-10 に足した）
+REMOVED_COLUMNS = ("removed", "removed_judgment", "archive_url")   # §4：掲載が終わった資料の扱い（2026-11-10 に足した）
 COLUMNS_V2 = [c for c in COLUMNS if c not in REMOVED_COLUMNS]   # 2026-11-10 より前の台帳。読むときに3列を空で足す
 COLUMNS_V1 = [c for c in COLUMNS_V2 if c not in ("ocr_method", "ocr_date")]   # 0c64af5 より前の台帳。読むときに2列を空で足す
 REMOVED_JUDGMENTS = ("", "replaced", "withheld")

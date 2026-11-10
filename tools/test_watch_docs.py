@@ -133,7 +133,7 @@ class TestCompare(unittest.TestCase):
         self.assertIn("保存版の候補：https://web.archive.org/", w.report({"date": "d", "categories": 0, "pages": 0, "docs": 0,
                       "prev_docs": "", "prev_pages": "", "findings": f, "errors": [], "out_docs": "x", "out_pages": "y"}))
         self.assertTrue(f["gone"][0]["status"].startswith("町のサイトから無くなった"))
-        self.assertTrue(f["gone"][1]["status"].startswith("掲載ページから外れた"))
+        self.assertTrue(f["gone"][1]["status"].startswith("掲載ページからのリンクが無くなった"))
 
     def test_updated(self):
         prev = [dict(p) for p in self.pages]
