@@ -94,8 +94,8 @@ class TestCompare(unittest.TestCase):
     def setUp(self):
         self.docs, self.pages = w.tables(crawl(fake_site()))
 
-    def src(self, i, url, page, note=""):
-        return {"id": i, "title": i, "url": url, "page_url": page, "note": note}
+    def src(self, i, url, page, note="", removed=""):
+        return {"id": i, "title": i, "url": url, "page_url": page, "note": note, "removed": removed}
 
     def test_nothing_new(self):
         f = w.compare(self.docs, self.pages, self.docs, self.pages, [], [])
@@ -121,10 +121,17 @@ class TestCompare(unittest.TestCase):
 
     def test_gone(self):
         s = [self.src("a", f"{S}cmsfiles/contents/a/old.pdf", f"{S}0000000001.html"),
-             self.src("b", f"{S}cmsfiles/contents/a/arch.pdf", f"{S}0000000009.html", "取得元：Webアーカイブの保存版（…）"),
+             self.src("b", f"{S}cmsfiles/contents/a/arch.pdf", f"{S}0000000009.html", "取得元：Webアーカイブの保存版（…）",
+                      removed="2026-10-23"),
              self.src("c", f"{S}cmsfiles/contents/a/moved.pdf", f"{S}0000000001.html")]
-        f = w.compare(self.docs, self.pages, self.docs, self.pages, s, [], head=lambda u: 404 if "old" in u else 200)
-        self.assertEqual([x["id"] for x in f["gone"]], ["a", "c"])
+        arc = {f"{S}cmsfiles/contents/a/old.pdf": "20260308000000", f"{S}cmsfiles/contents/a/moved.pdf": None}
+        f = w.compare(self.docs, self.pages, self.docs, self.pages, s, [], head=lambda u: 404 if "old" in u else 200,
+                      archive=arc.get)
+        self.assertEqual([x["id"] for x in f["gone"]], ["a", "c"])          # removed のある行は出さない
+        self.assertEqual(f["gone"][0]["archive"], f"https://web.archive.org/web/20260308000000id_/{S}cmsfiles/contents/a/old.pdf")
+        self.assertEqual(f["gone"][1]["archive"], "保存版を確かめられなかった")
+        self.assertIn("保存版の候補：https://web.archive.org/", w.report({"date": "d", "categories": 0, "pages": 0, "docs": 0,
+                      "prev_docs": "", "prev_pages": "", "findings": f, "errors": [], "out_docs": "x", "out_pages": "y"}))
         self.assertTrue(f["gone"][0]["status"].startswith("町のサイトから無くなった"))
         self.assertTrue(f["gone"][1]["status"].startswith("掲載ページから外れた"))
 

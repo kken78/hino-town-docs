@@ -167,7 +167,45 @@ class TestLedgerV1(Tmp):
         self.assertEqual((rows[0]["ocr_method"], rows[0]["ocr_date"]), ("", ""))
         htd.write_sources(rows)
         self.assertEqual(read_text(htd.SOURCES).splitlines()[0].split("\t"), htd.COLUMNS)
-        self.assertEqual(len(htd.COLUMNS), 18)
+        self.assertEqual(len(htd.COLUMNS), 21)
+
+    def test_v2_header_gets_removed_columns(self):
+        # 2026-11-10 より前の台帳（removed・removed_judgment・archive_url が無い）は、3列を空で足して読む（§4）
+        os.makedirs(os.path.dirname(htd.SOURCES))
+        row = {c: "" for c in htd.COLUMNS_V2}
+        row.update(id="yosan-r8-gaiyou", category="yosan", format="pdf", pages="1", check="ok")
+        with open(htd.SOURCES, "w", encoding="utf-8", newline="") as f:
+            f.write("\t".join(htd.COLUMNS_V2) + "\n" + "\t".join(row[c] for c in htd.COLUMNS_V2) + "\n")
+        rows = htd.read_sources()
+        self.assertEqual([rows[0][c] for c in htd.REMOVED_COLUMNS], ["", "", ""])
+        htd.write_sources(rows)
+        self.assertEqual(read_text(htd.SOURCES).splitlines()[0].split("\t"), htd.COLUMNS)
+
+
+class TestRemoved(Tmp):
+    URL = "https://www.town.shiga-hino.lg.jp/cmsfiles/contents/0000008/8428/kousou.pdf"
+
+    def write(self, **kw):
+        os.makedirs(os.path.dirname(htd.SOURCES), exist_ok=True)
+        row = {c: "" for c in htd.COLUMNS}
+        row.update(id="jigyo-shinkodomoen-kousou", category="jigyo", format="pdf", pages="1", check="ok", url=self.URL)
+        row.update(kw)
+        with open(htd.SOURCES, "w", encoding="utf-8", newline="") as f:
+            f.write("\t".join(htd.COLUMNS) + "\n" + "\t".join(row[c] for c in htd.COLUMNS) + "\n")
+
+    def test_good_values(self):
+        self.write(removed="2026-10-23", removed_judgment="replaced",
+                   archive_url="https://web.archive.org/web/20260308000000id_/" + self.URL)
+        self.assertEqual(htd.read_sources()[0]["removed_judgment"], "replaced")
+
+    def test_bad_values_stop(self):
+        bad = [dict(removed="2026/10/23"), dict(removed="2026-10-23", removed_judgment="ok"),
+               dict(removed_judgment="withheld"),
+               dict(removed="2026-10-23", archive_url="https://web.archive.org/web/20260308000000id_/https://example.org/x.pdf")]
+        for kw in bad:
+            self.write(**kw)
+            with self.assertRaises(htd.Stop):
+                htd.read_sources()
 
 
 class TestWriteAtomic(Tmp):
@@ -238,6 +276,7 @@ class TestFetch(Tmp):
         row = htd.read_sources()[0]
         self.assertEqual(row["url"], url)                                # 台帳の url は町の元の URL
         self.assertIn("取得元：Webアーカイブの保存版（2025-08-30 13:13:30 UTC、" + arc + "）", row["note"])
+        self.assertEqual((row["archive_url"], row["removed"], row["removed_judgment"]), (arc, row["fetched"], ""))   # §6
         htd.extract()                                                    # やり直しても取得元の注記は残る
         self.assertIn("取得元：Webアーカイブの保存版", htd.read_sources()[0]["note"])
 

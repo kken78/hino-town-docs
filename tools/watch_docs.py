@@ -9,7 +9,7 @@
   python3 -B tools/watch_docs.py --state s.json --seconds 150
       たどった途中の状態を s.json に残し、150秒で区切る。たどり終わるまで、くり返し動かす（終了コード 3 は「途中」）。
       たどり終わったら、くらべて結果を出す
-  python3 -B tools/watch_docs.py --state s.json --no-head  台帳の資料が外れたときの HEAD の確かめを省く（試しのとき）
+  python3 -B tools/watch_docs.py --state s.json --no-head  台帳の資料が外れたときの HEAD と保存版の確かめを省く（試しのとき）
 
 終了コード：0 巡回できた／2 巡回に失敗した（トップの分類が取れない、取れないページが5%以上、通信の失敗）／3 たどる途中（--seconds）
 """
@@ -51,7 +51,6 @@ TITLE_RE = re.compile(r"(?is)<title>(.*?)</title>")
 UPDATED_RE = re.compile(r'itemprop="dateModified"[^>]*datetime="(\d{4}-\d{2}-\d{2})')
 POSTED_RE = re.compile(r'itemprop="datePublished"[^>]*datetime="(\d{4}-\d{2}-\d{2})')
 SIZE_RE = re.compile(r"([0-9][0-9.,]*\s*[KMG]?B)", re.I)
-ARCHIVE_NOTE = "取得元：Webアーカイブ"
 
 
 class Fail(Exception):
@@ -290,8 +289,10 @@ def ignored(rules, origin="", page_url="", url="", name="", page_name=""):
 
 # ---- くらべる ----
 
-def compare(docs, pages, prev_docs, prev_pages, sources, rules, head=None):
-    """§12 の3種類の見つけたもの。head(url) は HEAD の状態を返す関数（None なら確かめない）。"""
+def compare(docs, pages, prev_docs, prev_pages, sources, rules, head=None, archive=None):
+    """§12 の3種類の見つけたもの。head(url) は HEAD の状態を返す関数（None なら確かめない）。
+    archive(url) は、Webアーカイブのいちばん新しい保存版の保存日時（無ければ ""、確かめられなければ None）を返す関数
+    （None なら確かめない。§12・§14）。台帳の removed がある行は、外れた・掲載ページの更新の対象にしない。"""
     known = {r["資料の URL"] for r in prev_docs} | {r["url"] for r in sources}
     known_pages = {r["URL"] for r in prev_pages}
     page_names = {r["URL"]: r["ページの名前"] for r in pages}
@@ -315,22 +316,26 @@ def compare(docs, pages, prev_docs, prev_pages, sources, rules, head=None):
 
     linked = {r["資料の URL"] for r in docs} | {r["URL"] for r in pages}
     for s in sources:
-        if ARCHIVE_NOTE in (s.get("note") or "") or s["url"] in linked:
+        if (s.get("removed") or "").strip() or s["url"] in linked:
             continue
-        x = {"id": s["id"], "title": s["title"], "url": s["url"], "page": s["page_url"], "status": ""}
+        x = {"id": s["id"], "title": s["title"], "url": s["url"], "page": s["page_url"], "status": "", "archive": ""}
         if head:
             code = head(s["url"])
             x["status"] = {404: "町のサイトから無くなった（HTTP 404）", 410: "町のサイトから無くなった（HTTP 410）",
                            200: "掲載ページから外れた（ファイルは取れる）"}.get(code, f"確かめられない（HTTP {code}）")
         else:
             x["status"] = "掲載ページから外れた（HEAD は確かめていない）"
+        if archive:
+            ts = archive(s["url"])
+            x["archive"] = (f"https://web.archive.org/web/{ts}id_/{s['url']}" if ts
+                            else "保存版は無い" if ts == "" else "保存版を確かめられなかった")
         found["gone"].append(x)
 
     prev_up = {r["URL"]: r["更新日"] for r in prev_pages}
     now_up = {r["URL"]: r["更新日"] for r in pages}
     ids = {}
     for s in sources:
-        if ARCHIVE_NOTE not in (s.get("note") or ""):
+        if not (s.get("removed") or "").strip():
             ids.setdefault(s["page_url"], []).append(s["id"])
     for pu in sorted(ids):
         was, now = prev_up.get(pu), now_up.get(pu)
@@ -360,7 +365,8 @@ def report(rep):
             else:
                 L.append(f"- ページ：{x['page_name']}　{x['url']}（更新日 {x['updated'] or '不明'}、資料 {x['files']} 件）")
     L += ["", f"## 台帳の資料が外れた（{len(f['gone'])}件）"]
-    L += [f"- {x['id']}：{x['title']}。{x['status']}。{x['url']}（掲載ページ {x['page']}）" for x in f["gone"]] or ["- なし"]
+    L += [f"- {x['id']}：{x['title']}。{x['status']}。{x['url']}（掲載ページ {x['page']}）"
+          f"{'。保存版の候補：' + x['archive'] if x.get('archive') else ''}" for x in f["gone"]] or ["- なし"]
     L += ["", f"## 台帳の掲載ページの更新（{len(f['updated'])}件）"]
     L += [f"- {x['page_name'] or x['page']}：更新日 {x['was'] or '（空）'} → {x['now'] or '（空）'}。{x['page']}（台帳の id：{'・'.join(x['ids'])}）"
           for x in f["updated"]] or ["- なし"]
@@ -379,7 +385,7 @@ def main(argv=None):
     ap.add_argument("--seconds", type=int, help="たどるのをこの秒数で区切る（--state と一緒に使う）")
     ap.add_argument("--out", default=os.path.join(ROOT, "build", "watch"), help="作った一覧を置くフォルダ")
     ap.add_argument("--json", help="結果の JSON")
-    ap.add_argument("--no-head", action="store_true", help="台帳の資料が外れたときの HEAD を省く")
+    ap.add_argument("--no-head", action="store_true", help="台帳の資料が外れたときの HEAD と保存版（CDX）の確かめを省く")
     ap.add_argument("--inventory", default=os.path.join(ROOT, "data", "inventory"))
     ap.add_argument("--sources", default=os.path.join(ROOT, "data", "sources.tsv"))
     ap.add_argument("--ignore", default=os.path.join(ROOT, "data", "watch_ignore.tsv"))
@@ -417,7 +423,14 @@ def main(argv=None):
         prev_docs = read_tsv(pd) if pd else []
         prev_pages = read_tsv(pp) if pp else []
         head = None if a.no_head else (lambda u: request(u, "HEAD")[0])
-        found = compare(docs, pages, prev_docs, prev_pages, sources, rules, head)
+        archive = None
+        if not a.no_head:
+            import watch_archive
+
+            def archive(u):
+                _wait()   # Webアーカイブへの問い合わせも1秒に1件以内（§14）
+                return watch_archive.cdx_latest(u)
+        found = compare(docs, pages, prev_docs, prev_pages, sources, rules, head, archive)
         rep = {"date": datetime.now(JST).strftime("%Y-%m-%d %H:%M JST"), "categories": len(st["cats_done"]),
                "pages": len(pages), "docs": len(docs), "prev_docs": os.path.basename(pd) if pd else "",
                "prev_pages": os.path.basename(pp) if pp else "", "out_docs": out_docs, "out_pages": out_pages,
