@@ -66,7 +66,7 @@
 | 保存版の無い資料 N件 | Webアーカイブに保存版の無い資料（台帳と shiga-hino-plans の原典。[DOCS_SCHEMA.md](DOCS_SCHEMA.md) §14）。保存を頼んだもの・失敗したもの・次の月に回したもの | 失敗が続くものは、ブラウザで web.archive.org/save から頼むかを決める |
 | 巡回に失敗した | トップの分類が取れない、取れないページが5%以上 | 手元で `python3 -B tools/watch_docs.py` を動かして原因を見る |
 
-巡回は見つけるだけで、台帳・テキスト・一覧は変えない。作った一覧は実行の成果物（artifact、90日）に残る。毎月1日の巡回のあとを「取り込みの日」とし、Issue を片付けてから一覧を `data/inventory/` にコミットする（Issue に手順がある）。コミットした一覧が、次の巡回でくらべる相手になる。巡回のあと、同じ workflow で、台帳の資料の保存版が Webアーカイブにあるかを確かめ、無いものは保存を頼む（DOCS_SCHEMA.md §14。結果の `data/archive.tsv` も取り込みの日にコミットする）。取り込んだら、同じ日に hino-ronten・hino-zaisei・hino-shiryo の inputs.lock.json を上げる。
+巡回は見つけるだけで、台帳・テキスト・一覧は変えない。作った一覧は実行の成果物（artifact、90日）に残る。毎月1日の巡回のあとを「取り込みの日」とし、Issue を片付けてから一覧を `data/inventory/` にコミットする（Issue に手順がある）。コミットした一覧が、次の巡回でくらべる相手になる。巡回のあと、同じ workflow で、台帳の資料の保存版が Webアーカイブにあるかを確かめ、無いものは保存を頼む（DOCS_SCHEMA.md §14。結果の `data/archive.tsv` も取り込みの日にコミットする）。取り込んだら、同じ日に hino-ronten・hino-zaisei・hino-shisan・hino-shiryo の inputs.lock.json を上げる。
 
 必要な設定：Settings → Actions → General → Workflow permissions を「Read and write permissions」にする。手で動かすときは Actions の画面の watch から「Run workflow」。`keepalive.yml` が毎月1日に定期実行を有効化し直す（60日間動きが無いと定期実行が止まるため）。
 
