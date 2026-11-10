@@ -61,11 +61,12 @@
 | Issue | 意味 | すること |
 | --- | --- | --- |
 | 新しい資料とページ N件 | 前の一覧にも台帳にも無い資料とページ（除外の表 `data/watch_ignore.tsv` に当たるものは除く） | 取り込む（依頼の TSV → `python3 -B tools/htd.py fetch`）、除外の表に足す、今は決めない、のどれかを決める |
-| 台帳の資料が外れた N件 | 台帳の url が、どのページからもリンクされていない | 差し替えの版を探す。元の行は消さず note に書く |
+| 台帳の資料が外れた N件 | 台帳の url が、どのページからもリンクされていない。外れる前の最後の保存版の URL の候補を添える | 差し替えの版を探す。外れた事情を確かめて、台帳の removed・removed_judgment・archive_url を書く（DOCS_SCHEMA.md §4） |
 | 台帳の掲載ページの更新 N件 | 台帳の掲載ページの更新日が変わった | ページを見て、資料の版が変わっていれば新しい id で取り直す |
+| 保存版の無い資料 N件 | Webアーカイブに保存版の無い資料（台帳と shiga-hino-plans の原典。[DOCS_SCHEMA.md](DOCS_SCHEMA.md) §14）。保存を頼んだもの・失敗したもの・次の月に回したもの | 失敗が続くものは、ブラウザで web.archive.org/save から頼むかを決める |
 | 巡回に失敗した | トップの分類が取れない、取れないページが5%以上 | 手元で `python3 -B tools/watch_docs.py` を動かして原因を見る |
 
-巡回は見つけるだけで、台帳・テキスト・一覧は変えない。作った一覧は実行の成果物（artifact、90日）に残る。毎月1日の巡回のあとを「取り込みの日」とし、Issue を片付けてから一覧を `data/inventory/` にコミットする（Issue に手順がある）。コミットした一覧が、次の巡回でくらべる相手になる。取り込んだら、同じ日に hino-ronten と hino-budget の inputs.lock.json を上げる。
+巡回は見つけるだけで、台帳・テキスト・一覧は変えない。作った一覧は実行の成果物（artifact、90日）に残る。毎月1日の巡回のあとを「取り込みの日」とし、Issue を片付けてから一覧を `data/inventory/` にコミットする（Issue に手順がある）。コミットした一覧が、次の巡回でくらべる相手になる。巡回のあと、同じ workflow で、台帳の資料の保存版が Webアーカイブにあるかを確かめ、無いものは保存を頼む（DOCS_SCHEMA.md §14。結果の `data/archive.tsv` も取り込みの日にコミットする）。取り込んだら、同じ日に hino-ronten・hino-zaisei・hino-shiryo の inputs.lock.json を上げる。
 
 必要な設定：Settings → Actions → General → Workflow permissions を「Read and write permissions」にする。手で動かすときは Actions の画面の watch から「Run workflow」。`keepalive.yml` が毎月1日に定期実行を有効化し直す（60日間動きが無いと定期実行が止まるため）。
 
