@@ -1,0 +1,116 @@
+doc	kaikei	bubun	shurui	bango	n	page	insatsu_page	line_from	line_to	midashi	note
+kessan-r3-ikensho	ippan	matome	maegaki		1	11	10	1282	1283		
+kessan-r3-ikensho	ippan	matome	iken	①	2	11	10	1284	1295		
+kessan-r3-ikensho	ippan	matome	iken	②	3	11	10	1296	1309		
+kessan-r3-ikensho	ippan	matome	iken	③	4	11	10	1310	1317		
+kessan-r3-ikensho	ippan	matome	iken	④	5	11	10	1318	1331		ページをまたぐ（11〜12 ページ。印刷のページ 10〜11）
+kessan-r3-ikensho	ippan	matome	iken	⑤	6	12	11	1332	1344		
+kessan-r3-ikensho	ippan	matome	iken	⑥	7	12	11	1345	1351		
+kessan-r3-ikensho	ippan	matome	iken	⑦	8	12	11	1352	1358		
+kessan-r3-ikensho	ippan	matome	iken	⑧	9	13	12	1361	1363		
+kessan-r3-ikensho	ippan	matome	iken	⑨	10	13	12	1364	1370		
+kessan-r3-ikensho	ippan	matome	iken	⑩	11	13	12	1371	1378		
+kessan-r3-ikensho	ippan	matome	iken	⑪	12	13	12	1379	1383		
+kessan-r3-ikensho	ippan	matome	iken	⑫	13	13	12	1384	1388		
+kessan-r3-ikensho	ippan	matome	iken	⑬	14	13	12	1389	1393		
+kessan-r3-ikensho	ippan	matome	iken	⑭	15	14	13	1396	1404		
+kessan-r3-ikensho	ippan	matome	iken	⑮	16	14	13	1405	1411		締めの文との境は字の並びの決まりで決めた
+kessan-r3-ikensho	ippan	matome	musubi		17	14	13	1412	1423		最後の意見との境は字の並びの決まりで決めた
+kessan-r3-ikensho	kokuho	matome	zentai		1	18	17	2023	2044		
+kessan-r3-ikensho	kansui	matome	zentai		1	20	19	2385	2401		
+kessan-r3-ikensho	noshu	matome	zentai		1	22	21	2773	2787		
+kessan-r3-ikensho	kaigo	matome	zentai		1	26	25	3502	3524		
+kessan-r3-ikensho	koki	matome	zentai		1	28	27	3882	3894		
+kessan-r3-ikensho	suido	matome	zentai		1	35	34	5231	5273		ページをまたぐ（35〜36 ページ。印刷のページ 34〜35）
+kessan-r3-ikensho	gesuido	matome	zentai		1	43	42	6356	6388		
+kessan-r3-ikensho	nashi	kenzenka	zentai		1	44	43	6393	6431		ページをまたぐ（44〜45 ページ。印刷のページ 43〜44）
+kessan-r3-ikensho	nashi	shikin	zentai		1	45	44	6434	6437		
+kessan-r4-ikensho	ippan	matome	maegaki		1	11	10	1265	1266		
+kessan-r4-ikensho	ippan	matome	iken	①	2	11	10	1267	1272		
+kessan-r4-ikensho	ippan	matome	iken	②	3	11	10	1273	1284		
+kessan-r4-ikensho	ippan	matome	iken	③	4	11	10	1285	1291		
+kessan-r4-ikensho	ippan	matome	iken	④	5	11	10	1292	1308		ページをまたぐ（11〜12 ページ。印刷のページ 10〜11）
+kessan-r4-ikensho	ippan	matome	iken	⑤	6	12	11	1309	1321		
+kessan-r4-ikensho	ippan	matome	iken	⑥	7	12	11	1322	1329		
+kessan-r4-ikensho	ippan	matome	iken	⑦	8	12	11	1330	1332		
+kessan-r4-ikensho	ippan	matome	iken	⑧	9	12	11	1333	1341		
+kessan-r4-ikensho	ippan	matome	iken	⑨	10	12	11	1342	1351		ページをまたぐ（12〜13 ページ。印刷のページ 11〜12）
+kessan-r4-ikensho	ippan	matome	iken	⑩	11	13	12	1352	1360		
+kessan-r4-ikensho	ippan	matome	iken	⑪	12	13	12	1362	1365		
+kessan-r4-ikensho	ippan	matome	iken	⑫	13	13	12	1366	1372		
+kessan-r4-ikensho	ippan	matome	iken	⑬	14	13	12	1374	1382		
+kessan-r4-ikensho	ippan	matome	iken	⑭	15	13	12	1383	1385		締めの文との境は字の並びの決まりで決めた
+kessan-r4-ikensho	ippan	matome	musubi		16	13	12	1386	1402		最後の意見との境は字の並びの決まりで決めた。ページをまたぐ（13〜14 ページ。印刷のページ 12〜13）
+kessan-r4-ikensho	kokuho	matome	zentai		1	18	17	2000	2024		
+kessan-r4-ikensho	kansui	matome	zentai		1	20	19	2388	2399		
+kessan-r4-ikensho	noshu	matome	zentai		1	22	21	2775	2787		
+kessan-r4-ikensho	kaigo	matome	zentai		1	26	25	3503	3528		
+kessan-r4-ikensho	koki	matome	zentai		1	28	27	3888	3901		
+kessan-r4-ikensho	suido	matome	zentai		1	35	34	5201	5246		ページをまたぐ（35〜36 ページ。印刷のページ 34〜35）。data/text の範囲に数だけの行がある（「1.3」）
+kessan-r4-ikensho	gesuido	matome	zentai		1	43	42	6326	6361		
+kessan-r4-ikensho	nashi	kenzenka	zentai		1	44	43	6365	6415		ページをまたぐ（44〜45 ページ。印刷のページ 43〜44）
+kessan-r4-ikensho	nashi	shikin	zentai		1	45	44	6418	6421		
+kessan-r5-ikensho	ippan	matome	maegaki		1	10	9	1245	1246		
+kessan-r5-ikensho	ippan	matome	iken	①	2	10	9	1247	1254		
+kessan-r5-ikensho	ippan	matome	iken	②	3	10	9	1255	1265		
+kessan-r5-ikensho	ippan	matome	iken	③	4	10	9	1266	1274		
+kessan-r5-ikensho	ippan	matome	iken	④	5	10	9	1276	1294		ページをまたぐ（10〜11 ページ。印刷のページ 9〜10）
+kessan-r5-ikensho	ippan	matome	iken	⑤	6	11	10	1295	1311		
+kessan-r5-ikensho	ippan	matome	iken	⑥	7	11	10	1312	1322		
+kessan-r5-ikensho	ippan	matome	iken	⑦	8	11	10	1324	1329		
+kessan-r5-ikensho	ippan	matome	iken	⑧	9	11	10	1331	1340		
+kessan-r5-ikensho	ippan	matome	iken	⑨	10	12	11	1343	1353		
+kessan-r5-ikensho	ippan	matome	iken	⑩	11	12	11	1355	1363		
+kessan-r5-ikensho	ippan	matome	iken	⑪	12	12	11	1365	1372		
+kessan-r5-ikensho	ippan	matome	iken	⑫	13	12	11	1374	1384		
+kessan-r5-ikensho	ippan	matome	iken	⑬	14	12	11	1386	1390		締めの文との境は字の並びの決まりで決めた
+kessan-r5-ikensho	ippan	matome	musubi		15	12	11	1391	1412		最後の意見との境は字の並びの決まりで決めた。ページをまたぐ（12〜13 ページ。印刷のページ 11〜12）
+kessan-r5-ikensho	kokuho	matome	zentai		1	17	16	2019	2043		
+kessan-r5-ikensho	kaigo	matome	zentai		1	21	20	2758	2781		
+kessan-r5-ikensho	koki	matome	zentai		1	23	22	3140	3152		
+kessan-r5-ikensho	suido	matome	zentai		1	30	29	4477	4520		ページをまたぐ（30〜31 ページ。印刷のページ 29〜30）
+kessan-r5-ikensho	gesuido	matome	zentai		1	38	37	5744	5784		ページをまたぐ（38〜39 ページ。印刷のページ 37〜38）
+kessan-r5-ikensho	nashi	kenzenka	zentai		1	40	39	5789	5837		ページをまたぐ（40〜41 ページ。印刷のページ 39〜40）
+kessan-r5-ikensho	nashi	shikin	zentai		1	41	40	5840	5842		
+kessan-r6-ikensho	ippan	matome	maegaki		1	10	9	1244	1245		
+kessan-r6-ikensho	ippan	matome	iken	①	2	10	9	1246	1255		
+kessan-r6-ikensho	ippan	matome	iken	②	3	10	9	1257	1269		
+kessan-r6-ikensho	ippan	matome	iken	③	4	10	9	1271	1281		
+kessan-r6-ikensho	ippan	matome	iken	④	5	10	9	1283	1303		ページをまたぐ（10〜11 ページ。印刷のページ 9〜10）
+kessan-r6-ikensho	ippan	matome	iken	⑤	6	11	10	1304	1317		
+kessan-r6-ikensho	ippan	matome	iken	⑥	7	11	10	1319	1330		
+kessan-r6-ikensho	ippan	matome	iken	⑦	8	11	10	1332	1337		
+kessan-r6-ikensho	ippan	matome	iken	⑧	9	11	10	1339	1351		ページをまたぐ（11〜12 ページ。印刷のページ 10〜11）
+kessan-r6-ikensho	ippan	matome	iken	⑨	10	12	11	1352	1361		
+kessan-r6-ikensho	ippan	matome	iken	⑩	11	12	11	1363	1375		
+kessan-r6-ikensho	ippan	matome	iken	⑪	12	12	11	1377	1385		
+kessan-r6-ikensho	ippan	matome	iken	⑫	13	12	11	1387	1398		ページをまたぐ（12〜13 ページ。印刷のページ 11〜12）
+kessan-r6-ikensho	ippan	matome	iken	⑬	14	13	12	1399	1403		締めの文との境は字の並びの決まりで決めた
+kessan-r6-ikensho	ippan	matome	musubi		15	13	12	1404	1424		最後の意見との境は字の並びの決まりで決めた
+kessan-r6-ikensho	kokuho	matome	zentai		1	17	16	2026	2049		
+kessan-r6-ikensho	kaigo	matome	zentai		1	21	20	2768	2792		
+kessan-r6-ikensho	koki	matome	zentai		1	23	22	3150	3162		
+kessan-r6-ikensho	suido	matome	zentai		1	30	29	4509	4554		ページをまたぐ（30〜31 ページ。印刷のページ 29〜30）
+kessan-r6-ikensho	gesuido	matome	zentai		1	38	37	5766	5809		ページをまたぐ（38〜39 ページ。印刷のページ 37〜38）
+kessan-r6-ikensho	nashi	kenzenka	zentai		1	40	39	5814	5863		ページをまたぐ（40〜41 ページ。印刷のページ 39〜40）
+kessan-r6-ikensho	nashi	shikin	zentai		1	41	40	5866	5868		
+kessan-r7-ikensho	ippan	matome	maegaki		1	10	9	1266	1267		
+kessan-r7-ikensho	ippan	matome	iken	①	2	10	9	1268	1276		
+kessan-r7-ikensho	ippan	matome	iken	②	3	10	9	1278	1293		
+kessan-r7-ikensho	ippan	matome	iken	③	4	10	9	1295	1308		
+kessan-r7-ikensho	ippan	matome	iken	④	5	10	9	1310	1317		
+kessan-r7-ikensho	ippan	matome	iken	⑤	6	11	10	1320	1330		
+kessan-r7-ikensho	ippan	matome	iken	⑥	7	11	10	1332	1342		
+kessan-r7-ikensho	ippan	matome	iken	⑦	8	11	10	1344	1355		
+kessan-r7-ikensho	ippan	matome	iken	⑧	9	11	10	1357	1372		
+kessan-r7-ikensho	ippan	matome	iken	⑨	10	12	11	1375	1386		
+kessan-r7-ikensho	ippan	matome	iken	⑩	11	12	11	1388	1399		
+kessan-r7-ikensho	ippan	matome	iken	⑪	12	12	11	1401	1408		締めの文との境は字の並びの決まりで決めた
+kessan-r7-ikensho	ippan	matome	musubi		13	12	11	1409	1423		最後の意見との境は字の並びの決まりで決めた
+kessan-r7-ikensho	kokuho	matome	zentai		1	16	15	2029	2056		
+kessan-r7-ikensho	kaigo	matome	zentai		1	20	19	2792	2821		
+kessan-r7-ikensho	koki	matome	zentai		1	22	21	3197	3210		
+kessan-r7-ikensho	suido	matome	zentai		1	29	28	4527	4576		ページをまたぐ（29〜30 ページ。印刷のページ 28〜29）
+kessan-r7-ikensho	gesuido	matome	zentai		1	36	35	5757	5811		ページをまたぐ（36〜37 ページ。印刷のページ 35〜36）
+kessan-r7-ikensho	nashi	kenzenka	zentai		1	38	37	5816	5870		ページをまたぐ（38〜39 ページ。印刷のページ 37〜38）
+kessan-r7-ikensho	nashi	shikin	zentai		1	39	38	5873	5875		
