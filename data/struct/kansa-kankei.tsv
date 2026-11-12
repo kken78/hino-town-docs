@@ -1,0 +1,47 @@
+doc	n	gyo	oya	meimoku	shurui_ji	kubun	nendo_ji	nendo_basho	retsu	gaku	gaku_raw	note
+kansa-r4-16	1	kobetsu		保育所入所運営事業負担金	負担金	zaisei-enjo				196391520	196,391,520 円	頭の「・」を除いた。shurui_ji・kubun は道具の候補
+kansa-r4-16	2	kobetsu		わらべ保育園運営事業費補助金	補助金	zaisei-enjo				34053710	34,053,710 円	頭の「・」を除いた。shurui_ji・kubun は道具の候補
+kansa-r4-16	3	uchiwake	2	保育費加算補助					わらべ保育園	3192750	3,192,750 円	
+kansa-r4-16	4	uchiwake	2	保育費加算補助					第二わらべ保育園	3005640	3,005,640 円	
+kansa-r4-16	5	uchiwake	2	園児健康管理共済費補助					わらべ保育園	10881	10,881 円	
+kansa-r4-16	6	uchiwake	2	園児健康管理共済費補助					第二わらべ保育園	10179	10,179 円	
+kansa-r4-16	7	uchiwake	2	週休加配保育士等特別配置					わらべ保育園	3000000	3,000,000 円	
+kansa-r4-16	8	uchiwake	2	週休加配保育士等特別配置					第二わらべ保育園	3000000	3,000,000 円	
+kansa-r4-16	9	uchiwake	2	一時保育促進事業					わらべ保育園	3000000	3,000,000 円	
+kansa-r4-16	10	uchiwake	2	一時保育促進事業					第二わらべ保育園	0	0 円	
+kansa-r4-16	11	uchiwake	2	低年齢児保育保育士等特別配置事業					わらべ保育園	3000000	3,000,000 円	
+kansa-r4-16	12	uchiwake	2	低年齢児保育保育士等特別配置事業					第二わらべ保育園	3000000	3,000,000 円	
+kansa-r4-16	13	uchiwake	2	障害児保育推進事業					わらべ保育園	2400000	2,400,000 円	
+kansa-r4-16	14	uchiwake	2	障害児保育推進事業					第二わらべ保育園	1200000	1,200,000 円	
+kansa-r4-16	15	uchiwake	2	延長保育事業					わらべ保育園	2120400	2,120,400 円	
+kansa-r4-16	16	uchiwake	2	延長保育事業					第二わらべ保育園	2120400	2,120,400 円	
+kansa-r4-16	17	uchiwake	2	保育所地域活動事業					わらべ保育園	141000	141,000 円	
+kansa-r4-16	18	uchiwake	2	保育所地域活動事業					第二わらべ保育園	141000	141,000 円	
+kansa-r4-16	19	uchiwake	2	０歳児途中入所保育保育士確保事業					わらべ保育園	1000000	1,000,000 円	
+kansa-r4-16	20	uchiwake	2	０歳児途中入所保育保育士確保事業					第二わらべ保育園	1000000	1,000,000 円	
+kansa-r4-16	21	uchiwake	2	主食費補助事業					わらべ保育園	227900	227,900 円	
+kansa-r4-16	22	uchiwake	2	主食費補助事業					第二わらべ保育園	215000	215,000 円	
+kansa-r4-16	23	uchiwake	2	副食費補助事業					わらべ保育園	204400	204,400 円	
+kansa-r4-16	24	uchiwake	2	副食費補助事業					第二わらべ保育園	212800	212,800 円	
+kansa-r4-16	25	uchiwake	2	新型コロナウイルス感染症対策事業					わらべ保育園	500000	500,000 円	
+kansa-r4-16	26	uchiwake	2	新型コロナウイルス感染症対策事業					第二わらべ保育園	500000	500,000 円	
+kansa-r4-16	27	uchiwake	2	保育士・幼稚園教諭等処遇改善臨時特例事業					わらべ保育園	422520	422,520 円	折り返しをつないだ
+kansa-r4-16	28	uchiwake	2	保育士・幼稚園教諭等処遇改善臨時特例事業					第二わらべ保育園	428840	428,840 円	折り返しをつないだ
+kansa-r4-16	29	gokei	2	合計					わらべ保育園	19219851	19,219,851 円	
+kansa-r4-16	30	gokei	2	合計					第二わらべ保育園	14833859	14,833,859 円	
+kansa-r4-17	1	kobetsu		土地改良区運営事業補助金	補助金	zaisei-enjo				2600000	2,600,000 円	shurui_ji・kubun は道具の候補
+kansa-r4-17	2	kobetsu		土地改良区南比都佐地区水利補助金	補助金	zaisei-enjo				739000	739,000 円	shurui_ji・kubun は道具の候補
+kansa-r4-17	3	kobetsu		土地改良区西大路地区水利補助金	補助金	zaisei-enjo				117000	117,000 円	shurui_ji・kubun は道具の候補
+kansa-r4-17	4	gokei		合 計						3456000	3,456,000 円	
+kansa-r4-18	1	kobetsu		日野観光協会補助金	補助金	zaisei-enjo	令和３年度決算	gaku-ato		23581000	23,581,000 円	shurui_ji・kubun は道具の候補
+kansa-r4-19	1	kobetsu		日野町スポーツ協会補助金	補助金	zaisei-enjo	令和３年度決算	gaku-ato		2041000	2,041,000 円	shurui_ji・kubun は道具の候補
+kansa-r5-18	1	kobetsu		令和４年度日野町少年センター運営負担金	負担金	zaisei-enjo	令和４年度	atama		8824000	8,824,000 円	shurui_ji・kubun は道具の候補
+kansa-r5-19	1	kobetsu		令和４年度「わたむき自動車プロジェクト」推進協議会負担金	負担金	zaisei-enjo	令和４年度	atama		66221000	66,221,000 円	shurui_ji・kubun は道具の候補
+kansa-r5-20	1	kobetsu		令和４年度体験型観光啓発及び新規開拓事業委託業務委託料	委託料		令和４年度	atama		7000000	7,000,000 円	条文の列挙に無い語（委託料）。shurui_ji・kubun は道具の候補
+kansa-r6-17	1	kobetsu		令和５年度日野町農業再生協議会運営費補助金	補助金	zaisei-enjo	令和５年度	atama		6733500	6,733,500 円	shurui_ji・kubun は道具の候補
+kansa-r6-18	1	kobetsu		商工会補助金	補助金	zaisei-enjo	令和５年度決算	midashi		17000000	17,000,000 円	shurui_ji・kubun は道具の候補。次の行の字：（日野町商業活性化補助金含む）
+kansa-r6-19	1	kobetsu		日野町社会福祉協議会運営事業補助金	補助金	zaisei-enjo	令和５年度決算	midashi		36988000	３６，９８８，０００円	shurui_ji・kubun は道具の候補
+kansa-r6-19	2	kobetsu		日野町社会福祉協議会活動事業補助金	補助金	zaisei-enjo	令和５年度決算	midashi		8412000	８，４１２，０００円	shurui_ji・kubun は道具の候補
+kansa-r7-18	1	kobetsu		グリム冒険の森指定管理料 令和６年度指定管理料	指定管理料	shitei-kanri	令和６年度	naka		9100000	9,100,000 円	shurui_ji・kubun は道具の候補
+kansa-r7-19	1	kobetsu		令和６年度(公社)日野町シルバー人材センター運営補助金	補助金	zaisei-enjo	令和６年度	atama		9000000	9,000,000 円	shurui_ji・kubun は道具の候補
+kansa-r7-20	1	kobetsu		町民会館指定管理料	指定管理料	shitei-kanri	令和６年度決算ベース	midashi		92008000	９２，００８，０００円	shurui_ji・kubun は道具の候補

@@ -1,222 +1,344 @@
 key	table	row	cols	value	unit	source	checked	reviewer	date	note
-218c347b8d1e3a1e	kansa-kekka	kansa-r3-14	shurui,kokuji,kohyo_bi,kansa_bi,taisho,shiteki,kekka_from,kekka_to	teiki|日野町監査委員告示第４号|令和４年３月１６日|令和４年２月２５日（金）午前９時３０分～午前１０時２０分|長寿福祉課||72|86		kansa-r3-14 p.1	✓	kken78	2026-11-12	H4 3点 見出しの字が違うか見出しが無い・折り返しをつないだ。人が確認：一致（2026-11-12）
-f0ff5e6e12b4e48e	kansa-kekka	kansa-r3-15	shurui,kokuji,kohyo_bi,kansa_bi,taisho,shiteki,kekka_from,kekka_to	teiki|日野町監査委員告示第５号|令和４年３月１６日|令和４年２月２５日（金）午前１０時３０分～午前１１時５０分|商工観光課||73|90		kansa-r3-15 p.1	✓	auto:pdftext	2026-11-12	
-8f817ba12cd8ba23	kansa-kekka	kansa-r4-01	shurui,kokuji,kohyo_bi,kansa_bi,taisho,shiteki,kekka_from,kekka_to	teiki|日野町監査委員告示第６号|令和４年６月２９日|令和４年５月２６日（木）午前８時５５分～午前１０時２８分|福祉保健課||32|48		kansa-r4-01 p.1	✓	auto:pdftext	2026-11-12	
-10bee6396e8dc554	kansa-kekka	kansa-r4-02	shurui,kokuji,kohyo_bi,kansa_bi,taisho,shiteki,kekka_from,kekka_to	teiki|日野町監査委員告示第７号|令和４年６月２９日|令和４年５月２６日（木）午前１０時３５分～午後１２時０２分|建設計画課||33|49		kansa-r4-02 p.1	✓	auto:pdftext	2026-11-12	
-a3672d29305d18f2	kansa-kekka	kansa-r4-03	shurui,kokuji,kohyo_bi,kansa_bi,taisho,shiteki,kekka_from,kekka_to	teiki|日野町監査委員告示第８号|令和４年７月１２日|令和４年６月２９日（水）午前８時５５分～午前１０時３５分|税務課||72|86		kansa-r4-03 p.1	✓	auto:pdftext	2026-11-12	
-f3890956d6263ed2	kansa-kekka	kansa-r4-04	shurui,kokuji,kohyo_bi,kansa_bi,taisho,shiteki,kekka_from,kekka_to	teiki|日野町監査委員告示第９号|令和４年７月１２日|令和４年６月２９日（水）午前１０時４２分～午前１１時５４分|長寿福祉課||75|90		kansa-r4-04 p.1	✓	auto:pdftext	2026-11-12	
-99d514101ce8538f	kansa-kekka	kansa-r4-05	shurui,kokuji,kohyo_bi,kansa_bi,taisho,shiteki,kekka_from,kekka_to	teiki|日野町監査委員告示第１０号|令和４年７月１２日|令和４年７月４日（月）午後１時３０分～午後３時６分|上下水道課||73|89		kansa-r4-05 p.1	✓	auto:pdftext	2026-11-12	
-0995bd71fac747b4	kansa-kekka	kansa-r4-06	shurui,kokuji,kohyo_bi,kansa_bi,taisho,shiteki,kekka_from,kekka_to	teiki|日野町監査委員告示第１１号|令和４年９月２７日|令和４年８月３０日（火）午後２時００分～午後３時３２分|住民課||67|85		kansa-r4-06 p.1	✓	auto:pdftext	2026-11-12	
-247f2b4d45e19cdc	kansa-kekka	kansa-r4-07	shurui,kokuji,kohyo_bi,kansa_bi,taisho,shiteki,kekka_from,kekka_to	teiki|日野町監査委員告示第１２号|令和４年９月２７日|令和４年８月３０日（火）午後３時３８分～午後４時５０分|学校教育課||65|80		kansa-r4-07 p.1	✓	auto:pdftext	2026-11-12	
-acc523348caa477b	kansa-kekka	kansa-r4-08	shurui,kokuji,kohyo_bi,kansa_bi,taisho,shiteki,kekka_from,kekka_to	teiki|日野町監査委員告示第１３号|令和４年１０月３１日|令和４年９月２７日（火）午前９時００分～午前９時５５分|子ども支援課||59|72		kansa-r4-08 p.1	✓	auto:pdftext	2026-11-12	
-7dfdac4e61d65d33	kansa-kekka	kansa-r4-09	shurui,kokuji,kohyo_bi,kansa_bi,taisho,shiteki,kekka_from,kekka_to	teiki|日野町監査委員告示第１５号|令和４年１２月２８日|令和４年１０月３１日（月）午前９時００分～午前１０時５２分|企画振興課||56|71		kansa-r4-09 p.1	✓	kken78	2026-11-12	H4 4点 折り返しをつないだ。人が確認：一致（2026-11-12）
-c0364f5d103b60c3	kansa-kekka	kansa-r4-10	shurui,kokuji,kohyo_bi,kansa_bi,taisho,shiteki,kekka_from,kekka_to	teiki|日野町監査委員告示第１６号|令和４年１２月２８日|令和４年１０月３１日（月）午前１１時００分～午後１２時１０分|出納室||73|76		kansa-r4-10 p.1	✓	auto:pdftext	2026-11-12	
-879f41d7ef7abb32	kansa-kekka	kansa-r4-11	shurui,kokuji,kohyo_bi,kansa_bi,taisho,shiteki,kekka_from,kekka_to	teiki|日野町監査委員告示第１８号|令和４年１２月２８日|令和４年１１月２８日（月）午前９時００分～午前１０時３９分|農林課||68|84		kansa-r4-11 p.1	✓	auto:pdftext	2026-11-12	
-0e8c63cf7667aace	kansa-kekka	kansa-r4-12	shurui,kokuji,kohyo_bi,kansa_bi,taisho,shiteki,kekka_from,kekka_to	teiki|日野町監査委員告示第１号|令和５年１月２７日|令和４年１２月２７日（火）午前９時００分～午前１０時４０分|総務課||32|48		kansa-r4-12 p.1	✓	auto:pdftext	2026-11-12	
-73dc87d777c6f557	kansa-kekka	kansa-r4-13	shurui,kokuji,kohyo_bi,kansa_bi,taisho,shiteki,kekka_from,kekka_to	teiki|日野町監査委員告示第２号|令和５年２月１０日|令和５年１月２７日（金）午前９時００分～午前１０時５分|商工観光課||73|89		kansa-r4-13 p.1	✓	auto:pdftext	2026-11-12	
-cde74035081463b7	kansa-kekka	kansa-r4-14	shurui,kokuji,kohyo_bi,kansa_bi,taisho,shiteki,kekka_from,kekka_to	teiki|日野町監査委員告示第４号|令和５年３月２７日|令和５年２月２１日（火）午前９時００分～午前１０時１０分|生涯学習課||69|86		kansa-r4-14 p.1	✓	auto:pdftext	2026-11-12	
-3de3fb44d1b02e0f	kansa-kekka	kansa-r4-15	shurui,kokuji,kohyo_bi,kansa_bi,taisho,shiteki,kekka_from,kekka_to	teiki|日野町監査委員告示第６号|令和５年３月３１日|令和５年３月２７日（月）午前９時００分～午前１０時５５分|総務課||31|50		kansa-r4-15 p.1	✓	auto:pdftext	2026-11-12	
-2f66bbace738f746	kansa-kekka	kansa-r4-16	shurui,kokuji,kohyo_bi,kansa_bi,taisho,shiteki,kekka_from,kekka_to	dantai|日野町監査委員告示第１４号|令和４年１０月３１日|令和４年９月２７日（火）||なし|100|109		kansa-r4-16 p.2		auto:pdftext	2026-11-12	要人確認:段1 taisho：空
-a192c982aa4d336c	kansa-kekka	kansa-r4-17	shurui,kokuji,kohyo_bi,kansa_bi,taisho,shiteki,kekka_from,kekka_to	dantai|日野町監査委員告示第１７号|令和４年１２月２８日|令和４年１１月２８日（月）||なし|61|64		kansa-r4-17 p.1		auto:pdftext	2026-11-12	要人確認:段1 taisho：空
-c8c86ef14d256628	kansa-kekka	kansa-r4-18	shurui,kokuji,kohyo_bi,kansa_bi,taisho,shiteki,kekka_from,kekka_to	dantai|日野町監査委員告示第３号|令和５年２月１０日|令和５年１月２７日（金）||なし|60|66		kansa-r4-18 p.1		auto:pdftext	2026-11-12	要人確認:段1 taisho：空。要人確認:H4 4点 段1 で合わない値がある・額の前後に字がある
-ebe5bafafecedd3e	kansa-kekka	kansa-r4-19	shurui,kokuji,kohyo_bi,kansa_bi,taisho,shiteki,kekka_from,kekka_to	dantai|日野町監査委員告示第５号|令和５年３月２７日|令和５年２月２１日（火）午前１０時１０分～午前１１時２０分|日野町スポーツ協会|なし|44|50		kansa-r4-19 p.1	✓	auto:pdftext	2026-11-12	
-b05b76d5cd2cf7af	kansa-kekka	kansa-r5-01	shurui,kokuji,kohyo_bi,kansa_bi,taisho,shiteki,kekka_from,kekka_to	teiki|日野町監査委員告示第８号|令和５年６月２８日|令和５年５月２６日（金）午前８時４５分～午前９時５５分|子ども支援課||63|82		kansa-r5-01 p.1	✓	auto:pdftext	2026-11-12	
-90ca4159f6eedc58	kansa-kekka	kansa-r5-02	shurui,kokuji,kohyo_bi,kansa_bi,taisho,shiteki,kekka_from,kekka_to	teiki|日野町監査委員告示第９号|令和５年６月２８日|令和５年５月２６日（金）午前１０時５分～午前１１時３０分|長寿福祉課||65|81		kansa-r5-02 p.1	✓	auto:pdftext	2026-11-12	
-ab2c83ce10e7109e	kansa-kekka	kansa-r5-03	shurui,kokuji,kohyo_bi,kansa_bi,taisho,shiteki,kekka_from,kekka_to	teiki|日野町監査委員告示第１０号|令和５年７月１２日|令和５年６月２８日（水）午前８時５５分～午前１０時４０分|税務課||63|81		kansa-r5-03 p.1	✓	auto:pdftext	2026-11-12	
-c80f4eb07bbe2ac6	kansa-kekka	kansa-r5-04	shurui,kokuji,kohyo_bi,kansa_bi,taisho,shiteki,kekka_from,kekka_to	teiki|日野町監査委員告示第１１号|令和５年７月１２日|令和５年６月２８日（水）午前１０時５０分～午前１１時５２分|図書館||62|78		kansa-r5-04 p.1	✓	auto:pdftext	2026-11-12	
-046d8ff31249bf6d	kansa-kekka	kansa-r5-05	shurui,kokuji,kohyo_bi,kansa_bi,taisho,shiteki,kekka_from,kekka_to	teiki|日野町監査委員告示第１２号|令和５年７月１４日|令和５年７月１３日（木）午前１０時３０分～午前１１時５０分|上下水道課||64|80		kansa-r5-05 p.1	✓	auto:pdftext	2026-11-12	
-26e52c2f591b744c	kansa-kekka	kansa-r5-06	shurui,kokuji,kohyo_bi,kansa_bi,taisho,shiteki,kekka_from,kekka_to	teiki|日野町監査委員告示第１３号|令和５年１１月２７日|令和５年８月２２日（火）午前９時００分～午前１０時３０分|農林課||72|88		kansa-r5-06 p.1	✓	auto:pdftext	2026-11-12	
-1ad91a25d3ed043a	kansa-kekka	kansa-r5-07	shurui,kokuji,kohyo_bi,kansa_bi,taisho,shiteki,kekka_from,kekka_to	teiki|日野町監査委員告示第１４号|令和５年１１月２７日|令和５年８月２２日（火）午前１０時４０分～正午|建設計画課||72|89		kansa-r5-07 p.1	✓	auto:pdftext	2026-11-12	
-814cd5984ef5343f	kansa-kekka	kansa-r5-08	shurui,kokuji,kohyo_bi,kansa_bi,taisho,shiteki,kekka_from,kekka_to	teiki|日野町監査委員告示第１５号|令和５年１２月１日|令和５年９月２２日（金）午前８時５７分～午前１０時００分|学校教育課||69|86		kansa-r5-08 p.1	✓	auto:pdftext	2026-11-12	
-21530ca051317ca3	kansa-kekka	kansa-r5-09	shurui,kokuji,kohyo_bi,kansa_bi,taisho,shiteki,kekka_from,kekka_to	teiki|日野町監査委員告示第１７号|令和５年１２月１日|令和５年９月２２日（金）午前１１時１０分～正午|出納室||70|73		kansa-r5-09 p.1	✓	auto:pdftext	2026-11-12	
-7d8a294954af092e	kansa-kekka	kansa-r5-10	shurui,kokuji,kohyo_bi,kansa_bi,taisho,shiteki,kekka_from,kekka_to	teiki|日野町監査委員告示第１８号|令和５年１２月２２日|令和５年１１月１日（水）午前９時３５分～午前１０時４５分|福祉保健課||72|86		kansa-r5-10 p.1	✓	auto:pdftext	2026-11-12	
-1ea74130782028ee	kansa-kekka	kansa-r5-11	shurui,kokuji,kohyo_bi,kansa_bi,taisho,shiteki,kekka_from,kekka_to	teiki|日野町監査委員告示第１９号|令和５年１２月２２日|令和５年１１月１日（水）午前１０時５５分～午前１１時４０分|住民課||72|87		kansa-r5-11 p.1	✓	auto:pdftext	2026-11-12	
-4e8609028c53823c	kansa-kekka	kansa-r5-12	shurui,kokuji,kohyo_bi,kansa_bi,taisho,shiteki,kekka_from,kekka_to	teiki|日野町監査委員告示第２０号|令和５年１２月２７日|令和５年１１月２７日（月）午前９時００分～午前１０時４０分|交通環境政策課||73|90		kansa-r5-12 p.1	✓	auto:pdftext	2026-11-12	
-2de2155f5d0ec358	kansa-kekka	kansa-r5-13	shurui,kokuji,kohyo_bi,kansa_bi,taisho,shiteki,kekka_from,kekka_to	teiki|日野町監査委員告示第１号|令和６年１月２６日|令和５年１２月２２日（金）午前９時００分～午前１０時１２分|総務課||72|89		kansa-r5-13 p.1	✓	auto:pdftext	2026-11-12	
-607af46a3e484f18	kansa-kekka	kansa-r5-14	shurui,kokuji,kohyo_bi,kansa_bi,taisho,shiteki,kekka_from,kekka_to	teiki|日野町監査委員告示第２号|令和６年２月２２日|令和６年１月２６日（金）午前９時００分～午前１０時２８分|生涯学習課||69|84		kansa-r5-14 p.1	✓	auto:pdftext	2026-11-12	
-bf974bd5111aed54	kansa-kekka	kansa-r5-15	shurui,kokuji,kohyo_bi,kansa_bi,taisho,shiteki,kekka_from,kekka_to	teiki|日野町監査委員告示第３号|令和６年２月２２日|令和６年１月２６日（金）午前１０時４５分～午前１１時５７分|企画振興課||72|89		kansa-r5-15 p.1	✓	auto:pdftext	2026-11-12	
-59fb64fd47495edf	kansa-kekka	kansa-r5-16	shurui,kokuji,kohyo_bi,kansa_bi,taisho,shiteki,kekka_from,kekka_to	teiki|日野町監査委員告示第４号|令和６年３月２５日|令和６年２月２２日（木）午前９時００分～午前１０時４０分|商工観光課||76|90		kansa-r5-16 p.1	✓	kken78	2026-11-12	H4 4点 折り返しをつないだ。人が確認：一致（2026-11-12）
-c514ac8a6e0fd796	kansa-kekka	kansa-r5-17	shurui,kokuji,kohyo_bi,kansa_bi,taisho,shiteki,kekka_from,kekka_to	teiki|日野町監査委員告示第６号|令和６年３月２８日|令和６年３月２５日（月）午前９時００分～午前１１時５０分|総務課||55|74		kansa-r5-17 p.1	✓	auto:pdftext	2026-11-12	
-abfcb824826b3cd1	kansa-kekka	kansa-r5-18	shurui,kokuji,kohyo_bi,kansa_bi,taisho,shiteki,kekka_from,kekka_to	dantai|日野町監査委員告示第１６号|令和５年１２月１日|令和５年９月２２日（金） 午前１０時５分～午前１１時５分|日野町少年センター運営委員会、学校教育課|なし|46|54		kansa-r5-18 p.1	✓	kken78	2026-11-12	H4 0点。人が確認：一致（2026-11-12）
-1b00bb92a0043948	kansa-kekka	kansa-r5-19	shurui,kokuji,kohyo_bi,kansa_bi,taisho,shiteki,kekka_from,kekka_to	dantai|日野町監査委員告示第２１号|令和５年１２月２７日|令和５年１１月２７日（月） 午前１０時５０分～正午|「わたむき自動車プロジェクト」推進協議会、交通環境政策課|なし|46|55		kansa-r5-19 p.1	✓	auto:pdftext	2026-11-12	
-c54329846b9842c4	kansa-kekka	kansa-r5-20	shurui,kokuji,kohyo_bi,kansa_bi,taisho,shiteki,kekka_from,kekka_to	dantai|日野町監査委員告示第５号|令和６年３月２５日|令和６年２月２２日（木） 午前１０時５０分～午前１１時５０分|一般社団法人近江日野交流ネットワーク、商工観光課|なし|46|55		kansa-r5-20 p.1	✓	auto:pdftext	2026-11-12	
-cdaef4671199fade	kansa-kekka	kansa-r6-01	shurui,kokuji,kohyo_bi,kansa_bi,taisho,shiteki,kekka_from,kekka_to	teiki|日野町監査委員告示第１号|令和７年３月２７日|令和６年５月２４日（金）午前９時００分～１０時２５分|建設計画課||59|74		kansa-r6-01 p.1	✓	auto:pdftext	2026-11-12	
-d0dde2c6ad814d85	kansa-kekka	kansa-r6-02	shurui,kokuji,kohyo_bi,kansa_bi,taisho,shiteki,kekka_from,kekka_to	teiki|日野町監査委員告示第２号|令和７年３月２７日|令和６年５月２４日（金）午前１０時４０分～午前１２時００分|住民課||59|78		kansa-r6-02 p.1	✓	auto:pdftext	2026-11-12	
-f1f3a01739d2f93e	kansa-kekka	kansa-r6-03	shurui,kokuji,kohyo_bi,kansa_bi,taisho,shiteki,kekka_from,kekka_to	teiki|日野町監査委員告示第３号|令和７年３月２７日|令和６年６月２７日（木）午前９時００分～午前１０時３０分|税務課||53|68		kansa-r6-03 p.1	✓	auto:pdftext	2026-11-12	
-3d583d992b62f0c2	kansa-kekka	kansa-r6-04	shurui,kokuji,kohyo_bi,kansa_bi,taisho,shiteki,kekka_from,kekka_to	teiki|日野町監査委員告示第４号|令和７年３月２７日|令和６年６月２７日（木）午前１０時４２分～午前１１時５４分|長寿福祉課||52|66		kansa-r6-04 p.1	✓	kken78	2026-11-12	H4 4点 折り返しをつないだ。人が確認：一致（2026-11-12）
-24371849fd688401	kansa-kekka	kansa-r6-05	shurui,kokuji,kohyo_bi,kansa_bi,taisho,shiteki,kekka_from,kekka_to	teiki|日野町監査委員告示第５号|令和７年３月２７日|令和６年７月１９日（金）午後１時３０分～午後２時５５分|上下水道課||54|69		kansa-r6-05 p.1	✓	auto:pdftext	2026-11-12	
-8119ded1e2639765	kansa-kekka	kansa-r6-06	shurui,kokuji,kohyo_bi,kansa_bi,taisho,shiteki,kekka_from,kekka_to	teiki|日野町監査委員告示第６号|令和７年３月２７日|令和６年８月２９日（木）午前８時５５分～午前１０時２５分|企画振興課||54|69		kansa-r6-06 p.1	✓	auto:pdftext	2026-11-12	
-1d0d488c1054cd08	kansa-kekka	kansa-r6-07	shurui,kokuji,kohyo_bi,kansa_bi,taisho,shiteki,kekka_from,kekka_to	teiki|日野町監査委員告示第７号|令和７年３月２７日|令和６年８月２９日（木）午前１０時３７分～１１時３８分|学校教育課||58|73		kansa-r6-07 p.1	✓	auto:pdftext	2026-11-12	
-2b348e524b78991e	kansa-kekka	kansa-r6-08	shurui,kokuji,kohyo_bi,kansa_bi,taisho,shiteki,kekka_from,kekka_to	teiki|日野町監査委員告示第８号|令和７年３月２７日|令和６年９月２４日（火）午前９時００分～午前１０時３５分|農林課||54|70		kansa-r6-08 p.1	✓	auto:pdftext	2026-11-12	
-e00c19f0ba63962f	kansa-kekka	kansa-r6-09	shurui,kokuji,kohyo_bi,kansa_bi,taisho,shiteki,kekka_from,kekka_to	teiki|日野町監査委員告示第１０号|令和７年３月２７日|令和６年１０月２１日（月）午前９時００分～午前１０時３５分|生涯学習課||61|74		kansa-r6-09 p.1	✓	auto:pdftext	2026-11-12	
-44b08bad0e515e5b	kansa-kekka	kansa-r6-10	shurui,kokuji,kohyo_bi,kansa_bi,taisho,shiteki,kekka_from,kekka_to	teiki|日野町監査委員告示第１１号|令和７年３月２７日|令和６年１０月２１日（月）午前１０時５０分～１１時５０分|出納室||57|61		kansa-r6-10 p.1	✓	auto:pdftext	2026-11-12	
-d070eefc8fd064b7	kansa-kekka	kansa-r6-11	shurui,kokuji,kohyo_bi,kansa_bi,taisho,shiteki,kekka_from,kekka_to	teiki|日野町監査委員告示第１２号|令和７年３月２７日|令和６年１２月５日（木）午後２時００分～午後３時４０分|商工観光課||51|65		kansa-r6-11 p.1	✓	auto:pdftext	2026-11-12	
-68eb62ead7d3732c	kansa-kekka	kansa-r6-12	shurui,kokuji,kohyo_bi,kansa_bi,taisho,shiteki,kekka_from,kekka_to	teiki|日野町監査委員告示第１４号|令和７年３月２７日|令和６年１２月２６日（木）午後２時００分～午後３時３０分|総務課||60|73		kansa-r6-12 p.1	✓	auto:pdftext	2026-11-12	
-5788d4a7bc058682	kansa-kekka	kansa-r6-13	shurui,kokuji,kohyo_bi,kansa_bi,taisho,shiteki,kekka_from,kekka_to	teiki|日野町監査委員告示第１５号|令和７年３月２７日|令和７年１月２９日（水）午前１０時４５分～午前１２時００分|交通環境政策課||59|74		kansa-r6-13 p.1	✓	auto:pdftext	2026-11-12	
-bc8beaf92e5d1eae	kansa-kekka	kansa-r6-14	shurui,kokuji,kohyo_bi,kansa_bi,taisho,shiteki,kekka_from,kekka_to	teiki|日野町監査委員告示第１６号|令和７年３月２７日|令和７年１月２９日（水）午前９時００分～午前１０時３０分|子ども支援課||53|71		kansa-r6-14 p.1	✓	auto:pdftext	2026-11-12	
-464e36327f04c772	kansa-kekka	kansa-r6-15	shurui,kokuji,kohyo_bi,kansa_bi,taisho,shiteki,kekka_from,kekka_to	teiki|日野町監査委員告示第１７号|令和７年３月２７日|令和７年２月１９日（水）午前９時００分～午前１０時３５分|福祉保健課||56|69		kansa-r6-15 p.1	✓	auto:pdftext	2026-11-12	
-a5a358f99182f4d8	kansa-kekka	kansa-r6-16	shurui,kokuji,kohyo_bi,kansa_bi,taisho,shiteki,kekka_from,kekka_to	teiki|日野町監査委員告示第１９号|令和７年３月３１日|令和７年３月２７日（木）午前９時００分～午前１１時０４分|総務課（財政担当）||54|72		kansa-r6-16 p.1	✓	auto:pdftext	2026-11-12	
-6e53a8eaa8f5ad95	kansa-kekka	kansa-r6-17	shurui,kokuji,kohyo_bi,kansa_bi,taisho,shiteki,kekka_from,kekka_to	dantai|日野町監査委員告示第９号|令和７年３月２７日|令和６年９月２４日（火）|日野町農業再生協議会・農林課|なし|41|53		kansa-r6-17 p.1	✓	auto:pdftext	2026-11-12	
-dad2d7925f5c0187	kansa-kekka	kansa-r6-18	shurui,kokuji,kohyo_bi,kansa_bi,taisho,shiteki,kekka_from,kekka_to	dantai|日野町監査委員告示第１３号|令和７年３月２７日|令和６年１２月５日（木）|日野町商工会・商工観光課|なし|40|47		kansa-r6-18 p.1	✓	kken78	2026-11-12	H4 1点 額の前後に字がある。人が確認：一致（2026-11-12）
-7c8bb3a95b491173	kansa-kekka	kansa-r6-19	shurui,kokuji,kohyo_bi,kansa_bi,taisho,shiteki,kekka_from,kekka_to	dantai|日野町監査委員告示第１８号|令和７年３月２７日|令和７年２月１９日（水）|日野町社会福祉協議会・福祉保健課・地域共生担当課長|なし|47|55		kansa-r6-19 p.1	✓	auto:pdftext	2026-11-12	
-7c6e532b5f529f46	kansa-kekka	kansa-r7-01	shurui,kokuji,kohyo_bi,kansa_bi,taisho,shiteki,kekka_from,kekka_to	teiki|日野町監査委員告示第２０号|令和７年８月２２日|令和７年５月２９日（木）午前９時００分～１０時２５分|建設計画課||30|49		kansa-r7-01 p.1	✓	auto:pdftext	2026-11-12	
-2b629961b4361dde	kansa-kekka	kansa-r7-02	shurui,kokuji,kohyo_bi,kansa_bi,taisho,shiteki,kekka_from,kekka_to	teiki|日野町監査委員告示第２１号|令和７年８月２２日|令和７年５月２９日（木）午前１０時４０分～午前１１時５５分|長寿福祉課||51|66		kansa-r7-02 p.1	✓	auto:pdftext	2026-11-12	
-0f536f778b6f23ea	kansa-kekka	kansa-r7-03	shurui,kokuji,kohyo_bi,kansa_bi,taisho,shiteki,kekka_from,kekka_to	teiki|日野町監査委員告示第２２号|令和７年８月２２日|令和７年６月２７日（金）午前９時００分～午前１０時２０分|税務課||47|60		kansa-r7-03 p.1	✓	auto:pdftext	2026-11-12	
-d161795b7fff616a	kansa-kekka	kansa-r7-04	shurui,kokuji,kohyo_bi,kansa_bi,taisho,shiteki,kekka_from,kekka_to	teiki|日野町監査委員告示第２３号|令和７年８月２２日|令和７年６月２７日（金）午前１０時３５分～午前１１時４０分|図書館||47|61		kansa-r7-04 p.1	✓	auto:pdftext	2026-11-12	
-d118dc6bc86bb46a	kansa-kekka	kansa-r7-05	shurui,kokuji,kohyo_bi,kansa_bi,taisho,shiteki,kekka_from,kekka_to	teiki|日野町監査委員告示第２４号|令和７年８月２２日|令和７年７月１１日（金）午後１時３０分～午後３時００分|上下水道課||54|70		kansa-r7-05 p.1	✓	auto:pdftext	2026-11-12	
-3a8742e603ba8113	kansa-kekka	kansa-r7-06	shurui,kokuji,kohyo_bi,kansa_bi,taisho,shiteki,kekka_from,kekka_to	teiki|日野町監査委員告示第２５号|令和７年９月２９日|令和７年８月２９日（金）午前９時００分～午前１０時３５分|子ども支援課||50|67		kansa-r7-06 p.1	✓	auto:pdftext	2026-11-12	
-a952909e4516de50	kansa-kekka	kansa-r7-07	shurui,kokuji,kohyo_bi,kansa_bi,taisho,shiteki,kekka_from,kekka_to	teiki|日野町監査委員告示第２６号|令和７年９月２９日|令和７年８月２９日（金）午前１０時４５分～１１時４５分|学校教育課||59|74		kansa-r7-07 p.1	✓	auto:pdftext	2026-11-12	
-def53a45f6d6a571	kansa-kekka	kansa-r7-08	shurui,kokuji,kohyo_bi,kansa_bi,taisho,shiteki,kekka_from,kekka_to	teiki|日野町監査委員告示第２７号|令和７年１１月２５日|令和７年９月２９日（月）午前９時００分～午前１０時２０分|農林課||52|70		kansa-r7-08 p.1	✓	auto:pdftext	2026-11-12	
-1961152282a37868	kansa-kekka	kansa-r7-09	shurui,kokuji,kohyo_bi,kansa_bi,taisho,shiteki,kekka_from,kekka_to	teiki|日野町監査委員告示第２８号|令和７年１１月２５日|令和７年９月２９日（月）午後２時５５分～３時４０分|出納室||57|65		kansa-r7-09 p.1	✓	auto:pdftext	2026-11-12	
-7f82fe1d3a893abf	kansa-kekka	kansa-r7-10	shurui,kokuji,kohyo_bi,kansa_bi,taisho,shiteki,kekka_from,kekka_to	teiki|日野町監査委員告示第３０号|令和７年１１月２５日|令和７年１０月２３日（木）午前９時００分～午前１０時３０分|福祉保健課||49|65		kansa-r7-10 p.1	✓	auto:pdftext	2026-11-12	
-3152ff39d8699e6a	kansa-kekka	kansa-r7-11	shurui,kokuji,kohyo_bi,kansa_bi,taisho,shiteki,kekka_from,kekka_to	teiki|日野町監査委員告示第３１号|令和７年１１月２５日|令和７年１０月２３日（木）午前１０時４０分～午前１１時５５分|住民課||59|76		kansa-r7-11 p.1	✓	auto:pdftext	2026-11-12	
-2981531e517ecfad	kansa-kekka	kansa-r7-12	shurui,kokuji,kohyo_bi,kansa_bi,taisho,shiteki,kekka_from,kekka_to	teiki|日野町監査委員告示第３２号|令和７年１２月２２日|令和７年１１月２７日（木）午前８時５５分～午前１０時２５分|商工観光課||52|69		kansa-r7-12 p.1	✓	auto:pdftext	2026-11-12	
-84817e47dfe3ca2d	kansa-kekka	kansa-r7-13	shurui,kokuji,kohyo_bi,kansa_bi,taisho,shiteki,kekka_from,kekka_to	teiki|日野町監査委員告示第１号|令和８年１月３０日|令和７年１２月２２日（月）午前９時００分～午前１０時３０分|総務課||44|63		kansa-r7-13 p.1	✓	auto:pdftext	2026-11-12	
-650402a37b068d09	kansa-kekka	kansa-r7-14	shurui,kokuji,kohyo_bi,kansa_bi,taisho,shiteki,kekka_from,kekka_to	teiki|日野町監査委員告示第２号|令和８年２月２０日|令和８年１月２３日（金）午前９時００分～午前１０時２５分|交通環境政策課||58|76		kansa-r7-14 p.1	✓	auto:pdftext	2026-11-12	
-77ee18e6e4160a11	kansa-kekka	kansa-r7-15	shurui,kokuji,kohyo_bi,kansa_bi,taisho,shiteki,kekka_from,kekka_to	teiki|日野町監査委員告示第３号|令和８年２月２０日|令和８年１月２３日（金）午前１０時３５分～午前１１時５５分|企画振興課||40|58		kansa-r7-15 p.1	✓	auto:pdftext	2026-11-12	
-a3dcb5fce47d9fe3	kansa-kekka	kansa-r7-16	shurui,kokuji,kohyo_bi,kansa_bi,taisho,shiteki,kekka_from,kekka_to	teiki|日野町監査委員告示第４号|令和８年３月２５日|令和８年２月２０日（金）午前９時００分～午前１０時２０分|生涯学習課||60|80		kansa-r7-16 p.1-2	✓	kken78	2026-11-12	H4 6点 本文が2ページにまたがる・折り返しをつないだ。人が確認：一致（2026-11-12）
-7784f0ffa1a95e87	kansa-kekka	kansa-r7-17	shurui,kokuji,kohyo_bi,kansa_bi,taisho,shiteki,kekka_from,kekka_to	teiki|日野町監査委員告示第６号|令和８年３月３１日|令和８年３月２５日（水）午前９時００分～午前１１時１０分|総務課||56|73		kansa-r7-17 p.1	✓	auto:pdftext	2026-11-12	
-5fc340061625666c	kansa-kekka	kansa-r7-18	shurui,kokuji,kohyo_bi,kansa_bi,taisho,shiteki,kekka_from,kekka_to	dantai|日野町監査委員告示第２９号|令和７年１１月２５日|令和７年９月２９日（月）|熊野企業組合・農林課|町（農林課）、指定管理者の間で管理運営業務についての連絡調整を密に行うとともに、指定管理料については実態に即して算出根拠を再考されたい。|45|58		kansa-r7-18 p.1	✓	kken78	2026-11-12	H4 2点 指摘事項がある・額に付いた名前がある。人が確認：一致（2026-11-12）
-60791be88a8427e0	kansa-kekka	kansa-r7-19	shurui,kokuji,kohyo_bi,kansa_bi,taisho,shiteki,kekka_from,kekka_to	dantai|日野町監査委員告示第３３号|令和７年１２月２２日|令和７年１１月２７日（木）|公益社団法人日野町シルバー人材センター・商工観光課|なし|43|56		kansa-r7-19 p.1	✓	auto:pdftext	2026-11-12	
-0364b1dc62fcdb62	kansa-kekka	kansa-r7-20	shurui,kokuji,kohyo_bi,kansa_bi,taisho,shiteki,kekka_from,kekka_to	dantai|日野町監査委員告示第５号|令和８年３月２５日|令和８年２月２０日（金）|生涯学習課・(公財)日野町文化振興事業団|なし|40|56		kansa-r7-20 p.1	✓	auto:pdftext	2026-11-12	
-148b9f267612b009	kansa-jiko	kansa-r3-14/1	jiko,komoku,gaku,gaku_raw	日野町高齢者福祉計画・介護保険事業計画(第８期)について（介護保険サービスと介護保険料）|||		kansa-r3-14 p.1	✓	kken78	2026-11-12	H4 3点 見出しの字が違うか見出しが無い・折り返しをつないだ。人が確認：一致（2026-11-12）
-4e45a3a1c79c9b81	kansa-jiko	kansa-r3-14/2	jiko,komoku,gaku,gaku_raw	保健事業と介護予防の一体的実施について|||		kansa-r3-14 p.1	✓	kken78	2026-11-12	H4 3点 見出しの字が違うか見出しが無い・折り返しをつないだ。人が確認：一致（2026-11-12）
-780a8f750412d11e	kansa-jiko	kansa-r3-15/1	jiko,komoku,gaku,gaku_raw	商工業の活性化について|||		kansa-r3-15 p.1	✓	auto:pdftext	2026-11-12	
-8cf0bd76e4a1f9bc	kansa-jiko	kansa-r3-15/2	jiko,komoku,gaku,gaku_raw	工場用地の確保と企業誘致について|||		kansa-r3-15 p.1	✓	auto:pdftext	2026-11-12	
-413b627abc4c49b8	kansa-jiko	kansa-r4-01/1	jiko,komoku,gaku,gaku_raw	ひきこもり対策の現状と課題について|||		kansa-r4-01 p.1	✓	auto:pdftext	2026-11-12	
-b85ed8d6f384d22d	kansa-jiko	kansa-r4-01/2	jiko,komoku,gaku,gaku_raw	健康づくりと健康診査の取組について|||		kansa-r4-01 p.1	✓	auto:pdftext	2026-11-12	
-ee8128bb4458539a	kansa-jiko	kansa-r4-02/1	jiko,komoku,gaku,gaku_raw	日野町都市計画マスタープランの改訂について|||		kansa-r4-02 p.1	✓	auto:pdftext	2026-11-12	
-5826a7f8a620c0ff	kansa-jiko	kansa-r4-02/2	jiko,komoku,gaku,gaku_raw	道路・河川に関する地元要望と対応、および主要道路整備の進捗状況について|||		kansa-r4-02 p.1	✓	auto:pdftext	2026-11-12	
-225f6d22493454e0	kansa-jiko	kansa-r4-03/1	jiko,komoku,gaku,gaku_raw	令和３年度未納金徴収実績、令和３年度不納欠損処分の状況|||		kansa-r4-03 p.1	✓	auto:pdftext	2026-11-12	
-dea2b2cced408fa5	kansa-jiko	kansa-r4-03/2	jiko,komoku,gaku,gaku_raw	確定申告のシステム導入について|||		kansa-r4-03 p.1	✓	auto:pdftext	2026-11-12	
-33896f81bc0bb509	kansa-jiko	kansa-r4-04/1	jiko,komoku,gaku,gaku_raw	日野町高齢者福祉計画・介護保険事業計画（第８期）の進捗状況（計画１年目の実績および計画２年目以降の見込等）（介護給付費の実績と推移、介護予防事業の取組実績と今後の展開等）|||		kansa-r4-04 p.1	✓	auto:pdftext	2026-11-12	
-0117e16c4525766f	kansa-jiko	kansa-r4-05/1	jiko,komoku,gaku,gaku_raw	令和３年度未納金徴収実績（水道使用料、公共下水道および農業集落排水使用料、公共下水道受益者負担金）について|||		kansa-r4-05 p.1	✓	auto:pdftext	2026-11-12	
-c6b5a5ab7b73255f	kansa-jiko	kansa-r4-05/2	jiko,komoku,gaku,gaku_raw	雨水排水事業計画の推進状況について|||		kansa-r4-05 p.1	✓	auto:pdftext	2026-11-12	
-f6aa9aa3c0f74d4d	kansa-jiko	kansa-r4-06/1	jiko,komoku,gaku,gaku_raw	福祉医療費助成事業制度について（対象者と総事業費の推移）|||		kansa-r4-06 p.1	✓	auto:pdftext	2026-11-12	
-f5553b38daa15534	kansa-jiko	kansa-r4-06/2	jiko,komoku,gaku,gaku_raw	これからの環境施策について|||		kansa-r4-06 p.1	✓	auto:pdftext	2026-11-12	
-477a4ec89f4135e4	kansa-jiko	kansa-r4-07/1	jiko,komoku,gaku,gaku_raw	子育て・教育相談センターの運営状況について|||		kansa-r4-07 p.1	✓	auto:pdftext	2026-11-12	
-5c43e1421052feb3	kansa-jiko	kansa-r4-07/2	jiko,komoku,gaku,gaku_raw	学校給食の現状について|||		kansa-r4-07 p.1	✓	auto:pdftext	2026-11-12	
-f667b55696711d82	kansa-jiko	kansa-r4-08/1	jiko,komoku,gaku,gaku_raw	日野町幼児教育と保育の在り方と町の現状について|||		kansa-r4-08 p.1	✓	auto:pdftext	2026-11-12	
-088ba299c7edcad7	kansa-jiko	kansa-r4-09/1	jiko,komoku,gaku,gaku_raw	わたむき自動車プロジェクトの取り組みについて（令和３年度の成果と令和４年度の概要）|||		kansa-r4-09 p.1	✓	kken78	2026-11-12	H4 4点 折り返しをつないだ。人が確認：一致（2026-11-12）
-ca0ac238408c1923	kansa-jiko	kansa-r4-09/2	jiko,komoku,gaku,gaku_raw	地方創生推進交付金事業およびデジタル田園都市国家構想交付金事業の取り組みについて|||		kansa-r4-09 p.1	✓	kken78	2026-11-12	H4 4点 折り返しをつないだ。人が確認：一致（2026-11-12）
-4114701802ca8158	kansa-jiko	kansa-r4-10/1	jiko,komoku,gaku,gaku_raw	保管金の管理状況について|||		kansa-r4-10 p.1	✓	auto:pdftext	2026-11-12	
-67db6f32a663f154	kansa-jiko	kansa-r4-11/1	jiko,komoku,gaku,gaku_raw	特産農産物振興事業（日野菜・茶）の取り組み状況と課題について|||		kansa-r4-11 p.1	✓	auto:pdftext	2026-11-12	
-8843a44760052462	kansa-jiko	kansa-r4-11/2	jiko,komoku,gaku,gaku_raw	森林経営管理制度への取組みと森林環境譲与税の活用について|||		kansa-r4-11 p.1	✓	auto:pdftext	2026-11-12	
-87769b5b1a9e8eb8	kansa-jiko	kansa-r4-12/1	jiko,komoku,gaku,gaku_raw	人事管理の現状と課題について（職員の人材育成と勤怠管理（時間外勤務の状況（管理職を含む） 、有給休暇の取得状況等）について|||		kansa-r4-12 p.1	✓	auto:pdftext	2026-11-12	
-20d5e487a5f646e0	kansa-jiko	kansa-r4-12/2	jiko,komoku,gaku,gaku_raw	人事評価制度の運用状況等について|||		kansa-r4-12 p.1	✓	auto:pdftext	2026-11-12	
-ea5602d7c48f4c17	kansa-jiko	kansa-r4-13/1	jiko,komoku,gaku,gaku_raw	ふるさと応援寄附事業の状況と今後について|||		kansa-r4-13 p.1	✓	auto:pdftext	2026-11-12	
-53e4853ea2e053c8	kansa-jiko	kansa-r4-13/2	jiko,komoku,gaku,gaku_raw	「近江日野商人サミット」の取組について|||		kansa-r4-13 p.1	✓	auto:pdftext	2026-11-12	
-ed6feded27cfdd54	kansa-jiko	kansa-r4-14/1	jiko,komoku,gaku,gaku_raw	文化財保存活用地域計画作成の進捗状況と今後の予定について|||		kansa-r4-14 p.1	✓	auto:pdftext	2026-11-12	
-a493ea9c2a0df10d	kansa-jiko	kansa-r4-15/1	jiko,komoku,gaku,gaku_raw	令和５年度当初予算の概要について|||		kansa-r4-15 p.1	✓	auto:pdftext	2026-11-12	
-3b325832bfc688cd	kansa-jiko	kansa-r4-15/2	jiko,komoku,gaku,gaku_raw	地方公会計制度に基づく令和３年度財務書類の概要について|||		kansa-r4-15 p.1	✓	auto:pdftext	2026-11-12	
-4c6a195074df12b4	kansa-jiko	kansa-r4-16/1	jiko,komoku,gaku,gaku_raw	保育所入所運営事業負担金||196391520|196,391,520 円	円	kansa-r4-16 p.1	✓	auto:pdftext	2026-11-12	
-1bd1e19f386001e7	kansa-jiko	kansa-r4-16/2	jiko,komoku,gaku,gaku_raw	わらべ保育園運営事業費補助金||34053710|34,053,710 円	円	kansa-r4-16 p.1	✓	auto:pdftext	2026-11-12	
-327caf20610245b2	kansa-jiko	kansa-r4-17/1	jiko,komoku,gaku,gaku_raw	土地改良区運営事業補助金||2600000|2,600,000 円	円	kansa-r4-17 p.1	✓	auto:pdftext	2026-11-12	
-90caf7fae67343f5	kansa-jiko	kansa-r4-17/2	jiko,komoku,gaku,gaku_raw	土地改良区南比都佐地区水利補助金||739000|739,000 円	円	kansa-r4-17 p.1	✓	auto:pdftext	2026-11-12	
-ae32ffe5a03f4ab0	kansa-jiko	kansa-r4-17/3	jiko,komoku,gaku,gaku_raw	土地改良区西大路地区水利補助金||117000|117,000 円	円	kansa-r4-17 p.1	✓	auto:pdftext	2026-11-12	
-6f4f3a94fb2293c6	kansa-jiko	kansa-r4-18/1	jiko,komoku,gaku,gaku_raw	日野観光協会補助金||23581000|23,581,000 円	円	kansa-r4-18 p.1	✓	auto:pdftext	2026-11-12	要人確認:H4 4点 段1 で合わない値がある・額の前後に字がある
-56d043a8bcd7fc3d	kansa-jiko	kansa-r4-19/1	jiko,komoku,gaku,gaku_raw	日野町スポーツ協会補助金||2041000|2,041,000 円	円	kansa-r4-19 p.1	✓	auto:pdftext	2026-11-12	
-fd822f16ff4404ba	kansa-jiko	kansa-r5-01/1	jiko,komoku,gaku,gaku_raw	日野町幼児教育と保育の在り方の中間報告について|||		kansa-r5-01 p.1	✓	auto:pdftext	2026-11-12	
-af64c47b78c4a1a8	kansa-jiko	kansa-r5-01/2	jiko,komoku,gaku,gaku_raw	学童保育所の現状と課題について|||		kansa-r5-01 p.1	✓	auto:pdftext	2026-11-12	
-8a5f7bfbaac8e75b	kansa-jiko	kansa-r5-02/1	jiko,komoku,gaku,gaku_raw	日野町高齢者福祉計画・介護保険事業計画（第８期）の進捗状況（計画２年目の実績および計画３年目の見込等）（介護給付費の実績と推移、介護予防事業の取組実績、指標の達成状況等）|||		kansa-r5-02 p.1	✓	auto:pdftext	2026-11-12	
-941b2543e272e059	kansa-jiko	kansa-r5-03/1	jiko,komoku,gaku,gaku_raw	令和４年度未納金徴収実績、令和４年度不納欠損処分の状況|||		kansa-r5-03 p.1	✓	auto:pdftext	2026-11-12	
-c0c8c3268cf0de3c	kansa-jiko	kansa-r5-03/2	jiko,komoku,gaku,gaku_raw	「地方税統一ＱＲコード」を利用した町税の納付方法について|||		kansa-r5-03 p.1	✓	auto:pdftext	2026-11-12	
-debe0734c086bd92	kansa-jiko	kansa-r5-04/1	jiko,komoku,gaku,gaku_raw	令和４年度の事業実績について（来館者・貸出冊数の推移、新規事業等）|||		kansa-r5-04 p.1	✓	auto:pdftext	2026-11-12	
-f148e7dd870fd715	kansa-jiko	kansa-r5-04/2	jiko,komoku,gaku,gaku_raw	施設の管理状況|||		kansa-r5-04 p.1	✓	auto:pdftext	2026-11-12	
-8a88e41cd297f38d	kansa-jiko	kansa-r5-05/1	jiko,komoku,gaku,gaku_raw	令和４年度未納金徴収実績（水道使用料、公共下水道および農業集落排水使用料、公共下水道受益者負担金）について|||		kansa-r5-05 p.1	✓	auto:pdftext	2026-11-12	
-7a01379ba74cdeb8	kansa-jiko	kansa-r5-05/2	jiko,komoku,gaku,gaku_raw	上水道施設等の耐震化・老朽化対策について|||		kansa-r5-05 p.1	✓	auto:pdftext	2026-11-12	
-0cd94d21bc7dde9b	kansa-jiko	kansa-r5-06/1	jiko,komoku,gaku,gaku_raw	有害鳥獣駆除事業の取組について|||		kansa-r5-06 p.1	✓	auto:pdftext	2026-11-12	
-4aca36ed171efeb5	kansa-jiko	kansa-r5-06/2	jiko,komoku,gaku,gaku_raw	土地改良施設に関する地元要望と対応について|||		kansa-r5-06 p.1	✓	auto:pdftext	2026-11-12	
-28378b8dd0d8070b	kansa-jiko	kansa-r5-07/1	jiko,komoku,gaku,gaku_raw	空き家対策の取り組みについて|||		kansa-r5-07 p.1	✓	auto:pdftext	2026-11-12	
-14a0a5865edba1ac	kansa-jiko	kansa-r5-07/2	jiko,komoku,gaku,gaku_raw	町内の道路整備の現状と今後の計画について|||		kansa-r5-07 p.1	✓	auto:pdftext	2026-11-12	
-a1d221745d7556ee	kansa-jiko	kansa-r5-08/1	jiko,komoku,gaku,gaku_raw	不登校の現状と課題、対応について|||		kansa-r5-08 p.1	✓	auto:pdftext	2026-11-12	
-32ec1c632f3beb8b	kansa-jiko	kansa-r5-09/1	jiko,komoku,gaku,gaku_raw	保管金の保管状況について|||		kansa-r5-09 p.1	✓	auto:pdftext	2026-11-12	
-c988f47c6382129f	kansa-jiko	kansa-r5-10/1	jiko,komoku,gaku,gaku_raw	地域共生社会の実現に向けたこれまでの取組と今後の進め方（重層的支援体制整備事業の実施に向けた取組状況など）|||		kansa-r5-10 p.1	✓	auto:pdftext	2026-11-12	
-943fcbe98e6abb36	kansa-jiko	kansa-r5-11/1	jiko,komoku,gaku,gaku_raw	マイナンバーカードの交付事務の状況、諸証明コンビニ交付サービスの現状と課題について|||		kansa-r5-11 p.1	✓	auto:pdftext	2026-11-12	
-7f699a4d07a4bce1	kansa-jiko	kansa-r5-12/1	jiko,komoku,gaku,gaku_raw	環境基本計画の策定への取り組み状況について|||		kansa-r5-12 p.1	✓	auto:pdftext	2026-11-12	
-bcb133102a11e7af	kansa-jiko	kansa-r5-12/2	jiko,komoku,gaku,gaku_raw	わたむき自動車プロジェクトの取り組みについて（令和４年度の成果と令和５年度の概要）|||		kansa-r5-12 p.1	✓	auto:pdftext	2026-11-12	
-0b4368b2e79889d2	kansa-jiko	kansa-r5-13/1	jiko,komoku,gaku,gaku_raw	消防団の現状と課題について|||		kansa-r5-13 p.1	✓	auto:pdftext	2026-11-12	
-693bc21ff6ec23dc	kansa-jiko	kansa-r5-13/2	jiko,komoku,gaku,gaku_raw	自主防災組織の育成について|||		kansa-r5-13 p.1	✓	auto:pdftext	2026-11-12	
-9accd85a4412ab63	kansa-jiko	kansa-r5-14/1	jiko,komoku,gaku,gaku_raw	公民館運営の現状と課題について|||		kansa-r5-14 p.1	✓	auto:pdftext	2026-11-12	
-60d13bd393e54fe3	kansa-jiko	kansa-r5-15/1	jiko,komoku,gaku,gaku_raw	広報広聴の取組について|||		kansa-r5-15 p.1	✓	auto:pdftext	2026-11-12	
-5503462006f696f6	kansa-jiko	kansa-r5-15/2	jiko,komoku,gaku,gaku_raw	国際交流・多文化共生の取組について|||		kansa-r5-15 p.1	✓	auto:pdftext	2026-11-12	
-f89345d3e85972c3	kansa-jiko	kansa-r5-16/1	jiko,komoku,gaku,gaku_raw	令和５年度デジタル田園都市国家構想交付金（地方創生推進タイプ）事業の中で商工観光課が所管する事務事業の内容と実施結果（見込み）について|||		kansa-r5-16 p.1	✓	kken78	2026-11-12	H4 4点 折り返しをつないだ。人が確認：一致（2026-11-12）
-deda6f77bd3d5d48	kansa-jiko	kansa-r5-16/2	jiko,komoku,gaku,gaku_raw	コロナ禍および物価高騰における商品券事業およびクーポン券事業の結果とその効果の検証について|||		kansa-r5-16 p.1	✓	kken78	2026-11-12	H4 4点 折り返しをつないだ。人が確認：一致（2026-11-12）
-fac6ef18396ae93c	kansa-jiko	kansa-r5-16/3	jiko,komoku,gaku,gaku_raw	観光施設における町の管理範囲と管理状況について|||		kansa-r5-16 p.1	✓	kken78	2026-11-12	H4 4点 折り返しをつないだ。人が確認：一致（2026-11-12）
-15ae520dc95b525a	kansa-jiko	kansa-r5-17/1	jiko,komoku,gaku,gaku_raw	令和６年度当初予算の概要について|||		kansa-r5-17 p.1	✓	auto:pdftext	2026-11-12	
-f8751d1fba6f5c06	kansa-jiko	kansa-r5-17/2	jiko,komoku,gaku,gaku_raw	地方公会計制度に基づく令和４年度財務書類の概要について|||		kansa-r5-17 p.1	✓	auto:pdftext	2026-11-12	
-b711ee4c2b5f2f19	kansa-jiko	kansa-r5-18/1	jiko,komoku,gaku,gaku_raw	令和４年度日野町少年センター運営負担金||8824000|8,824,000 円	円	kansa-r5-18 p.1	✓	kken78	2026-11-12	H4 0点。人が確認：一致（2026-11-12）
-6e1f3c58fad97296	kansa-jiko	kansa-r5-19/1	jiko,komoku,gaku,gaku_raw	令和４年度「わたむき自動車プロジェクト」推進協議会負担金||66221000|66,221,000 円	円	kansa-r5-19 p.1	✓	auto:pdftext	2026-11-12	
-f22d3dd96bc37499	kansa-jiko	kansa-r5-20/1	jiko,komoku,gaku,gaku_raw	令和４年度体験型観光啓発及び新規開拓事業委託業務委託料||7000000|7,000,000 円	円	kansa-r5-20 p.1	✓	auto:pdftext	2026-11-12	
-073aea2ff32ce1af	kansa-jiko	kansa-r6-01/1	jiko,komoku,gaku,gaku_raw	都市計画公園の管理状況と施設利用状況について|||		kansa-r6-01 p.1	✓	auto:pdftext	2026-11-12	
-b36fa2a9611df45c	kansa-jiko	kansa-r6-01/2	jiko,komoku,gaku,gaku_raw	町内の橋梁の現状と長寿命化について|||		kansa-r6-01 p.1	✓	auto:pdftext	2026-11-12	
-849d257cacc7865f	kansa-jiko	kansa-r6-02/1	jiko,komoku,gaku,gaku_raw	マイナンバーカードの普及状況と健康保険証利用について|||		kansa-r6-02 p.1	✓	auto:pdftext	2026-11-12	
-770252a3f740297d	kansa-jiko	kansa-r6-02/2	jiko,komoku,gaku,gaku_raw	外国人住民の窓口対応の現状と課題について|||		kansa-r6-02 p.1	✓	auto:pdftext	2026-11-12	
-cc6204b596d2ef8e	kansa-jiko	kansa-r6-03/1	jiko,komoku,gaku,gaku_raw	令和５年度未納金徴収実績、令和５年度不納欠損処分の状況|||		kansa-r6-03 p.1	✓	auto:pdftext	2026-11-12	
-57de33bc92b73d26	kansa-jiko	kansa-r6-03/2	jiko,komoku,gaku,gaku_raw	納付方法別の町税納付実績と今後の展開について|||		kansa-r6-03 p.1	✓	auto:pdftext	2026-11-12	
-c78aaf9aaff261d6	kansa-jiko	kansa-r6-04/1	jiko,komoku,gaku,gaku_raw	日野町高齢者福祉計画・介護保険事業計画（第８期）に対する３年間の実績見込みおよび第９期計画への展望について|||		kansa-r6-04 p.1	✓	kken78	2026-11-12	H4 4点 折り返しをつないだ。人が確認：一致（2026-11-12）
-5e678a55faf6169f	kansa-jiko	kansa-r6-04/2	jiko,komoku,gaku,gaku_raw	介護施設、介護支援事業等における介護職員の人材不足に対する町の対応について|||		kansa-r6-04 p.1	✓	kken78	2026-11-12	H4 4点 折り返しをつないだ。人が確認：一致（2026-11-12）
-da87ff233d71d6aa	kansa-jiko	kansa-r6-05/1	jiko,komoku,gaku,gaku_raw	令和５年度未納金徴収実績（水道使用料、公共下水道および農業集落排水使用料、公共下水道受益者負担金）について|||		kansa-r6-05 p.1	✓	auto:pdftext	2026-11-12	
-d169ace185dc539e	kansa-jiko	kansa-r6-05/2	jiko,komoku,gaku,gaku_raw	農村集落排水処理場の現状と課題、今後のあり方について|||		kansa-r6-05 p.1	✓	auto:pdftext	2026-11-12	
-37e215f557bf153d	kansa-jiko	kansa-r6-06/1	jiko,komoku,gaku,gaku_raw	人口減少と今後の自治会運営について|||		kansa-r6-06 p.1	✓	auto:pdftext	2026-11-12	
-5e9d69f59c68e9cb	kansa-jiko	kansa-r6-06/2	jiko,komoku,gaku,gaku_raw	ジェンダー平等（男女共同参画や性の多様性）における日野町の考え方について|||		kansa-r6-06 p.1	✓	auto:pdftext	2026-11-12	
-0e010b4294a41ade	kansa-jiko	kansa-r6-07/1	jiko,komoku,gaku,gaku_raw	今後の各小中学校児童生徒数の推移と施設の方向性について|||		kansa-r6-07 p.1	✓	auto:pdftext	2026-11-12	
-95322974474c27e7	kansa-jiko	kansa-r6-08/1	jiko,komoku,gaku,gaku_raw	各集落の「地域計画」策定の取組状況について|||		kansa-r6-08 p.1	✓	auto:pdftext	2026-11-12	
-9c13c68da8accf5a	kansa-jiko	kansa-r6-08/2	jiko,komoku,gaku,gaku_raw	町内の生産森林組合の施業・管理状況、町の森林振興の現状と課題について|||		kansa-r6-08 p.1	✓	auto:pdftext	2026-11-12	
-46f2df2f5155136b	kansa-jiko	kansa-r6-09/1	jiko,komoku,gaku,gaku_raw	国民スポーツ大会の進捗状況と町内施設の活用を含めたスポーツ振興の展望について|||		kansa-r6-09 p.1	✓	auto:pdftext	2026-11-12	
-6cc12bab82e4fa47	kansa-jiko	kansa-r6-09/2	jiko,komoku,gaku,gaku_raw	日野町人権啓発推進連絡協議会・各地区人権啓発推進協議会の活動状況と課題について|||		kansa-r6-09 p.1	✓	auto:pdftext	2026-11-12	
-b164e7e97f077670	kansa-jiko	kansa-r6-10/1	jiko,komoku,gaku,gaku_raw	基金の運用について|||		kansa-r6-10 p.1	✓	auto:pdftext	2026-11-12	
-8f75301d6c3aed26	kansa-jiko	kansa-r6-10/2	jiko,komoku,gaku,gaku_raw	保管金の管理状況について|||		kansa-r6-10 p.1	✓	auto:pdftext	2026-11-12	
-84bf4dccb1208b53	kansa-jiko	kansa-r6-11/1	jiko,komoku,gaku,gaku_raw	町内の商工業者の現状と課題について|||		kansa-r6-11 p.1	✓	auto:pdftext	2026-11-12	
-46aa70a07cd7c363	kansa-jiko	kansa-r6-11/2	jiko,komoku,gaku,gaku_raw	ふるさと応援寄付事業の実績推移と推進拡大に向けた取組状況について|||		kansa-r6-11 p.1	✓	auto:pdftext	2026-11-12	
-99dcacbc542b2e8a	kansa-jiko	kansa-r6-12/1	jiko,komoku,gaku,gaku_raw	人事管理の現状と課題について（職員の人材育成と勤怠管理について）|||		kansa-r6-12 p.1	✓	auto:pdftext	2026-11-12	
-664d1f453ccb69cb	kansa-jiko	kansa-r6-12/2	jiko,komoku,gaku,gaku_raw	公共施設等総合管理計画と長寿命化計画の整合性について|||		kansa-r6-12 p.1	✓	auto:pdftext	2026-11-12	
-355f0289538d67de	kansa-jiko	kansa-r6-13/1	jiko,komoku,gaku,gaku_raw	「チョイソコひの」の運用状況と今後の展望、課題について|||		kansa-r6-13 p.1	✓	auto:pdftext	2026-11-12	
-18632cd061e95e7c	kansa-jiko	kansa-r6-13/2	jiko,komoku,gaku,gaku_raw	環境基本計画の策定に向けた現状について|||		kansa-r6-13 p.1	✓	auto:pdftext	2026-11-12	
-ec29d5541278aaf7	kansa-jiko	kansa-r6-14/1	jiko,komoku,gaku,gaku_raw	日野町幼児教育保育施設再編整備計画策定の取組状況について|||		kansa-r6-14 p.1	✓	auto:pdftext	2026-11-12	
-84035fe29e58903e	kansa-jiko	kansa-r6-14/2	jiko,komoku,gaku,gaku_raw	要保護児童ならびに児童虐待の現状と課題、対応について|||		kansa-r6-14 p.1	✓	auto:pdftext	2026-11-12	
-de32f292258d710e	kansa-jiko	kansa-r6-15/1	jiko,komoku,gaku,gaku_raw	生活困窮者に対する町の窓口対応について（生活保護受給者の状況、相談業務における民生委員との関わりなど）|||		kansa-r6-15 p.1	✓	auto:pdftext	2026-11-12	
-da93aed7411d9f2a	kansa-jiko	kansa-r6-15/2	jiko,komoku,gaku,gaku_raw	地域福祉全般にわたる町と社会福祉協議会との関わりについて（町と社会福祉協議会との役割分担、委託している業務、日頃の連携など）|||		kansa-r6-15 p.1	✓	auto:pdftext	2026-11-12	
-dc4b4bb90397cae1	kansa-jiko	kansa-r6-16/1	jiko,komoku,gaku,gaku_raw	令和７年度当初予算の概要について|||		kansa-r6-16 p.1	✓	auto:pdftext	2026-11-12	
-e3260b7bb0bfbd20	kansa-jiko	kansa-r6-16/2	jiko,komoku,gaku,gaku_raw	地方公会計制度に基づく令和５年度財務書類の概要について|||		kansa-r6-16 p.1	✓	auto:pdftext	2026-11-12	
-8c34a6cb5fca8a53	kansa-jiko	kansa-r6-17/1	jiko,komoku,gaku,gaku_raw	令和５年度日野町農業再生協議会運営費補助金||6733500|6,733,500 円	円	kansa-r6-17 p.1	✓	auto:pdftext	2026-11-12	
-e708990af0c32a3b	kansa-jiko	kansa-r6-18/1	jiko,komoku,gaku,gaku_raw	商工会補助金||17000000|17,000,000 円	円	kansa-r6-18 p.1	✓	kken78	2026-11-12	H4 1点 額の前後に字がある。人が確認：一致（2026-11-12）
-3eaab9acc60c2a2c	kansa-jiko	kansa-r6-19/1	jiko,komoku,gaku,gaku_raw	日野町社会福祉協議会運営事業補助金||36988000|３６，９８８，０００円	円	kansa-r6-19 p.1	✓	auto:pdftext	2026-11-12	
-6f52400168b9ff96	kansa-jiko	kansa-r6-19/2	jiko,komoku,gaku,gaku_raw	日野町社会福祉協議会活動事業補助金||8412000|８，４１２，０００円	円	kansa-r6-19 p.1	✓	auto:pdftext	2026-11-12	
-ee484b5a09e14c7f	kansa-jiko	kansa-r7-01/1	jiko,komoku,gaku,gaku_raw	河川の維持補修（浚渫や護岸、堤防等の改修、河川敷の除草（竹））について|||		kansa-r7-01 p.1	✓	auto:pdftext	2026-11-12	
-391d6ef21eaf55aa	kansa-jiko	kansa-r7-01/2	jiko,komoku,gaku,gaku_raw	今後の日野町の公園の整備計画について|||		kansa-r7-01 p.1	✓	auto:pdftext	2026-11-12	
-9ba1f2dd6a410419	kansa-jiko	kansa-r7-02/1	jiko,komoku,gaku,gaku_raw	日野町高齢者福祉計画・介護保険事業計画（第９期）の進捗状況（計画 1 年目の実績および計画 2 年目以降の見込・展開）|||		kansa-r7-02 p.1	✓	auto:pdftext	2026-11-12	
-347f29593f37b246	kansa-jiko	kansa-r7-02/2	jiko,komoku,gaku,gaku_raw	介護予防の取り組みについて|||		kansa-r7-02 p.1	✓	auto:pdftext	2026-11-12	
-5a52746d9131a549	kansa-jiko	kansa-r7-03/1	jiko,komoku,gaku,gaku_raw	令和６年度未納金徴収実績、令和６年度不納欠損処分の状況|||		kansa-r7-03 p.1	✓	auto:pdftext	2026-11-12	
-878aa02a743a7cc5	kansa-jiko	kansa-r7-03/2	jiko,komoku,gaku,gaku_raw	法人町民税、法人固定資産税の動向について|||		kansa-r7-03 p.1	✓	auto:pdftext	2026-11-12	
-6b17acd02979ad99	kansa-jiko	kansa-r7-04/1	jiko,komoku,gaku,gaku_raw	令和６年度の事業実績について（来館者・貸出冊数の推移、新規事業等）|||		kansa-r7-04 p.1	✓	auto:pdftext	2026-11-12	
-154e29e12ac2a7e9	kansa-jiko	kansa-r7-04/2	jiko,komoku,gaku,gaku_raw	今後の図書館運営について|||		kansa-r7-04 p.1	✓	auto:pdftext	2026-11-12	
-938bbd81680189c3	kansa-jiko	kansa-r7-05/1	jiko,komoku,gaku,gaku_raw	令和６年度未納金徴収実績（水道使用料、公共下水道および農業集落排水使用料、公共下水道受益者負担金）について|||		kansa-r7-05 p.1	✓	auto:pdftext	2026-11-12	
-2976d9364fd39f49	kansa-jiko	kansa-r7-05/2	jiko,komoku,gaku,gaku_raw	雨水排水事業計画の進捗状況について|||		kansa-r7-05 p.1	✓	auto:pdftext	2026-11-12	
-80efa264b3bcdda2	kansa-jiko	kansa-r7-06/1	jiko,komoku,gaku,gaku_raw	日野町認定こども園整備基本構想（案）における住民意見募集（パブリックコメント）の結果および今後の町内幼児教育保育施設の再編計画と新こども園の具体的な計画について|||		kansa-r7-06 p.1	✓	auto:pdftext	2026-11-12	
-6fd8445a1da89e2d	kansa-jiko	kansa-r7-07/1	jiko,komoku,gaku,gaku_raw	不登校の現状と対策および日野里山フリースクールの現状について|||		kansa-r7-07 p.1	✓	auto:pdftext	2026-11-12	
-8cacc77267ded478	kansa-jiko	kansa-r7-07/2	jiko,komoku,gaku,gaku_raw	学校給食の現状および学校給食無償化の課題について|||		kansa-r7-07 p.1	✓	auto:pdftext	2026-11-12	
-af4a2ce43001d95e	kansa-jiko	kansa-r7-08/1	jiko,komoku,gaku,gaku_raw	日野町の林業の現状と課題について|||		kansa-r7-08 p.1	✓	auto:pdftext	2026-11-12	
-679ed72915601dcc	kansa-jiko	kansa-r7-08/2	jiko,komoku,gaku,gaku_raw	政府の米政策に対する町の対応と課題について|||		kansa-r7-08 p.1	✓	auto:pdftext	2026-11-12	
-09a059aa96fcadfd	kansa-jiko	kansa-r7-09/1	jiko,komoku,gaku,gaku_raw	今後の資金運用について|||		kansa-r7-09 p.1	✓	auto:pdftext	2026-11-12	
-938c5506e7094a89	kansa-jiko	kansa-r7-09/2	jiko,komoku,gaku,gaku_raw	保管金の管理状況について|||		kansa-r7-09 p.1	✓	auto:pdftext	2026-11-12	
-4a1736e6c149e5f1	kansa-jiko	kansa-r7-10/1	jiko,komoku,gaku,gaku_raw	重層的支援体制整備事業の現状について|||		kansa-r7-10 p.1	✓	auto:pdftext	2026-11-12	
-f9be7117e45c8551	kansa-jiko	kansa-r7-10/2	jiko,komoku,gaku,gaku_raw	町民の健康づくりについて|||		kansa-r7-10 p.1	✓	auto:pdftext	2026-11-12	
-62826789103c491b	kansa-jiko	kansa-r7-11/1	jiko,komoku,gaku,gaku_raw	国民健康保険等「資格確認書」の発行状況と医療機関の対応状況について|||		kansa-r7-11 p.1	✓	auto:pdftext	2026-11-12	
-6067dfa1a9b841f4	kansa-jiko	kansa-r7-11/2	jiko,komoku,gaku,gaku_raw	子ども・子育て支援納付金に伴う対応状況について|||		kansa-r7-11 p.1	✓	auto:pdftext	2026-11-12	
-2723edfd2463265a	kansa-jiko	kansa-r7-12/1	jiko,komoku,gaku,gaku_raw	（仮称）鳥居平松尾工業団地の現状と課題について|||		kansa-r7-12 p.1	✓	auto:pdftext	2026-11-12	
-400705e9545f2e1a	kansa-jiko	kansa-r7-12/2	jiko,komoku,gaku,gaku_raw	（公社）日野町シルバー人材センターの現状と課題について|||		kansa-r7-12 p.1	✓	auto:pdftext	2026-11-12	
-f4dc6678668ae006	kansa-jiko	kansa-r7-13/1	jiko,komoku,gaku,gaku_raw	人事管理について|||		kansa-r7-13 p.1	✓	auto:pdftext	2026-11-12	
-db5fa4e4e1bc7fc9	kansa-jiko	kansa-r7-13/2	jiko,komoku,gaku,gaku_raw	地域防災の現状と課題について|||		kansa-r7-13 p.1	✓	auto:pdftext	2026-11-12	
-030ca70093b90651	kansa-jiko	kansa-r7-14/1	jiko,komoku,gaku,gaku_raw	日野町の交通政策の現状と課題について|||		kansa-r7-14 p.1	✓	auto:pdftext	2026-11-12	
-aa372629b5825e89	kansa-jiko	kansa-r7-14/2	jiko,komoku,gaku,gaku_raw	日野町環境基本計画について|||		kansa-r7-14 p.1	✓	auto:pdftext	2026-11-12	
-fa0b3c17e0957ffb	kansa-jiko	kansa-r7-15/1	jiko,komoku,gaku,gaku_raw	情報管理の現状と課題について|||		kansa-r7-15 p.1	✓	auto:pdftext	2026-11-12	
-df6fc034d7c5ea71	kansa-jiko	kansa-r7-15/2	jiko,komoku,gaku,gaku_raw	移住・定住促進の取り組みについて|||		kansa-r7-15 p.1	✓	auto:pdftext	2026-11-12	
-fab5a45adc058a78	kansa-jiko	kansa-r7-16/1	jiko,komoku,gaku,gaku_raw	国民スポーツ大会・障がい者スポーツ大会の総括と今後のスポーツ振興について|||		kansa-r7-16 p.1	✓	kken78	2026-11-12	H4 6点 本文が2ページにまたがる・折り返しをつないだ。人が確認：一致（2026-11-12）
-22dee87fbf9c6e75	kansa-jiko	kansa-r7-16/2	jiko,komoku,gaku,gaku_raw	（公財）日野町文化振興事業団への指定管理の内容と成果、課題について|||		kansa-r7-16 p.1	✓	kken78	2026-11-12	H4 6点 本文が2ページにまたがる・折り返しをつないだ。人が確認：一致（2026-11-12）
-a701fdfe8aca8656	kansa-jiko	kansa-r7-17/1	jiko,komoku,gaku,gaku_raw	令和８年度当初予算の概要について|||		kansa-r7-17 p.1	✓	auto:pdftext	2026-11-12	
-1b6f8d2a067c4ce7	kansa-jiko	kansa-r7-17/2	jiko,komoku,gaku,gaku_raw	災害応急対策にかかる食糧、生活必需品等の備蓄状況と更新計画について|||		kansa-r7-17 p.1	✓	auto:pdftext	2026-11-12	
-21d7935fe944e975	kansa-jiko	kansa-r7-17/3	jiko,komoku,gaku,gaku_raw	水道施設における消火栓の設置基準について|||		kansa-r7-17 p.1	✓	auto:pdftext	2026-11-12	
-d7bdc26f7f89b419	kansa-jiko	kansa-r7-18/1	jiko,komoku,gaku,gaku_raw	グリム冒険の森指定管理料|令和６年度指定管理料|9100000|9,100,000 円	円	kansa-r7-18 p.1	✓	kken78	2026-11-12	H4 2点 指摘事項がある・額に付いた名前がある。人が確認：一致（2026-11-12）
-895d421e4e5ef978	kansa-jiko	kansa-r7-19/1	jiko,komoku,gaku,gaku_raw	令和６年度(公社)日野町シルバー人材センター運営補助金||9000000|9,000,000 円	円	kansa-r7-19 p.1	✓	auto:pdftext	2026-11-12	
-ba4c9d301fcee2ec	kansa-jiko	kansa-r7-20/1	jiko,komoku,gaku,gaku_raw	町民会館指定管理料||92008000|９２，００８，０００円	円	kansa-r7-20 p.1	✓	auto:pdftext	2026-11-12	
+63fa295e90f717f3	kansa-kekka	kansa-r3-14	shurui,kokuji,kohyo_bi,kansa_bi,chakugan,shiteki,kekka_from,kekka_to	teiki|日野町監査委員告示第４号|令和４年３月１６日|令和４年２月２５日（金）午前９時３０分～午前１０時２０分|||72|86		kansa-r3-14 p.1	✓	auto:pdftext	2026-11-12	要人確認:H4 3点 見出しの字が違うか見出しが無い・折り返しをつないだ
+bed17f207ee3ec30	kansa-kekka	kansa-r3-15	shurui,kokuji,kohyo_bi,kansa_bi,chakugan,shiteki,kekka_from,kekka_to	teiki|日野町監査委員告示第５号|令和４年３月１６日|令和４年２月２５日（金）午前１０時３０分～午前１１時５０分|||73|90		kansa-r3-15 p.1	✓	auto:pdftext	2026-11-12	
+42025d2432d50248	kansa-kekka	kansa-r4-01	shurui,kokuji,kohyo_bi,kansa_bi,chakugan,shiteki,kekka_from,kekka_to	teiki|日野町監査委員告示第６号|令和４年６月２９日|令和４年５月２６日（木）午前８時５５分～午前１０時２８分|||32|48		kansa-r4-01 p.1	✓	auto:pdftext	2026-11-12	
+d1d7343cd4b59a81	kansa-kekka	kansa-r4-02	shurui,kokuji,kohyo_bi,kansa_bi,chakugan,shiteki,kekka_from,kekka_to	teiki|日野町監査委員告示第７号|令和４年６月２９日|令和４年５月２６日（木）午前１０時３５分～午後１２時０２分|||33|49		kansa-r4-02 p.1	✓	auto:pdftext	2026-11-12	
+10b6ad64b98f5349	kansa-kekka	kansa-r4-03	shurui,kokuji,kohyo_bi,kansa_bi,chakugan,shiteki,kekka_from,kekka_to	teiki|日野町監査委員告示第８号|令和４年７月１２日|令和４年６月２９日（水）午前８時５５分～午前１０時３５分|||72|86		kansa-r4-03 p.1	✓	auto:pdftext	2026-11-12	
+9e3aa5a73b5df5f2	kansa-kekka	kansa-r4-04	shurui,kokuji,kohyo_bi,kansa_bi,chakugan,shiteki,kekka_from,kekka_to	teiki|日野町監査委員告示第９号|令和４年７月１２日|令和４年６月２９日（水）午前１０時４２分～午前１１時５４分|||75|90		kansa-r4-04 p.1	✓	auto:pdftext	2026-11-12	
+bb1a416bb4f7aa03	kansa-kekka	kansa-r4-05	shurui,kokuji,kohyo_bi,kansa_bi,chakugan,shiteki,kekka_from,kekka_to	teiki|日野町監査委員告示第１０号|令和４年７月１２日|令和４年７月４日（月）午後１時３０分～午後３時６分|||73|89		kansa-r4-05 p.1	✓	auto:pdftext	2026-11-12	
+89cafb4629472c87	kansa-kekka	kansa-r4-06	shurui,kokuji,kohyo_bi,kansa_bi,chakugan,shiteki,kekka_from,kekka_to	teiki|日野町監査委員告示第１１号|令和４年９月２７日|令和４年８月３０日（火）午後２時００分～午後３時３２分|||67|85		kansa-r4-06 p.1	✓	auto:pdftext	2026-11-12	
+d225323ee3c08a60	kansa-kekka	kansa-r4-07	shurui,kokuji,kohyo_bi,kansa_bi,chakugan,shiteki,kekka_from,kekka_to	teiki|日野町監査委員告示第１２号|令和４年９月２７日|令和４年８月３０日（火）午後３時３８分～午後４時５０分|||65|80		kansa-r4-07 p.1	✓	auto:pdftext	2026-11-12	
+02617e369c5f09a7	kansa-kekka	kansa-r4-08	shurui,kokuji,kohyo_bi,kansa_bi,chakugan,shiteki,kekka_from,kekka_to	teiki|日野町監査委員告示第１３号|令和４年１０月３１日|令和４年９月２７日（火）午前９時００分～午前９時５５分|||59|72		kansa-r4-08 p.1	✓	auto:pdftext	2026-11-12	
+71796fa81b610b81	kansa-kekka	kansa-r4-09	shurui,kokuji,kohyo_bi,kansa_bi,chakugan,shiteki,kekka_from,kekka_to	teiki|日野町監査委員告示第１５号|令和４年１２月２８日|令和４年１０月３１日（月）午前９時００分～午前１０時５２分|||56|71		kansa-r4-09 p.1	✓	auto:pdftext	2026-11-12	要人確認:H4 4点 折り返しをつないだ
+e469e9f84eea5118	kansa-kekka	kansa-r4-10	shurui,kokuji,kohyo_bi,kansa_bi,chakugan,shiteki,kekka_from,kekka_to	teiki|日野町監査委員告示第１６号|令和４年１２月２８日|令和４年１０月３１日（月）午前１１時００分～午後１２時１０分|||73|76		kansa-r4-10 p.1	✓	auto:pdftext	2026-11-12	
+92cb2cb41c721b4a	kansa-kekka	kansa-r4-11	shurui,kokuji,kohyo_bi,kansa_bi,chakugan,shiteki,kekka_from,kekka_to	teiki|日野町監査委員告示第１８号|令和４年１２月２８日|令和４年１１月２８日（月）午前９時００分～午前１０時３９分|||68|84		kansa-r4-11 p.1	✓	auto:pdftext	2026-11-12	
+4b834ac0fd93282c	kansa-kekka	kansa-r4-12	shurui,kokuji,kohyo_bi,kansa_bi,chakugan,shiteki,kekka_from,kekka_to	teiki|日野町監査委員告示第１号|令和５年１月２７日|令和４年１２月２７日（火）午前９時００分～午前１０時４０分|||32|48		kansa-r4-12 p.1	✓	auto:pdftext	2026-11-12	
+127af76b07a8f4a2	kansa-kekka	kansa-r4-13	shurui,kokuji,kohyo_bi,kansa_bi,chakugan,shiteki,kekka_from,kekka_to	teiki|日野町監査委員告示第２号|令和５年２月１０日|令和５年１月２７日（金）午前９時００分～午前１０時５分|||73|89		kansa-r4-13 p.1	✓	auto:pdftext	2026-11-12	
+45442d9c361c3501	kansa-kekka	kansa-r4-14	shurui,kokuji,kohyo_bi,kansa_bi,chakugan,shiteki,kekka_from,kekka_to	teiki|日野町監査委員告示第４号|令和５年３月２７日|令和５年２月２１日（火）午前９時００分～午前１０時１０分|||69|86		kansa-r4-14 p.1	✓	auto:pdftext	2026-11-12	
+45906e4e15e7449c	kansa-kekka	kansa-r4-15	shurui,kokuji,kohyo_bi,kansa_bi,chakugan,shiteki,kekka_from,kekka_to	teiki|日野町監査委員告示第６号|令和５年３月３１日|令和５年３月２７日（月）午前９時００分～午前１０時５５分|||31|50		kansa-r4-15 p.1	✓	auto:pdftext	2026-11-12	
+2c17688efdae8b2a	kansa-kekka	kansa-r4-16	shurui,kokuji,kohyo_bi,kansa_bi,chakugan,shiteki,kekka_from,kekka_to	dantai|日野町監査委員告示第１４号|令和４年１０月３１日|令和４年９月２７日（火）|対象事業の内容、公益性の必要性、算定方法、証拠書類の整備、事務手続の適正等主眼に監査しました。|なし|100|109		kansa-r4-16 p.2	✓	auto:pdftext	2026-11-12	要人確認:団体の監査 全件（相手の区切りと yakuwari、関係の shurui_ji・kubun は道具の候補）
+6c9073547cf50570	kansa-kekka	kansa-r4-17	shurui,kokuji,kohyo_bi,kansa_bi,chakugan,shiteki,kekka_from,kekka_to	dantai|日野町監査委員告示第１７号|令和４年１２月２８日|令和４年１１月２８日（月）|対象事業の内容、公益性の必要性、算定方法、証拠書類の整備、事務手続 の適正等を主眼に監査しました。|なし|61|64		kansa-r4-17 p.1		auto:pdftext	2026-11-12	要人確認:段1 chakugan：「対象事業の内容、公益性の必要性、算定方法、証拠書類の整備、事務手続 の適正等を主眼に監査しました。」が data/text に無い。要人確認:団体の監査 全件（相手の区切りと yakuwari、関係の shurui_ji・kubun は道具の候補）
+d864a9378b3b8912	kansa-kekka	kansa-r4-18	shurui,kokuji,kohyo_bi,kansa_bi,chakugan,shiteki,kekka_from,kekka_to	dantai|日野町監査委員告示第３号|令和５年２月１０日|令和５年１月２７日（金）|対象事業の内容、公益性の必要性、算定方法、証拠書類の整備、事務手続の適正等主眼に監査した。|なし|60|66		kansa-r4-18 p.1	✓	auto:pdftext	2026-11-12	要人確認:団体の監査 全件（相手の区切りと yakuwari、関係の shurui_ji・kubun は道具の候補）
+082906de21167935	kansa-kekka	kansa-r4-19	shurui,kokuji,kohyo_bi,kansa_bi,chakugan,shiteki,kekka_from,kekka_to	dantai|日野町監査委員告示第５号|令和５年３月２７日|令和５年２月２１日（火）午前１０時１０分～午前１１時２０分|対象事業の内容、公益性の必要性、算定方法、証拠書類の整備、事務手続の適正等を主眼に監査した。|なし|44|50		kansa-r4-19 p.1	✓	auto:pdftext	2026-11-12	要人確認:団体の監査 全件（相手の区切りと yakuwari、関係の shurui_ji・kubun は道具の候補）
+d299374c2715742b	kansa-kekka	kansa-r5-01	shurui,kokuji,kohyo_bi,kansa_bi,chakugan,shiteki,kekka_from,kekka_to	teiki|日野町監査委員告示第８号|令和５年６月２８日|令和５年５月２６日（金）午前８時４５分～午前９時５５分|||63|82		kansa-r5-01 p.1	✓	auto:pdftext	2026-11-12	
+2844398e2072eb62	kansa-kekka	kansa-r5-02	shurui,kokuji,kohyo_bi,kansa_bi,chakugan,shiteki,kekka_from,kekka_to	teiki|日野町監査委員告示第９号|令和５年６月２８日|令和５年５月２６日（金）午前１０時５分～午前１１時３０分|||65|81		kansa-r5-02 p.1	✓	auto:pdftext	2026-11-12	
+840b2b51768cde1c	kansa-kekka	kansa-r5-03	shurui,kokuji,kohyo_bi,kansa_bi,chakugan,shiteki,kekka_from,kekka_to	teiki|日野町監査委員告示第１０号|令和５年７月１２日|令和５年６月２８日（水）午前８時５５分～午前１０時４０分|||63|81		kansa-r5-03 p.1	✓	auto:pdftext	2026-11-12	
+9650616177a85e69	kansa-kekka	kansa-r5-04	shurui,kokuji,kohyo_bi,kansa_bi,chakugan,shiteki,kekka_from,kekka_to	teiki|日野町監査委員告示第１１号|令和５年７月１２日|令和５年６月２８日（水）午前１０時５０分～午前１１時５２分|||62|78		kansa-r5-04 p.1	✓	auto:pdftext	2026-11-12	
+62a382deae1afcf7	kansa-kekka	kansa-r5-05	shurui,kokuji,kohyo_bi,kansa_bi,chakugan,shiteki,kekka_from,kekka_to	teiki|日野町監査委員告示第１２号|令和５年７月１４日|令和５年７月１３日（木）午前１０時３０分～午前１１時５０分|||64|80		kansa-r5-05 p.1	✓	auto:pdftext	2026-11-12	
+073f957f0e1d58d2	kansa-kekka	kansa-r5-06	shurui,kokuji,kohyo_bi,kansa_bi,chakugan,shiteki,kekka_from,kekka_to	teiki|日野町監査委員告示第１３号|令和５年１１月２７日|令和５年８月２２日（火）午前９時００分～午前１０時３０分|||72|88		kansa-r5-06 p.1	✓	auto:pdftext	2026-11-12	
+4087b73abbdf0c2f	kansa-kekka	kansa-r5-07	shurui,kokuji,kohyo_bi,kansa_bi,chakugan,shiteki,kekka_from,kekka_to	teiki|日野町監査委員告示第１４号|令和５年１１月２７日|令和５年８月２２日（火）午前１０時４０分～正午|||72|89		kansa-r5-07 p.1	✓	auto:pdftext	2026-11-12	
+c28890547293abfa	kansa-kekka	kansa-r5-08	shurui,kokuji,kohyo_bi,kansa_bi,chakugan,shiteki,kekka_from,kekka_to	teiki|日野町監査委員告示第１５号|令和５年１２月１日|令和５年９月２２日（金）午前８時５７分～午前１０時００分|||69|86		kansa-r5-08 p.1	✓	auto:pdftext	2026-11-12	
+c7cd0f1b6b7cd05f	kansa-kekka	kansa-r5-09	shurui,kokuji,kohyo_bi,kansa_bi,chakugan,shiteki,kekka_from,kekka_to	teiki|日野町監査委員告示第１７号|令和５年１２月１日|令和５年９月２２日（金）午前１１時１０分～正午|||70|73		kansa-r5-09 p.1	✓	auto:pdftext	2026-11-12	
+52f106829d7391b4	kansa-kekka	kansa-r5-10	shurui,kokuji,kohyo_bi,kansa_bi,chakugan,shiteki,kekka_from,kekka_to	teiki|日野町監査委員告示第１８号|令和５年１２月２２日|令和５年１１月１日（水）午前９時３５分～午前１０時４５分|||72|86		kansa-r5-10 p.1	✓	auto:pdftext	2026-11-12	
+26c512f377e3879f	kansa-kekka	kansa-r5-11	shurui,kokuji,kohyo_bi,kansa_bi,chakugan,shiteki,kekka_from,kekka_to	teiki|日野町監査委員告示第１９号|令和５年１２月２２日|令和５年１１月１日（水）午前１０時５５分～午前１１時４０分|||72|87		kansa-r5-11 p.1	✓	auto:pdftext	2026-11-12	
+7cda624bdf376f93	kansa-kekka	kansa-r5-12	shurui,kokuji,kohyo_bi,kansa_bi,chakugan,shiteki,kekka_from,kekka_to	teiki|日野町監査委員告示第２０号|令和５年１２月２７日|令和５年１１月２７日（月）午前９時００分～午前１０時４０分|||73|90		kansa-r5-12 p.1	✓	auto:pdftext	2026-11-12	
+a20ca7e6b8a0c2b9	kansa-kekka	kansa-r5-13	shurui,kokuji,kohyo_bi,kansa_bi,chakugan,shiteki,kekka_from,kekka_to	teiki|日野町監査委員告示第１号|令和６年１月２６日|令和５年１２月２２日（金）午前９時００分～午前１０時１２分|||72|89		kansa-r5-13 p.1	✓	auto:pdftext	2026-11-12	
+fe67d316b1a57f1f	kansa-kekka	kansa-r5-14	shurui,kokuji,kohyo_bi,kansa_bi,chakugan,shiteki,kekka_from,kekka_to	teiki|日野町監査委員告示第２号|令和６年２月２２日|令和６年１月２６日（金）午前９時００分～午前１０時２８分|||69|84		kansa-r5-14 p.1	✓	auto:pdftext	2026-11-12	
+3a4f3ab04bd627df	kansa-kekka	kansa-r5-15	shurui,kokuji,kohyo_bi,kansa_bi,chakugan,shiteki,kekka_from,kekka_to	teiki|日野町監査委員告示第３号|令和６年２月２２日|令和６年１月２６日（金）午前１０時４５分～午前１１時５７分|||72|89		kansa-r5-15 p.1	✓	auto:pdftext	2026-11-12	
+6eafc261a06a61be	kansa-kekka	kansa-r5-16	shurui,kokuji,kohyo_bi,kansa_bi,chakugan,shiteki,kekka_from,kekka_to	teiki|日野町監査委員告示第４号|令和６年３月２５日|令和６年２月２２日（木）午前９時００分～午前１０時４０分|||76|90		kansa-r5-16 p.1	✓	auto:pdftext	2026-11-12	要人確認:H4 4点 折り返しをつないだ
+917010cd4391bcf9	kansa-kekka	kansa-r5-17	shurui,kokuji,kohyo_bi,kansa_bi,chakugan,shiteki,kekka_from,kekka_to	teiki|日野町監査委員告示第６号|令和６年３月２８日|令和６年３月２５日（月）午前９時００分～午前１１時５０分|||55|74		kansa-r5-17 p.1	✓	auto:pdftext	2026-11-12	
+fd40efb7e6ac8835	kansa-kekka	kansa-r5-18	shurui,kokuji,kohyo_bi,kansa_bi,chakugan,shiteki,kekka_from,kekka_to	dantai|日野町監査委員告示第１６号|令和５年１２月１日|令和５年９月２２日（金） 午前１０時５分～午前１１時５分|対象事業の内容、公益上の必要性、算定方法、証拠書類の整備、事務手続の適正等を主眼に監査した。|なし|46|54		kansa-r5-18 p.1	✓	auto:pdftext	2026-11-12	要人確認:団体の監査 全件（相手の区切りと yakuwari、関係の shurui_ji・kubun は道具の候補）
+bd4b8cba4e24a522	kansa-kekka	kansa-r5-19	shurui,kokuji,kohyo_bi,kansa_bi,chakugan,shiteki,kekka_from,kekka_to	dantai|日野町監査委員告示第２１号|令和５年１２月２７日|令和５年１１月２７日（月） 午前１０時５０分～正午|対象事業の内容、公益上の必要性、算定方法、証拠書類の整備、事務手続の適正等を主眼に監査した。|なし|46|55		kansa-r5-19 p.1	✓	auto:pdftext	2026-11-12	要人確認:団体の監査 全件（相手の区切りと yakuwari、関係の shurui_ji・kubun は道具の候補）
+5821e51880c0046e	kansa-kekka	kansa-r5-20	shurui,kokuji,kohyo_bi,kansa_bi,chakugan,shiteki,kekka_from,kekka_to	dantai|日野町監査委員告示第５号|令和６年３月２５日|令和６年２月２２日（木） 午前１０時５０分～午前１１時５０分|対象事業の内容、公益上の必要性、算定方法、証拠書類の整備、事務手続の適正等を主眼に監査した。|なし|46|55		kansa-r5-20 p.1	✓	auto:pdftext	2026-11-12	要人確認:団体の監査 全件（相手の区切りと yakuwari、関係の shurui_ji・kubun は道具の候補）
+0cf52a8b443b4504	kansa-kekka	kansa-r6-01	shurui,kokuji,kohyo_bi,kansa_bi,chakugan,shiteki,kekka_from,kekka_to	teiki|日野町監査委員告示第１号|令和７年３月２７日|令和６年５月２４日（金）午前９時００分～１０時２５分|||59|74		kansa-r6-01 p.1	✓	auto:pdftext	2026-11-12	
+a62c9e63da05f248	kansa-kekka	kansa-r6-02	shurui,kokuji,kohyo_bi,kansa_bi,chakugan,shiteki,kekka_from,kekka_to	teiki|日野町監査委員告示第２号|令和７年３月２７日|令和６年５月２４日（金）午前１０時４０分～午前１２時００分|||59|78		kansa-r6-02 p.1	✓	auto:pdftext	2026-11-12	
+6e62a4bba92d6c3c	kansa-kekka	kansa-r6-03	shurui,kokuji,kohyo_bi,kansa_bi,chakugan,shiteki,kekka_from,kekka_to	teiki|日野町監査委員告示第３号|令和７年３月２７日|令和６年６月２７日（木）午前９時００分～午前１０時３０分|||53|68		kansa-r6-03 p.1	✓	auto:pdftext	2026-11-12	
+e2a6d9b0f1469815	kansa-kekka	kansa-r6-04	shurui,kokuji,kohyo_bi,kansa_bi,chakugan,shiteki,kekka_from,kekka_to	teiki|日野町監査委員告示第４号|令和７年３月２７日|令和６年６月２７日（木）午前１０時４２分～午前１１時５４分|||52|66		kansa-r6-04 p.1	✓	auto:pdftext	2026-11-12	要人確認:H4 4点 折り返しをつないだ
+392745369e11989a	kansa-kekka	kansa-r6-05	shurui,kokuji,kohyo_bi,kansa_bi,chakugan,shiteki,kekka_from,kekka_to	teiki|日野町監査委員告示第５号|令和７年３月２７日|令和６年７月１９日（金）午後１時３０分～午後２時５５分|||54|69		kansa-r6-05 p.1	✓	auto:pdftext	2026-11-12	
+e67a51bb67b89b61	kansa-kekka	kansa-r6-06	shurui,kokuji,kohyo_bi,kansa_bi,chakugan,shiteki,kekka_from,kekka_to	teiki|日野町監査委員告示第６号|令和７年３月２７日|令和６年８月２９日（木）午前８時５５分～午前１０時２５分|||54|69		kansa-r6-06 p.1	✓	auto:pdftext	2026-11-12	
+5fed5fbd13852ed2	kansa-kekka	kansa-r6-07	shurui,kokuji,kohyo_bi,kansa_bi,chakugan,shiteki,kekka_from,kekka_to	teiki|日野町監査委員告示第７号|令和７年３月２７日|令和６年８月２９日（木）午前１０時３７分～１１時３８分|||58|73		kansa-r6-07 p.1	✓	auto:pdftext	2026-11-12	
+e85ce4fc671738b0	kansa-kekka	kansa-r6-08	shurui,kokuji,kohyo_bi,kansa_bi,chakugan,shiteki,kekka_from,kekka_to	teiki|日野町監査委員告示第８号|令和７年３月２７日|令和６年９月２４日（火）午前９時００分～午前１０時３５分|||54|70		kansa-r6-08 p.1	✓	auto:pdftext	2026-11-12	
+e0639d7bafbe576f	kansa-kekka	kansa-r6-09	shurui,kokuji,kohyo_bi,kansa_bi,chakugan,shiteki,kekka_from,kekka_to	teiki|日野町監査委員告示第１０号|令和７年３月２７日|令和６年１０月２１日（月）午前９時００分～午前１０時３５分|||61|74		kansa-r6-09 p.1	✓	auto:pdftext	2026-11-12	
+448ec08b725d84b9	kansa-kekka	kansa-r6-10	shurui,kokuji,kohyo_bi,kansa_bi,chakugan,shiteki,kekka_from,kekka_to	teiki|日野町監査委員告示第１１号|令和７年３月２７日|令和６年１０月２１日（月）午前１０時５０分～１１時５０分|||57|61		kansa-r6-10 p.1	✓	auto:pdftext	2026-11-12	
+6722092c86207024	kansa-kekka	kansa-r6-11	shurui,kokuji,kohyo_bi,kansa_bi,chakugan,shiteki,kekka_from,kekka_to	teiki|日野町監査委員告示第１２号|令和７年３月２７日|令和６年１２月５日（木）午後２時００分～午後３時４０分|||51|65		kansa-r6-11 p.1	✓	auto:pdftext	2026-11-12	
+30affbc6a4b4aff6	kansa-kekka	kansa-r6-12	shurui,kokuji,kohyo_bi,kansa_bi,chakugan,shiteki,kekka_from,kekka_to	teiki|日野町監査委員告示第１４号|令和７年３月２７日|令和６年１２月２６日（木）午後２時００分～午後３時３０分|||60|73		kansa-r6-12 p.1	✓	auto:pdftext	2026-11-12	
+b2c848d40638ce22	kansa-kekka	kansa-r6-13	shurui,kokuji,kohyo_bi,kansa_bi,chakugan,shiteki,kekka_from,kekka_to	teiki|日野町監査委員告示第１５号|令和７年３月２７日|令和７年１月２９日（水）午前１０時４５分～午前１２時００分|||59|74		kansa-r6-13 p.1	✓	auto:pdftext	2026-11-12	
+e054b65f573a9181	kansa-kekka	kansa-r6-14	shurui,kokuji,kohyo_bi,kansa_bi,chakugan,shiteki,kekka_from,kekka_to	teiki|日野町監査委員告示第１６号|令和７年３月２７日|令和７年１月２９日（水）午前９時００分～午前１０時３０分|||53|71		kansa-r6-14 p.1	✓	auto:pdftext	2026-11-12	
+09cce5033b29b083	kansa-kekka	kansa-r6-15	shurui,kokuji,kohyo_bi,kansa_bi,chakugan,shiteki,kekka_from,kekka_to	teiki|日野町監査委員告示第１７号|令和７年３月２７日|令和７年２月１９日（水）午前９時００分～午前１０時３５分|||56|69		kansa-r6-15 p.1	✓	auto:pdftext	2026-11-12	
+a1b755fad845747b	kansa-kekka	kansa-r6-16	shurui,kokuji,kohyo_bi,kansa_bi,chakugan,shiteki,kekka_from,kekka_to	teiki|日野町監査委員告示第１９号|令和７年３月３１日|令和７年３月２７日（木）午前９時００分～午前１１時０４分|||54|72		kansa-r6-16 p.1	✓	auto:pdftext	2026-11-12	
+1e270acc55dabfa1	kansa-kekka	kansa-r6-17	shurui,kokuji,kohyo_bi,kansa_bi,chakugan,shiteki,kekka_from,kekka_to	dantai|日野町監査委員告示第９号|令和７年３月２７日|令和６年９月２４日（火）|対象事業の内容、公益上の必要性、算定方法、証拠書類の整備、事務手続の適正等を主眼に監査した。|なし|41|53		kansa-r6-17 p.1	✓	auto:pdftext	2026-11-12	要人確認:団体の監査 全件（相手の区切りと yakuwari、関係の shurui_ji・kubun は道具の候補）
+bd2701f2d0334ba5	kansa-kekka	kansa-r6-18	shurui,kokuji,kohyo_bi,kansa_bi,chakugan,shiteki,kekka_from,kekka_to	dantai|日野町監査委員告示第１３号|令和７年３月２７日|令和６年１２月５日（木）|対象事業の内容、公益上の必要性、算定方法、証拠書類の整備、事務手続の適正等を主眼に監査した。|なし|40|47		kansa-r6-18 p.1	✓	auto:pdftext	2026-11-12	要人確認:団体の監査 全件（相手の区切りと yakuwari、関係の shurui_ji・kubun は道具の候補）
+cda77c004179de7f	kansa-kekka	kansa-r6-19	shurui,kokuji,kohyo_bi,kansa_bi,chakugan,shiteki,kekka_from,kekka_to	dantai|日野町監査委員告示第１８号|令和７年３月２７日|令和７年２月１９日（水）|対象事業の内容、公益上の必要性、算定方法、証拠書類の整備、事務手続の適正等を主眼に監査した。|なし|47|55		kansa-r6-19 p.1	✓	auto:pdftext	2026-11-12	要人確認:団体の監査 全件（相手の区切りと yakuwari、関係の shurui_ji・kubun は道具の候補）
+ccb44ab712bc4525	kansa-kekka	kansa-r7-01	shurui,kokuji,kohyo_bi,kansa_bi,chakugan,shiteki,kekka_from,kekka_to	teiki|日野町監査委員告示第２０号|令和７年８月２２日|令和７年５月２９日（木）午前９時００分～１０時２５分|||30|49		kansa-r7-01 p.1	✓	auto:pdftext	2026-11-12	
+f64a5a151bf8f94f	kansa-kekka	kansa-r7-02	shurui,kokuji,kohyo_bi,kansa_bi,chakugan,shiteki,kekka_from,kekka_to	teiki|日野町監査委員告示第２１号|令和７年８月２２日|令和７年５月２９日（木）午前１０時４０分～午前１１時５５分|||51|66		kansa-r7-02 p.1	✓	auto:pdftext	2026-11-12	
+f7543f86105e0e64	kansa-kekka	kansa-r7-03	shurui,kokuji,kohyo_bi,kansa_bi,chakugan,shiteki,kekka_from,kekka_to	teiki|日野町監査委員告示第２２号|令和７年８月２２日|令和７年６月２７日（金）午前９時００分～午前１０時２０分|||47|60		kansa-r7-03 p.1	✓	auto:pdftext	2026-11-12	
+c9a51c7be6d24ffc	kansa-kekka	kansa-r7-04	shurui,kokuji,kohyo_bi,kansa_bi,chakugan,shiteki,kekka_from,kekka_to	teiki|日野町監査委員告示第２３号|令和７年８月２２日|令和７年６月２７日（金）午前１０時３５分～午前１１時４０分|||47|61		kansa-r7-04 p.1	✓	auto:pdftext	2026-11-12	
+decb6e5181a539d2	kansa-kekka	kansa-r7-05	shurui,kokuji,kohyo_bi,kansa_bi,chakugan,shiteki,kekka_from,kekka_to	teiki|日野町監査委員告示第２４号|令和７年８月２２日|令和７年７月１１日（金）午後１時３０分～午後３時００分|||54|70		kansa-r7-05 p.1	✓	auto:pdftext	2026-11-12	
+d62dc5bc12b6de79	kansa-kekka	kansa-r7-06	shurui,kokuji,kohyo_bi,kansa_bi,chakugan,shiteki,kekka_from,kekka_to	teiki|日野町監査委員告示第２５号|令和７年９月２９日|令和７年８月２９日（金）午前９時００分～午前１０時３５分|||50|67		kansa-r7-06 p.1	✓	auto:pdftext	2026-11-12	
+d1b0bd9ad94d4145	kansa-kekka	kansa-r7-07	shurui,kokuji,kohyo_bi,kansa_bi,chakugan,shiteki,kekka_from,kekka_to	teiki|日野町監査委員告示第２６号|令和７年９月２９日|令和７年８月２９日（金）午前１０時４５分～１１時４５分|||59|74		kansa-r7-07 p.1	✓	auto:pdftext	2026-11-12	
+fecc882f73e7a433	kansa-kekka	kansa-r7-08	shurui,kokuji,kohyo_bi,kansa_bi,chakugan,shiteki,kekka_from,kekka_to	teiki|日野町監査委員告示第２７号|令和７年１１月２５日|令和７年９月２９日（月）午前９時００分～午前１０時２０分|||52|70		kansa-r7-08 p.1	✓	auto:pdftext	2026-11-12	
+1961dd0f54cbf629	kansa-kekka	kansa-r7-09	shurui,kokuji,kohyo_bi,kansa_bi,chakugan,shiteki,kekka_from,kekka_to	teiki|日野町監査委員告示第２８号|令和７年１１月２５日|令和７年９月２９日（月）午後２時５５分～３時４０分|||57|65		kansa-r7-09 p.1	✓	auto:pdftext	2026-11-12	
+0530d1e497d0d234	kansa-kekka	kansa-r7-10	shurui,kokuji,kohyo_bi,kansa_bi,chakugan,shiteki,kekka_from,kekka_to	teiki|日野町監査委員告示第３０号|令和７年１１月２５日|令和７年１０月２３日（木）午前９時００分～午前１０時３０分|||49|65		kansa-r7-10 p.1	✓	auto:pdftext	2026-11-12	
+609495d9c42963a0	kansa-kekka	kansa-r7-11	shurui,kokuji,kohyo_bi,kansa_bi,chakugan,shiteki,kekka_from,kekka_to	teiki|日野町監査委員告示第３１号|令和７年１１月２５日|令和７年１０月２３日（木）午前１０時４０分～午前１１時５５分|||59|76		kansa-r7-11 p.1	✓	auto:pdftext	2026-11-12	
+a376b2d54e611889	kansa-kekka	kansa-r7-12	shurui,kokuji,kohyo_bi,kansa_bi,chakugan,shiteki,kekka_from,kekka_to	teiki|日野町監査委員告示第３２号|令和７年１２月２２日|令和７年１１月２７日（木）午前８時５５分～午前１０時２５分|||52|69		kansa-r7-12 p.1	✓	auto:pdftext	2026-11-12	
+bf2388a5ef651a5e	kansa-kekka	kansa-r7-13	shurui,kokuji,kohyo_bi,kansa_bi,chakugan,shiteki,kekka_from,kekka_to	teiki|日野町監査委員告示第１号|令和８年１月３０日|令和７年１２月２２日（月）午前９時００分～午前１０時３０分|||44|63		kansa-r7-13 p.1	✓	auto:pdftext	2026-11-12	
+66d9b75ff5385501	kansa-kekka	kansa-r7-14	shurui,kokuji,kohyo_bi,kansa_bi,chakugan,shiteki,kekka_from,kekka_to	teiki|日野町監査委員告示第２号|令和８年２月２０日|令和８年１月２３日（金）午前９時００分～午前１０時２５分|||58|76		kansa-r7-14 p.1	✓	auto:pdftext	2026-11-12	
+b18359826aa7aaa0	kansa-kekka	kansa-r7-15	shurui,kokuji,kohyo_bi,kansa_bi,chakugan,shiteki,kekka_from,kekka_to	teiki|日野町監査委員告示第３号|令和８年２月２０日|令和８年１月２３日（金）午前１０時３５分～午前１１時５５分|||40|58		kansa-r7-15 p.1	✓	auto:pdftext	2026-11-12	
+88ce8658af0c811c	kansa-kekka	kansa-r7-16	shurui,kokuji,kohyo_bi,kansa_bi,chakugan,shiteki,kekka_from,kekka_to	teiki|日野町監査委員告示第４号|令和８年３月２５日|令和８年２月２０日（金）午前９時００分～午前１０時２０分|||60|80		kansa-r7-16 p.1-2	✓	auto:pdftext	2026-11-12	要人確認:H4 6点 本文が2ページにまたがる・折り返しをつないだ
+493cc5c8ef1d390d	kansa-kekka	kansa-r7-17	shurui,kokuji,kohyo_bi,kansa_bi,chakugan,shiteki,kekka_from,kekka_to	teiki|日野町監査委員告示第６号|令和８年３月３１日|令和８年３月２５日（水）午前９時００分～午前１１時１０分|||56|73		kansa-r7-17 p.1	✓	auto:pdftext	2026-11-12	
+316602d785ac4255	kansa-kekka	kansa-r7-18	shurui,kokuji,kohyo_bi,kansa_bi,chakugan,shiteki,kekka_from,kekka_to	dantai|日野町監査委員告示第２９号|令和７年１１月２５日|令和７年９月２９日（月）|指定管理料等の目的、対象事業の内容、公益性の必要性、算定方法、証拠書類の整備、事務手続の適正等主眼に監査した。|町（農林課）、指定管理者の間で管理運営業務についての連絡調整を密に行うとともに、指定管理料については実態に即して算出根拠を再考されたい。|45|58		kansa-r7-18 p.1	✓	auto:pdftext	2026-11-12	要人確認:団体の監査 全件（相手の区切りと yakuwari、関係の shurui_ji・kubun は道具の候補）
+ee788fd07da4e313	kansa-kekka	kansa-r7-19	shurui,kokuji,kohyo_bi,kansa_bi,chakugan,shiteki,kekka_from,kekka_to	dantai|日野町監査委員告示第３３号|令和７年１２月２２日|令和７年１１月２７日（木）|対象事業の内容、公益上の必要性、算定方法、証拠書類の整備、事務手続の適正等を主眼に監査した。|なし|43|56		kansa-r7-19 p.1	✓	auto:pdftext	2026-11-12	要人確認:団体の監査 全件（相手の区切りと yakuwari、関係の shurui_ji・kubun は道具の候補）
+804f8746a07e7a11	kansa-kekka	kansa-r7-20	shurui,kokuji,kohyo_bi,kansa_bi,chakugan,shiteki,kekka_from,kekka_to	dantai|日野町監査委員告示第５号|令和８年３月２５日|令和８年２月２０日（金）|指定管理料の交付目的、対象事業の内容、公益性の必要性、算定方法、証拠書類の整備、事務手続の適正等主眼に監査した。|なし|40|56		kansa-r7-20 p.1	✓	auto:pdftext	2026-11-12	要人確認:団体の監査 全件（相手の区切りと yakuwari、関係の shurui_ji・kubun は道具の候補）
+4b8696742d1aab28	kansa-aite	kansa-r3-14/1	yakuwari,name,jikan,basho	ka|長寿福祉課||		kansa-r3-14 p.1	✓	auto:pdftext	2026-11-12	
+57b1978b61fdc50d	kansa-aite	kansa-r3-15/1	yakuwari,name,jikan,basho	ka|商工観光課||		kansa-r3-15 p.1	✓	auto:pdftext	2026-11-12	
+27e11cae9d45d270	kansa-aite	kansa-r4-01/1	yakuwari,name,jikan,basho	ka|福祉保健課||		kansa-r4-01 p.1	✓	auto:pdftext	2026-11-12	
+1591227b8367d13e	kansa-aite	kansa-r4-02/1	yakuwari,name,jikan,basho	ka|建設計画課||		kansa-r4-02 p.1	✓	auto:pdftext	2026-11-12	
+a59a4a09d5593a36	kansa-aite	kansa-r4-03/1	yakuwari,name,jikan,basho	ka|税務課||		kansa-r4-03 p.1	✓	auto:pdftext	2026-11-12	
+3ee4d0d548934c84	kansa-aite	kansa-r4-04/1	yakuwari,name,jikan,basho	ka|長寿福祉課||		kansa-r4-04 p.1	✓	auto:pdftext	2026-11-12	
+e418041b4aa4ec7e	kansa-aite	kansa-r4-05/1	yakuwari,name,jikan,basho	ka|上下水道課||		kansa-r4-05 p.1	✓	auto:pdftext	2026-11-12	
+9f2d3686dc5fefde	kansa-aite	kansa-r4-06/1	yakuwari,name,jikan,basho	ka|住民課||		kansa-r4-06 p.1	✓	auto:pdftext	2026-11-12	
+070efcd1a8e29e16	kansa-aite	kansa-r4-07/1	yakuwari,name,jikan,basho	ka|学校教育課||		kansa-r4-07 p.1	✓	auto:pdftext	2026-11-12	
+2f1fe14762e1592f	kansa-aite	kansa-r4-08/1	yakuwari,name,jikan,basho	ka|子ども支援課||		kansa-r4-08 p.1	✓	auto:pdftext	2026-11-12	
+b251382ff9b5f4d1	kansa-aite	kansa-r4-09/1	yakuwari,name,jikan,basho	ka|企画振興課||		kansa-r4-09 p.1	✓	auto:pdftext	2026-11-12	
+04238d91971c60d3	kansa-aite	kansa-r4-10/1	yakuwari,name,jikan,basho	ka|出納室||		kansa-r4-10 p.1	✓	auto:pdftext	2026-11-12	
+efad18576249af8d	kansa-aite	kansa-r4-11/1	yakuwari,name,jikan,basho	ka|農林課||		kansa-r4-11 p.1	✓	auto:pdftext	2026-11-12	
+fb4efe894523b271	kansa-aite	kansa-r4-12/1	yakuwari,name,jikan,basho	ka|総務課||		kansa-r4-12 p.1	✓	auto:pdftext	2026-11-12	
+d6b0dd9c20f41978	kansa-aite	kansa-r4-13/1	yakuwari,name,jikan,basho	ka|商工観光課||		kansa-r4-13 p.1	✓	auto:pdftext	2026-11-12	
+e3dfbac9829b64a6	kansa-aite	kansa-r4-14/1	yakuwari,name,jikan,basho	ka|生涯学習課||		kansa-r4-14 p.1	✓	auto:pdftext	2026-11-12	
+a3e28d8e33f7b7ab	kansa-aite	kansa-r4-15/1	yakuwari,name,jikan,basho	ka|総務課||		kansa-r4-15 p.1	✓	auto:pdftext	2026-11-12	
+9526db826d816403	kansa-aite	kansa-r4-16/1	yakuwari,name,jikan,basho	ka|子ども支援課|午前９時５５分～午前１０時２０分|第１委員会室		kansa-r4-16 p.1	✓	auto:pdftext	2026-11-12	要人確認:団体の監査 全件（相手の区切りと yakuwari、関係の shurui_ji・kubun は道具の候補）
+c6e0677524c15db0	kansa-aite	kansa-r4-16/2	yakuwari,name,jikan,basho	dantai|わらべ保育園|午前１０時４０分～午前１１時２５分|同保育園		kansa-r4-16 p.1	✓	auto:pdftext	2026-11-12	要人確認:団体の監査 全件（相手の区切りと yakuwari、関係の shurui_ji・kubun は道具の候補）
+c8eb0c34017f8117	kansa-aite	kansa-r4-17/1	yakuwari,name,jikan,basho	ka|農林課|午前１０時５１分～午前１１時１５分|第１委員会室		kansa-r4-17 p.1	✓	auto:pdftext	2026-11-12	要人確認:団体の監査 全件（相手の区切りと yakuwari、関係の shurui_ji・kubun は道具の候補）
+42e7f936e9eaa800	kansa-aite	kansa-r4-17/2	yakuwari,name,jikan,basho	dantai|日野町土地改良区|午前１１時１５分～午前１１時２８分|第１委員会室		kansa-r4-17 p.1	✓	auto:pdftext	2026-11-12	要人確認:団体の監査 全件（相手の区切りと yakuwari、関係の shurui_ji・kubun は道具の候補）
+10a42452c4e14b61	kansa-aite	kansa-r4-18/1	yakuwari,name,jikan,basho	ka|商工観光課|午前１０時５分～午前１０時２３分|第１委員会室		kansa-r4-18 p.1	✓	auto:pdftext	2026-11-12	要人確認:団体の監査 全件（相手の区切りと yakuwari、関係の shurui_ji・kubun は道具の候補）
+e5c6ebe6cc2578da	kansa-aite	kansa-r4-18/2	yakuwari,name,jikan,basho	dantai|日野観光協会|午前１０時４５分～午前１１時３５分|まちかど感応館		kansa-r4-18 p.1	✓	auto:pdftext	2026-11-12	要人確認:団体の監査 全件（相手の区切りと yakuwari、関係の shurui_ji・kubun は道具の候補）
+6bdc1c9c5a06cf20	kansa-aite	kansa-r4-19/1	yakuwari,name,jikan,basho	dantai|日野町スポーツ協会||		kansa-r4-19 p.1	✓	auto:pdftext	2026-11-12	要人確認:団体の監査 全件（相手の区切りと yakuwari、関係の shurui_ji・kubun は道具の候補）
+01ca9295ad5fef9e	kansa-aite	kansa-r5-01/1	yakuwari,name,jikan,basho	ka|子ども支援課||		kansa-r5-01 p.1	✓	auto:pdftext	2026-11-12	
+9ec80f75e40c12eb	kansa-aite	kansa-r5-02/1	yakuwari,name,jikan,basho	ka|長寿福祉課||		kansa-r5-02 p.1	✓	auto:pdftext	2026-11-12	
+c4285b3f37e305d9	kansa-aite	kansa-r5-03/1	yakuwari,name,jikan,basho	ka|税務課||		kansa-r5-03 p.1	✓	auto:pdftext	2026-11-12	
+78b54a25d204b99c	kansa-aite	kansa-r5-04/1	yakuwari,name,jikan,basho	ka|図書館||		kansa-r5-04 p.1	✓	auto:pdftext	2026-11-12	
+37c87d839a781d7b	kansa-aite	kansa-r5-05/1	yakuwari,name,jikan,basho	ka|上下水道課||		kansa-r5-05 p.1	✓	auto:pdftext	2026-11-12	
+02abdb05072750c0	kansa-aite	kansa-r5-06/1	yakuwari,name,jikan,basho	ka|農林課||		kansa-r5-06 p.1	✓	auto:pdftext	2026-11-12	
+0b7150c00e120b93	kansa-aite	kansa-r5-07/1	yakuwari,name,jikan,basho	ka|建設計画課||		kansa-r5-07 p.1	✓	auto:pdftext	2026-11-12	
+7c757ab823c65bd6	kansa-aite	kansa-r5-08/1	yakuwari,name,jikan,basho	ka|学校教育課||		kansa-r5-08 p.1	✓	auto:pdftext	2026-11-12	
+6a228923a5147a4a	kansa-aite	kansa-r5-09/1	yakuwari,name,jikan,basho	ka|出納室||		kansa-r5-09 p.1	✓	auto:pdftext	2026-11-12	
+bafe375ca83db7cb	kansa-aite	kansa-r5-10/1	yakuwari,name,jikan,basho	ka|福祉保健課||		kansa-r5-10 p.1	✓	auto:pdftext	2026-11-12	
+61e7484b99c32ef6	kansa-aite	kansa-r5-11/1	yakuwari,name,jikan,basho	ka|住民課||		kansa-r5-11 p.1	✓	auto:pdftext	2026-11-12	
+a6abe57140e364e4	kansa-aite	kansa-r5-12/1	yakuwari,name,jikan,basho	ka|交通環境政策課||		kansa-r5-12 p.1	✓	auto:pdftext	2026-11-12	
+80157b525877c5c3	kansa-aite	kansa-r5-13/1	yakuwari,name,jikan,basho	ka|総務課||		kansa-r5-13 p.1	✓	auto:pdftext	2026-11-12	
+f3cd922b4e18a23f	kansa-aite	kansa-r5-14/1	yakuwari,name,jikan,basho	ka|生涯学習課||		kansa-r5-14 p.1	✓	auto:pdftext	2026-11-12	
+744a95d6c343a0f7	kansa-aite	kansa-r5-15/1	yakuwari,name,jikan,basho	ka|企画振興課||		kansa-r5-15 p.1	✓	auto:pdftext	2026-11-12	
+d8ef0d660cac382c	kansa-aite	kansa-r5-16/1	yakuwari,name,jikan,basho	ka|商工観光課||		kansa-r5-16 p.1	✓	auto:pdftext	2026-11-12	
+f093e7a94a3e519c	kansa-aite	kansa-r5-17/1	yakuwari,name,jikan,basho	ka|総務課||		kansa-r5-17 p.1	✓	auto:pdftext	2026-11-12	
+714fd006f08488dc	kansa-aite	kansa-r5-18/1	yakuwari,name,jikan,basho	dantai|日野町少年センター運営委員会||		kansa-r5-18 p.1	✓	auto:pdftext	2026-11-12	要人確認:団体の監査 全件（相手の区切りと yakuwari、関係の shurui_ji・kubun は道具の候補）
+849fe5a49fd51812	kansa-aite	kansa-r5-18/2	yakuwari,name,jikan,basho	ka|学校教育課||		kansa-r5-18 p.1	✓	auto:pdftext	2026-11-12	要人確認:団体の監査 全件（相手の区切りと yakuwari、関係の shurui_ji・kubun は道具の候補）
+a6b5c06e518c4fd4	kansa-aite	kansa-r5-19/1	yakuwari,name,jikan,basho	dantai|「わたむき自動車プロジェクト」推進協議会||		kansa-r5-19 p.1	✓	auto:pdftext	2026-11-12	要人確認:団体の監査 全件（相手の区切りと yakuwari、関係の shurui_ji・kubun は道具の候補）
+aab8b9de29a71a76	kansa-aite	kansa-r5-19/2	yakuwari,name,jikan,basho	ka|交通環境政策課||		kansa-r5-19 p.1	✓	auto:pdftext	2026-11-12	要人確認:団体の監査 全件（相手の区切りと yakuwari、関係の shurui_ji・kubun は道具の候補）
+3858178a694675da	kansa-aite	kansa-r5-20/1	yakuwari,name,jikan,basho	dantai|一般社団法人近江日野交流ネットワーク||		kansa-r5-20 p.1	✓	auto:pdftext	2026-11-12	要人確認:団体の監査 全件（相手の区切りと yakuwari、関係の shurui_ji・kubun は道具の候補）
+20d753478a54e7a7	kansa-aite	kansa-r5-20/2	yakuwari,name,jikan,basho	ka|商工観光課||		kansa-r5-20 p.1	✓	auto:pdftext	2026-11-12	要人確認:団体の監査 全件（相手の区切りと yakuwari、関係の shurui_ji・kubun は道具の候補）
+4f845c3e67b51bdc	kansa-aite	kansa-r6-01/1	yakuwari,name,jikan,basho	ka|建設計画課||		kansa-r6-01 p.1	✓	auto:pdftext	2026-11-12	
+522ae86b7aa3b4be	kansa-aite	kansa-r6-02/1	yakuwari,name,jikan,basho	ka|住民課||		kansa-r6-02 p.1	✓	auto:pdftext	2026-11-12	
+9497b7e8c12443a0	kansa-aite	kansa-r6-03/1	yakuwari,name,jikan,basho	ka|税務課||		kansa-r6-03 p.1	✓	auto:pdftext	2026-11-12	
+b2fdddd09fa1b754	kansa-aite	kansa-r6-04/1	yakuwari,name,jikan,basho	ka|長寿福祉課||		kansa-r6-04 p.1	✓	auto:pdftext	2026-11-12	
+f7b5b8d301b79489	kansa-aite	kansa-r6-05/1	yakuwari,name,jikan,basho	ka|上下水道課||		kansa-r6-05 p.1	✓	auto:pdftext	2026-11-12	
+e7765efc15114f15	kansa-aite	kansa-r6-06/1	yakuwari,name,jikan,basho	ka|企画振興課||		kansa-r6-06 p.1	✓	auto:pdftext	2026-11-12	
+449311391125eb5a	kansa-aite	kansa-r6-07/1	yakuwari,name,jikan,basho	ka|学校教育課||		kansa-r6-07 p.1	✓	auto:pdftext	2026-11-12	
+04022ad99a099a65	kansa-aite	kansa-r6-08/1	yakuwari,name,jikan,basho	ka|農林課||		kansa-r6-08 p.1	✓	auto:pdftext	2026-11-12	
+8de4d4af75549624	kansa-aite	kansa-r6-09/1	yakuwari,name,jikan,basho	ka|生涯学習課||		kansa-r6-09 p.1	✓	auto:pdftext	2026-11-12	
+73a8a6828960b293	kansa-aite	kansa-r6-10/1	yakuwari,name,jikan,basho	ka|出納室||		kansa-r6-10 p.1	✓	auto:pdftext	2026-11-12	
+35f9af4445929c13	kansa-aite	kansa-r6-11/1	yakuwari,name,jikan,basho	ka|商工観光課||		kansa-r6-11 p.1	✓	auto:pdftext	2026-11-12	
+20b58022ba88e833	kansa-aite	kansa-r6-12/1	yakuwari,name,jikan,basho	ka|総務課||		kansa-r6-12 p.1	✓	auto:pdftext	2026-11-12	
+0676ddd4c8ef7b97	kansa-aite	kansa-r6-13/1	yakuwari,name,jikan,basho	ka|交通環境政策課||		kansa-r6-13 p.1	✓	auto:pdftext	2026-11-12	
+8e185e38a92b0364	kansa-aite	kansa-r6-14/1	yakuwari,name,jikan,basho	ka|子ども支援課||		kansa-r6-14 p.1	✓	auto:pdftext	2026-11-12	
+c6ca4815f1b13a87	kansa-aite	kansa-r6-15/1	yakuwari,name,jikan,basho	ka|福祉保健課||		kansa-r6-15 p.1	✓	auto:pdftext	2026-11-12	
+f18f67fdccf8a04d	kansa-aite	kansa-r6-16/1	yakuwari,name,jikan,basho	ka|総務課（財政担当）||		kansa-r6-16 p.1	✓	auto:pdftext	2026-11-12	
+182efad445410b94	kansa-aite	kansa-r6-17/1	yakuwari,name,jikan,basho	dantai|日野町農業再生協議会||		kansa-r6-17 p.1	✓	auto:pdftext	2026-11-12	要人確認:団体の監査 全件（相手の区切りと yakuwari、関係の shurui_ji・kubun は道具の候補）
+bad9d3d8baa8cb5d	kansa-aite	kansa-r6-17/2	yakuwari,name,jikan,basho	ka|農林課||		kansa-r6-17 p.1	✓	auto:pdftext	2026-11-12	要人確認:団体の監査 全件（相手の区切りと yakuwari、関係の shurui_ji・kubun は道具の候補）
+4e941927a8ad8f16	kansa-aite	kansa-r6-18/1	yakuwari,name,jikan,basho	dantai|日野町商工会||		kansa-r6-18 p.1	✓	auto:pdftext	2026-11-12	要人確認:団体の監査 全件（相手の区切りと yakuwari、関係の shurui_ji・kubun は道具の候補）
+61baa64c0554e543	kansa-aite	kansa-r6-18/2	yakuwari,name,jikan,basho	ka|商工観光課||		kansa-r6-18 p.1	✓	auto:pdftext	2026-11-12	要人確認:団体の監査 全件（相手の区切りと yakuwari、関係の shurui_ji・kubun は道具の候補）
+6a7b718f56a5c118	kansa-aite	kansa-r6-19/1	yakuwari,name,jikan,basho	dantai|日野町社会福祉協議会||		kansa-r6-19 p.1	✓	auto:pdftext	2026-11-12	要人確認:団体の監査 全件（相手の区切りと yakuwari、関係の shurui_ji・kubun は道具の候補）
+d723bc30f88fb83d	kansa-aite	kansa-r6-19/2	yakuwari,name,jikan,basho	ka|福祉保健課||		kansa-r6-19 p.1	✓	auto:pdftext	2026-11-12	要人確認:団体の監査 全件（相手の区切りと yakuwari、関係の shurui_ji・kubun は道具の候補）
+1ece4c2f165eedd4	kansa-aite	kansa-r6-19/3	yakuwari,name,jikan,basho	ka|地域共生担当課長||		kansa-r6-19 p.1	✓	auto:pdftext	2026-11-12	要人確認:団体の監査 全件（相手の区切りと yakuwari、関係の shurui_ji・kubun は道具の候補）
+44c7ea72fcc5787c	kansa-aite	kansa-r7-01/1	yakuwari,name,jikan,basho	ka|建設計画課||		kansa-r7-01 p.1	✓	auto:pdftext	2026-11-12	
+4b958bd2ace049be	kansa-aite	kansa-r7-02/1	yakuwari,name,jikan,basho	ka|長寿福祉課||		kansa-r7-02 p.1	✓	auto:pdftext	2026-11-12	
+9cc1396b4da382ed	kansa-aite	kansa-r7-03/1	yakuwari,name,jikan,basho	ka|税務課||		kansa-r7-03 p.1	✓	auto:pdftext	2026-11-12	
+f975ae66e8db85e5	kansa-aite	kansa-r7-04/1	yakuwari,name,jikan,basho	ka|図書館||		kansa-r7-04 p.1	✓	auto:pdftext	2026-11-12	
+911698c5e76652f2	kansa-aite	kansa-r7-05/1	yakuwari,name,jikan,basho	ka|上下水道課||		kansa-r7-05 p.1	✓	auto:pdftext	2026-11-12	
+507ece120c9132d3	kansa-aite	kansa-r7-06/1	yakuwari,name,jikan,basho	ka|子ども支援課||		kansa-r7-06 p.1	✓	auto:pdftext	2026-11-12	
+5b3b94ba446d84de	kansa-aite	kansa-r7-07/1	yakuwari,name,jikan,basho	ka|学校教育課||		kansa-r7-07 p.1	✓	auto:pdftext	2026-11-12	
+3ecdb6f077792a4b	kansa-aite	kansa-r7-08/1	yakuwari,name,jikan,basho	ka|農林課||		kansa-r7-08 p.1	✓	auto:pdftext	2026-11-12	
+b85072a47e986c7f	kansa-aite	kansa-r7-09/1	yakuwari,name,jikan,basho	ka|出納室||		kansa-r7-09 p.1	✓	auto:pdftext	2026-11-12	
+538801f3064ab305	kansa-aite	kansa-r7-10/1	yakuwari,name,jikan,basho	ka|福祉保健課||		kansa-r7-10 p.1	✓	auto:pdftext	2026-11-12	
+ebd52e28504a8a0f	kansa-aite	kansa-r7-11/1	yakuwari,name,jikan,basho	ka|住民課||		kansa-r7-11 p.1	✓	auto:pdftext	2026-11-12	
+184bdf307292b011	kansa-aite	kansa-r7-12/1	yakuwari,name,jikan,basho	ka|商工観光課||		kansa-r7-12 p.1	✓	auto:pdftext	2026-11-12	
+0a4976f3c2e302f2	kansa-aite	kansa-r7-13/1	yakuwari,name,jikan,basho	ka|総務課||		kansa-r7-13 p.1	✓	auto:pdftext	2026-11-12	
+34bc178c1261a1b8	kansa-aite	kansa-r7-14/1	yakuwari,name,jikan,basho	ka|交通環境政策課||		kansa-r7-14 p.1	✓	auto:pdftext	2026-11-12	
+e410cc89eea328c7	kansa-aite	kansa-r7-15/1	yakuwari,name,jikan,basho	ka|企画振興課||		kansa-r7-15 p.1	✓	auto:pdftext	2026-11-12	
+8a4802d4b9d396e0	kansa-aite	kansa-r7-16/1	yakuwari,name,jikan,basho	ka|生涯学習課||		kansa-r7-16 p.1	✓	auto:pdftext	2026-11-12	
+c734a4a71ecfbfeb	kansa-aite	kansa-r7-17/1	yakuwari,name,jikan,basho	ka|総務課||		kansa-r7-17 p.1	✓	auto:pdftext	2026-11-12	
+f3a2e264cb9baf5c	kansa-aite	kansa-r7-18/1	yakuwari,name,jikan,basho	dantai|熊野企業組合||		kansa-r7-18 p.1	✓	auto:pdftext	2026-11-12	要人確認:団体の監査 全件（相手の区切りと yakuwari、関係の shurui_ji・kubun は道具の候補）
+0fa9b2cfcb73f6e4	kansa-aite	kansa-r7-18/2	yakuwari,name,jikan,basho	ka|農林課||		kansa-r7-18 p.1	✓	auto:pdftext	2026-11-12	要人確認:団体の監査 全件（相手の区切りと yakuwari、関係の shurui_ji・kubun は道具の候補）
+b3ccfe481a7961e0	kansa-aite	kansa-r7-19/1	yakuwari,name,jikan,basho	dantai|公益社団法人日野町シルバー人材センター||		kansa-r7-19 p.1	✓	auto:pdftext	2026-11-12	要人確認:団体の監査 全件（相手の区切りと yakuwari、関係の shurui_ji・kubun は道具の候補）
+38ac4ec3cbd3ee8a	kansa-aite	kansa-r7-19/2	yakuwari,name,jikan,basho	ka|商工観光課||		kansa-r7-19 p.1	✓	auto:pdftext	2026-11-12	要人確認:団体の監査 全件（相手の区切りと yakuwari、関係の shurui_ji・kubun は道具の候補）
+be04cc05774fd445	kansa-aite	kansa-r7-20/1	yakuwari,name,jikan,basho	ka|生涯学習課||		kansa-r7-20 p.1	✓	auto:pdftext	2026-11-12	要人確認:団体の監査 全件（相手の区切りと yakuwari、関係の shurui_ji・kubun は道具の候補）
+6c8eb3e89cd9ebcf	kansa-aite	kansa-r7-20/2	yakuwari,name,jikan,basho	dantai|(公財)日野町文化振興事業団||		kansa-r7-20 p.1	✓	auto:pdftext	2026-11-12	要人確認:団体の監査 全件（相手の区切りと yakuwari、関係の shurui_ji・kubun は道具の候補）
+090f01ffa78291d1	kansa-kankei	kansa-r4-16/1	gyo,oya,meimoku,shurui_ji,kubun,nendo_ji,nendo_basho,retsu,gaku,gaku_raw	kobetsu||保育所入所運営事業負担金|負担金|zaisei-enjo||||196391520|196,391,520 円	円	kansa-r4-16 p.1	✓	auto:pdftext	2026-11-12	要人確認:団体の監査 全件（相手の区切りと yakuwari、関係の shurui_ji・kubun は道具の候補）
+61844ec9517f8786	kansa-kankei	kansa-r4-16/2	gyo,oya,meimoku,shurui_ji,kubun,nendo_ji,nendo_basho,retsu,gaku,gaku_raw	kobetsu||わらべ保育園運営事業費補助金|補助金|zaisei-enjo||||34053710|34,053,710 円	円	kansa-r4-16 p.1	✓	auto:pdftext	2026-11-12	要人確認:団体の監査 全件（相手の区切りと yakuwari、関係の shurui_ji・kubun は道具の候補）
+4fd4357b7c6e8d8d	kansa-kankei	kansa-r4-16/3	gyo,oya,meimoku,shurui_ji,kubun,nendo_ji,nendo_basho,retsu,gaku,gaku_raw	uchiwake|2|保育費加算補助|||||わらべ保育園|3192750|3,192,750 円	円	kansa-r4-16 p.1	✓	auto:pdftext	2026-11-12	要人確認:団体の監査 全件（相手の区切りと yakuwari、関係の shurui_ji・kubun は道具の候補）
+d44dd0587773157d	kansa-kankei	kansa-r4-16/4	gyo,oya,meimoku,shurui_ji,kubun,nendo_ji,nendo_basho,retsu,gaku,gaku_raw	uchiwake|2|保育費加算補助|||||第二わらべ保育園|3005640|3,005,640 円	円	kansa-r4-16 p.1	✓	auto:pdftext	2026-11-12	要人確認:団体の監査 全件（相手の区切りと yakuwari、関係の shurui_ji・kubun は道具の候補）
+03931ad4bd7a1741	kansa-kankei	kansa-r4-16/5	gyo,oya,meimoku,shurui_ji,kubun,nendo_ji,nendo_basho,retsu,gaku,gaku_raw	uchiwake|2|園児健康管理共済費補助|||||わらべ保育園|10881|10,881 円	円	kansa-r4-16 p.1	✓	auto:pdftext	2026-11-12	要人確認:団体の監査 全件（相手の区切りと yakuwari、関係の shurui_ji・kubun は道具の候補）
+12cdad8aa5d4de75	kansa-kankei	kansa-r4-16/6	gyo,oya,meimoku,shurui_ji,kubun,nendo_ji,nendo_basho,retsu,gaku,gaku_raw	uchiwake|2|園児健康管理共済費補助|||||第二わらべ保育園|10179|10,179 円	円	kansa-r4-16 p.1	✓	auto:pdftext	2026-11-12	要人確認:団体の監査 全件（相手の区切りと yakuwari、関係の shurui_ji・kubun は道具の候補）
+e25627c25cc3a2cc	kansa-kankei	kansa-r4-16/7	gyo,oya,meimoku,shurui_ji,kubun,nendo_ji,nendo_basho,retsu,gaku,gaku_raw	uchiwake|2|週休加配保育士等特別配置|||||わらべ保育園|3000000|3,000,000 円	円	kansa-r4-16 p.1	✓	auto:pdftext	2026-11-12	要人確認:団体の監査 全件（相手の区切りと yakuwari、関係の shurui_ji・kubun は道具の候補）
+7eb10d83cb127da9	kansa-kankei	kansa-r4-16/8	gyo,oya,meimoku,shurui_ji,kubun,nendo_ji,nendo_basho,retsu,gaku,gaku_raw	uchiwake|2|週休加配保育士等特別配置|||||第二わらべ保育園|3000000|3,000,000 円	円	kansa-r4-16 p.1	✓	auto:pdftext	2026-11-12	要人確認:団体の監査 全件（相手の区切りと yakuwari、関係の shurui_ji・kubun は道具の候補）
+22d148ba75cace1d	kansa-kankei	kansa-r4-16/9	gyo,oya,meimoku,shurui_ji,kubun,nendo_ji,nendo_basho,retsu,gaku,gaku_raw	uchiwake|2|一時保育促進事業|||||わらべ保育園|3000000|3,000,000 円	円	kansa-r4-16 p.1	✓	auto:pdftext	2026-11-12	要人確認:団体の監査 全件（相手の区切りと yakuwari、関係の shurui_ji・kubun は道具の候補）
+c75e16e1bf6de574	kansa-kankei	kansa-r4-16/10	gyo,oya,meimoku,shurui_ji,kubun,nendo_ji,nendo_basho,retsu,gaku,gaku_raw	uchiwake|2|一時保育促進事業|||||第二わらべ保育園|0|0 円	円	kansa-r4-16 p.1	✓	auto:pdftext	2026-11-12	要人確認:団体の監査 全件（相手の区切りと yakuwari、関係の shurui_ji・kubun は道具の候補）
+a200523cc1de79ce	kansa-kankei	kansa-r4-16/11	gyo,oya,meimoku,shurui_ji,kubun,nendo_ji,nendo_basho,retsu,gaku,gaku_raw	uchiwake|2|低年齢児保育保育士等特別配置事業|||||わらべ保育園|3000000|3,000,000 円	円	kansa-r4-16 p.1	✓	auto:pdftext	2026-11-12	要人確認:団体の監査 全件（相手の区切りと yakuwari、関係の shurui_ji・kubun は道具の候補）
+5ebd63cf2d2f160d	kansa-kankei	kansa-r4-16/12	gyo,oya,meimoku,shurui_ji,kubun,nendo_ji,nendo_basho,retsu,gaku,gaku_raw	uchiwake|2|低年齢児保育保育士等特別配置事業|||||第二わらべ保育園|3000000|3,000,000 円	円	kansa-r4-16 p.1	✓	auto:pdftext	2026-11-12	要人確認:団体の監査 全件（相手の区切りと yakuwari、関係の shurui_ji・kubun は道具の候補）
+824eb6494630bced	kansa-kankei	kansa-r4-16/13	gyo,oya,meimoku,shurui_ji,kubun,nendo_ji,nendo_basho,retsu,gaku,gaku_raw	uchiwake|2|障害児保育推進事業|||||わらべ保育園|2400000|2,400,000 円	円	kansa-r4-16 p.1	✓	auto:pdftext	2026-11-12	要人確認:団体の監査 全件（相手の区切りと yakuwari、関係の shurui_ji・kubun は道具の候補）
+6105d63344c8a1de	kansa-kankei	kansa-r4-16/14	gyo,oya,meimoku,shurui_ji,kubun,nendo_ji,nendo_basho,retsu,gaku,gaku_raw	uchiwake|2|障害児保育推進事業|||||第二わらべ保育園|1200000|1,200,000 円	円	kansa-r4-16 p.1	✓	auto:pdftext	2026-11-12	要人確認:団体の監査 全件（相手の区切りと yakuwari、関係の shurui_ji・kubun は道具の候補）
+0dd1d51ba94190fd	kansa-kankei	kansa-r4-16/15	gyo,oya,meimoku,shurui_ji,kubun,nendo_ji,nendo_basho,retsu,gaku,gaku_raw	uchiwake|2|延長保育事業|||||わらべ保育園|2120400|2,120,400 円	円	kansa-r4-16 p.1	✓	auto:pdftext	2026-11-12	要人確認:団体の監査 全件（相手の区切りと yakuwari、関係の shurui_ji・kubun は道具の候補）
+1127a716f1004a20	kansa-kankei	kansa-r4-16/16	gyo,oya,meimoku,shurui_ji,kubun,nendo_ji,nendo_basho,retsu,gaku,gaku_raw	uchiwake|2|延長保育事業|||||第二わらべ保育園|2120400|2,120,400 円	円	kansa-r4-16 p.1	✓	auto:pdftext	2026-11-12	要人確認:団体の監査 全件（相手の区切りと yakuwari、関係の shurui_ji・kubun は道具の候補）
+fba4ad1eac9bcb28	kansa-kankei	kansa-r4-16/17	gyo,oya,meimoku,shurui_ji,kubun,nendo_ji,nendo_basho,retsu,gaku,gaku_raw	uchiwake|2|保育所地域活動事業|||||わらべ保育園|141000|141,000 円	円	kansa-r4-16 p.1	✓	auto:pdftext	2026-11-12	要人確認:団体の監査 全件（相手の区切りと yakuwari、関係の shurui_ji・kubun は道具の候補）
+5985702a481ec6f7	kansa-kankei	kansa-r4-16/18	gyo,oya,meimoku,shurui_ji,kubun,nendo_ji,nendo_basho,retsu,gaku,gaku_raw	uchiwake|2|保育所地域活動事業|||||第二わらべ保育園|141000|141,000 円	円	kansa-r4-16 p.1	✓	auto:pdftext	2026-11-12	要人確認:団体の監査 全件（相手の区切りと yakuwari、関係の shurui_ji・kubun は道具の候補）
+0089efd86c0efc9b	kansa-kankei	kansa-r4-16/19	gyo,oya,meimoku,shurui_ji,kubun,nendo_ji,nendo_basho,retsu,gaku,gaku_raw	uchiwake|2|０歳児途中入所保育保育士確保事業|||||わらべ保育園|1000000|1,000,000 円	円	kansa-r4-16 p.1	✓	auto:pdftext	2026-11-12	要人確認:団体の監査 全件（相手の区切りと yakuwari、関係の shurui_ji・kubun は道具の候補）
+f0de68d94c301619	kansa-kankei	kansa-r4-16/20	gyo,oya,meimoku,shurui_ji,kubun,nendo_ji,nendo_basho,retsu,gaku,gaku_raw	uchiwake|2|０歳児途中入所保育保育士確保事業|||||第二わらべ保育園|1000000|1,000,000 円	円	kansa-r4-16 p.1	✓	auto:pdftext	2026-11-12	要人確認:団体の監査 全件（相手の区切りと yakuwari、関係の shurui_ji・kubun は道具の候補）
+73bf798fcfe44c54	kansa-kankei	kansa-r4-16/21	gyo,oya,meimoku,shurui_ji,kubun,nendo_ji,nendo_basho,retsu,gaku,gaku_raw	uchiwake|2|主食費補助事業|||||わらべ保育園|227900|227,900 円	円	kansa-r4-16 p.1	✓	auto:pdftext	2026-11-12	要人確認:団体の監査 全件（相手の区切りと yakuwari、関係の shurui_ji・kubun は道具の候補）
+517cdae6f3849fae	kansa-kankei	kansa-r4-16/22	gyo,oya,meimoku,shurui_ji,kubun,nendo_ji,nendo_basho,retsu,gaku,gaku_raw	uchiwake|2|主食費補助事業|||||第二わらべ保育園|215000|215,000 円	円	kansa-r4-16 p.1	✓	auto:pdftext	2026-11-12	要人確認:団体の監査 全件（相手の区切りと yakuwari、関係の shurui_ji・kubun は道具の候補）
+b8d046c497903f0b	kansa-kankei	kansa-r4-16/23	gyo,oya,meimoku,shurui_ji,kubun,nendo_ji,nendo_basho,retsu,gaku,gaku_raw	uchiwake|2|副食費補助事業|||||わらべ保育園|204400|204,400 円	円	kansa-r4-16 p.1	✓	auto:pdftext	2026-11-12	要人確認:団体の監査 全件（相手の区切りと yakuwari、関係の shurui_ji・kubun は道具の候補）
+195e3fca8915e511	kansa-kankei	kansa-r4-16/24	gyo,oya,meimoku,shurui_ji,kubun,nendo_ji,nendo_basho,retsu,gaku,gaku_raw	uchiwake|2|副食費補助事業|||||第二わらべ保育園|212800|212,800 円	円	kansa-r4-16 p.1	✓	auto:pdftext	2026-11-12	要人確認:団体の監査 全件（相手の区切りと yakuwari、関係の shurui_ji・kubun は道具の候補）
+33f627237dd4a656	kansa-kankei	kansa-r4-16/25	gyo,oya,meimoku,shurui_ji,kubun,nendo_ji,nendo_basho,retsu,gaku,gaku_raw	uchiwake|2|新型コロナウイルス感染症対策事業|||||わらべ保育園|500000|500,000 円	円	kansa-r4-16 p.1	✓	auto:pdftext	2026-11-12	要人確認:団体の監査 全件（相手の区切りと yakuwari、関係の shurui_ji・kubun は道具の候補）
+43cccfe107513c1e	kansa-kankei	kansa-r4-16/26	gyo,oya,meimoku,shurui_ji,kubun,nendo_ji,nendo_basho,retsu,gaku,gaku_raw	uchiwake|2|新型コロナウイルス感染症対策事業|||||第二わらべ保育園|500000|500,000 円	円	kansa-r4-16 p.1	✓	auto:pdftext	2026-11-12	要人確認:団体の監査 全件（相手の区切りと yakuwari、関係の shurui_ji・kubun は道具の候補）
+0bc09faf3ae9e1df	kansa-kankei	kansa-r4-16/27	gyo,oya,meimoku,shurui_ji,kubun,nendo_ji,nendo_basho,retsu,gaku,gaku_raw	uchiwake|2|保育士・幼稚園教諭等処遇改善臨時特例事業|||||わらべ保育園|422520|422,520 円	円	kansa-r4-16 p.1		auto:pdftext	2026-11-12	要人確認:段1 meimoku：「保育士・幼稚園教諭等処遇改善臨時特例事業」が data/text に無い。要人確認:団体の監査 全件（相手の区切りと yakuwari、関係の shurui_ji・kubun は道具の候補）
+9835c1c28e7ba6a7	kansa-kankei	kansa-r4-16/28	gyo,oya,meimoku,shurui_ji,kubun,nendo_ji,nendo_basho,retsu,gaku,gaku_raw	uchiwake|2|保育士・幼稚園教諭等処遇改善臨時特例事業|||||第二わらべ保育園|428840|428,840 円	円	kansa-r4-16 p.1		auto:pdftext	2026-11-12	要人確認:段1 meimoku：「保育士・幼稚園教諭等処遇改善臨時特例事業」が data/text に無い。要人確認:団体の監査 全件（相手の区切りと yakuwari、関係の shurui_ji・kubun は道具の候補）
+30f97994e4c87ed0	kansa-kankei	kansa-r4-16/29	gyo,oya,meimoku,shurui_ji,kubun,nendo_ji,nendo_basho,retsu,gaku,gaku_raw	gokei|2|合計|||||わらべ保育園|19219851|19,219,851 円	円	kansa-r4-16 p.1	✓	auto:pdftext	2026-11-12	要人確認:団体の監査 全件（相手の区切りと yakuwari、関係の shurui_ji・kubun は道具の候補）
+4fc6f72868dbd0a6	kansa-kankei	kansa-r4-16/30	gyo,oya,meimoku,shurui_ji,kubun,nendo_ji,nendo_basho,retsu,gaku,gaku_raw	gokei|2|合計|||||第二わらべ保育園|14833859|14,833,859 円	円	kansa-r4-16 p.1	✓	auto:pdftext	2026-11-12	要人確認:団体の監査 全件（相手の区切りと yakuwari、関係の shurui_ji・kubun は道具の候補）
+882222c01cafaa82	kansa-kankei	kansa-r4-17/1	gyo,oya,meimoku,shurui_ji,kubun,nendo_ji,nendo_basho,retsu,gaku,gaku_raw	kobetsu||土地改良区運営事業補助金|補助金|zaisei-enjo||||2600000|2,600,000 円	円	kansa-r4-17 p.1	✓	auto:pdftext	2026-11-12	要人確認:団体の監査 全件（相手の区切りと yakuwari、関係の shurui_ji・kubun は道具の候補）
+7c3134a342e50bd5	kansa-kankei	kansa-r4-17/2	gyo,oya,meimoku,shurui_ji,kubun,nendo_ji,nendo_basho,retsu,gaku,gaku_raw	kobetsu||土地改良区南比都佐地区水利補助金|補助金|zaisei-enjo||||739000|739,000 円	円	kansa-r4-17 p.1	✓	auto:pdftext	2026-11-12	要人確認:団体の監査 全件（相手の区切りと yakuwari、関係の shurui_ji・kubun は道具の候補）
+150548d09e910675	kansa-kankei	kansa-r4-17/3	gyo,oya,meimoku,shurui_ji,kubun,nendo_ji,nendo_basho,retsu,gaku,gaku_raw	kobetsu||土地改良区西大路地区水利補助金|補助金|zaisei-enjo||||117000|117,000 円	円	kansa-r4-17 p.1	✓	auto:pdftext	2026-11-12	要人確認:団体の監査 全件（相手の区切りと yakuwari、関係の shurui_ji・kubun は道具の候補）
+0096c88b11a96eb4	kansa-kankei	kansa-r4-17/4	gyo,oya,meimoku,shurui_ji,kubun,nendo_ji,nendo_basho,retsu,gaku,gaku_raw	gokei||合 計||||||3456000|3,456,000 円	円	kansa-r4-17 p.1	✓	auto:pdftext	2026-11-12	要人確認:団体の監査 全件（相手の区切りと yakuwari、関係の shurui_ji・kubun は道具の候補）
+2d21fc3bc4ef0dc9	kansa-kankei	kansa-r4-18/1	gyo,oya,meimoku,shurui_ji,kubun,nendo_ji,nendo_basho,retsu,gaku,gaku_raw	kobetsu||日野観光協会補助金|補助金|zaisei-enjo|令和３年度決算|gaku-ato||23581000|23,581,000 円	円	kansa-r4-18 p.1	✓	auto:pdftext	2026-11-12	要人確認:団体の監査 全件（相手の区切りと yakuwari、関係の shurui_ji・kubun は道具の候補）
+9bc821b141c2411d	kansa-kankei	kansa-r4-19/1	gyo,oya,meimoku,shurui_ji,kubun,nendo_ji,nendo_basho,retsu,gaku,gaku_raw	kobetsu||日野町スポーツ協会補助金|補助金|zaisei-enjo|令和３年度決算|gaku-ato||2041000|2,041,000 円	円	kansa-r4-19 p.1	✓	auto:pdftext	2026-11-12	要人確認:団体の監査 全件（相手の区切りと yakuwari、関係の shurui_ji・kubun は道具の候補）
+4acb71950614862d	kansa-kankei	kansa-r5-18/1	gyo,oya,meimoku,shurui_ji,kubun,nendo_ji,nendo_basho,retsu,gaku,gaku_raw	kobetsu||令和４年度日野町少年センター運営負担金|負担金|zaisei-enjo|令和４年度|atama||8824000|8,824,000 円	円	kansa-r5-18 p.1	✓	auto:pdftext	2026-11-12	要人確認:団体の監査 全件（相手の区切りと yakuwari、関係の shurui_ji・kubun は道具の候補）
+8a52a35fdb3bf23d	kansa-kankei	kansa-r5-19/1	gyo,oya,meimoku,shurui_ji,kubun,nendo_ji,nendo_basho,retsu,gaku,gaku_raw	kobetsu||令和４年度「わたむき自動車プロジェクト」推進協議会負担金|負担金|zaisei-enjo|令和４年度|atama||66221000|66,221,000 円	円	kansa-r5-19 p.1	✓	auto:pdftext	2026-11-12	要人確認:団体の監査 全件（相手の区切りと yakuwari、関係の shurui_ji・kubun は道具の候補）
+fe053744e911a535	kansa-kankei	kansa-r5-20/1	gyo,oya,meimoku,shurui_ji,kubun,nendo_ji,nendo_basho,retsu,gaku,gaku_raw	kobetsu||令和４年度体験型観光啓発及び新規開拓事業委託業務委託料|委託料||令和４年度|atama||7000000|7,000,000 円	円	kansa-r5-20 p.1	✓	auto:pdftext	2026-11-12	要人確認:団体の監査 全件（相手の区切りと yakuwari、関係の shurui_ji・kubun は道具の候補）
+e4c94c512cc8475a	kansa-kankei	kansa-r6-17/1	gyo,oya,meimoku,shurui_ji,kubun,nendo_ji,nendo_basho,retsu,gaku,gaku_raw	kobetsu||令和５年度日野町農業再生協議会運営費補助金|補助金|zaisei-enjo|令和５年度|atama||6733500|6,733,500 円	円	kansa-r6-17 p.1	✓	auto:pdftext	2026-11-12	要人確認:団体の監査 全件（相手の区切りと yakuwari、関係の shurui_ji・kubun は道具の候補）
+86bb4e5bd5c59c83	kansa-kankei	kansa-r6-18/1	gyo,oya,meimoku,shurui_ji,kubun,nendo_ji,nendo_basho,retsu,gaku,gaku_raw	kobetsu||商工会補助金|補助金|zaisei-enjo|令和５年度決算|midashi||17000000|17,000,000 円	円	kansa-r6-18 p.1	✓	auto:pdftext	2026-11-12	要人確認:団体の監査 全件（相手の区切りと yakuwari、関係の shurui_ji・kubun は道具の候補）
+da2ae5bdc1d95294	kansa-kankei	kansa-r6-19/1	gyo,oya,meimoku,shurui_ji,kubun,nendo_ji,nendo_basho,retsu,gaku,gaku_raw	kobetsu||日野町社会福祉協議会運営事業補助金|補助金|zaisei-enjo|令和５年度決算|midashi||36988000|３６，９８８，０００円	円	kansa-r6-19 p.1	✓	auto:pdftext	2026-11-12	要人確認:団体の監査 全件（相手の区切りと yakuwari、関係の shurui_ji・kubun は道具の候補）
+f771f23d6a6f6ccb	kansa-kankei	kansa-r6-19/2	gyo,oya,meimoku,shurui_ji,kubun,nendo_ji,nendo_basho,retsu,gaku,gaku_raw	kobetsu||日野町社会福祉協議会活動事業補助金|補助金|zaisei-enjo|令和５年度決算|midashi||8412000|８，４１２，０００円	円	kansa-r6-19 p.1	✓	auto:pdftext	2026-11-12	要人確認:団体の監査 全件（相手の区切りと yakuwari、関係の shurui_ji・kubun は道具の候補）
+2e80f564cd08c3de	kansa-kankei	kansa-r7-18/1	gyo,oya,meimoku,shurui_ji,kubun,nendo_ji,nendo_basho,retsu,gaku,gaku_raw	kobetsu||グリム冒険の森指定管理料 令和６年度指定管理料|指定管理料|shitei-kanri|令和６年度|naka||9100000|9,100,000 円	円	kansa-r7-18 p.1	✓	auto:pdftext	2026-11-12	要人確認:団体の監査 全件（相手の区切りと yakuwari、関係の shurui_ji・kubun は道具の候補）
+2ce9dba1e19659e6	kansa-kankei	kansa-r7-19/1	gyo,oya,meimoku,shurui_ji,kubun,nendo_ji,nendo_basho,retsu,gaku,gaku_raw	kobetsu||令和６年度(公社)日野町シルバー人材センター運営補助金|補助金|zaisei-enjo|令和６年度|atama||9000000|9,000,000 円	円	kansa-r7-19 p.1	✓	auto:pdftext	2026-11-12	要人確認:団体の監査 全件（相手の区切りと yakuwari、関係の shurui_ji・kubun は道具の候補）
+64f9167fda31c298	kansa-kankei	kansa-r7-20/1	gyo,oya,meimoku,shurui_ji,kubun,nendo_ji,nendo_basho,retsu,gaku,gaku_raw	kobetsu||町民会館指定管理料|指定管理料|shitei-kanri|令和６年度決算ベース|midashi||92008000|９２，００８，０００円	円	kansa-r7-20 p.1	✓	auto:pdftext	2026-11-12	要人確認:団体の監査 全件（相手の区切りと yakuwari、関係の shurui_ji・kubun は道具の候補）
+111fcee351b3bc66	kansa-jiko	kansa-r3-14/1	jiko	日野町高齢者福祉計画・介護保険事業計画(第８期)について（介護保険サービスと介護保険料）		kansa-r3-14 p.1	✓	auto:pdftext	2026-11-12	要人確認:H4 3点 見出しの字が違うか見出しが無い・折り返しをつないだ
+d087006f3769ec4e	kansa-jiko	kansa-r3-14/2	jiko	保健事業と介護予防の一体的実施について		kansa-r3-14 p.1	✓	auto:pdftext	2026-11-12	要人確認:H4 3点 見出しの字が違うか見出しが無い・折り返しをつないだ
+ca261072e06bd30d	kansa-jiko	kansa-r3-15/1	jiko	商工業の活性化について		kansa-r3-15 p.1	✓	auto:pdftext	2026-11-12	
+a45f97bf65f377b2	kansa-jiko	kansa-r3-15/2	jiko	工場用地の確保と企業誘致について		kansa-r3-15 p.1	✓	auto:pdftext	2026-11-12	
+8e4f91f2ef1e1085	kansa-jiko	kansa-r4-01/1	jiko	ひきこもり対策の現状と課題について		kansa-r4-01 p.1	✓	auto:pdftext	2026-11-12	
+3982c31310afeeb6	kansa-jiko	kansa-r4-01/2	jiko	健康づくりと健康診査の取組について		kansa-r4-01 p.1	✓	auto:pdftext	2026-11-12	
+757a44d177b19edc	kansa-jiko	kansa-r4-02/1	jiko	日野町都市計画マスタープランの改訂について		kansa-r4-02 p.1	✓	auto:pdftext	2026-11-12	
+d1af971e2e2de18a	kansa-jiko	kansa-r4-02/2	jiko	道路・河川に関する地元要望と対応、および主要道路整備の進捗状況について		kansa-r4-02 p.1	✓	auto:pdftext	2026-11-12	
+541041e512fe840a	kansa-jiko	kansa-r4-03/1	jiko	令和３年度未納金徴収実績、令和３年度不納欠損処分の状況		kansa-r4-03 p.1	✓	auto:pdftext	2026-11-12	
+c2b1f883f0c717d3	kansa-jiko	kansa-r4-03/2	jiko	確定申告のシステム導入について		kansa-r4-03 p.1	✓	auto:pdftext	2026-11-12	
+d4d64266d6df02c8	kansa-jiko	kansa-r4-04/1	jiko	日野町高齢者福祉計画・介護保険事業計画（第８期）の進捗状況（計画１年目の実績および計画２年目以降の見込等）（介護給付費の実績と推移、介護予防事業の取組実績と今後の展開等）		kansa-r4-04 p.1	✓	auto:pdftext	2026-11-12	
+203d1e8569f8487f	kansa-jiko	kansa-r4-05/1	jiko	令和３年度未納金徴収実績（水道使用料、公共下水道および農業集落排水使用料、公共下水道受益者負担金）について		kansa-r4-05 p.1	✓	auto:pdftext	2026-11-12	
+3ad8d885cb27c236	kansa-jiko	kansa-r4-05/2	jiko	雨水排水事業計画の推進状況について		kansa-r4-05 p.1	✓	auto:pdftext	2026-11-12	
+6e4e7ac839fe159d	kansa-jiko	kansa-r4-06/1	jiko	福祉医療費助成事業制度について（対象者と総事業費の推移）		kansa-r4-06 p.1	✓	auto:pdftext	2026-11-12	
+0291f29898da5588	kansa-jiko	kansa-r4-06/2	jiko	これからの環境施策について		kansa-r4-06 p.1	✓	auto:pdftext	2026-11-12	
+7bfe7b746c4a358d	kansa-jiko	kansa-r4-07/1	jiko	子育て・教育相談センターの運営状況について		kansa-r4-07 p.1	✓	auto:pdftext	2026-11-12	
+f88d41eeb9fa5717	kansa-jiko	kansa-r4-07/2	jiko	学校給食の現状について		kansa-r4-07 p.1	✓	auto:pdftext	2026-11-12	
+2ff65f385f3610bf	kansa-jiko	kansa-r4-08/1	jiko	日野町幼児教育と保育の在り方と町の現状について		kansa-r4-08 p.1	✓	auto:pdftext	2026-11-12	
+ed4c9ad07019c2bc	kansa-jiko	kansa-r4-09/1	jiko	わたむき自動車プロジェクトの取り組みについて（令和３年度の成果と令和４年度の概要）		kansa-r4-09 p.1	✓	auto:pdftext	2026-11-12	要人確認:H4 4点 折り返しをつないだ
+a1e6c992dbefa14e	kansa-jiko	kansa-r4-09/2	jiko	地方創生推進交付金事業およびデジタル田園都市国家構想交付金事業の取り組みについて		kansa-r4-09 p.1	✓	auto:pdftext	2026-11-12	要人確認:H4 4点 折り返しをつないだ
+1bab7315cb26b5f8	kansa-jiko	kansa-r4-10/1	jiko	保管金の管理状況について		kansa-r4-10 p.1	✓	auto:pdftext	2026-11-12	
+4851e3a57a66f20c	kansa-jiko	kansa-r4-11/1	jiko	特産農産物振興事業（日野菜・茶）の取り組み状況と課題について		kansa-r4-11 p.1	✓	auto:pdftext	2026-11-12	
+f6fa8f848f60e440	kansa-jiko	kansa-r4-11/2	jiko	森林経営管理制度への取組みと森林環境譲与税の活用について		kansa-r4-11 p.1	✓	auto:pdftext	2026-11-12	
+a843ddeda9965237	kansa-jiko	kansa-r4-12/1	jiko	人事管理の現状と課題について（職員の人材育成と勤怠管理（時間外勤務の状況（管理職を含む） 、有給休暇の取得状況等）について		kansa-r4-12 p.1	✓	auto:pdftext	2026-11-12	
+99fb45c6cd2647a6	kansa-jiko	kansa-r4-12/2	jiko	人事評価制度の運用状況等について		kansa-r4-12 p.1	✓	auto:pdftext	2026-11-12	
+5d2996863f8a27c5	kansa-jiko	kansa-r4-13/1	jiko	ふるさと応援寄附事業の状況と今後について		kansa-r4-13 p.1	✓	auto:pdftext	2026-11-12	
+0d6ae1569f6fd3f8	kansa-jiko	kansa-r4-13/2	jiko	「近江日野商人サミット」の取組について		kansa-r4-13 p.1	✓	auto:pdftext	2026-11-12	
+0016d2f612948d5d	kansa-jiko	kansa-r4-14/1	jiko	文化財保存活用地域計画作成の進捗状況と今後の予定について		kansa-r4-14 p.1	✓	auto:pdftext	2026-11-12	
+e8ea17187b097ae4	kansa-jiko	kansa-r4-15/1	jiko	令和５年度当初予算の概要について		kansa-r4-15 p.1	✓	auto:pdftext	2026-11-12	
+d8ebf180d5c328ad	kansa-jiko	kansa-r4-15/2	jiko	地方公会計制度に基づく令和３年度財務書類の概要について		kansa-r4-15 p.1	✓	auto:pdftext	2026-11-12	
+8b40bfcd0db41d6a	kansa-jiko	kansa-r5-01/1	jiko	日野町幼児教育と保育の在り方の中間報告について		kansa-r5-01 p.1	✓	auto:pdftext	2026-11-12	
+65f05d2dbe392ee5	kansa-jiko	kansa-r5-01/2	jiko	学童保育所の現状と課題について		kansa-r5-01 p.1	✓	auto:pdftext	2026-11-12	
+2d982bf117ba338c	kansa-jiko	kansa-r5-02/1	jiko	日野町高齢者福祉計画・介護保険事業計画（第８期）の進捗状況（計画２年目の実績および計画３年目の見込等）（介護給付費の実績と推移、介護予防事業の取組実績、指標の達成状況等）		kansa-r5-02 p.1	✓	auto:pdftext	2026-11-12	
+72411e096e7910ae	kansa-jiko	kansa-r5-03/1	jiko	令和４年度未納金徴収実績、令和４年度不納欠損処分の状況		kansa-r5-03 p.1	✓	auto:pdftext	2026-11-12	
+e2a03b77af9ae2b5	kansa-jiko	kansa-r5-03/2	jiko	「地方税統一ＱＲコード」を利用した町税の納付方法について		kansa-r5-03 p.1	✓	auto:pdftext	2026-11-12	
+dfceb2a85cb1fc88	kansa-jiko	kansa-r5-04/1	jiko	令和４年度の事業実績について（来館者・貸出冊数の推移、新規事業等）		kansa-r5-04 p.1	✓	auto:pdftext	2026-11-12	
+2b12aa00503551d0	kansa-jiko	kansa-r5-04/2	jiko	施設の管理状況		kansa-r5-04 p.1	✓	auto:pdftext	2026-11-12	
+4ffd0f7d98487ff8	kansa-jiko	kansa-r5-05/1	jiko	令和４年度未納金徴収実績（水道使用料、公共下水道および農業集落排水使用料、公共下水道受益者負担金）について		kansa-r5-05 p.1	✓	auto:pdftext	2026-11-12	
+f5851274372970ac	kansa-jiko	kansa-r5-05/2	jiko	上水道施設等の耐震化・老朽化対策について		kansa-r5-05 p.1	✓	auto:pdftext	2026-11-12	
+1f678bedeb7c2fad	kansa-jiko	kansa-r5-06/1	jiko	有害鳥獣駆除事業の取組について		kansa-r5-06 p.1	✓	auto:pdftext	2026-11-12	
+103d6f09f1689d93	kansa-jiko	kansa-r5-06/2	jiko	土地改良施設に関する地元要望と対応について		kansa-r5-06 p.1	✓	auto:pdftext	2026-11-12	
+35a2c4d6af4ed46f	kansa-jiko	kansa-r5-07/1	jiko	空き家対策の取り組みについて		kansa-r5-07 p.1	✓	auto:pdftext	2026-11-12	
+914156bba2632560	kansa-jiko	kansa-r5-07/2	jiko	町内の道路整備の現状と今後の計画について		kansa-r5-07 p.1	✓	auto:pdftext	2026-11-12	
+5f9f6fc0ec50c47d	kansa-jiko	kansa-r5-08/1	jiko	不登校の現状と課題、対応について		kansa-r5-08 p.1	✓	auto:pdftext	2026-11-12	
+b68fb050c1f9f68a	kansa-jiko	kansa-r5-09/1	jiko	保管金の保管状況について		kansa-r5-09 p.1	✓	auto:pdftext	2026-11-12	
+57b012a664854ab1	kansa-jiko	kansa-r5-10/1	jiko	地域共生社会の実現に向けたこれまでの取組と今後の進め方（重層的支援体制整備事業の実施に向けた取組状況など）		kansa-r5-10 p.1	✓	auto:pdftext	2026-11-12	
+98740b4346d458ae	kansa-jiko	kansa-r5-11/1	jiko	マイナンバーカードの交付事務の状況、諸証明コンビニ交付サービスの現状と課題について		kansa-r5-11 p.1	✓	auto:pdftext	2026-11-12	
+9840229de5573ab6	kansa-jiko	kansa-r5-12/1	jiko	環境基本計画の策定への取り組み状況について		kansa-r5-12 p.1	✓	auto:pdftext	2026-11-12	
+8c9469b23be24870	kansa-jiko	kansa-r5-12/2	jiko	わたむき自動車プロジェクトの取り組みについて（令和４年度の成果と令和５年度の概要）		kansa-r5-12 p.1	✓	auto:pdftext	2026-11-12	
+01d64f436a9d54c4	kansa-jiko	kansa-r5-13/1	jiko	消防団の現状と課題について		kansa-r5-13 p.1	✓	auto:pdftext	2026-11-12	
+ad4976ca5d79d3a4	kansa-jiko	kansa-r5-13/2	jiko	自主防災組織の育成について		kansa-r5-13 p.1	✓	auto:pdftext	2026-11-12	
+e0b04f626cbd0414	kansa-jiko	kansa-r5-14/1	jiko	公民館運営の現状と課題について		kansa-r5-14 p.1	✓	auto:pdftext	2026-11-12	
+604054221840a195	kansa-jiko	kansa-r5-15/1	jiko	広報広聴の取組について		kansa-r5-15 p.1	✓	auto:pdftext	2026-11-12	
+0fb889488af01aab	kansa-jiko	kansa-r5-15/2	jiko	国際交流・多文化共生の取組について		kansa-r5-15 p.1	✓	auto:pdftext	2026-11-12	
+87366834fb86b875	kansa-jiko	kansa-r5-16/1	jiko	令和５年度デジタル田園都市国家構想交付金（地方創生推進タイプ）事業の中で商工観光課が所管する事務事業の内容と実施結果（見込み）について		kansa-r5-16 p.1	✓	auto:pdftext	2026-11-12	要人確認:H4 4点 折り返しをつないだ
+1bc3ea01289a90d5	kansa-jiko	kansa-r5-16/2	jiko	コロナ禍および物価高騰における商品券事業およびクーポン券事業の結果とその効果の検証について		kansa-r5-16 p.1	✓	auto:pdftext	2026-11-12	要人確認:H4 4点 折り返しをつないだ
+331724c4fa6082d6	kansa-jiko	kansa-r5-16/3	jiko	観光施設における町の管理範囲と管理状況について		kansa-r5-16 p.1	✓	auto:pdftext	2026-11-12	要人確認:H4 4点 折り返しをつないだ
+c44e378395adcecf	kansa-jiko	kansa-r5-17/1	jiko	令和６年度当初予算の概要について		kansa-r5-17 p.1	✓	auto:pdftext	2026-11-12	
+ba3757c6a7188f83	kansa-jiko	kansa-r5-17/2	jiko	地方公会計制度に基づく令和４年度財務書類の概要について		kansa-r5-17 p.1	✓	auto:pdftext	2026-11-12	
+b4f0dbe3faac85be	kansa-jiko	kansa-r6-01/1	jiko	都市計画公園の管理状況と施設利用状況について		kansa-r6-01 p.1	✓	auto:pdftext	2026-11-12	
+366b4afc58cf7e6f	kansa-jiko	kansa-r6-01/2	jiko	町内の橋梁の現状と長寿命化について		kansa-r6-01 p.1	✓	auto:pdftext	2026-11-12	
+6289fa9931c38c15	kansa-jiko	kansa-r6-02/1	jiko	マイナンバーカードの普及状況と健康保険証利用について		kansa-r6-02 p.1	✓	auto:pdftext	2026-11-12	
+16339f9105fc40b3	kansa-jiko	kansa-r6-02/2	jiko	外国人住民の窓口対応の現状と課題について		kansa-r6-02 p.1	✓	auto:pdftext	2026-11-12	
+ff4a22973af3eaea	kansa-jiko	kansa-r6-03/1	jiko	令和５年度未納金徴収実績、令和５年度不納欠損処分の状況		kansa-r6-03 p.1	✓	auto:pdftext	2026-11-12	
+c3598d8159d00904	kansa-jiko	kansa-r6-03/2	jiko	納付方法別の町税納付実績と今後の展開について		kansa-r6-03 p.1	✓	auto:pdftext	2026-11-12	
+24824dd4c7b888a7	kansa-jiko	kansa-r6-04/1	jiko	日野町高齢者福祉計画・介護保険事業計画（第８期）に対する３年間の実績見込みおよび第９期計画への展望について		kansa-r6-04 p.1	✓	auto:pdftext	2026-11-12	要人確認:H4 4点 折り返しをつないだ
+55774fbe5efbd43e	kansa-jiko	kansa-r6-04/2	jiko	介護施設、介護支援事業等における介護職員の人材不足に対する町の対応について		kansa-r6-04 p.1	✓	auto:pdftext	2026-11-12	要人確認:H4 4点 折り返しをつないだ
+e3e72dda76f0c007	kansa-jiko	kansa-r6-05/1	jiko	令和５年度未納金徴収実績（水道使用料、公共下水道および農業集落排水使用料、公共下水道受益者負担金）について		kansa-r6-05 p.1	✓	auto:pdftext	2026-11-12	
+9bdfd0660e21f605	kansa-jiko	kansa-r6-05/2	jiko	農村集落排水処理場の現状と課題、今後のあり方について		kansa-r6-05 p.1	✓	auto:pdftext	2026-11-12	
+44fa12a16e40c309	kansa-jiko	kansa-r6-06/1	jiko	人口減少と今後の自治会運営について		kansa-r6-06 p.1	✓	auto:pdftext	2026-11-12	
+17ce1eed5886e1b0	kansa-jiko	kansa-r6-06/2	jiko	ジェンダー平等（男女共同参画や性の多様性）における日野町の考え方について		kansa-r6-06 p.1	✓	auto:pdftext	2026-11-12	
+2caac3645a65850b	kansa-jiko	kansa-r6-07/1	jiko	今後の各小中学校児童生徒数の推移と施設の方向性について		kansa-r6-07 p.1	✓	auto:pdftext	2026-11-12	
+f49e7d7005b7b390	kansa-jiko	kansa-r6-08/1	jiko	各集落の「地域計画」策定の取組状況について		kansa-r6-08 p.1	✓	auto:pdftext	2026-11-12	
+8cb244371050c2f1	kansa-jiko	kansa-r6-08/2	jiko	町内の生産森林組合の施業・管理状況、町の森林振興の現状と課題について		kansa-r6-08 p.1	✓	auto:pdftext	2026-11-12	
+2fc8a99fe3632341	kansa-jiko	kansa-r6-09/1	jiko	国民スポーツ大会の進捗状況と町内施設の活用を含めたスポーツ振興の展望について		kansa-r6-09 p.1	✓	auto:pdftext	2026-11-12	
+86019e2418087ecf	kansa-jiko	kansa-r6-09/2	jiko	日野町人権啓発推進連絡協議会・各地区人権啓発推進協議会の活動状況と課題について		kansa-r6-09 p.1	✓	auto:pdftext	2026-11-12	
+55be5bec478e404f	kansa-jiko	kansa-r6-10/1	jiko	基金の運用について		kansa-r6-10 p.1	✓	auto:pdftext	2026-11-12	
+5016eb8e988269e6	kansa-jiko	kansa-r6-10/2	jiko	保管金の管理状況について		kansa-r6-10 p.1	✓	auto:pdftext	2026-11-12	
+b0d1449a5a21a16d	kansa-jiko	kansa-r6-11/1	jiko	町内の商工業者の現状と課題について		kansa-r6-11 p.1	✓	auto:pdftext	2026-11-12	
+5bcd11955b71c8f2	kansa-jiko	kansa-r6-11/2	jiko	ふるさと応援寄付事業の実績推移と推進拡大に向けた取組状況について		kansa-r6-11 p.1	✓	auto:pdftext	2026-11-12	
+c1dd3cd58dc8e92e	kansa-jiko	kansa-r6-12/1	jiko	人事管理の現状と課題について（職員の人材育成と勤怠管理について）		kansa-r6-12 p.1	✓	auto:pdftext	2026-11-12	
+d53256bf7012a858	kansa-jiko	kansa-r6-12/2	jiko	公共施設等総合管理計画と長寿命化計画の整合性について		kansa-r6-12 p.1	✓	auto:pdftext	2026-11-12	
+a9c567318545cf6c	kansa-jiko	kansa-r6-13/1	jiko	「チョイソコひの」の運用状況と今後の展望、課題について		kansa-r6-13 p.1	✓	auto:pdftext	2026-11-12	
+2b4c90d9b18f07d1	kansa-jiko	kansa-r6-13/2	jiko	環境基本計画の策定に向けた現状について		kansa-r6-13 p.1	✓	auto:pdftext	2026-11-12	
+65f4eb7b2bbdade6	kansa-jiko	kansa-r6-14/1	jiko	日野町幼児教育保育施設再編整備計画策定の取組状況について		kansa-r6-14 p.1	✓	auto:pdftext	2026-11-12	
+5f5e2b3628f4f591	kansa-jiko	kansa-r6-14/2	jiko	要保護児童ならびに児童虐待の現状と課題、対応について		kansa-r6-14 p.1	✓	auto:pdftext	2026-11-12	
+b57c72d23b0f1489	kansa-jiko	kansa-r6-15/1	jiko	生活困窮者に対する町の窓口対応について（生活保護受給者の状況、相談業務における民生委員との関わりなど）		kansa-r6-15 p.1	✓	auto:pdftext	2026-11-12	
+aa852f4dc34dded0	kansa-jiko	kansa-r6-15/2	jiko	地域福祉全般にわたる町と社会福祉協議会との関わりについて（町と社会福祉協議会との役割分担、委託している業務、日頃の連携など）		kansa-r6-15 p.1	✓	auto:pdftext	2026-11-12	
+24f1cd140f62976a	kansa-jiko	kansa-r6-16/1	jiko	令和７年度当初予算の概要について		kansa-r6-16 p.1	✓	auto:pdftext	2026-11-12	
+9ecb6cb35c417951	kansa-jiko	kansa-r6-16/2	jiko	地方公会計制度に基づく令和５年度財務書類の概要について		kansa-r6-16 p.1	✓	auto:pdftext	2026-11-12	
+8096c6600ff06afa	kansa-jiko	kansa-r7-01/1	jiko	河川の維持補修（浚渫や護岸、堤防等の改修、河川敷の除草（竹））について		kansa-r7-01 p.1	✓	auto:pdftext	2026-11-12	
+ff151eba8ce1dee2	kansa-jiko	kansa-r7-01/2	jiko	今後の日野町の公園の整備計画について		kansa-r7-01 p.1	✓	auto:pdftext	2026-11-12	
+c4594c5be62df33a	kansa-jiko	kansa-r7-02/1	jiko	日野町高齢者福祉計画・介護保険事業計画（第９期）の進捗状況（計画 1 年目の実績および計画 2 年目以降の見込・展開）		kansa-r7-02 p.1	✓	auto:pdftext	2026-11-12	
+6bcbfa79e52e1980	kansa-jiko	kansa-r7-02/2	jiko	介護予防の取り組みについて		kansa-r7-02 p.1	✓	auto:pdftext	2026-11-12	
+0591cab03dfaa7da	kansa-jiko	kansa-r7-03/1	jiko	令和６年度未納金徴収実績、令和６年度不納欠損処分の状況		kansa-r7-03 p.1	✓	auto:pdftext	2026-11-12	
+3637e524906c42ef	kansa-jiko	kansa-r7-03/2	jiko	法人町民税、法人固定資産税の動向について		kansa-r7-03 p.1	✓	auto:pdftext	2026-11-12	
+9dbbf78c9e53e5ef	kansa-jiko	kansa-r7-04/1	jiko	令和６年度の事業実績について（来館者・貸出冊数の推移、新規事業等）		kansa-r7-04 p.1	✓	auto:pdftext	2026-11-12	
+8971eacc2627e075	kansa-jiko	kansa-r7-04/2	jiko	今後の図書館運営について		kansa-r7-04 p.1	✓	auto:pdftext	2026-11-12	
+db51252ab4398f1b	kansa-jiko	kansa-r7-05/1	jiko	令和６年度未納金徴収実績（水道使用料、公共下水道および農業集落排水使用料、公共下水道受益者負担金）について		kansa-r7-05 p.1	✓	auto:pdftext	2026-11-12	
+164aba0e61d3c38d	kansa-jiko	kansa-r7-05/2	jiko	雨水排水事業計画の進捗状況について		kansa-r7-05 p.1	✓	auto:pdftext	2026-11-12	
+fcf1bfcd5d19a8c0	kansa-jiko	kansa-r7-06/1	jiko	日野町認定こども園整備基本構想（案）における住民意見募集（パブリックコメント）の結果および今後の町内幼児教育保育施設の再編計画と新こども園の具体的な計画について		kansa-r7-06 p.1	✓	auto:pdftext	2026-11-12	
+c2acaf764163d465	kansa-jiko	kansa-r7-07/1	jiko	不登校の現状と対策および日野里山フリースクールの現状について		kansa-r7-07 p.1	✓	auto:pdftext	2026-11-12	
+e8cfa3a257af84ec	kansa-jiko	kansa-r7-07/2	jiko	学校給食の現状および学校給食無償化の課題について		kansa-r7-07 p.1	✓	auto:pdftext	2026-11-12	
+406ff56627ed438a	kansa-jiko	kansa-r7-08/1	jiko	日野町の林業の現状と課題について		kansa-r7-08 p.1	✓	auto:pdftext	2026-11-12	
+be27009803da49c2	kansa-jiko	kansa-r7-08/2	jiko	政府の米政策に対する町の対応と課題について		kansa-r7-08 p.1	✓	auto:pdftext	2026-11-12	
+0bedd5f63598ae64	kansa-jiko	kansa-r7-09/1	jiko	今後の資金運用について		kansa-r7-09 p.1	✓	auto:pdftext	2026-11-12	
+2618be88c3cef312	kansa-jiko	kansa-r7-09/2	jiko	保管金の管理状況について		kansa-r7-09 p.1	✓	auto:pdftext	2026-11-12	
+e0c53b4821945d6c	kansa-jiko	kansa-r7-10/1	jiko	重層的支援体制整備事業の現状について		kansa-r7-10 p.1	✓	auto:pdftext	2026-11-12	
+1c8b70e66664212f	kansa-jiko	kansa-r7-10/2	jiko	町民の健康づくりについて		kansa-r7-10 p.1	✓	auto:pdftext	2026-11-12	
+15d83f540fcdfe58	kansa-jiko	kansa-r7-11/1	jiko	国民健康保険等「資格確認書」の発行状況と医療機関の対応状況について		kansa-r7-11 p.1	✓	auto:pdftext	2026-11-12	
+4425d022d581137e	kansa-jiko	kansa-r7-11/2	jiko	子ども・子育て支援納付金に伴う対応状況について		kansa-r7-11 p.1	✓	auto:pdftext	2026-11-12	
+68cd5fbb452190b4	kansa-jiko	kansa-r7-12/1	jiko	（仮称）鳥居平松尾工業団地の現状と課題について		kansa-r7-12 p.1	✓	auto:pdftext	2026-11-12	
+8c3081c428321375	kansa-jiko	kansa-r7-12/2	jiko	（公社）日野町シルバー人材センターの現状と課題について		kansa-r7-12 p.1	✓	auto:pdftext	2026-11-12	
+96f7232ee11aea44	kansa-jiko	kansa-r7-13/1	jiko	人事管理について		kansa-r7-13 p.1	✓	auto:pdftext	2026-11-12	
+4df4d5e9008d7200	kansa-jiko	kansa-r7-13/2	jiko	地域防災の現状と課題について		kansa-r7-13 p.1	✓	auto:pdftext	2026-11-12	
+e87e74dc5249359c	kansa-jiko	kansa-r7-14/1	jiko	日野町の交通政策の現状と課題について		kansa-r7-14 p.1	✓	auto:pdftext	2026-11-12	
+db8bf6f8e141e2be	kansa-jiko	kansa-r7-14/2	jiko	日野町環境基本計画について		kansa-r7-14 p.1	✓	auto:pdftext	2026-11-12	
+ce815910ac0d0516	kansa-jiko	kansa-r7-15/1	jiko	情報管理の現状と課題について		kansa-r7-15 p.1	✓	auto:pdftext	2026-11-12	
+9141f6bfbf1316c0	kansa-jiko	kansa-r7-15/2	jiko	移住・定住促進の取り組みについて		kansa-r7-15 p.1	✓	auto:pdftext	2026-11-12	
+76406f2202f889fc	kansa-jiko	kansa-r7-16/1	jiko	国民スポーツ大会・障がい者スポーツ大会の総括と今後のスポーツ振興について		kansa-r7-16 p.1	✓	auto:pdftext	2026-11-12	要人確認:H4 6点 本文が2ページにまたがる・折り返しをつないだ
+7615964a757ce4e8	kansa-jiko	kansa-r7-16/2	jiko	（公財）日野町文化振興事業団への指定管理の内容と成果、課題について		kansa-r7-16 p.1	✓	auto:pdftext	2026-11-12	要人確認:H4 6点 本文が2ページにまたがる・折り返しをつないだ
+f8ab5ec4b412a4dd	kansa-jiko	kansa-r7-17/1	jiko	令和８年度当初予算の概要について		kansa-r7-17 p.1	✓	auto:pdftext	2026-11-12	
+cace07a0993371ca	kansa-jiko	kansa-r7-17/2	jiko	災害応急対策にかかる食糧、生活必需品等の備蓄状況と更新計画について		kansa-r7-17 p.1	✓	auto:pdftext	2026-11-12	
+f00551c2a4f8ee7c	kansa-jiko	kansa-r7-17/3	jiko	水道施設における消火栓の設置基準について		kansa-r7-17 p.1	✓	auto:pdftext	2026-11-12	
