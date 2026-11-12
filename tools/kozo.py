@@ -4,8 +4,9 @@
   python3 -B tools/kozo.py hosei-check <年度>   補正予算の表を原典の文字で照合・検算し、検収の台帳 data/struct/audit/hosei-<年度>.tsv を書く（13.10 段1）
   python3 -B tools/kozo.py selftest             段1 の道具に、誤りを入れた表を読ませて、誤りを見つけることを確かめる（13.10、補遺 L）
 
-決算（kessan-*）・財政指標（zaisei-*）・監査の結果（kansa-kian・kansa-check・kansa-selftest。13.15）の命令は、
-tools/kozo_kessan.py・tools/kozo_zaisei.py・tools/kozo_kansa.py にある。
+決算（kessan-*）・財政指標（zaisei-*）・監査の結果（kansa-kian・kansa-check・kansa-selftest。13.15）・
+決算審査の意見（iken-kian・iken-check・iken-selftest。13.16）の命令は、
+tools/kozo_kessan.py・tools/kozo_zaisei.py・tools/kozo_kansa.py・tools/kozo_kessan_iken.py にある。
 
 年度は r6 の形。起票は data/text_raw/ を基にし、data/text/ は企業会計の表の会計の名前にだけ使う。
 読めないもの・決まりで決まらないものは空にして note に書く。決まりに無いものが出たら止める（終了コード 2）。
@@ -1876,6 +1877,9 @@ def main(argv):
     if len(argv) == 2 and argv[1] in ("kansa-kian", "kansa-check", "kansa-selftest"):
         import kozo_kansa
         return kozo_kansa.main(argv)
+    if len(argv) == 2 and argv[1] in ("iken-kian", "iken-check", "iken-selftest"):
+        import kozo_kessan_iken
+        return kozo_kessan_iken.main(argv)
     print(__doc__)
     return 2
 
